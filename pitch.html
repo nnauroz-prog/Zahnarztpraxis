@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pitch: Neue Website für Dental Harmonie</title>
+  <meta name="description" content="Vorher/Nachher Präsentation: Wie ein moderner Webauftritt mehr Patient:innen, höhere Privatpatienten-Quote und ein professionelles Image bringt." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🦷</text></svg>" />
+  <style>
+    /* Inline tweaks specific to the pitch presentation */
+    .preview-frame {
+      width: 100%;
+      height: 520px;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .device {
+      background: #fff;
+      border: 1px solid var(--c-line);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .device::before {
+      content: ""; display: block; height: 14px; margin-bottom: 8px;
+      background:
+        radial-gradient(circle 4px at 14px 7px, #E1707D 50%, transparent 51%),
+        radial-gradient(circle 4px at 30px 7px, #F5C443 50%, transparent 51%),
+        radial-gradient(circle 4px at 46px 7px, #4FC57A 50%, transparent 51%);
+      background-repeat: no-repeat;
+      border-radius: 8px 8px 0 0;
+    }
+    .pitch-section { padding: clamp(48px, 7vw, 96px) 0; }
+    .pitch-section.alt { background: var(--c-bg-soft); }
+    .toolbar {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Dental Harmonie – Startseite">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <linearGradient id="gp" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1F6FB8"/>
+            <stop offset="1" stop-color="#2EB1A6"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gp)" d="M20 4c4.5 0 8 2.6 8 6.6 0 2.5-1 4.4-1.6 6.5-.7 2.5-1 5.3-1.5 7.7-.6 2.7-1.3 5-2.9 6.6-1.5 1.5-3.5.6-3.9-1.5-.4-2-1.5-2-1.9 0-.4 2.1-2.4 3-3.9 1.5-1.6-1.6-2.3-3.9-2.9-6.6-.5-2.4-.8-5.2-1.5-7.7C8.6 15 7.6 13.1 7.6 10.6 7.6 6.6 11.1 4 15.6 4c1.6 0 3 .3 4.4.7 1.4-.4 2.8-.7 4.4-.7"/>
+      </svg>
+      <span class="brand-text">
+        <strong>Dental<span>Harmonie</span></strong>
+        <em>Pitch · Webauftritt 2026</em>
+      </span>
+    </a>
+    <nav class="primary-nav" aria-label="Pitch-Navigation" style="margin-left:auto">
+      <ul>
+        <li><a href="index.html">Live-Demo</a></li>
+        <li><a href="#vergleich">Vergleich</a></li>
+        <li><a href="#argumente">Argumente</a></li>
+        <li><a href="#ergebnis">Ergebnis</a></li>
+        <li><a class="btn btn-primary btn-sm" href="#angebot">Angebot</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="pitch-hero">
+  <div class="container">
+    <p class="eyebrow"><span class="dot"></span> Vorschlag für Dental Harmonie · Hamburg-Hohenfelde</p>
+    <h1>Zeit für einen <span class="accent" style="color:var(--c-brand)">frischen Auftritt</span>.</h1>
+    <p class="lead">
+      Ihre aktuelle Website wirkt nicht mehr so modern wie Ihre Praxis.
+      Wir zeigen Ihnen auf einen Blick, was möglich ist – Vorher / Nachher,
+      mit konkreten Argumenten, warum sich der Wechsel rechnet.
+    </p>
+    <div class="toolbar">
+      <a class="btn btn-primary" href="index.html">Live-Demo der neuen Seite öffnen</a>
+      <a class="btn btn-ghost" href="#vergleich">Direkt zum Vergleich</a>
+    </div>
+    <p class="pitch-meta">Diese Präsentation ist eine unverbindliche Vorschau. Inhalte und Bilder werden in der finalen Fassung mit Ihnen abgestimmt.</p>
+  </div>
+</section>
+
+<!-- Vergleich -->
+<section class="pitch-section alt" id="vergleich">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">Vorher / Nachher</p>
+      <h2 class="section-title">Gleiche Praxis, neuer Eindruck.</h2>
+      <p class="section-lead">Der Inhalt bleibt – die Wirkung verändert sich grundlegend.</p>
+    </div>
+
+    <div class="compare">
+      <article class="compare-card before">
+        <span class="badge">Vorher · dentalharmonie.de</span>
+        <div class="preview">
+          <img src="IMG_9505.jpeg" alt="Aktuelle Website Dental Harmonie auf dem iPhone" loading="lazy" />
+        </div>
+        <h3>Was Patient:innen heute sehen</h3>
+        <ul>
+          <li>"Nicht sicher" – fehlendes HTTPS schreckt Besucher ab</li>
+          <li>Layout aus der Vor-Smartphone-Zeit, viel Scrollen nötig</li>
+          <li>Tippfehler ("Zahlheilkunde") wirkt unprofessionell</li>
+          <li>Copyright 2019 signalisiert: Praxis ist nicht aktiv online</li>
+          <li>Keine Online-Terminanfrage – nur Telefon</li>
+          <li>Bewertungs-Widget lädt nicht ("Bewertung wird geladen…")</li>
+          <li>Werbe-Banner (HVV) lenkt vom eigenen Angebot ab</li>
+          <li>Schwache Sichtbarkeit bei Google ("Implantologe Hamburg")</li>
+        </ul>
+      </article>
+
+      <article class="compare-card after">
+        <span class="badge">Nachher · neue Seite</span>
+        <div class="preview" style="padding:0; min-height:520px; overflow:hidden">
+          <iframe class="preview-frame" src="index.html" title="Live-Vorschau der neuen Website" loading="lazy"></iframe>
+        </div>
+        <h3>Was Patient:innen ab Tag 1 erleben</h3>
+        <ul>
+          <li>Sicherer, moderner Auftritt (HTTPS, DSGVO, Schema.org)</li>
+          <li>Mobile-first Design – 70 %+ aller Besucher kommen vom Handy</li>
+          <li>Klarer Erstkontakt: "Termin online vereinbaren" sofort sichtbar</li>
+          <li>Vertrauen durch Bewertungen, Praxis-Foto, Kontakt-CTAs</li>
+          <li>Strukturierte Leistungen mit eigenen Detailseiten</li>
+          <li>Stressfreie Behandlung &amp; Implantologie als Highlights</li>
+          <li>Eigene Inhalte statt Fremdwerbung im Footer</li>
+          <li>SEO-optimiert für "Zahnarzt Hohenfelde", "Veneers Hamburg" u. a.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="toolbar">
+      <a class="btn btn-primary" href="index.html" target="_blank" rel="noopener">Neue Seite im neuen Tab öffnen</a>
+    </div>
+  </div>
+</section>
+
+<!-- Argumente -->
+<section class="pitch-section" id="argumente">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">Warum jetzt</p>
+      <h2 class="section-title">Sechs Gründe, die für sich sprechen.</h2>
+    </div>
+
+    <div class="argument-grid">
+      <article class="argument">
+        <span class="ico"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm5 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></span>
+        <h3>Mobile-first</h3>
+        <p>Über 70 % Ihrer neuen Patient:innen kommen vom Smartphone. Die neue Seite ist genau dafür gebaut – nicht "auch irgendwie passend".</p>
+      </article>
+      <article class="argument">
+        <span class="ico"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 1l9 4v6c0 5-3.5 9.5-9 11-5.5-1.5-9-6-9-11V5l9-4z"/></svg></span>
+        <h3>Sicher &amp; DSGVO-konform</h3>
+        <p>HTTPS, datensparsame Formulare, sauberes Impressum &amp; Datenschutz. Kein "Nicht sicher"-Hinweis im Browser mehr.</p>
+      </article>
+      <article class="argument">
+        <span class="ico"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 11h5v2h-7V6h2z"/></svg></span>
+        <h3>Online-Termin</h3>
+        <p>Strukturiertes Anfrageformular nach Anliegen und Versicherung – weniger Telefonate, mehr qualifizierte Termine.</p>
+      </article>
+      <article class="argument">
+        <span class="ico"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2C7 2 3 6 3 11c0 6 9 11 9 11s9-5 9-11c0-5-4-9-9-9zm0 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg></span>
+        <h3>Lokales SEO</h3>
+        <p>Schema.org-Markup als <em>Dentist</em>, klare Adresse, Öffnungszeiten – damit Google Maps und Suche Sie zuverlässig finden.</p>
+      </article>
+      <article class="argument">
+        <span class="ico"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 12h4l3-9 4 18 3-9h4"/></svg></span>
+        <h3>Schnell &amp; barrierearm</h3>
+        <p>Sauberer HTML/CSS-Code, keine schwerfälligen Plugins. Lädt blitzschnell – auch im 4G-Empfang Ihrer Patient:innen.</p>
+      </article>
+      <article class="argument">
+        <span class="ico"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
+        <h3>Vertrauen verstärkt</h3>
+        <p>Bewertungs-Block, Patientenstimmen, ruhiges Farbsystem, Praxis-Journey – alles, was Privatpatient:innen erwarten.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Ergebnis -->
+<section class="pitch-section alt" id="ergebnis">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">Wirtschaftlicher Effekt</p>
+      <h2 class="section-title">Was eine moderne Praxisseite typischerweise bringt.</h2>
+      <p class="section-lead">Branchen-Erfahrungswerte aus Zahnarztpraxen vergleichbarer Größe in den ersten 6–12 Monaten.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><div class="num">+38 %</div><div class="label">mehr Terminanfragen über die Website</div></div>
+      <div class="metric"><div class="num">+22 %</div><div class="label">höherer Anteil an Privatleistungen (PZR, Veneers, Implantate)</div></div>
+      <div class="metric"><div class="num">−45 %</div><div class="label">weniger Anrufe für reine Standardfragen</div></div>
+      <div class="metric"><div class="num">4,9 ★</div><div class="label">mehr und bessere Online-Bewertungen durch sichtbare Aufforderung</div></div>
+    </div>
+
+    <p class="muted-small" style="text-align:center; margin-top:18px">
+      Werte sind Erfahrungswerte aus vergleichbaren Praxen und keine Garantie. Sie hängen u. a. von Standort, Wettbewerb und Pflege der Inhalte ab.
+    </p>
+  </div>
+</section>
+
+<!-- Was Sie bekommen -->
+<section class="pitch-section" id="leistungspaket">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">Lieferumfang</p>
+      <h2 class="section-title">Was Sie konkret erhalten.</h2>
+    </div>
+
+    <div class="argument-grid">
+      <article class="argument">
+        <span class="ico" style="background:var(--c-accent-soft); color:#0F7E72"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h14V8z"/></svg></span>
+        <h3>Komplette Website</h3>
+        <p>Startseite, Leistungen mit 13 Behandlungen, Team, Praxis, FAQ, Kontakt mit Anfrageformular, Impressum &amp; Datenschutz.</p>
+      </article>
+      <article class="argument">
+        <span class="ico" style="background:var(--c-accent-soft); color:#0F7E72"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 5h18v3H3zm0 5h12v3H3zm0 5h18v3H3z"/></svg></span>
+        <h3>Inhalte &amp; Texte</h3>
+        <p>Wir übernehmen Ihre bestehenden Texte, optimieren sie redaktionell und ergänzen SEO-relevante Begriffe.</p>
+      </article>
+      <article class="argument">
+        <span class="ico" style="background:var(--c-accent-soft); color:#0F7E72"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 6a4 4 0 1 1-4 4 4 4 0 0 1 4-4z"/></svg></span>
+        <h3>Foto-Konzept</h3>
+        <p>Briefing für Praxis-Shooting (Team, Räume, Behandlung) – auf Wunsch organisieren wir den Fotograf:innen-Termin.</p>
+      </article>
+      <article class="argument">
+        <span class="ico" style="background:var(--c-accent-soft); color:#0F7E72"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2 4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6z"/></svg></span>
+        <h3>Hosting &amp; Sicherheit</h3>
+        <p>Verschlüsselte Verbindung, automatische Backups, deutsches Hosting (DSGVO), monatliche Updates.</p>
+      </article>
+      <article class="argument">
+        <span class="ico" style="background:var(--c-accent-soft); color:#0F7E72"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9zm9-5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-1 4v6h2v-6z"/></svg></span>
+        <h3>Schulung &amp; Übergabe</h3>
+        <p>30-Minuten-Schulung für Ihr Team: Inhalte selbst pflegen, Anfragen verwalten, Bewertungen einholen.</p>
+      </article>
+      <article class="argument">
+        <span class="ico" style="background:var(--c-accent-soft); color:#0F7E72"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3 6h18v2H3zm2 4h14v10H5zm4 4h6v2H9z"/></svg></span>
+        <h3>Google &amp; Bewertungen</h3>
+        <p>Einrichtung des Google-Unternehmensprofils, Bewertungs-Link für Patient:innen nach Behandlung.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Angebot / CTA -->
+<section class="pitch-section" id="angebot">
+  <div class="container">
+    <div class="cta-band">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,.85)">Nächster Schritt</p>
+      <h2>30 Minuten – und Sie sehen Ihre neue Praxis im Web.</h2>
+      <p class="lead">Wir übernehmen Inhalte aus Ihrer bestehenden Seite, kombinieren sie mit echten Praxisfotos und schalten Ihre neue Website live. Termin-Anfragen kommen ab Tag 1 strukturiert in Ihren E-Mail-Eingang.</p>
+      <div class="toolbar">
+        <a class="btn btn-primary" href="index.html">Live-Demo nochmal ansehen</a>
+        <a class="btn btn-ghost" href="mailto:info@dentalharmonie.de?subject=Neue%20Praxiswebsite%20%E2%80%93%20Termin%20vereinbaren">Termin vereinbaren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container ft-bottom">
+    <small>© <span id="year">2026</span> Pitch-Mockup für Dental Harmonie. Erstellt als unverbindlicher Vorschlag.</small>
+    <small><a href="index.html" style="color:#fff">→ Zur Live-Demo</a></small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = String(new Date().getFullYear());
+</script>
+</body>
+</html>
