@@ -38,7 +38,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(63,42,74,.12);
+}
 body {
   margin: 0;
   font-family: var(--f-sans);
@@ -49,6 +53,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 img, svg { max-width: 100%; display: block; }
@@ -1267,6 +1272,182 @@ p  { margin: 0 0 1em; }
    ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* =========================================================
+   Responsive Tuning · Tablet & Mobile
+   Optimierungen für Laptop bis Handy
+   ========================================================= */
+
+/* Tablet (Querformat / kleines Laptop) */
+@media (max-width: 1100px) {
+  .container { padding: 0 28px; }
+  .hero h1 { font-size: clamp(2.4rem, 6.5vw, 4.5rem); }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
+  .pullquote p { font-size: clamp(1.4rem, 3vw, 2.4rem); }
+}
+
+/* Tablet (iPad portrait, kleine Laptops) */
+@media (max-width: 880px) {
+  .nav { padding-top: 12px; padding-bottom: 12px; }
+  .hero { padding: clamp(40px, 6vw, 64px) 0 clamp(40px, 6vw, 64px); }
+  .hero h1 { font-size: clamp(2.2rem, 7vw, 3.2rem); line-height: 1.05; }
+  .page-hero { padding: clamp(40px, 6vw, 80px) 0 clamp(28px, 4vw, 48px); }
+  .page-hero h1 { font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.1; }
+  .section { padding: clamp(40px, 6vw, 64px) 0; }
+  .pullquote { padding: clamp(56px, 10vw, 96px) 0; }
+  .pullquote p { font-size: clamp(1.3rem, 4.5vw, 2rem); line-height: 1.25; }
+  .pullquote .quote-mark { font-size: 3.5rem; }
+  .bento { gap: 8px; }
+  .bento figure { aspect-ratio: 4 / 3; }
+}
+
+/* Smartphone (Portrait) */
+@media (max-width: 640px) {
+  body { font-size: 15.5px; }
+  .container { padding: 0 18px; }
+  .section { padding: 36px 0 40px; }
+  .section-head { margin-bottom: 24px; }
+
+  /* Hero kompakter */
+  .hero { padding: 28px 0 36px; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem); margin-bottom: .6em; }
+  .hero .lead { font-size: 1rem; line-height: 1.55; margin-bottom: 1.5rem; }
+  .hero-portrait { max-width: 320px; aspect-ratio: 4 / 5; }
+  .hero-grid { gap: 28px; }
+
+  /* Page-Hero kompakter */
+  .page-hero { padding: 32px 0 24px; }
+  .page-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .page-hero .lead { font-size: .98rem; }
+
+  /* Buttons als klare Tap-Targets (≥44px) */
+  .btn { padding: .9rem 1.4rem; min-height: 44px; }
+  .btn-sm { padding: .65rem 1.1rem; min-height: 38px; }
+
+  /* CTAs auf Mobile full-width für leichteres Tippen */
+  .cta-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .cta-row .btn { justify-content: center; }
+  .cta-row .btn-link { text-align: center; padding: 8px 0; }
+
+  /* Mobile-Nav-Drawer — etwas mehr Padding pro Punkt */
+  .primary-nav a { padding: 1rem 1rem; font-size: .98rem; }
+
+  /* Threecol / Values stapeln (war schon, aber Tighter) */
+  .threecol { gap: 24px; }
+  .threecol > div { padding-top: 1rem; }
+  .values { gap: 20px; }
+
+  /* Pullquote */
+  .pullquote { padding: 56px 0; }
+  .pullquote p { font-size: clamp(1.25rem, 5.5vw, 1.6rem); }
+
+  /* Bento — alle Bilder gleich hoch, gestapelt */
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+    gap: 6px;
+  }
+  .bento > :nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 10;
+  }
+  .bento > :nth-child(2),
+  .bento > :nth-child(3),
+  .bento > :nth-child(4) {
+    grid-column: span 1;
+    aspect-ratio: 1 / 1;
+  }
+  .bento > :nth-child(2) { grid-column: span 2; }
+  .bento figcaption { font-size: .68rem; padding: 5px 10px; bottom: 10px; left: 10px; }
+
+  /* Member-Login-Leiste vollständig stapeln */
+  .member-form { gap: 14px; }
+  .member-form-fields { flex-direction: column; gap: 8px; }
+  .member-form input { width: 100%; min-width: 0; }
+  .member-form .btn { width: 100%; justify-content: center; }
+  .member-form-info h3 { font-size: 1rem; }
+  .member-form-info p { font-size: .82rem; }
+
+  /* Letter-Block — Foto kleiner zentriert */
+  .doctor-photo { max-width: 280px; }
+  .letter h2 { font-size: 1.5rem; }
+
+  /* Service-Cards / Detail */
+  .services-list > a { padding: 18px 18px 18px; }
+  .services-list > a h3 { font-size: 1rem; }
+  .detail h3 { font-size: 1.4rem; }
+
+  /* Kontakt-Liste — 1 Spalte */
+  .contact-info .info-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+  }
+  .hours th { width: 100px; font-size: .76rem; }
+  .hours td { font-size: .92rem; }
+
+  /* Definitionsliste 1-spaltig (war schon ab 600, hier sicher) */
+  .deflist { grid-template-columns: 1fr; gap: 4px 0; }
+  .deflist dd { margin-bottom: 16px; }
+
+  /* CV — schon 1-spaltig <600, aber sicher */
+  .cv li { padding: 16px 0; }
+
+  /* FAQ */
+  .faq summary { font-size: 1rem; gap: 1rem; }
+
+  /* Footer-Brand kompakter */
+  .footer-grid { gap: 28px; }
+  .ft-bottom { flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 32px; }
+
+  /* Hero-Scroll-Hint auf Mobile aus (war schon, sicher) */
+  .hero-scroll { display: none; }
+
+  /* Form: comfortabler Touch */
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    padding: 12px 14px;
+    font-size: 16px; /* iOS Auto-Zoom verhindern */
+  }
+  .login-card input { font-size: 16px; }
+  .member-form input { font-size: 16px; }
+
+  /* Detail-Block padding kleiner */
+  .detail { padding: 32px 0; }
+
+  /* Sektion-Eyebrows kleiner */
+  .section-eyebrow { font-size: .66rem; letter-spacing: .14em; }
+}
+
+/* Sehr kleine Geräte (≤375 px iPhone SE) */
+@media (max-width: 380px) {
+  .container { padding: 0 14px; }
+  .hero h1 { font-size: 1.85rem; }
+  .page-hero h1 { font-size: 1.7rem; }
+  .pullquote p { font-size: 1.15rem; }
+  .bento { grid-template-rows: 180px 180px 180px; }
+  .bento > :nth-child(1) { aspect-ratio: 16 / 11; }
+  .doctor-photo { max-width: 240px; }
+  .login-card { padding: 22px; }
+  .dash-card { padding: 18px; }
+  .shift-table th, .shift-table td { padding: 8px 8px; font-size: .82rem; }
+}
+
+/* Hover/Pointer-Reduction auf Touch-Devices */
+@media (hover: none) and (pointer: coarse) {
+  .services-list > a:hover { transform: none; }
+  .bento figure:hover img,
+  .bento a:hover img { transform: none; }
+  .btn-arrow:hover .arrow { transform: none; }
+}
+
+/* iOS / iPad Safari: 100vh-Bug umgehen */
+.intern-shell {
+  min-height: 100vh;
+  min-height: 100svh; /* short viewport height where supported */
 }
 
 /* =========================================================
