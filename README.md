@@ -16,6 +16,7 @@ Stilrichtung: **Privatklinik clean** – pure White, viel Weißraum, dezenter Au
 | `kontakt.html` | Adresse, Sprechzeiten, Notdienst-Nummern, OpenStreetMap (Klick-zu-Laden) |
 | `impressum.html` | Pflichtangaben nach § 5 TMG |
 | `datenschutz.html` | Datenschutzhinweise (DSGVO) |
+| `intern.html` | Mitarbeiter-Bereich – Dienstplan, Notfall-Kontakte, Lieferanten, Hygiene-Protokoll, Fortbildungen, News (passwortgeschützt, `noindex`) |
 | `pitch.html` | Internes Pitch-Mockup (nicht für Patienten) – via robots.txt ausgeschlossen |
 
 ## Assets
@@ -25,7 +26,8 @@ Stilrichtung: **Privatklinik clean** – pure White, viel Weißraum, dezenter Au
 - `praxis-behandlung-1.jpg` / `-2.jpg` / `-3.jpg` – Behandlungsräume
 - `praxis-wartezimmer.jpg` – Wartezimmer
 - `assets/css/style.css` – Design-System (Aubergine + warmes Grau)
-- `assets/js/main.js` – Sticky Header, Mobile-Nav-Toggle
+- `assets/js/main.js` – Sticky Header, Mobile-Nav-Toggle, FAQ-Verhalten, Scroll-Reveal
+- `assets/js/intern.js` – Login-Logic für `intern.html` (SHA-256 clientseitig)
 - `robots.txt` + `sitemap.xml` – SEO
 
 ## Lokal ausprobieren
@@ -74,6 +76,41 @@ python3 -m http.server 8080
 - [ ] Google Search Console: Property anlegen + sitemap.xml einreichen
 - [ ] Google Business Profile pflegen (Adresse, Sprechzeiten, Bilder)
 - [ ] Backlink-Strategie (KZV Hamburg, Champions Implant Expert Verzeichnis, Praxis-Verzeichnisse)
+
+## Mitarbeiter-Bereich (`intern.html`)
+
+Passwortgeschützte Übersicht für das Praxis-Team mit Dienstplan, Notfall-Telefonen, Lieferanten-Liste, Hygiene-Tagesablauf, Fortbildungen und Praxis-News.
+
+### Wichtig zur Sicherheit
+
+> Diese Anmeldung ist eine **UX-Schwelle, kein kryptografisch sicherer Login**. Inhalte stehen im HTML/JS-Quellcode und sind für jeden mit Browser-Dev-Tools sichtbar. **Keine Patienten-Daten** dort einpflegen — das gehört in die Praxis-Software.
+
+### Standardpasswort
+
+`harmonie2026`
+
+### Passwort ändern
+
+1. Neues Passwort wählen (mindestens 12 Zeichen).
+2. SHA-256-Hash erzeugen — Terminal:
+   ```sh
+   echo -n "neuesPasswort" | shasum -a 256
+   ```
+   Oder im Browser-Devtool:
+   ```js
+   const hex = Array.from(new Uint8Array(
+     await crypto.subtle.digest('SHA-256', new TextEncoder().encode('neuesPasswort'))
+   )).map(b => b.toString(16).padStart(2,'0')).join('');
+   console.log(hex);
+   ```
+3. In `assets/js/intern.js` die Konstante `PW_HASH` durch den neuen Hex-Hash ersetzen.
+4. Commit + Deploy.
+
+Empfehlung: Passwort vierteljährlich rotieren und nie per E-Mail versenden.
+
+### Inhalte pflegen
+
+Dienstplan, Lieferantenliste, News etc. werden direkt im HTML von `intern.html` gepflegt. Platzhalter `[Platzhalter — …]` sind als Hinweis markiert, wo echte Daten eingetragen werden sollen.
 
 ## Designgrundsätze (für künftige Änderungen)
 
