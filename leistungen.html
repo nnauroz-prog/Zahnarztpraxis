@@ -319,6 +319,25 @@
 
 </main>
 
+<section class="member-login-bar" aria-labelledby="memberLoginTitle">
+  <div class="container">
+    <form id="memberForm" class="member-form" novalidate>
+      <div class="member-form-info">
+        <p class="section-eyebrow">Mitarbeiter-Bereich</p>
+        <h3 id="memberLoginTitle">Direktzugang für das Praxis-Team</h3>
+        <p>Schichtplan, Notfall-Kontakte, Hygiene-Protokolle, Praxis-News.</p>
+      </div>
+      <div class="member-form-fields">
+        <label class="visually-hidden" for="memberPw">Praxis-Passwort</label>
+        <input type="password" id="memberPw" name="memberPw" placeholder="Praxis-Passwort" autocomplete="current-password" required />
+        <button type="submit" class="btn btn-primary btn-arrow">Anmelden <span class="arrow" aria-hidden="true">→</span></button>
+      </div>
+      <p class="member-error" id="memberError" role="alert" hidden></p>
+      <p class="member-note">Kein Patientenportal. Bei Fragen: <a href="kontakt.html">Praxis kontaktieren</a>.</p>
+    </form>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
