@@ -30,9 +30,29 @@
         </span>
       </a>
       <span class="badge" id="badgeIntern">Intern</span>
+      <button type="button" id="toggleEdit" class="btn-edit-toggle" hidden>✎ Bearbeiten</button>
       <a href="#" id="internLogout" class="btn-link" hidden>Abmelden</a>
     </div>
   </header>
+
+  <!-- Edit-Toolbar (nur sichtbar im Bearbeiten-Modus) -->
+  <div class="edit-bar" role="toolbar" aria-label="Bearbeiten">
+    <div class="container">
+      <span class="edit-title">Bearbeiten</span>
+      <span class="edit-hint">Klicken Sie in einen Text zum Ändern. Speichert lokal.</span>
+      <div class="edit-actions">
+        <button type="button" id="exportData" title="Alle Daten als JSON herunterladen">⬇ Export</button>
+        <label class="btn-edit" title="JSON-Datei importieren">
+          ⬆ Import
+          <input type="file" id="importData" accept="application/json" hidden />
+        </label>
+        <button type="button" id="printData" title="Dienstplan drucken">🖨 Drucken</button>
+        <button type="button" id="resetData" title="Alle Bearbeitungen verwerfen">↺ Zurücksetzen</button>
+        <button type="button" id="finishEdit" title="Bearbeiten beenden">Fertig</button>
+      </div>
+      <span class="save-status" id="saveStatus" aria-live="polite">Bereit</span>
+    </div>
+  </div>
 
   <main id="main" class="intern">
     <div class="container">
@@ -82,15 +102,17 @@
                     <th>Prophylaxe</th>
                     <th>Empfang</th>
                     <th>Assistenz</th>
+                    <th class="col-actions" aria-hidden="true"></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody data-edit-block="schichtplan">
                   <tr>
                     <th>Montag</th>
                     <td><span class="shift-pill">08:30 – 18:30</span></td>
                     <td><span class="shift-pill">09:00 – 17:00</span></td>
                     <td><span class="shift-pill">08:00 – 18:30</span></td>
                     <td><span class="shift-pill">08:30 – 18:30</span></td>
+                    <td class="col-actions"><button type="button" class="row-remove" aria-label="Zeile entfernen">×</button></td>
                   </tr>
                   <tr>
                     <th>Dienstag</th>
@@ -98,6 +120,7 @@
                     <td><span class="shift-pill off">frei</span></td>
                     <td><span class="shift-pill">08:00 – 18:30</span></td>
                     <td><span class="shift-pill">08:30 – 18:30</span></td>
+                    <td class="col-actions"><button type="button" class="row-remove" aria-label="Zeile entfernen">×</button></td>
                   </tr>
                   <tr>
                     <th>Mittwoch</th>
@@ -105,6 +128,7 @@
                     <td><span class="shift-pill">09:00 – 17:00</span></td>
                     <td><span class="shift-pill">09:30 – 18:30</span></td>
                     <td><span class="shift-pill">10:00 – 18:30</span></td>
+                    <td class="col-actions"><button type="button" class="row-remove" aria-label="Zeile entfernen">×</button></td>
                   </tr>
                   <tr>
                     <th>Donnerstag</th>
@@ -112,6 +136,7 @@
                     <td><span class="shift-pill">09:00 – 17:00</span></td>
                     <td><span class="shift-pill">08:00 – 18:30</span></td>
                     <td><span class="shift-pill">08:30 – 18:30</span></td>
+                    <td class="col-actions"><button type="button" class="row-remove" aria-label="Zeile entfernen">×</button></td>
                   </tr>
                   <tr>
                     <th>Freitag</th>
@@ -119,52 +144,57 @@
                     <td><span class="shift-pill off">frei</span></td>
                     <td><span class="shift-pill">08:00 – 13:30</span></td>
                     <td><span class="shift-pill">08:30 – 13:00</span></td>
+                    <td class="col-actions"><button type="button" class="row-remove" aria-label="Zeile entfernen">×</button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <button type="button" class="row-add" data-add-target="schichtplan" data-add-template="schichtRow">+ Tag hinzufügen</button>
           </article>
 
           <!-- Notfall-Schnellzugriff -->
           <article class="dash-card span-6">
             <p class="card-eyebrow">Notfall-Kontakte</p>
             <h2>Schnellzugriff</h2>
-            <ul class="contact-rows">
-              <li><strong>Praxis-Festnetz</strong><span><a href="tel:+4940221528">+49 40 221528</a></span></li>
-              <li><strong>Zahnärztl. Notdienst HH</strong><span><a href="tel:+494022707671">040 227 076 71</a></span></li>
-              <li><strong>KZV Notdienst (24h)</strong><span><a href="tel:+4901805051218">01805 051 218</a></span></li>
-              <li><strong>Ärztl. Bereitschaft</strong><span><a href="tel:116117">116 117</a></span></li>
-              <li><strong>Notruf</strong><span><a href="tel:112">112</a></span></li>
-              <li><strong>Giftnotruf Hamburg</strong><span><a href="tel:+4940741024211">040 741 024 211</a></span></li>
+            <ul class="contact-rows" data-edit-block="notfaelle">
+              <li><strong>Praxis-Festnetz</strong><span><a href="tel:+4940221528">+49 40 221528</a></span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Zahnärztl. Notdienst HH</strong><span><a href="tel:+494022707671">040 227 076 71</a></span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>KZV Notdienst (24h)</strong><span><a href="tel:+4901805051218">01805 051 218</a></span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Ärztl. Bereitschaft</strong><span><a href="tel:116117">116 117</a></span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Notruf</strong><span><a href="tel:112">112</a></span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Giftnotruf Hamburg</strong><span><a href="tel:+4940741024211">040 741 024 211</a></span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
             </ul>
+            <button type="button" class="row-add" data-add-target="notfaelle" data-add-template="contactRow">+ Kontakt hinzufügen</button>
           </article>
 
           <!-- Lieferanten / externe Partner -->
           <article class="dash-card span-6">
             <p class="card-eyebrow">Lieferanten &amp; Partner</p>
             <h2>Telefonliste</h2>
-            <ul class="contact-rows">
-              <li><strong>Dental-Labor</strong><span>[Platzhalter — Telefon]</span></li>
-              <li><strong>Implantat-Lieferant</strong><span>[Platzhalter — Champions Implants]</span></li>
-              <li><strong>Prophylaxe-Material</strong><span>[Platzhalter — Lieferant]</span></li>
-              <li><strong>Steuerberater</strong><span>[Platzhalter — Kanzlei]</span></li>
-              <li><strong>Praxis-IT / Software</strong><span>[Platzhalter — Hotline]</span></li>
-              <li><strong>Praxis-Versicherung</strong><span>[Platzhalter — Berufshaftpflicht]</span></li>
-              <li><strong>Hausverwaltung</strong><span>[Platzhalter — Telefon]</span></li>
+            <ul class="contact-rows" data-edit-block="lieferanten">
+              <li><strong>Dental-Labor</strong><span>[Platzhalter — Telefon]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Implantat-Lieferant</strong><span>[Platzhalter — Champions Implants]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Prophylaxe-Material</strong><span>[Platzhalter — Lieferant]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Steuerberater</strong><span>[Platzhalter — Kanzlei]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Praxis-IT / Software</strong><span>[Platzhalter — Hotline]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Praxis-Versicherung</strong><span>[Platzhalter — Berufshaftpflicht]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><strong>Hausverwaltung</strong><span>[Platzhalter — Telefon]</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
             </ul>
+            <button type="button" class="row-add" data-add-target="lieferanten" data-add-template="contactRow">+ Lieferant hinzufügen</button>
           </article>
 
           <!-- Hygiene-Protokoll -->
           <article class="dash-card span-8">
             <p class="card-eyebrow">Hygiene &amp; Aufbereitung</p>
             <h2>Tagesablauf</h2>
-            <ul class="dash-list">
-              <li><span class="date">Morgens</span><span>Praxis lüften, Steri prüfen, Behandlungsräume desinfizieren, Material auffüllen, Termine durchgehen.</span></li>
-              <li><span class="date">Vor jedem Patienten</span><span>Behandlungsstuhl Wischdesinfektion, Instrumenten-Tray vorbereiten, sterile Verpackung erst beim Patienten öffnen.</span></li>
-              <li><span class="date">Nach jedem Patienten</span><span>Instrumente in Aufbereitung (Reinigung → Desinfektion → Sterilisation), Oberflächen desinfizieren, Mundspülbecher tauschen.</span></li>
-              <li><span class="date">Mittags</span><span>Sterilisations-Charge dokumentieren, Aufbereitungsprotokoll abzeichnen.</span></li>
-              <li><span class="date">Abends</span><span>Steri-Endkontrolle, Müllentsorgung nach Vorgaben (gelb/schwarz), Praxis abschließen, Alarmanlage scharf.</span></li>
+            <ul class="dash-list" data-edit-block="hygiene">
+              <li><span class="date">Morgens</span><span>Praxis lüften, Steri prüfen, Behandlungsräume desinfizieren, Material auffüllen, Termine durchgehen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Vor jedem Patienten</span><span>Behandlungsstuhl Wischdesinfektion, Instrumenten-Tray vorbereiten, sterile Verpackung erst beim Patienten öffnen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Nach jedem Patienten</span><span>Instrumente in Aufbereitung (Reinigung → Desinfektion → Sterilisation), Oberflächen desinfizieren, Mundspülbecher tauschen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Mittags</span><span>Sterilisations-Charge dokumentieren, Aufbereitungsprotokoll abzeichnen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Abends</span><span>Steri-Endkontrolle, Müllentsorgung nach Vorgaben (gelb/schwarz), Praxis abschließen, Alarmanlage scharf.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
             </ul>
+            <button type="button" class="row-add" data-add-target="hygiene" data-add-template="datedRow">+ Eintrag hinzufügen</button>
             <p class="muted-small" style="margin-top: 1rem;">
               Vollständiges Hygiene-Handbuch: <a href="#" onclick="event.preventDefault(); alert('PDF noch zu hinterlegen');">Hygiene-Plan.pdf</a> · <a href="#" onclick="event.preventDefault(); alert('PDF noch zu hinterlegen');">RKI-Anforderungen.pdf</a>
             </p>
@@ -174,32 +204,35 @@
           <article class="dash-card span-4">
             <p class="card-eyebrow">Fortbildungen</p>
             <h2>Anstehend</h2>
-            <ul class="dash-list">
-              <li><span class="date">Q1 2026</span><span>Pflicht: Strahlenschutz-Aktualisierung (alle 5 Jahre).</span></li>
-              <li><span class="date">Q2 2026</span><span>Hygiene-Schulung gesamtes Team.</span></li>
-              <li><span class="date">Q2 2026</span><span>Notfallmanagement / Reanimation.</span></li>
-              <li><span class="date">Q3 2026</span><span>Datenschutz-Schulung.</span></li>
-              <li><span class="date">Offen</span><span>Implantologie-Fortbildung Frau Dr. Mostafaei.</span></li>
+            <ul class="dash-list" data-edit-block="fortbildungen">
+              <li><span class="date">Q1 2026</span><span>Pflicht: Strahlenschutz-Aktualisierung (alle 5 Jahre).</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Q2 2026</span><span>Hygiene-Schulung gesamtes Team.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Q2 2026</span><span>Notfallmanagement / Reanimation.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Q3 2026</span><span>Datenschutz-Schulung.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Offen</span><span>Implantologie-Fortbildung Frau Dr. Mostafaei.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
             </ul>
+            <button type="button" class="row-add" data-add-target="fortbildungen" data-add-template="datedRow">+ Fortbildung hinzufügen</button>
           </article>
 
           <!-- Praxis-News -->
           <article class="dash-card span-12">
             <p class="card-eyebrow">Praxis-News</p>
             <h2>Aktuell</h2>
-            <ul class="dash-list">
-              <li><span class="date">Dauerhaft</span><span>Termin-Anfragen aus dem Online-Formular landen bei <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a> — bitte täglich morgens und nach der Mittagspause prüfen.</span></li>
-              <li><span class="date">Hinweis</span><span>Bei akuten Schmerzen Patient:innen direkt durchstellen, auch ohne Termin.</span></li>
-              <li><span class="date">Urlaub</span><span>[Platzhalter] — bitte hier neue Urlaubszeiten ergänzen.</span></li>
-              <li><span class="date">Bestand</span><span>[Platzhalter] — Material-Niedrigstand-Hinweis bitte hier eintragen.</span></li>
+            <ul class="dash-list" data-edit-block="news">
+              <li><span class="date">Dauerhaft</span><span>Termin-Anfragen aus dem Online-Formular landen bei <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a> — bitte täglich morgens und nach der Mittagspause prüfen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Hinweis</span><span>Bei akuten Schmerzen Patient:innen direkt durchstellen, auch ohne Termin.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Urlaub</span><span>[Platzhalter] — bitte hier neue Urlaubszeiten ergänzen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
+              <li><span class="date">Bestand</span><span>[Platzhalter] — Material-Niedrigstand-Hinweis bitte hier eintragen.</span><button type="button" class="row-remove" aria-label="Eintrag entfernen">×</button></li>
             </ul>
+            <button type="button" class="row-add" data-add-target="news" data-add-template="datedRow">+ News-Eintrag hinzufügen</button>
           </article>
 
         </div>
 
         <div class="dash-disclaimer">
-          <strong>Sicherheits-Hinweis</strong>
-          Dieser Bereich ersetzt kein Backend. Inhalte sind im HTML/JS-Quellcode der Seite enthalten und für jeden mit Browser-Dev-Tools sichtbar. Patient:innen-Daten gehören in die Praxis-Software, nicht hierhin. Passwort regelmäßig wechseln (Anleitung im README).
+          <strong>Speicherung &amp; Sicherheit</strong>
+          Bearbeitungen werden im <em>Browser-Speicher (localStorage)</em> gespeichert — also nur auf <strong>diesem Gerät</strong>. Über <em>Export</em> erzeugen Sie eine JSON-Datei zum Weitergeben; Kolleginnen können diese mit <em>Import</em> auf ihrem Gerät übernehmen.
+          Patient:innen-Daten gehören in die Praxis-Software, nicht hierhin. Passwort regelmäßig wechseln (Anleitung im README).
         </div>
 
       </section>

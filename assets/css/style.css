@@ -1845,6 +1845,191 @@ main.intern {
   width: 96px;
 }
 
+/* Edit-Mode Toolbar */
+.edit-bar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--c-brand);
+  color: #fff;
+  padding: 12px 0;
+  margin: -1px 0 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+body.editing .edit-bar { display: block; }
+.edit-bar .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.edit-bar .edit-title {
+  font-weight: 500;
+  font-size: .92rem;
+  letter-spacing: .04em;
+  margin-right: 8px;
+}
+.edit-bar .edit-hint {
+  font-size: .78rem;
+  opacity: .75;
+}
+.edit-bar .edit-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.edit-bar button, .edit-bar label.btn-edit {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: .82rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .2s ease, border-color .2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.edit-bar button:hover,
+.edit-bar label.btn-edit:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.4);
+}
+.edit-bar .save-status {
+  font-size: .78rem;
+  opacity: .8;
+  min-width: 100px;
+  text-align: right;
+}
+.edit-bar .save-status.is-saved { color: #C8FFD0; opacity: 1; }
+.edit-bar .save-status.is-saving { color: #FFE9A6; opacity: 1; }
+
+/* Bearbeiten-Button im Header */
+.btn-edit-toggle {
+  background: var(--c-brand-soft);
+  color: var(--c-brand);
+  border: 1px solid var(--c-brand-soft);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: .82rem;
+  cursor: pointer;
+  font-family: inherit;
+  margin-left: 10px;
+  transition: background .15s ease;
+}
+.btn-edit-toggle:hover { background: #E5DBF0; }
+body.editing .btn-edit-toggle { background: var(--c-brand); color: #fff; border-color: var(--c-brand); }
+
+/* Edit-Mode: editierbare Elemente markieren */
+body.editing [data-edit-cell],
+body.editing [data-edit-block] > li,
+body.editing [data-edit-block] > tr td,
+body.editing [data-edit-block] > tr th,
+body.editing tbody[data-edit-block] td,
+body.editing tbody[data-edit-block] th {
+  outline: 1px dashed rgba(63,42,74,.25);
+  outline-offset: 2px;
+  border-radius: 2px;
+  cursor: text;
+}
+body.editing [contenteditable="true"]:focus {
+  outline: 2px solid var(--c-brand);
+  outline-offset: 2px;
+  background: rgba(184,155,126,.1);
+}
+
+/* Row-Remove Button (×) — nur im Edit-Mode sichtbar */
+.row-remove {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--c-line-strong);
+  color: var(--c-muted);
+  width: 28px; height: 28px;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: inherit;
+  flex-shrink: 0;
+  transition: all .15s ease;
+}
+.row-remove:hover {
+  border-color: #B23B3B;
+  color: #B23B3B;
+}
+body.editing .row-remove { display: inline-flex; align-items: center; justify-content: center; }
+
+/* In Tabellen: extra Spalte für Remove-Button */
+.shift-table .col-actions { width: 40px; }
+.shift-table td.col-actions { padding: 4px; text-align: center; }
+
+/* In Listen: Wrap für Inhalt + Remove */
+[data-edit-block] > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+[data-edit-block] > li > .row-remove { margin-top: 2px; }
+
+/* Row-Add Button (+ Eintrag) — nur im Edit-Mode */
+.row-add {
+  display: none;
+  background: transparent;
+  border: 1px dashed var(--c-line-strong);
+  color: var(--c-muted);
+  padding: 10px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .85rem;
+  width: 100%;
+  margin-top: 12px;
+  border-radius: var(--radius-sm);
+  transition: all .15s ease;
+}
+body.editing .row-add { display: block; }
+.row-add:hover { border-color: var(--c-brand); color: var(--c-brand); background: rgba(63,42,74,.03); }
+
+/* Save-Indicator als Toast unten rechts */
+.save-toast {
+  position: fixed;
+  right: 20px; bottom: 20px;
+  background: var(--c-brand-deep);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  font-size: .85rem;
+  letter-spacing: .02em;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 50;
+  pointer-events: none;
+}
+.save-toast.show { opacity: 1; transform: translateY(0); }
+
+/* Print-Styles für Dienstplan-Druck */
+@media print {
+  body.intern { background: #fff; color: #000; }
+  .intern-header, .edit-bar, .save-toast, .dash-disclaimer,
+  .row-add, .row-remove, .btn-edit-toggle,
+  #internLogout, footer { display: none !important; }
+  .dash-card {
+    border: 1px solid #999 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 12px;
+  }
+  .dash-card.span-12 { grid-column: span 12 !important; }
+  .shift-table { font-size: 11pt; }
+  .shift-pill { background: transparent !important; color: #000 !important; }
+  .dash-grid { gap: 12px; }
+}
+
 .dash-disclaimer {
   margin-top: clamp(28px, 4vw, 40px);
   padding: 16px 20px;

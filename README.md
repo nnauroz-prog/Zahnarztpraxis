@@ -108,9 +108,20 @@ Passwortgeschützte Übersicht für das Praxis-Team mit Dienstplan, Notfall-Tele
 
 Empfehlung: Passwort vierteljährlich rotieren und nie per E-Mail versenden.
 
-### Inhalte pflegen
+### Inhalte pflegen — direkt im Browser
 
-Dienstplan, Lieferantenliste, News etc. werden direkt im HTML von `intern.html` gepflegt. Platzhalter `[Platzhalter — …]` sind als Hinweis markiert, wo echte Daten eingetragen werden sollen.
+Im Mitarbeiter-Bereich gibt es nach dem Login einen **Bearbeiten-Knopf** (oben rechts neben „Abmelden"). Damit:
+
+- **Texte ändern**: einfach in eine Zelle/Zeile klicken und tippen.
+- **Zeilen hinzufügen**: über die gestrichelten „+ Tag/Kontakt/Eintrag hinzufügen"-Buttons unter jeder Liste.
+- **Zeilen löschen**: über das `×` rechts neben jeder Zeile (nur im Bearbeiten-Modus sichtbar).
+- **Drucken**: Print-optimiertes Layout (Header, Toolbar etc. werden ausgeblendet).
+- **Export / Import**: Bearbeitungen als JSON-Datei herunterladen und auf einem anderen Gerät einspielen.
+- **Zurücksetzen**: alle Bearbeitungen verwerfen, Standardinhalte werden wiederhergestellt.
+
+> ⚠ **Wichtig**: Bearbeitungen liegen im `localStorage` des Browsers, also **nur auf diesem Gerät**. Frau Mostafaeis Praxis-PC und das Smartphone der ZFA sind getrennte Speicher. Zum Synchronisieren: Export → Datei via Mail/Slack/USB an die anderen → Import.
+
+Die Original-Inhalte bleiben im HTML-Quellcode von `intern.html`. Wenn jemand „Zurücksetzen" wählt, kommen genau diese zurück.
 
 ## Designgrundsätze (für künftige Änderungen)
 
