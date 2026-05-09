@@ -1,60 +1,84 @@
-# Zahnarztpraxis · Dental Harmonie – neuer Webauftritt
+# DentalHarmonie · Webauftritt
 
-Pitch-Mockup für die Zahnarztpraxis **Dental Harmonie** (Ifflandstraße 75, 22087 Hamburg-Hohenfelde).
-Ziel: Eine moderne, "Clean &amp; medizinisch" gestaltete Website plus Verkaufs-Pitch, mit dem die Praxis von der neuen Lösung überzeugt werden kann.
+Multi-Page Praxis-Website für **DentalHarmonie** (Inhaberin Dr. Delaram Mostafaei, Ifflandstraße 75, 22087 Hamburg-Hohenfelde).
 
-## Dateien
+Stilrichtung: **Privatklinik clean** – pure White, viel Weißraum, dezenter Aubergine-Akzent (passend zum Praxis-Logo: violetter Zahn auf Zen-Steinen). Inhalt 1:1 von [dentalharmonie.de](http://www.dentalharmonie.de) übernommen, nicht ausgedacht.
+
+## Seitenstruktur
 
 | Datei | Zweck |
 | --- | --- |
-| `index.html` | Die neue Website (Hero, Praxis, Leistungen, Team, Ablauf, Bewertungen, FAQ, Kontakt) |
-| `pitch.html` | Verkaufs-Pitch mit Vorher/Nachher-Vergleich, Argumenten, Wirtschaftlichkeit, Lieferumfang und CTA |
-| `impressum.html` | Impressum (Pflichtseite, DSGVO/TMG) |
+| `index.html` | Startseite – Hero, Drei Säulen, Praxisrundgang, Brief der Inhaberin, FAQ, Kontakt-CTA |
+| `praxis.html` | Über die Praxis – Praxisrundgang (Galerie), Behandlungskonzept, Werdegang, berufsrechtliche Pflichtangaben |
+| `team.html` | Team – Lead-Karte Dr. Mostafaei + Team-Statement aus dem Original |
+| `leistungen.html` | Alle 14 Behandlungen, gruppiert. Detailblöcke für Veneers, Ästhetik, Bleaching, Implantologie, Stressfreie Behandlung, PZR |
+| `termin.html` | Erstgespräch in 3 Schritten, Anfrageformular mit DSGVO- und Schweigepflicht-Hinweis |
+| `kontakt.html` | Adresse, Sprechzeiten, Notdienst-Nummern, OpenStreetMap (Klick-zu-Laden) |
+| `impressum.html` | Pflichtangaben nach § 5 TMG |
 | `datenschutz.html` | Datenschutzhinweise (DSGVO) |
-| `assets/css/style.css` | Komplettes Design-System (Farben, Typografie, Komponenten) |
-| `assets/js/main.js` | Sticky-Header, mobile Navigation, FAQ-Verhalten |
-| `IMG_9504.png` | Praxis-Logo (Dental Harmonie · Header, Footer, Favicon) |
-| `IMG_9505.jpeg` | Portraitfoto Delaram Mostafaei (Hero, Persönlich-Bereich, Team) |
+| `pitch.html` | Internes Pitch-Mockup (nicht für Patienten) – via robots.txt ausgeschlossen |
 
-## So präsentieren Sie der Praxis
+## Assets
 
-1. **Pitch öffnen** – `pitch.html` zuerst zeigen. Der Vorher/Nachher-Block macht den Unterschied sofort sichtbar.
-2. **Live-Demo** – aus dem Pitch heraus per Klick `index.html` öffnen und durch die Sektionen scrollen:
-   - Hero mit "Termin online vereinbaren"
-   - Leistungen mit allen 13 Behandlungen
-   - Detail-Sektionen Veneers · Ästhetik · Stressfreie Behandlung · Implantologie
-   - Online-Anfrageformular
-3. **Mobil zeigen** – Browser-DevTools auf iPhone-Größe stellen oder direkt am Smartphone öffnen. Die Praxis sieht: 70 % der Patient:innen kommen vom Handy – die alte Seite hat dort die größten Schwächen.
-4. **Argumente** – im Pitch sind die sechs Kernargumente (Mobile-first, Sicherheit, Online-Termin, lokales SEO, Speed, Vertrauen) plus Wirtschaftlichkeitskennzahlen verlinkt.
-5. **Abschluss** – Call-to-Action im Pitch mit Mailto-Link, der den Termin direkt anbahnt.
+- `IMG_9504.png` – Praxis-Logo
+- `IMG_9505.jpeg` – Portraitfoto Dr. Delaram Mostafaei
+- `praxis-behandlung-1.jpg` / `-2.jpg` / `-3.jpg` – Behandlungsräume
+- `praxis-wartezimmer.jpg` – Wartezimmer
+- `assets/css/style.css` – Design-System (Aubergine + warmes Grau)
+- `assets/js/main.js` – Sticky Header, Mobile-Nav-Toggle
+- `robots.txt` + `sitemap.xml` – SEO
 
 ## Lokal ausprobieren
 
-Reine HTML/CSS/JS-Seite – kein Build nötig:
+Reine HTML/CSS/JS-Site, kein Build:
 
 ```sh
-# Im Projektordner
 python3 -m http.server 8080
-# danach im Browser:
-# http://localhost:8080/pitch.html
-# http://localhost:8080/index.html
+# Browser: http://localhost:8080/
 ```
 
-(Das `iframe` mit der Live-Vorschau im Pitch funktioniert am zuverlässigsten über einen lokalen Server – nicht per `file://`.)
+## Was funktioniert
 
-## Designgrundsätze
+- Multi-Page-Architektur mit globaler Nav + aktiver Seitenmarkierung
+- Schema.org `Dentist` auf Index, Praxis, Kontakt
+- Open Graph + Twitter Card Meta-Tags auf allen Seiten
+- Sitemap.xml + robots.txt
+- Echte Praxis-Bilder (Galerie auf Praxis + Index)
+- WCAG 2.1: Skip-Link, Focus-Indikatoren, ARIA-Labels, prefers-reduced-motion respektiert
+- DSGVO: kein Tracking, keine Marketing-Cookies, OpenStreetMap mit Klick-zu-Laden, Schweigepflicht-Hinweis am Formular
+- Telefonnummer im Header sichtbar (Desktop) + Sticky-Header
+- FAQ-Sektion (8 Fragen) auf Index
+- Berufsrechtlicher Block + Heil- und Kostenplan-Hinweis
+- Notfallnummern: zahnärztlicher Notdienst Hamburg, 116 117, 112
 
-- **Stilrichtung**: Persönlich &amp; harmonisch – passend zum echten Logo: Aubergine/Violett (#6B4880 / #3F2A4A) mit warmem Champagner-Taupe (#B89B7E) und weichem Cremeweiß.
-- **Typografie**: *Fraunces* für Überschriften (vertrauensvoll, leicht warm), *Inter* für Lauftext, *Dancing Script* für die Unterschrift im Persönlich-Bereich.
-- **Mobile-first**, semantisches HTML, ARIA-Labels, `prefers-reduced-motion` respektiert.
-- **SEO &amp; Lokal**: Schema.org `Dentist`-Markup mit Adresse, Telefon, Öffnungszeiten – damit Google Maps und Suche die Praxis sauber indizieren.
-- **DSGVO-bewusst**: Kein Tracking, klares Datenschutz-Dokument, Hinweis auf Consent für Google Fonts (für die Produktivversion lokales Hosten der Fonts empfohlen).
+## Was Frau Mostafaei oder der Hosting-Anbieter noch tun sollte
 
-## Anpassen
+### Inhalt
+- [ ] Konkrete Approbations- und Studienjahre in `praxis.html` ergänzen
+- [ ] Klinische Stationen vor 2016 (welche Hamburger Praxen) konkretisieren
+- [ ] Echte Patientenstimmen mit Einwilligung (z.B. aus Trustindex.io) einbauen
+- [ ] Team-Mitarbeiterinnen mit Namen + Rolle ergänzen, sofern gewünscht
+- [ ] og:image als 1200×630 Banner mit Logo + „Dr. Mostafaei · Hamburg" erstellen (ersetzt aktuell IMG_9505.jpeg)
 
-Texte stammen weitgehend aus der bestehenden dentalharmonie.de (Veneers, Stressfreie Behandlung, Behandlungsspektrum). In der finalen Auftragsversion empfehlen wir:
+### Technik (beim Deployment)
+- [ ] **Google Fonts self-hosten** (DSGVO-Sicherheit nach BGH-Urteil 2022)
+- [ ] **WebP/AVIF-Versionen** der Praxis-Bilder generieren + `<picture>` einbauen
+- [ ] **Logo als SVG** statt 82-KB-PNG (Vektor-Original ist nötig)
+- [ ] CSS minifizieren (–30 % Größe)
+- [ ] HTTP-Header beim Hosting: HSTS, CSP, X-Frame-Options
+- [ ] Static-Site-Generator (Eleventy/Astro) prüfen, um Header/Footer-Duplikation zu beenden
+- [ ] Form-Backend (Formspree, Resend, eigener Endpoint) statt `mailto:`
+- [ ] Doctolib- oder jameda-Integration für echte Online-Buchung in Echtzeit prüfen
 
-- Echte Praxis- und Teamfotos (Avatare in `index.html` durch `<img>`-Tags ersetzen)
-- Echte Patientenstimmen (Sektion `#bewertungen`)
-- Anbindung an ein echtes Terminsystem (z. B. Doctolib, jameda) statt `mailto:`-Formular
-- Lokales Hosten der Schriftarten für volle DSGVO-Konformität ohne Hinweis
+### SEO
+- [ ] Google Search Console: Property anlegen + sitemap.xml einreichen
+- [ ] Google Business Profile pflegen (Adresse, Sprechzeiten, Bilder)
+- [ ] Backlink-Strategie (KZV Hamburg, Champions Implant Expert Verzeichnis, Praxis-Verzeichnisse)
+
+## Designgrundsätze (für künftige Änderungen)
+
+- **Farben**: Aubergine `#3F2A4A` (Akzent), Champagner-Taupe `#8A7868` (Trennlinien, Eyebrows), warmes Off-White `#FCFAF7`. Mint, Blau und kräftige Highlights vermeiden.
+- **Typografie**: `Fraunces` für Headlines (Serife, ruhig), `Inter` für Lauftext. Italic nur sehr sparsam.
+- **Whitespace**: lieber zu viel als zu wenig. Section-Padding 48–80 px.
+- **Bildbehandlung**: Subtile Schatten, keine Versatz-Farb-Blöcke hinter Fotos. Aspect-Ratio 3/4 für Portraits, 4/3 für Räume.
+- **Trust statt Sales**: keine erfundenen Sterne, keine ausgedachten Patientenstimmen, keine "höchstes Niveau"-Floskeln. Heil- und Kostenplan, Berufsbezeichnung, Kammer prominent.
