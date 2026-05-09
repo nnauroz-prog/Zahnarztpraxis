@@ -13,7 +13,8 @@ Ziel: Eine moderne, "Clean &amp; medizinisch" gestaltete Website plus Verkaufs-P
 | `datenschutz.html` | Datenschutzhinweise (DSGVO) |
 | `assets/css/style.css` | Komplettes Design-System (Farben, Typografie, Komponenten) |
 | `assets/js/main.js` | Sticky-Header, mobile Navigation, FAQ-Verhalten |
-| `IMG_9504.png`, `IMG_9505.jpeg` | Screenshots der bestehenden Seite (für den Vorher-Vergleich im Pitch) |
+| `IMG_9504.png` | Praxis-Logo (Dental Harmonie · Header, Footer, Favicon) |
+| `IMG_9505.jpeg` | Portraitfoto Delaram Mostafaei (Hero, Persönlich-Bereich, Team) |
 
 ## So präsentieren Sie der Praxis
 
@@ -43,8 +44,8 @@ python3 -m http.server 8080
 
 ## Designgrundsätze
 
-- **Stilrichtung**: Clean &amp; medizinisch – Weiß, klares Blau (#1F6FB8 / #0E3A6B), Akzent in Mint-Türkis (#2EB1A6).
-- **Typografie**: *Fraunces* für Überschriften (vertrauensvoll, leicht warm), *Inter* für Lauftext.
+- **Stilrichtung**: Persönlich &amp; harmonisch – passend zum echten Logo: Aubergine/Violett (#6B4880 / #3F2A4A) mit warmem Champagner-Taupe (#B89B7E) und weichem Cremeweiß.
+- **Typografie**: *Fraunces* für Überschriften (vertrauensvoll, leicht warm), *Inter* für Lauftext, *Dancing Script* für die Unterschrift im Persönlich-Bereich.
 - **Mobile-first**, semantisches HTML, ARIA-Labels, `prefers-reduced-motion` respektiert.
 - **SEO &amp; Lokal**: Schema.org `Dentist`-Markup mit Adresse, Telefon, Öffnungszeiten – damit Google Maps und Suche die Praxis sauber indizieren.
 - **DSGVO-bewusst**: Kein Tracking, klares Datenschutz-Dokument, Hinweis auf Consent für Google Fonts (für die Produktivversion lokales Hosten der Fonts empfohlen).
