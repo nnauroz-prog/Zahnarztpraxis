@@ -49,9 +49,7 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet" />
+  <script src="assets/js/init.js"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="IMG_9504.png" type="image/png" />
 </head>
@@ -94,13 +92,13 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <p class="section-eyebrow reveal">Zahnarztpraxis · Hamburg-Hohenfelde · seit 2016</p>
+        <p class="section-eyebrow reveal" data-editable="hero.eyebrow">Zahnarztpraxis · Hamburg-Hohenfelde · seit 2016</p>
         <h1 class="reveal">
-          <span class="display-line">DentalHarmonie.</span>
-          <span class="display-line display-italic">Praxis Dr. Mostafaei.</span>
+          <span class="display-line" data-editable="hero.h1.line1">DentalHarmonie.</span>
+          <span class="display-line display-italic" data-editable="hero.h1.line2">Praxis Dr. Mostafaei.</span>
         </h1>
         <p class="lead reveal">
-          Drei Säulen, ein Anspruch: Zahnästhetik, Implantologie und Prophylaxe — mit besonders schonenden und schmerzarmen Methoden. Für gesetzlich und privat Versicherte.
+          <span data-editable="hero.lead">Drei Säulen, ein Anspruch: Zahnästhetik, Implantologie und Prophylaxe — mit besonders schonenden und schmerzarmen Methoden. Für gesetzlich und privat Versicherte.</span>
         </p>
         <div class="cta-row reveal">
           <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
@@ -120,27 +118,27 @@
     <div class="container">
       <div class="section-head center reveal">
         <p class="section-eyebrow">Behandlungskonzept</p>
-        <h2>Zahnästhetik · Implantologie · Prophylaxe.</h2>
+        <h2 data-editable="saeulen.h2">Zahnästhetik · Implantologie · Prophylaxe.</h2>
         <hr class="divider" />
         <p class="section-lead">
-          Schonende Methoden, hochwertige Materialien, klare Aufklärung – das ist die Basis jeder Behandlung.
+          <span data-editable="saeulen.lead">Schonende Methoden, hochwertige Materialien, klare Aufklärung – das ist die Basis jeder Behandlung.</span>
         </p>
       </div>
 
       <div class="threecol reveal-stagger">
         <div>
           <h3>Zahnästhetik</h3>
-          <p>Veneers, Vollkeramikkronen und Bleaching für ein natürlich schönes Ergebnis. Oft ist der Weg dorthin einfacher als gedacht.</p>
+          <p data-editable="saeule.aesthetik.desc">Veneers, Vollkeramikkronen und Bleaching für ein natürlich schönes Ergebnis. Oft ist der Weg dorthin einfacher als gedacht.</p>
           <a class="btn-link" href="leistungen.html#aesthetik">Zur Ästhetik</a>
         </div>
         <div>
           <h3>Implantologie</h3>
-          <p>Champions Implantate® – minimalinvasiv ohne OP, sofort belastbar. Schonend für Zahnfleisch und Knochen.</p>
+          <p data-editable="saeule.implantologie.desc">Champions Implantate® – minimalinvasiv ohne OP, sofort belastbar. Schonend für Zahnfleisch und Knochen.</p>
           <a class="btn-link" href="leistungen.html#implantologie">Zur Implantologie</a>
         </div>
         <div>
           <h3>Prophylaxe</h3>
-          <p>Professionelle Zahnreinigung für Erwachsene und Kinder. Schutz vor Karies und Parodontose – damit Behandlung selten nötig wird.</p>
+          <p data-editable="saeule.prophylaxe.desc">Professionelle Zahnreinigung für Erwachsene und Kinder. Schutz vor Karies und Parodontose – damit Behandlung selten nötig wird.</p>
           <a class="btn-link" href="leistungen.html#pzr">Zur Prophylaxe</a>
         </div>
       </div>
@@ -151,7 +149,7 @@
   <section class="pullquote">
     <blockquote class="reveal">
       <span class="quote-mark" aria-hidden="true">„</span>
-      <p>Wir nehmen uns Zeit – für Diagnose, Aufklärung und Ihre Fragen. Eine vertrauensvolle Beziehung ist die Grundlage jeder guten Behandlung.</p>
+      <p data-editable="pullquote.text">Wir nehmen uns Zeit – für Diagnose, Aufklärung und Ihre Fragen. Eine vertrauensvolle Beziehung ist die Grundlage jeder guten Behandlung.</p>
       <footer>Dr. Delaram Mostafaei · Inhaberin</footer>
     </blockquote>
   </section>
@@ -194,7 +192,7 @@
         </div>
         <div class="letter reveal">
           <p class="section-eyebrow">Über mich</p>
-          <h2>Schön, dass Sie hier sind.</h2>
+          <h2 data-editable="brief.h2">Schön, dass Sie hier sind.</h2>
           <p>
             Mein Name ist Dr. Delaram Mostafaei. Seit Januar 2016 führe ich die Praxis DentalHarmonie hier in Hamburg-Hohenfelde. Meine Ausbildung habe ich am Universitätsklinikum Hamburg-Eppendorf erhalten, anschließend war ich in mehreren Hamburger Praxen tätig.
           </p>
@@ -262,7 +260,7 @@
   <section class="section">
     <div class="container narrow text-center reveal">
       <p class="section-eyebrow">Termin</p>
-      <h2>Wir nehmen uns Zeit für Sie.</h2>
+      <h2 data-editable="cta.h2">Wir nehmen uns Zeit für Sie.</h2>
       <hr class="divider" />
       <p class="section-lead lead-narrow">
         Anfrage online oder telefonisch unter +49&nbsp;40&nbsp;221528. Wir melden uns am gleichen Werktag zurück.
@@ -331,6 +329,7 @@
       <ul class="ft-list">
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
         <li><a href="intern.html">Mitarbeiter</a></li>
       </ul>
     </div>

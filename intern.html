@@ -8,9 +8,7 @@
   <meta name="description" content="Interner Bereich für Mitarbeitende der Praxis DentalHarmonie." />
   <meta name="robots" content="noindex,nofollow" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet" />
+  <script src="assets/js/init.js"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="IMG_9504.png" type="image/png" />
 </head>
@@ -196,7 +194,7 @@
             </ul>
             <button type="button" class="row-add" data-add-target="hygiene" data-add-template="datedRow">+ Eintrag hinzufügen</button>
             <p class="muted-small" style="margin-top: 1rem;">
-              Vollständiges Hygiene-Handbuch: <a href="#" onclick="event.preventDefault(); alert('PDF noch zu hinterlegen');">Hygiene-Plan.pdf</a> · <a href="#" onclick="event.preventDefault(); alert('PDF noch zu hinterlegen');">RKI-Anforderungen.pdf</a>
+              Vollständiges Hygiene-Handbuch: <a href="#" data-pdf-stub>Hygiene-Plan.pdf</a> · <a href="#" data-pdf-stub>RKI-Anforderungen.pdf</a>
             </p>
           </article>
 
@@ -214,6 +212,15 @@
             <button type="button" class="row-add" data-add-target="fortbildungen" data-add-template="datedRow">+ Fortbildung hinzufügen</button>
           </article>
 
+
+          <!-- Hinweis-Banner (Praxis-Status) -->
+          <article class="dash-card span-12">
+            <p class="card-eyebrow">Hinweis-Banner (öffentliche Seite)</p>
+            <h2>Aktueller Praxis-Status <small>erscheint ganz oben auf jeder Seite</small></h2>
+            <p class="muted-small">Leer lassen = kein Banner. Beispiel: „Praxis vom 24. – 26. Mai wegen Fortbildung geschlossen."</p>
+            <div data-edit-block="banner" class="banner-input" style="margin-top: 14px; padding: 12px 14px; border: 1px dashed var(--c-line-strong); border-radius: var(--radius-sm); min-height: 48px; line-height: 1.55; font-family: inherit; color: var(--c-ink-2);"></div>
+            <p class="muted-small" style="margin-top: 8px;">Bearbeitung im Modus „Bearbeiten". Speichert lokal — siehe Hinweis unten.</p>
+          </article>
           <!-- Praxis-News -->
           <article class="dash-card span-12">
             <p class="card-eyebrow">Praxis-News</p>

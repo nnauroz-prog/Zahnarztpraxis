@@ -1,0 +1,42 @@
+# Netlify Headers · DentalHarmonie
+# Sicherheits-Header und Caching-Strategie
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), payment=(), geolocation=(), interest-cohort=()
+  X-XSS-Protection: 0
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src 'self' https://www.openstreetmap.org; connect-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Mitarbeiter-Bereich von Suchmaschinen ausschließen
+/intern.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-cache, no-store, must-revalidate
+
+# Pitch-Seite (intern, nicht für Suchmaschinen)
+/pitch.html
+  X-Robots-Tag: noindex, nofollow
+
+# Statische Assets aggressiv cachen (immutable, 1 Jahr)
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=2592000
+/*.jpg
+  Cache-Control: public, max-age=2592000
+/*.jpeg
+  Cache-Control: public, max-age=2592000
+
+# HTML niemals lange cachen — sonst sehen Patient:innen veraltete
+# Sprechzeiten/Notdienst-Nummern
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate

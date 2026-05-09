@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /pitch.html
+Disallow: /intern.html
+Disallow: /admin
 
 Sitemap: https://www.dentalharmonie.de/sitemap.xml

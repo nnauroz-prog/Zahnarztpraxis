@@ -29,9 +29,26 @@
   }
 
   function unlock() {
+    sessionStorage.setItem(STORAGE_KEY, SESSION_FLAG);
+
+    // Wenn Login von edit-gate kommt: zurück zur ursprünglichen Seite mit ?edit=1
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('next') === 'edit') {
+        let from = params.get('from');
+        if (from) {
+          try { from = decodeURIComponent(from); } catch (e) {}
+          if (/^\/[a-zA-Z0-9_\-./]*$/.test(from)) {
+            const sep = from.includes('?') ? '&' : '?';
+            window.location.replace(from + sep + 'edit=1');
+            return;
+          }
+        }
+      }
+    } catch (e) {}
+
     loginEl.hidden = true;
     dashboardEl.hidden = false;
-    sessionStorage.setItem(STORAGE_KEY, SESSION_FLAG);
     document.title = 'Mitarbeiter · DentalHarmonie';
     if (inputEl) inputEl.value = '';
     if (errorEl) errorEl.hidden = true;
@@ -139,15 +156,26 @@
   }
 
   function makeBlockEditable(block, on) {
-    // Texte: alle direkten li / tr's td&th
-    const cells = block.matches('table, tbody')
-      ? block.querySelectorAll('th, td:not(.col-actions), .shift-pill')
-      : block.querySelectorAll('li > strong, li > span, li > em');
-    cells.forEach(c => {
-      if (c.classList.contains('row-remove')) return;
-      if (on) c.setAttribute('contenteditable', 'true');
-      else c.removeAttribute('contenteditable');
-    });
+    const tag = block.tagName.toLowerCase();
+    if (tag === 'tbody' || tag === 'table') {
+      const cells = block.querySelectorAll('th, td:not(.col-actions), .shift-pill');
+      cells.forEach(c => {
+        if (c.classList.contains('row-remove')) return;
+        if (on) c.setAttribute('contenteditable', 'true');
+        else c.removeAttribute('contenteditable');
+      });
+    } else if (tag === 'ul' || tag === 'ol') {
+      const cells = block.querySelectorAll('li > strong, li > span, li > em');
+      cells.forEach(c => {
+        if (c.classList.contains('row-remove')) return;
+        if (on) c.setAttribute('contenteditable', 'true');
+        else c.removeAttribute('contenteditable');
+      });
+    } else {
+      // einfacher Text-Block (z.B. Hinweis-Banner)
+      if (on) block.setAttribute('contenteditable', 'plaintext-only');
+      else block.removeAttribute('contenteditable');
+    }
   }
 
   function saveBlock(block) {
@@ -336,4 +364,12 @@
   if (printBtn) {
     printBtn.addEventListener('click', () => window.print());
   }
+
+  // PDF-Stub-Links
+  document.querySelectorAll('[data-pdf-stub]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('PDF wird noch hinterlegt.');
+    });
+  });
 })();

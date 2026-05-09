@@ -123,6 +123,36 @@ Im Mitarbeiter-Bereich gibt es nach dem Login einen **Bearbeiten-Knopf** (oben r
 
 Die Original-Inhalte bleiben im HTML-Quellcode von `intern.html`. Wenn jemand „Zurücksetzen" wählt, kommen genau diese zurück.
 
+## Inline-Edit-Modus auf der öffentlichen Seite
+
+Frau Mostafaei kann ausgewählte Texte direkt auf der Startseite ändern (nicht nur im Mitarbeiter-Bereich):
+
+1. Im Mitarbeiter-Bereich anmelden (Login bleibt für die Browser-Session aktiv).
+2. URL `?edit=1` an eine öffentliche Seite anhängen, z.B. `index.html?edit=1`. Ohne Login erfolgt eine automatische Weiterleitung zum Login mit Rücksprung.
+3. Nach dem Anklicken eines markierten Texts (Eyebrow, Headlines, Lead, Säulen-Texte, Pull-Quote) erscheint eine Markierung; Tippen ändert den Text live.
+4. Auto-save in `localStorage` unter `dh_inline_<key>`. Patient:innen sehen die geänderten Texte **auf demselben Gerät** sofort, andere Geräte über Export/Import (siehe Mitarbeiter-Bereich).
+5. Floating-Button unten rechts: „↺ Texte zurücksetzen" oder „✓ Fertig" zum Schließen.
+
+Editierbare Felder auf `index.html` (Stand jetzt):
+- `hero.eyebrow`, `hero.h1.line1`, `hero.h1.line2`, `hero.lead`
+- `saeulen.h2`, `saeulen.lead`
+- `saeule.aesthetik.desc`, `saeule.implantologie.desc`, `saeule.prophylaxe.desc`
+- `pullquote.text`, `brief.h2`, `cta.h2`
+
+Neue editierbare Stellen lassen sich über das Attribut `data-editable="<key>"` auf einem beliebigen Text-Element hinzufügen.
+
+## Cookie-Consent &amp; Hinweis-Banner
+
+- **Cookie-Consent**: erscheint beim ersten Besuch unten als Karte. „Alle akzeptieren" lädt Google Fonts; „Nur notwendige" verwendet System-Schriften (Inter/Fraunces fallen auf system-ui/Georgia zurück). Wahl wird in `localStorage` (`dh_consent`) gespeichert. Im Footer „Cookies anpassen" zeigt das Banner erneut.
+- **Hinweis-Banner**: ganz oben auf jeder öffentlichen Seite, wenn im Mitarbeiter-Bereich Text eingetragen wurde. Beispiel: „Praxis vom 24. – 26. Mai geschlossen." `×` blendet das Banner für die laufende Tab-Session aus.
+
+## Deployment auf Netlify
+
+- `_headers` definiert HSTS, CSP, X-Frame-Options, Cache-Control für Assets/HTML
+- `netlify.toml` mit Redirects (`/admin → /intern.html`, `/team → /team.html` etc.) und 404-Fallback
+- Hochladen: GitHub-Repo mit Netlify verknüpfen, Branch wählen → deployt automatisch
+- Nach Go-Live: securityheaders.com prüfen → Ziel A oder besser
+
 ## Designgrundsätze (für künftige Änderungen)
 
 - **Farben**: Aubergine `#3F2A4A` (Akzent), Champagner-Taupe `#8A7868` (Trennlinien, Eyebrows), warmes Off-White `#FCFAF7`. Mint, Blau und kräftige Highlights vermeiden.

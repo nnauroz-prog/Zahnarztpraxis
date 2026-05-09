@@ -1,0 +1,61 @@
+# Netlify-Build-Konfiguration · DentalHarmonie
+# Reine statische Site, kein Build-Step nötig.
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin"
+  to = "/intern.html"
+  status = 301
+
+[[redirects]]
+  from = "/admin.html"
+  to = "/intern.html"
+  status = 301
+
+[[redirects]]
+  from = "/team"
+  to = "/team.html"
+  status = 301
+
+[[redirects]]
+  from = "/praxis"
+  to = "/praxis.html"
+  status = 301
+
+[[redirects]]
+  from = "/leistungen"
+  to = "/leistungen.html"
+  status = 301
+
+[[redirects]]
+  from = "/kontakt"
+  to = "/kontakt.html"
+  status = 301
+
+[[redirects]]
+  from = "/termin"
+  to = "/termin.html"
+  status = 301
+
+[[redirects]]
+  from = "/impressum"
+  to = "/impressum.html"
+  status = 301
+
+[[redirects]]
+  from = "/datenschutz"
+  to = "/datenschutz.html"
+  status = 301
+
+[[redirects]]
+  from = "/intern"
+  to = "/intern.html"
+  status = 301
+
+# 404-Fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
