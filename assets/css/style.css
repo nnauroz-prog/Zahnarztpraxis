@@ -42,8 +42,8 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   font-family: var(--f-sans);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--c-ink);
   background: var(--c-bg);
   -webkit-font-smoothing: antialiased;
@@ -81,7 +81,7 @@ p  { margin: 0 0 1em; }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 24px;
 }
 .container.narrow { max-width: var(--container-narrow); }
 .container.mid    { max-width: var(--container-mid); }
@@ -154,41 +154,44 @@ p  { margin: 0 0 1em; }
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .brand {
-  display: flex; align-items: center; gap: .8rem;
+  display: flex; align-items: center; gap: .65rem;
   color: var(--c-ink);
   font-weight: 400;
 }
 .brand:hover { color: var(--c-ink); }
-.brand-mark-img { width: 48px; height: 48px; object-fit: contain; }
+.brand-mark-img { width: 42px; height: 42px; object-fit: contain; }
 .brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  display: none;
 }
-.brand-text strong {
-  font-family: var(--f-display);
-  font-size: 1.05rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  color: var(--c-ink);
-}
-.brand-text strong span { color: var(--c-ink); font-weight: 500; }
-.brand-text em {
-  font-style: normal;
-  font-size: .7rem;
-  color: var(--c-muted);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  margin-top: 5px;
+.brand-text-mobile { display: none; }
+@media (min-width: 521px) {
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .brand-text strong {
+    font-family: var(--f-sans);
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    color: var(--c-ink);
+  }
+  .brand-text em {
+    font-style: normal;
+    font-size: .68rem;
+    color: var(--c-muted);
+    letter-spacing: .04em;
+    text-transform: none;
+    margin-top: 2px;
+  }
 }
 @media (max-width: 520px) {
-  .brand-mark-img { width: 38px; height: 38px; }
-  .brand-text strong { font-size: .95rem; }
-  .brand-text em { font-size: .62rem; letter-spacing: .12em; margin-top: 3px; }
+  .brand-mark-img { width: 36px; height: 36px; }
 }
 
 .nav-toggle {
@@ -264,32 +267,32 @@ p  { margin: 0 0 1em; }
    Sections
    ========================================================= */
 .section {
-  padding: clamp(72px, 9vw, 112px) 0;
+  padding: clamp(48px, 6vw, 80px) 0;
 }
 .section-alt { background: var(--c-bg-soft); }
 
 .section-eyebrow {
   text-transform: uppercase;
-  letter-spacing: .18em;
-  font-size: .72rem;
+  letter-spacing: .16em;
+  font-size: .68rem;
   font-weight: 600;
   color: var(--c-muted);
-  margin: 0 0 1rem;
+  margin: 0 0 .75rem;
 }
 .section-title {
-  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  margin-bottom: .8rem;
   font-weight: 400;
   color: var(--c-ink);
 }
 .section-lead {
   color: var(--c-muted);
-  font-size: 1.02rem;
+  font-size: .98rem;
   max-width: 640px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 .section-head {
-  margin: 0 auto clamp(40px, 5vw, 64px);
+  margin: 0 auto clamp(28px, 3.5vw, 44px);
   max-width: 760px;
 }
 .section-head.center {
@@ -308,7 +311,7 @@ p  { margin: 0 0 1em; }
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 88px);
+  gap: clamp(32px, 4vw, 64px);
   align-items: start;
 }
 @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; gap: 48px; } }
@@ -317,20 +320,20 @@ p  { margin: 0 0 1em; }
    Hero
    ========================================================= */
 .hero {
-  padding: clamp(64px, 9vw, 120px) 0 clamp(56px, 8vw, 96px);
+  padding: clamp(48px, 6vw, 80px) 0 clamp(48px, 6vw, 72px);
   background: var(--c-bg);
   border-bottom: 1px solid var(--c-line);
 }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  gap: clamp(40px, 6vw, 88px);
+  gap: clamp(32px, 4vw, 64px);
   align-items: center;
 }
 @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
 
 .hero h1 {
-  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
   margin-bottom: .5em;
   font-weight: 400;
   line-height: 1.15;
@@ -342,27 +345,27 @@ p  { margin: 0 0 1em; }
   color: var(--c-brand);
 }
 .hero .lead {
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   color: var(--c-ink-2);
   max-width: 540px;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
 }
 
 .hero-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-top: 2.5rem;
-  padding-top: 2rem;
+  gap: 28px;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
   border-top: 1px solid var(--c-line);
-  font-size: .9rem;
+  font-size: .88rem;
   color: var(--c-ink-2);
 }
 .hero-meta strong {
   color: var(--c-muted);
   font-weight: 500;
-  font-size: .72rem;
+  font-size: .68rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   display: block;
@@ -389,15 +392,16 @@ p  { margin: 0 0 1em; }
 
 /* Page hero (kleinere Variante) */
 .page-hero {
-  padding: clamp(72px, 9vw, 120px) 0 clamp(40px, 5vw, 64px);
+  padding: clamp(48px, 6vw, 80px) 0 clamp(28px, 3.5vw, 44px);
   background: var(--c-bg);
   border-bottom: 1px solid var(--c-line);
 }
 .page-hero h1 {
   font-weight: 400;
-  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   max-width: 760px;
   color: var(--c-ink);
+  line-height: 1.2;
 }
 .page-hero h1 em {
   font-style: italic;
@@ -405,9 +409,9 @@ p  { margin: 0 0 1em; }
 }
 .page-hero .lead {
   color: var(--c-muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
   max-width: 660px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 /* =========================================================
@@ -416,10 +420,10 @@ p  { margin: 0 0 1em; }
 .threecol {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(32px, 4vw, 56px);
+  gap: clamp(24px, 3vw, 40px);
 }
 .threecol > div {
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--c-line-strong);
 }
 .threecol h3 {
@@ -445,11 +449,11 @@ p  { margin: 0 0 1em; }
    ========================================================= */
 .letter-block {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(40px, 6vw, 80px);
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(32px, 4vw, 56px);
   align-items: center;
 }
-@media (max-width: 880px) { .letter-block { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 880px) { .letter-block { grid-template-columns: 1fr; gap: 32px; } }
 
 .doctor-photo {
   position: relative;
@@ -501,7 +505,7 @@ p  { margin: 0 0 1em; }
 .values {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(32px, 4vw, 56px);
+  gap: clamp(24px, 3vw, 40px);
 }
 @media (max-width: 880px) { .values { grid-template-columns: 1fr; } }
 .value h3 {
@@ -582,11 +586,11 @@ p  { margin: 0 0 1em; }
    Leistungen — Übersicht
    ========================================================= */
 .service-group {
-  padding: clamp(40px, 5vw, 72px) 0;
+  padding: clamp(28px, 3.5vw, 48px) 0;
 }
 .service-group + .service-group { border-top: 1px solid var(--c-line); }
 .service-group .group-head {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   max-width: 720px;
 }
 .service-group .group-head h2 {
@@ -605,12 +609,12 @@ p  { margin: 0 0 1em; }
 .services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 2.5vw, 32px);
+  gap: 16px;
 }
 .services-list > a {
   display: flex;
   flex-direction: column;
-  padding: 28px 28px 26px;
+  padding: 22px 22px 20px;
   border: 1px solid var(--c-line);
   border-radius: var(--radius);
   color: var(--c-ink);
@@ -634,9 +638,9 @@ p  { margin: 0 0 1em; }
 }
 .services-list > a p {
   color: var(--c-muted);
-  font-size: .92rem;
-  margin: 0 0 1.5rem;
-  line-height: 1.65;
+  font-size: .9rem;
+  margin: 0 0 1.1rem;
+  line-height: 1.6;
   flex-grow: 1;
 }
 .services-list > a span.arrow {
@@ -659,10 +663,10 @@ p  { margin: 0 0 1em; }
 .detail-stack {
   display: grid;
   gap: 0;
-  margin-top: clamp(40px, 5vw, 64px);
+  margin-top: clamp(28px, 3.5vw, 48px);
 }
 .detail {
-  padding: clamp(48px, 6vw, 80px) 0;
+  padding: clamp(36px, 4.5vw, 60px) 0;
   border-top: 1px solid var(--c-line);
   scroll-margin-top: 96px;
 }
@@ -670,7 +674,7 @@ p  { margin: 0 0 1em; }
 .detail-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: clamp(40px, 5vw, 80px);
+  gap: clamp(28px, 3.5vw, 56px);
   align-items: start;
 }
 @media (max-width: 880px) { .detail-grid { grid-template-columns: 1fr; gap: 32px; } }
@@ -720,11 +724,11 @@ p  { margin: 0 0 1em; }
 .team-lead {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(40px, 6vw, 72px);
+  gap: clamp(28px, 3.5vw, 56px);
   align-items: center;
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-bottom: clamp(32px, 4vw, 56px);
 }
-@media (max-width: 880px) { .team-lead { grid-template-columns: 1fr; gap: 36px; } }
+@media (max-width: 880px) { .team-lead { grid-template-columns: 1fr; gap: 28px; } }
 .team-lead .doctor-photo { max-width: 420px; }
 .team-lead h3 {
   font-family: var(--f-display);
@@ -770,8 +774,8 @@ p  { margin: 0 0 1em; }
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(32px, 4vw, 48px);
-  margin-top: clamp(32px, 4vw, 48px);
+  gap: clamp(24px, 3vw, 40px);
+  margin-top: clamp(24px, 3vw, 40px);
 }
 @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } }
 .steps article {
@@ -960,6 +964,83 @@ p  { margin: 0 0 1em; }
   border-radius: var(--radius-sm);
 }
 .form-privacy strong { color: var(--c-ink); }
+
+/* =========================================================
+   Praxis-Galerie
+   ========================================================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.gallery a, .gallery figure {
+  display: block;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--c-bg-soft);
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-sm);
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.gallery a:hover img { transform: scale(1.03); }
+.gallery figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(0,0,0,.55), transparent);
+  color: #fff;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  font-weight: 500;
+}
+@media (max-width: 880px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Galerie-Variante: erstes Bild quer, andere kleiner */
+.gallery.feature {
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+.gallery.feature > :first-child {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+@media (max-width: 880px) {
+  .gallery.feature { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gallery.feature > :first-child { grid-column: span 2; grid-row: auto; aspect-ratio: 16 / 10; }
+}
+
+/* Split: Bild + Text nebeneinander */
+.split-image {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+.split-image .split-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--c-bg-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.split-image .split-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 880px) {
+  .split-image { grid-template-columns: 1fr; gap: 28px; }
+}
 
 /* =========================================================
    Karte (Platzhalter)
