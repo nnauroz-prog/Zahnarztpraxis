@@ -702,26 +702,13 @@ p  { margin: 0 0 1em; }
   border-top: 1px solid var(--c-line-strong);
   position: relative;
 }
-.threecol > div::before {
-  content: attr(data-roman);
-  position: absolute;
-  top: 1.4rem;
-  right: 0;
-  font-family: var(--f-display);
-  font-style: italic;
-  font-size: 1.6rem;
-  color: var(--c-accent);
-  font-weight: 400;
-  letter-spacing: .05em;
-}
 .threecol h3 {
   font-family: var(--f-display);
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   color: var(--c-ink);
   margin: .5rem 0 .9rem;
   letter-spacing: -.012em;
-  max-width: 80%;
 }
 .threecol p {
   color: var(--c-muted);
@@ -2106,7 +2093,7 @@ p  { margin: 0 0 1em; }
   .hero .lead { font-size: 1rem; line-height: 1.55; }
 
   /* Drei Säulen römische Ziffern — verhindere Überlagerung */
-  .threecol h3 { max-width: calc(100% - 56px); }
+  .threecol h3 { max-width: none; }
 
   /* Sections auf Mobile: ruhig + nicht zu groß */
   .section { padding: 56px 0; }
