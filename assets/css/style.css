@@ -230,6 +230,7 @@ p  { margin: 0 0 1em; }
   border-radius: var(--radius-xs);
 }
 .primary-nav a:not(.btn):hover { color: var(--c-brand); }
+.primary-nav a .nav-sub { display: none; }
 .primary-nav a[aria-current="page"]:not(.btn) {
   color: var(--c-brand);
 }
@@ -358,6 +359,7 @@ p  { margin: 0 0 1em; }
     text-decoration: none;
   }
   .primary-nav a:not(.btn) .nav-sub {
+    display: block;
     font-family: var(--f-sans);
     font-style: normal;
     font-size: .78rem;
