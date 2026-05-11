@@ -13,84 +13,61 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Mobile-Drawer (Premium-Overlay)
+  /* =========================================================
+     Mobile-Drawer — schlank & robust
+     ========================================================= */
   if (toggle && nav) {
+    const drawerClose = nav.querySelector('.drawer-close');
     let lastFocused = null;
-
-    const focusableSelector = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
-    const closeNav = () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-      if (lastFocused) lastFocused.focus();
-    };
 
     const openNav = () => {
       lastFocused = document.activeElement;
       nav.classList.add('open');
       toggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('menu-open');
-      // Fokus auf erstes Menüelement
-      setTimeout(() => {
-        const first = nav.querySelector(focusableSelector);
-        if (first) first.focus();
-      }, 60);
+      // Fokus auf Close-Button setzen
+      const target = drawerClose || nav.querySelector('a, button');
+      if (target) setTimeout(() => target.focus(), 50);
     };
 
+    const closeNav = () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        try { lastFocused.focus(); } catch (e) {}
+      }
+    };
+
+    // Burger-Klick
     toggle.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       if (nav.classList.contains('open')) closeNav();
       else openNav();
     });
 
-    // Schließen-Button im Drawer
-    const drawerClose = nav.querySelector('.drawer-close');
-    if (drawerClose) drawerClose.addEventListener('click', closeNav);
-
-    // Klick auf Menüpunkt schließt
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        // Außer wenn es ein hash-Link auf dieser Seite ist — trotzdem schließen
+    // Close-Button im Drawer
+    if (drawerClose) {
+      drawerClose.addEventListener('click', (e) => {
+        e.preventDefault();
         closeNav();
       });
+    }
+
+    // Klick auf einen Menü-Link → schließen (Navigation folgt nativ)
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => closeNav());
     });
 
     // ESC schließt
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && nav.classList.contains('open')) {
-        e.preventDefault();
-        closeNav();
-      }
-      // Focus-Trap via Tab
-      if (e.key === 'Tab' && nav.classList.contains('open')) {
-        const focusables = Array.from(nav.querySelectorAll(focusableSelector))
-          .filter(el => !el.hasAttribute('hidden') && el.offsetParent !== null);
-        if (!focusables.length) return;
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
+      if (e.key === 'Escape' && nav.classList.contains('open')) closeNav();
     });
 
-    // Klick außerhalb (auf das transparente Außen des Drawer) — bei Fullscreen
-    // nicht relevant, da Drawer das ganze Viewport füllt. Trotzdem belassen.
-    document.addEventListener('click', (e) => {
-      if (!nav.classList.contains('open')) return;
-      if (!nav.contains(e.target) && !toggle.contains(e.target)) closeNav();
-    });
-
-    // Resize: bei Wechsel zu Desktop Menü automatisch schließen
+    // Resize zu Desktop → schließen
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 880 && nav.classList.contains('open')) {
-        closeNav();
-      }
+      if (window.innerWidth > 880 && nav.classList.contains('open')) closeNav();
     });
   }
 
@@ -110,11 +87,22 @@
   });
 
   // Scroll Reveal via IntersectionObserver
+  // ACHTUNG: .reveal sind im CSS standardmäßig SICHTBAR.
+  // Nur wenn body.js-ready gesetzt wird, greifen die Animationen.
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets = document.querySelectorAll('.reveal, .reveal-stagger');
-  if (reduceMotion) {
-    targets.forEach(el => el.classList.add('in'));
-  } else if ('IntersectionObserver' in window && targets.length) {
+
+  if (!reduceMotion && targets.length && 'IntersectionObserver' in window) {
+    document.body.classList.add('js-ready');
+    // Bereits sichtbare Elemente (Hero etc.) sofort einblenden
+    requestAnimationFrame(() => {
+      targets.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('in');
+        }
+      });
+    });
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -122,11 +110,19 @@
           io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-    targets.forEach(el => io.observe(el));
-  } else {
-    targets.forEach(el => el.classList.add('in'));
+    }, { rootMargin: '0px 0px -5% 0px', threshold: 0.05 });
+    targets.forEach(el => {
+      if (!el.classList.contains('in')) io.observe(el);
+    });
+
+    // Safety-Net: nach 2.5s ALLE verbleibenden Reveals erzwingen,
+    // damit niemals etwas unsichtbar bleibt
+    setTimeout(() => {
+      targets.forEach(el => el.classList.add('in'));
+    }, 2500);
   }
+  // Bei reduce-motion oder fehlendem IO: einfach NICHT body.js-ready setzen,
+  // CSS lässt alles sichtbar.
 
   // Sprechzeiten-Card "Heute" hervorheben (Kontaktseite)
   const hoursCards = document.getElementById('hoursCards');
