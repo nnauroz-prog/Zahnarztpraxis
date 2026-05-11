@@ -74,13 +74,33 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="primaryNav" class="primary-nav" aria-label="Hauptnavigation">
+      <div class="drawer-header">
+        <span class="drawer-brand">
+          <img src="IMG_9504.png" alt="" aria-hidden="true" />
+          <span>Dr. Delaram Mostafaei<small>Zahnärztin · Hamburg-Hohenfelde</small></span>
+        </span>
+        <button type="button" class="drawer-close" aria-label="Menü schließen">×</button>
+      </div>
       <ul>
-        <li><a href="index.html" aria-current="page">Startseite</a></li>
-        <li><a href="praxis.html">Praxis</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a class="btn btn-primary btn-sm" href="termin.html">Termin</a></li>
+        <li><a href="index.html" aria-current="page">Startseite<span class="nav-sub">Übersicht & Schwerpunkte</span></a></li>
+        <li><a href="praxis.html">Praxis<span class="nav-sub">Philosophie & Räume</span></a></li>
+        <li><a href="team.html">Team<span class="nav-sub">Dr. Mostafaei & Praxisteam</span></a></li>
+        <li><a href="leistungen.html">Leistungen<span class="nav-sub">Zahnästhetik, Implantologie, Prophylaxe</span></a></li>
+        <li><a href="kontakt.html">Kontakt<span class="nav-sub">Adresse, Sprechzeiten, Anfahrt</span></a></li>
+      </ul>
+      <ul class="drawer-actions">
+        <li class="drawer-cta">
+          <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+        </li>
+        <li class="drawer-tel">
+          <a href="tel:+4940221528">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+            Jetzt anrufen: +49 40 221528
+          </a>
+        </li>
+      </ul>
+      <ul class="drawer-legal">
+        <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" data-consent-reopen>Cookies</a> · <a href="intern.html">Intern</a></li>
       </ul>
     </nav>
   </div>
@@ -94,16 +114,23 @@
       <div>
         <p class="section-eyebrow reveal" data-editable="hero.eyebrow">Zahnarztpraxis · Hamburg-Hohenfelde · seit 2016</p>
         <h1 class="reveal">
-          <span class="display-line" data-editable="hero.h1.line1">DentalHarmonie.</span>
-          <span class="display-line display-italic" data-editable="hero.h1.line2">Praxis Dr. Mostafaei.</span>
+          <span class="display-line" data-editable="hero.h1.line1">Ruhige Zahnmedizin.</span>
+          <span class="display-line" data-editable="hero.h1.line2">Klar erklärt.</span>
+          <span class="display-line display-italic" data-editable="hero.h1.line3">Präzise behandelt.</span>
         </h1>
         <p class="lead reveal">
-          <span data-editable="hero.lead">Drei Säulen, ein Anspruch: Zahnästhetik, Implantologie und Prophylaxe — mit besonders schonenden und schmerzarmen Methoden. Für gesetzlich und privat Versicherte.</span>
+          <span data-editable="hero.lead">Drei Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe — schonend, ehrlich aufgeklärt und nach individuellem Befund. Für gesetzlich und privat Versicherte.</span>
         </p>
         <div class="cta-row reveal">
           <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn-link" href="tel:+4940221528">+49 40 221528</a>
+          <a class="btn btn-ghost" href="leistungen.html">Leistungen ansehen</a>
         </div>
+        <p class="hero-phone reveal">
+          <a href="tel:+4940221528">
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+            Direkt anrufen: +49 40 221528
+          </a>
+        </p>
       </div>
 
       <div class="hero-portrait reveal">
@@ -132,12 +159,12 @@
         </div>
         <div data-roman="II.">
           <h3>Implantologie</h3>
-          <p data-editable="saeule.implantologie.desc">Champions Implantate® – minimalinvasiv ohne OP, sofort belastbar. Schonend für Zahnfleisch und Knochen.</p>
+          <p data-editable="saeule.implantologie.desc">Champions Implantate®. Ob eine minimalinvasive Versorgung oder Sofortbelastung geeignet ist, klären wir individuell nach Befund.</p>
           <a class="btn-link" href="leistungen.html#implantologie">Zur Implantologie</a>
         </div>
         <div data-roman="III.">
           <h3>Prophylaxe</h3>
-          <p data-editable="saeule.prophylaxe.desc">Professionelle Zahnreinigung für Erwachsene und Kinder. Schutz vor Karies und Parodontose – damit Behandlung selten nötig wird.</p>
+          <p data-editable="saeule.prophylaxe.desc">Professionelle Zahnreinigung für Erwachsene und Kinder. Beitrag zur Vorbeugung von Karies und Parodontitis – damit Behandlung selten nötig wird.</p>
           <a class="btn-link" href="leistungen.html#pzr">Zur Prophylaxe</a>
         </div>
       </div>
@@ -190,7 +217,7 @@
       <div class="faq-wrap reveal">
         <div class="faq">
           <details>
-            <summary>Nehmen Sie gesetzlich versicherte Patient:innen?</summary>
+            <summary>Nehmen Sie gesetzlich versicherte Patientinnen und Patienten?</summary>
             <p>Ja. Wir behandeln gesetzlich und privat Versicherte gleichermaßen. Auf Wunsch beraten wir Sie zu möglichen privaten Zusatzleistungen.</p>
           </details>
           <details>
@@ -206,12 +233,12 @@
             <p>Implantate sind individuelle Versorgungen. Sie erhalten vor jeder Implantation einen schriftlichen Heil- und Kostenplan. Privatleistungen werden nach der Gebührenordnung für Zahnärzte (GOZ) abgerechnet.</p>
           </details>
           <details>
-            <summary>Bieten Sie Behandlungen für Angstpatient:innen an?</summary>
+            <summary>Bieten Sie Behandlungen für Angstpatientinnen und -patienten an?</summary>
             <p>Ja. Wir nehmen uns viel Zeit, erklären jeden Schritt und sorgen mit ruhiger Atmosphäre und auf Wunsch Entspannungsmusik für eine <a href="leistungen.html#stressfrei">stressfreie Behandlung</a>.</p>
           </details>
           <details>
             <summary>Was muss ich zum Erstbesuch mitbringen?</summary>
-            <p>Versichertenkarte und – sofern vorhanden – Ihren Bonusheft, eventuelle Vorbefunde, aktuelle Medikamenten­liste. Wenn Sie wegen akuter Schmerzen kommen, einfach anrufen.</p>
+            <p>Versichertenkarte und – sofern vorhanden – Ihr Bonusheft, eventuelle Vorbefunde, aktuelle Medikamenten­liste. Wenn Sie wegen akuter Schmerzen kommen, einfach anrufen.</p>
           </details>
           <details>
             <summary>Was ist im zahnärztlichen Notfall zu tun?</summary>
@@ -244,22 +271,19 @@
 
 </main>
 
-<section class="member-login-bar" aria-labelledby="memberLoginTitle">
+<section class="footer-cta" aria-label="Termin">
   <div class="container">
-    <form id="memberForm" class="member-form" novalidate>
-      <div class="member-form-info">
-        <p class="section-eyebrow">Mitarbeiter-Bereich</p>
-        <h3 id="memberLoginTitle">Direktzugang für das Praxis-Team</h3>
-        <p>Schichtplan, Notfall-Kontakte, Hygiene-Protokolle, Praxis-News.</p>
-      </div>
-      <div class="member-form-fields">
-        <label class="visually-hidden" for="memberPw">Praxis-Passwort</label>
-        <input type="password" id="memberPw" name="memberPw" placeholder="Praxis-Passwort" autocomplete="current-password" required />
-        <button type="submit" class="btn btn-primary btn-arrow">Anmelden <span class="arrow" aria-hidden="true">→</span></button>
-      </div>
-      <p class="member-error" id="memberError" role="alert" hidden></p>
-      <p class="member-note">Kein Patientenportal. Bei Fragen: <a href="kontakt.html">Praxis kontaktieren</a>.</p>
-    </form>
+    <div class="footer-cta-text">
+      <h2>Sie möchten einen Termin vereinbaren?</h2>
+      <p>Wir melden uns am gleichen Werktag zurück.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="footer-tel" href="tel:+4940221528">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+        +49 40 221528
+      </a>
+    </div>
   </div>
 </section>
 
@@ -273,16 +297,16 @@
           <em>Zahnärztin · Hamburg-Hohenfelde</em>
         </span>
       </a>
-      <p class="muted muted-block">Drei Säulen: Zahnästhetik, Implantologie, Prophylaxe.</p>
+      <p class="muted muted-block">DentalHarmonie · Praxis im Herzen Hamburgs. Drei Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe.</p>
     </div>
     <div>
-      <h4>Praxis</h4>
+      <h4>Leistungen &amp; Praxis</h4>
       <ul class="ft-list">
         <li><a href="praxis.html">Über die Praxis</a></li>
         <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="leistungen.html">Behandlungsspektrum</a></li>
         <li><a href="termin.html">Termin anfragen</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#faq">Häufige Fragen</a></li>
       </ul>
     </div>
     <div>
@@ -292,21 +316,18 @@
         <li>22087 Hamburg-Hohenfelde</li>
         <li><a href="tel:+4940221528">+49 40 221528</a></li>
         <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Rechtliches</h4>
-      <ul class="ft-list">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
-        <li><a href="intern.html">Mitarbeiter</a></li>
+        <li><a href="kontakt.html">Sprechzeiten &amp; Anfahrt</a></li>
       </ul>
     </div>
   </div>
   <div class="container ft-bottom">
     <small>© 2026 DentalHarmonie · Praxis Dr. Delaram Mostafaei</small>
-    <small>Hamburg-Hohenfelde</small>
+    <ul class="ft-legal" aria-label="Rechtliches">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="#" data-consent-reopen>Cookies</a></li>
+      <li><a class="ft-intern" href="intern.html">Intern</a></li>
+    </ul>
   </div>
 </footer>
 

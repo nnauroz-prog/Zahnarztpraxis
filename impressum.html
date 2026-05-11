@@ -43,13 +43,33 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="primaryNav" class="primary-nav" aria-label="Hauptnavigation">
+      <div class="drawer-header">
+        <span class="drawer-brand">
+          <img src="IMG_9504.png" alt="" aria-hidden="true" />
+          <span>Dr. Delaram Mostafaei<small>Zahnärztin · Hamburg-Hohenfelde</small></span>
+        </span>
+        <button type="button" class="drawer-close" aria-label="Menü schließen">×</button>
+      </div>
       <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="praxis.html">Praxis</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a class="btn btn-primary btn-sm" href="termin.html">Termin</a></li>
+        <li><a href="index.html">Startseite<span class="nav-sub">Übersicht & Schwerpunkte</span></a></li>
+        <li><a href="praxis.html">Praxis<span class="nav-sub">Philosophie & Räume</span></a></li>
+        <li><a href="team.html">Team<span class="nav-sub">Dr. Mostafaei & Praxisteam</span></a></li>
+        <li><a href="leistungen.html">Leistungen<span class="nav-sub">Zahnästhetik, Implantologie, Prophylaxe</span></a></li>
+        <li><a href="kontakt.html">Kontakt<span class="nav-sub">Adresse, Sprechzeiten, Anfahrt</span></a></li>
+      </ul>
+      <ul class="drawer-actions">
+        <li class="drawer-cta">
+          <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+        </li>
+        <li class="drawer-tel">
+          <a href="tel:+4940221528">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+            Jetzt anrufen: +49 40 221528
+          </a>
+        </li>
+      </ul>
+      <ul class="drawer-legal">
+        <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" data-consent-reopen>Cookies</a> · <a href="intern.html">Intern</a></li>
       </ul>
     </nav>
   </div>
@@ -60,7 +80,7 @@
     <p class="section-eyebrow">Pflichtangabe</p>
     <h1>Impressum</h1>
 
-    <h2>Angaben gemäß § 5 TMG</h2>
+    <h2>Angaben gemäß § 5 DDG (vormals § 5 TMG)</h2>
     <p>
       DentalHarmonie · Praxis Dr. Delaram Mostafaei<br/>
       Inhaberin: Dr. Delaram Mostafaei (Zahnärztin)<br/>
@@ -104,25 +124,6 @@
   </div>
 </main>
 
-<section class="member-login-bar" aria-labelledby="memberLoginTitle">
-  <div class="container">
-    <form id="memberForm" class="member-form" novalidate>
-      <div class="member-form-info">
-        <p class="section-eyebrow">Mitarbeiter-Bereich</p>
-        <h3 id="memberLoginTitle">Direktzugang für das Praxis-Team</h3>
-        <p>Schichtplan, Notfall-Kontakte, Hygiene-Protokolle, Praxis-News.</p>
-      </div>
-      <div class="member-form-fields">
-        <label class="visually-hidden" for="memberPw">Praxis-Passwort</label>
-        <input type="password" id="memberPw" name="memberPw" placeholder="Praxis-Passwort" autocomplete="current-password" required />
-        <button type="submit" class="btn btn-primary btn-arrow">Anmelden <span class="arrow" aria-hidden="true">→</span></button>
-      </div>
-      <p class="member-error" id="memberError" role="alert" hidden></p>
-      <p class="member-note">Kein Patientenportal. Bei Fragen: <a href="kontakt.html">Praxis kontaktieren</a>.</p>
-    </form>
-  </div>
-</section>
-
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -133,16 +134,16 @@
           <em>Zahnärztin · Hamburg-Hohenfelde</em>
         </span>
       </a>
-      <p class="muted muted-block">Drei Säulen: Zahnästhetik, Implantologie, Prophylaxe.</p>
+      <p class="muted muted-block">DentalHarmonie · Praxis im Herzen Hamburgs. Drei Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe.</p>
     </div>
     <div>
-      <h4>Praxis</h4>
+      <h4>Leistungen &amp; Praxis</h4>
       <ul class="ft-list">
         <li><a href="praxis.html">Über die Praxis</a></li>
         <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="leistungen.html">Behandlungsspektrum</a></li>
         <li><a href="termin.html">Termin anfragen</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#faq">Häufige Fragen</a></li>
       </ul>
     </div>
     <div>
@@ -152,21 +153,18 @@
         <li>22087 Hamburg-Hohenfelde</li>
         <li><a href="tel:+4940221528">+49 40 221528</a></li>
         <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Rechtliches</h4>
-      <ul class="ft-list">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
-        <li><a href="intern.html">Mitarbeiter</a></li>
+        <li><a href="kontakt.html">Sprechzeiten &amp; Anfahrt</a></li>
       </ul>
     </div>
   </div>
   <div class="container ft-bottom">
     <small>© 2026 DentalHarmonie · Praxis Dr. Delaram Mostafaei</small>
-    <small>Hamburg-Hohenfelde</small>
+    <ul class="ft-legal" aria-label="Rechtliches">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="#" data-consent-reopen>Cookies</a></li>
+      <li><a class="ft-intern" href="intern.html">Intern</a></li>
+    </ul>
   </div>
 </footer>
 

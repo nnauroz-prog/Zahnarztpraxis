@@ -44,13 +44,33 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="primaryNav" class="primary-nav" aria-label="Hauptnavigation">
+      <div class="drawer-header">
+        <span class="drawer-brand">
+          <img src="IMG_9504.png" alt="" aria-hidden="true" />
+          <span>Dr. Delaram Mostafaei<small>Zahnärztin · Hamburg-Hohenfelde</small></span>
+        </span>
+        <button type="button" class="drawer-close" aria-label="Menü schließen">×</button>
+      </div>
       <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="praxis.html">Praxis</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html" aria-current="page">Leistungen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a class="btn btn-primary btn-sm" href="termin.html">Termin</a></li>
+        <li><a href="index.html">Startseite<span class="nav-sub">Übersicht & Schwerpunkte</span></a></li>
+        <li><a href="praxis.html">Praxis<span class="nav-sub">Philosophie & Räume</span></a></li>
+        <li><a href="team.html">Team<span class="nav-sub">Dr. Mostafaei & Praxisteam</span></a></li>
+        <li><a href="leistungen.html" aria-current="page">Leistungen<span class="nav-sub">Zahnästhetik, Implantologie, Prophylaxe</span></a></li>
+        <li><a href="kontakt.html">Kontakt<span class="nav-sub">Adresse, Sprechzeiten, Anfahrt</span></a></li>
+      </ul>
+      <ul class="drawer-actions">
+        <li class="drawer-cta">
+          <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+        </li>
+        <li class="drawer-tel">
+          <a href="tel:+4940221528">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+            Jetzt anrufen: +49 40 221528
+          </a>
+        </li>
+      </ul>
+      <ul class="drawer-legal">
+        <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" data-consent-reopen>Cookies</a> · <a href="intern.html">Intern</a></li>
       </ul>
     </nav>
   </div>
@@ -61,10 +81,18 @@
   <section class="page-hero">
     <div class="container reveal">
       <p class="section-eyebrow">Leistungen</p>
-      <h1>Das gesamte Behandlungsspektrum.</h1>
+      <h1>Unser Behandlungsspektrum.</h1>
       <p class="lead">
-        Vierzehn Leistungen – von der Vorsorge bis zur ästhetischen Versorgung. Drei davon sind die Säulen unserer Praxis: Zahnästhetik, Implantologie und Prophylaxe. Für die Schwerpunkte finden Sie weiter unten ausführliche Erläuterungen.
+        Vierzehn Leistungen — von Vorsorge bis Ästhetik. Drei davon sind unsere Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe. Im Detail erklären wir die Verfahren weiter unten.
       </p>
+      <nav class="service-jumpnav" aria-label="Sprung zu Kategorie">
+        <span class="jumpnav-label">Springen zu</span>
+        <a href="#group-vorsorge">Vorsorge</a>
+        <a href="#group-aesthetik">Ästhetik</a>
+        <a href="#group-zahnersatz">Zahnersatz &amp; Implantologie</a>
+        <a href="#group-spezial">Schmerz &amp; Spezial</a>
+        <a href="#group-kinder">Kinder &amp; Angst</a>
+      </nav>
     </div>
   </section>
 
@@ -72,7 +100,7 @@
   <section class="section">
     <div class="container">
 
-      <article class="service-group reveal">
+      <article class="service-group reveal" id="group-vorsorge">
         <div class="group-head">
           <h2>Vorsorge &amp; Erhaltung</h2>
           <p>Damit Ihre Zähne möglichst lange Ihre eigenen bleiben.</p>
@@ -80,7 +108,7 @@
         <div class="services-list">
           <a href="#pzr">
             <h3>Professionelle Zahnreinigung (PZR)</h3>
-            <p>Für Erwachsene und Kinder. Schutz vor Karies und Parodontose, empfohlen alle 6 bis 12 Monate.</p>
+            <p>Für Erwachsene und Kinder. Schutz vor Karies und Parodontitis, empfohlen alle 6 bis 12 Monate.</p>
             <span class="arrow">Mehr lesen</span>
           </a>
           <a href="termin.html">
@@ -101,7 +129,7 @@
         </div>
       </article>
 
-      <article class="service-group reveal">
+      <article class="service-group reveal" id="group-aesthetik">
         <div class="group-head">
           <h2>Zahnästhetik</h2>
           <p>Schöne, helle Zähne sind ein Lebensgefühl.</p>
@@ -109,7 +137,7 @@
         <div class="services-list">
           <a href="#veneers">
             <h3>Veneers</h3>
-            <p>Kontaktlinsendünn (0,3 mm), substanzschonend, auf Wunsch ohne Schleifen aufgeklebt.</p>
+            <p>Kontaktlinsendünn (0,3 mm), je nach Ausgangssituation besonders substanzschonend.</p>
             <span class="arrow">Mehr lesen</span>
           </a>
           <a href="#aesthetik">
@@ -119,13 +147,13 @@
           </a>
           <a href="#bleaching">
             <h3>Office-Bleaching</h3>
-            <p>Bis zu sechs Nuancen heller in einer Stunde – direkt in der Praxis.</p>
+            <p>Professionelles Office-Bleaching in der Praxis. Das erreichbare Ergebnis hängt von Ausgangsfarbe und individuellen Faktoren ab.</p>
             <span class="arrow">Mehr lesen</span>
           </a>
         </div>
       </article>
 
-      <article class="service-group reveal">
+      <article class="service-group reveal" id="group-zahnersatz">
         <div class="group-head">
           <h2>Zahnersatz &amp; Implantologie</h2>
           <p>Funktion und Ästhetik – mit klarem Plan.</p>
@@ -144,7 +172,7 @@
         </div>
       </article>
 
-      <article class="service-group reveal">
+      <article class="service-group reveal" id="group-spezial">
         <div class="group-head">
           <h2>Spezial</h2>
           <p>Für besondere Situationen und Ansprüche.</p>
@@ -152,7 +180,7 @@
         <div class="services-list">
           <a href="#stressfrei">
             <h3>Stressfreie Behandlung</h3>
-            <p>Stressfreie Atmosphäre für Angstpatient:innen, optional mit Entspannungsmusik.</p>
+            <p>Ruhige, einfühlsame Behandlung mit Zeit für Fragen — auf Wunsch begleitet von Entspannungsmusik.</p>
             <span class="arrow">Mehr lesen</span>
           </a>
           <a href="termin.html">
@@ -160,7 +188,7 @@
             <p>Sanfte Korrektur von Frontzähnen mit fast unsichtbarer transparenter Schiene – vorwiegend für Erwachsene.</p>
             <span class="arrow">Termin anfragen</span>
           </a>
-          <a href="termin.html">
+          <a href="termin.html" id="group-kinder">
             <h3>Kinderzahnheilkunde</h3>
             <p>Spielerisch und liebevoll – damit Kinder gerne zum Zahnarzt gehen.</p>
             <span class="arrow">Termin anfragen</span>
@@ -198,14 +226,14 @@
               <p class="section-eyebrow">Veneers</p>
               <h3>Die Methode der Zahnkosmetik aus den USA.</h3>
               <p>
-                Superharte, kontaktlinsendünne (<strong>0,3 mm</strong>) Veneers aus einer der widerstandsfähigsten Keramikmassen weltweit – auf Wunsch <strong>ohne Schleifen</strong> auf die Zähne geklebt.
+                Superharte, kontaktlinsendünne (<strong>0,3 mm</strong>) Veneers aus einer der widerstandsfähigsten Keramikmassen weltweit – je nach Ausgangssituation besonders substanzschonend, ggf. mit minimalem Schleifen auf die Zähne geklebt.
               </p>
               <p>
-                Verfärbte Zähne, abgebrochene Zahnkanten und Zahnlücken werden so dauerhaft und natürlich abgedeckt. Die Indikation klären wir vor jeder Behandlung individuell mit Ihnen.
+                Verfärbungen, abgebrochene Zahnkanten und Lücken lassen sich so – je nach Befund – natürlich und langfristig korrigieren. Die Indikation klären wir vor jeder Behandlung individuell mit Ihnen.
               </p>
             </div>
             <ul class="checklist">
-              <li>Substanzschonend – meist ohne Schleifen</li>
+              <li>Je nach Befund besonders substanzschonend</li>
               <li>Hochfeste, biokompatible Keramik</li>
               <li>Natürliche Lichtreflexion wie echter Zahnschmelz</li>
               <li>Langjährige Haltbarkeit bei guter Pflege</li>
@@ -231,9 +259,9 @@
               <p class="callout-title" id="bleaching">Office-Bleaching – direkt in der Praxis.</p>
               <p>
                 Ein lichthärtender Spezialkunststoff schützt das Zahnfleisch. Anschließend wird das Bleichgel aufgetragen und zehn Minuten mit einer abgestimmten Lampe aktiviert.
-                Bis zu dreimal wiederholbar – innerhalb einer Stunde bis zu sechs Farbnuancen heller.
+                Bis zu dreimal wiederholbar – innerhalb einer Stunde bis zu mehreren Farbnuancen heller, abhängig von der Ausgangssituation.
               </p>
-              <p class="muted-small">Das Ergebnis hält je nach Ess- und Trinkgewohnheiten bis zu drei Jahre.</p>
+              <p class="muted-small">Die Haltbarkeit ist individuell und hängt von Ess-, Trink- und Pflegegewohnheiten ab.</p>
             </aside>
           </div>
         </article>
@@ -244,10 +272,10 @@
               <p class="section-eyebrow">Implantologie · Champions Implantate®</p>
               <h3>Minimalinvasiv, sofort belastbar.</h3>
               <p>
-                Champions® Implantate sind ein <strong>minimalinvasives Verfahren ohne OP</strong>, sofort belastbar, schmerzarm und bezahlbar. Sie reduzieren Beeinträchtigungen von Zahnfleisch und Knochen auf ein Minimum.
+                Champions® Implantate ermöglichen je nach Befund ein minimalinvasives Vorgehen. Ob im Einzelfall eine Sofortbelastung möglich ist und welche Versorgung medizinisch sinnvoll erscheint, klären wir im Vorgespräch.
               </p>
               <p>
-                Die einteiligen Champions® Implantate können oft schon kurz nach Insertion belastet werden. Die definitive Versorgung mit Kronen, Brücken oder Prothesen lässt sich häufig bereits wenige Tage nach dem Setzen abschließen.
+                Ob eine zeitnahe Versorgung mit Kronen, Brücken oder Prothesen möglich ist, ist abhängig von Knochenangebot, Heilungsverlauf und individuellem Befund.
               </p>
             </div>
             <ul class="checklist">
@@ -263,9 +291,9 @@
           <div class="detail-grid">
             <div>
               <p class="section-eyebrow">Stressfreie Behandlung</p>
-              <h3>Auch für Patient:innen mit Behandlungsangst.</h3>
+              <h3>Auch für Patientinnen und Patienten mit Behandlungsangst.</h3>
               <p>
-                In unserer Praxis erhalten Sie eine <strong>stressfreie Behandlung in ruhiger Atmosphäre</strong> – auf Wunsch begleitet von Entspannungsmusik. Wir nehmen uns Zeit für das Erstgespräch und erklären jeden Schritt vorher.
+                In unserer Praxis legen wir Wert auf eine <strong>ruhige Atmosphäre</strong> – auf Wunsch begleitet von Entspannungsmusik. Wir nehmen uns Zeit für das Erstgespräch und erklären jeden Schritt vorher.
               </p>
               <p>
                 Die Behandlung erfolgt in Ihrem Tempo. Sie bestimmen, wann der nächste Schritt kommt.
@@ -286,7 +314,7 @@
               <p class="section-eyebrow">Professionelle Zahnreinigung</p>
               <h3>Vorsorge, die wirkt.</h3>
               <p>
-                Eine regelmäßige PZR entfernt Beläge dort, wo die häusliche Zahnpflege nicht hinkommt. Sie ist eine der wirksamsten Maßnahmen gegen Karies und Parodontose.
+                Eine regelmäßige PZR entfernt Beläge dort, wo die häusliche Zahnpflege nicht hinkommt. Sie unterstützt die Vorbeugung von Karies und Parodontitis.
               </p>
             </div>
             <ul class="checklist">
@@ -317,22 +345,19 @@
 
 </main>
 
-<section class="member-login-bar" aria-labelledby="memberLoginTitle">
+<section class="footer-cta" aria-label="Termin">
   <div class="container">
-    <form id="memberForm" class="member-form" novalidate>
-      <div class="member-form-info">
-        <p class="section-eyebrow">Mitarbeiter-Bereich</p>
-        <h3 id="memberLoginTitle">Direktzugang für das Praxis-Team</h3>
-        <p>Schichtplan, Notfall-Kontakte, Hygiene-Protokolle, Praxis-News.</p>
-      </div>
-      <div class="member-form-fields">
-        <label class="visually-hidden" for="memberPw">Praxis-Passwort</label>
-        <input type="password" id="memberPw" name="memberPw" placeholder="Praxis-Passwort" autocomplete="current-password" required />
-        <button type="submit" class="btn btn-primary btn-arrow">Anmelden <span class="arrow" aria-hidden="true">→</span></button>
-      </div>
-      <p class="member-error" id="memberError" role="alert" hidden></p>
-      <p class="member-note">Kein Patientenportal. Bei Fragen: <a href="kontakt.html">Praxis kontaktieren</a>.</p>
-    </form>
+    <div class="footer-cta-text">
+      <h2>Sie möchten einen Termin vereinbaren?</h2>
+      <p>Wir melden uns am gleichen Werktag zurück.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="footer-tel" href="tel:+4940221528">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+        +49 40 221528
+      </a>
+    </div>
   </div>
 </section>
 
@@ -346,16 +371,16 @@
           <em>Zahnärztin · Hamburg-Hohenfelde</em>
         </span>
       </a>
-      <p class="muted muted-block">Drei Säulen: Zahnästhetik, Implantologie, Prophylaxe.</p>
+      <p class="muted muted-block">DentalHarmonie · Praxis im Herzen Hamburgs. Drei Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe.</p>
     </div>
     <div>
-      <h4>Praxis</h4>
+      <h4>Leistungen &amp; Praxis</h4>
       <ul class="ft-list">
         <li><a href="praxis.html">Über die Praxis</a></li>
         <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="leistungen.html">Behandlungsspektrum</a></li>
         <li><a href="termin.html">Termin anfragen</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#faq">Häufige Fragen</a></li>
       </ul>
     </div>
     <div>
@@ -365,21 +390,18 @@
         <li>22087 Hamburg-Hohenfelde</li>
         <li><a href="tel:+4940221528">+49 40 221528</a></li>
         <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Rechtliches</h4>
-      <ul class="ft-list">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
-        <li><a href="intern.html">Mitarbeiter</a></li>
+        <li><a href="kontakt.html">Sprechzeiten &amp; Anfahrt</a></li>
       </ul>
     </div>
   </div>
   <div class="container ft-bottom">
     <small>© 2026 DentalHarmonie · Praxis Dr. Delaram Mostafaei</small>
-    <small>Hamburg-Hohenfelde</small>
+    <ul class="ft-legal" aria-label="Rechtliches">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="#" data-consent-reopen>Cookies</a></li>
+      <li><a class="ft-intern" href="intern.html">Intern</a></li>
+    </ul>
   </div>
 </footer>
 

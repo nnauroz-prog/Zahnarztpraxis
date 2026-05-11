@@ -73,13 +73,33 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="primaryNav" class="primary-nav" aria-label="Hauptnavigation">
+      <div class="drawer-header">
+        <span class="drawer-brand">
+          <img src="IMG_9504.png" alt="" aria-hidden="true" />
+          <span>Dr. Delaram Mostafaei<small>Zahnärztin · Hamburg-Hohenfelde</small></span>
+        </span>
+        <button type="button" class="drawer-close" aria-label="Menü schließen">×</button>
+      </div>
       <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="praxis.html">Praxis</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
-        <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
-        <li><a class="btn btn-primary btn-sm" href="termin.html">Termin</a></li>
+        <li><a href="index.html">Startseite<span class="nav-sub">Übersicht & Schwerpunkte</span></a></li>
+        <li><a href="praxis.html">Praxis<span class="nav-sub">Philosophie & Räume</span></a></li>
+        <li><a href="team.html">Team<span class="nav-sub">Dr. Mostafaei & Praxisteam</span></a></li>
+        <li><a href="leistungen.html">Leistungen<span class="nav-sub">Zahnästhetik, Implantologie, Prophylaxe</span></a></li>
+        <li><a href="kontakt.html" aria-current="page">Kontakt<span class="nav-sub">Adresse, Sprechzeiten, Anfahrt</span></a></li>
+      </ul>
+      <ul class="drawer-actions">
+        <li class="drawer-cta">
+          <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+        </li>
+        <li class="drawer-tel">
+          <a href="tel:+4940221528">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+            Jetzt anrufen: +49 40 221528
+          </a>
+        </li>
+      </ul>
+      <ul class="drawer-legal">
+        <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" data-consent-reopen>Cookies</a> · <a href="intern.html">Intern</a></li>
       </ul>
     </nav>
   </div>
@@ -104,52 +124,62 @@
         <p class="section-eyebrow">Adresse &amp; Erreichbarkeit</p>
         <h2>DentalHarmonie.</h2>
 
-        <ul class="info-list">
-          <li>
-            <strong>Adresse</strong>
-            <span>Ifflandstraße 75<br/>22087 Hamburg-Hohenfelde</span>
-          </li>
-          <li>
-            <strong>Telefon</strong>
-            <span><a href="tel:+4940221528">+49 40 221528</a></span>
-          </li>
-          <li>
-            <strong>Fax</strong>
-            <span>+49 40 22698898</span>
-          </li>
-          <li>
-            <strong>E-Mail</strong>
-            <span><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></span>
-          </li>
-          <li>
-            <strong>Anfahrt</strong>
-            <span>U-/S-Bahn Berliner Tor oder Lübecker Straße – jeweils wenige Minuten zu Fuß. Mit dem Auto: kostenlose Parkplätze direkt an der Praxis.</span>
-          </li>
-        </ul>
+        <div class="contact-cards">
+          <a class="contact-card" href="tel:+4940221528" aria-label="Anrufen unter +49 40 221528">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg></span>
+            <span><span class="ck-label">Telefon</span><span class="ck-value">+49 40 221528</span></span>
+          </a>
+          <a class="contact-card" href="mailto:info@dentalharmonie.de" aria-label="E-Mail an info@dentalharmonie.de">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span><span class="ck-label">E-Mail</span><span class="ck-value">info@dentalharmonie.de</span></span>
+          </a>
+          <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener" aria-label="Route planen mit Google Maps">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s-7-7.5-7-13a7 7 0 0 1 14 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <span><span class="ck-label">Route planen</span><span class="ck-value">Ifflandstraße 75</span></span>
+          </a>
+          <div class="contact-card" aria-hidden="false">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg></span>
+            <span><span class="ck-label">Fax</span><span class="ck-value">+49 40 22698898</span></span>
+          </div>
+        </div>
+
+        <p class="muted-small spacer-sm">
+          <strong style="color:var(--c-ink); font-weight:500;">Anfahrt:</strong> U-/S-Bahn Berliner Tor oder Lübecker Straße – jeweils wenige Minuten zu Fuß. Mit dem Auto: kostenlose Parkplätze direkt an der Praxis.
+        </p>
       </div>
 
       <div>
         <p class="section-eyebrow">Sprechzeiten</p>
         <h2>Wann wir für Sie da sind.</h2>
 
-        <table class="hours">
-          <tbody>
-            <tr><th>Mo · Di · Do</th><td>08:30 – 12:30 &nbsp;·&nbsp; 14:00 – 18:30</td></tr>
-            <tr><th>Mittwoch</th><td>10:00 – 13:00 &nbsp;·&nbsp; 14:00 – 18:30</td></tr>
-            <tr><th>Freitag</th><td>08:30 – 13:00</td></tr>
-            <tr><th>Samstag</th><td>nach Vereinbarung</td></tr>
-          </tbody>
-        </table>
-
-        <div class="notice reveal">
-          <strong>Außerhalb der Sprechzeiten</strong>
-          <strong style="font-size:.95rem; letter-spacing:0; text-transform:none; margin-top:8px;">Zahnärztlicher Notdienst Hamburg</strong>
-          <a href="tel:+494022707671">+49&nbsp;40&nbsp;227&nbsp;076&nbsp;71</a> &nbsp;·&nbsp; <a href="tel:+4901805051218">01805&nbsp;051&nbsp;218</a><br/>
-          (KZV Hamburg, weitere Infos: <a href="https://www.kzv-hamburg.de" rel="noopener">kzv-hamburg.de</a>)
-          <br/><br/>
-          Bei allgemeinen ärztlichen Notfällen: ärztlicher Bereitschaftsdienst <a href="tel:116117"><strong>116&nbsp;117</strong></a>. Bei lebensbedrohlichen Notfällen: <a href="tel:112"><strong>112</strong></a>.
+        <div class="hours-cards" id="hoursCards">
+          <div class="hour-card" data-day="1,2,4">
+            <div class="day">Montag · Dienstag · Donnerstag</div>
+            <div class="time">08:30 – 12:30 · 14:00 – 18:30</div>
+          </div>
+          <div class="hour-card" data-day="3">
+            <div class="day">Mittwoch</div>
+            <div class="time">10:00 – 13:00 · 14:00 – 18:30</div>
+          </div>
+          <div class="hour-card" data-day="5">
+            <div class="day">Freitag</div>
+            <div class="time">08:30 – 13:00</div>
+          </div>
+          <div class="hour-card" data-day="6">
+            <div class="day">Samstag</div>
+            <div class="time">nach Vereinbarung</div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <!-- Notdienst optisch getrennte Sektion -->
+    <div class="container" style="margin-top: clamp(28px, 4vw, 48px);">
+      <aside class="notice reveal" aria-label="Außerhalb der Sprechzeiten" style="max-width: none;">
+        <strong>Außerhalb der Sprechzeiten</strong>
+        Zahnärztlicher Notdienst Hamburg: <a href="tel:+494022707671">+49&nbsp;40&nbsp;227&nbsp;076&nbsp;71</a> · <a href="tel:+4901805051218">01805&nbsp;051&nbsp;218</a> (KZV Hamburg, weitere Infos: <a href="https://www.kzv-hamburg.de" target="_blank" rel="noopener">kzv-hamburg.de</a>).<br/>
+        Bei ärztlichen Notfällen: Bereitschaftsdienst <a href="tel:116117"><strong>116&nbsp;117</strong></a>. Bei lebensbedrohlichen Notfällen: <a href="tel:112"><strong>112</strong></a>.
+      </aside>
     </div>
   </section>
 
@@ -188,22 +218,19 @@
 
 </main>
 
-<section class="member-login-bar" aria-labelledby="memberLoginTitle">
+<section class="footer-cta" aria-label="Termin">
   <div class="container">
-    <form id="memberForm" class="member-form" novalidate>
-      <div class="member-form-info">
-        <p class="section-eyebrow">Mitarbeiter-Bereich</p>
-        <h3 id="memberLoginTitle">Direktzugang für das Praxis-Team</h3>
-        <p>Schichtplan, Notfall-Kontakte, Hygiene-Protokolle, Praxis-News.</p>
-      </div>
-      <div class="member-form-fields">
-        <label class="visually-hidden" for="memberPw">Praxis-Passwort</label>
-        <input type="password" id="memberPw" name="memberPw" placeholder="Praxis-Passwort" autocomplete="current-password" required />
-        <button type="submit" class="btn btn-primary btn-arrow">Anmelden <span class="arrow" aria-hidden="true">→</span></button>
-      </div>
-      <p class="member-error" id="memberError" role="alert" hidden></p>
-      <p class="member-note">Kein Patientenportal. Bei Fragen: <a href="kontakt.html">Praxis kontaktieren</a>.</p>
-    </form>
+    <div class="footer-cta-text">
+      <h2>Sie möchten einen Termin vereinbaren?</h2>
+      <p>Wir melden uns am gleichen Werktag zurück.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="footer-tel" href="tel:+4940221528">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+        +49 40 221528
+      </a>
+    </div>
   </div>
 </section>
 
@@ -217,16 +244,16 @@
           <em>Zahnärztin · Hamburg-Hohenfelde</em>
         </span>
       </a>
-      <p class="muted muted-block">Drei Säulen: Zahnästhetik, Implantologie, Prophylaxe.</p>
+      <p class="muted muted-block">DentalHarmonie · Praxis im Herzen Hamburgs. Drei Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe.</p>
     </div>
     <div>
-      <h4>Praxis</h4>
+      <h4>Leistungen &amp; Praxis</h4>
       <ul class="ft-list">
         <li><a href="praxis.html">Über die Praxis</a></li>
         <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="leistungen.html">Behandlungsspektrum</a></li>
         <li><a href="termin.html">Termin anfragen</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#faq">Häufige Fragen</a></li>
       </ul>
     </div>
     <div>
@@ -236,21 +263,18 @@
         <li>22087 Hamburg-Hohenfelde</li>
         <li><a href="tel:+4940221528">+49 40 221528</a></li>
         <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Rechtliches</h4>
-      <ul class="ft-list">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
-        <li><a href="intern.html">Mitarbeiter</a></li>
+        <li><a href="kontakt.html">Sprechzeiten &amp; Anfahrt</a></li>
       </ul>
     </div>
   </div>
   <div class="container ft-bottom">
     <small>© 2026 DentalHarmonie · Praxis Dr. Delaram Mostafaei</small>
-    <small>Hamburg-Hohenfelde</small>
+    <ul class="ft-legal" aria-label="Rechtliches">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="#" data-consent-reopen>Cookies</a></li>
+      <li><a class="ft-intern" href="intern.html">Intern</a></li>
+    </ul>
   </div>
 </footer>
 

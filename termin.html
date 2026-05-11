@@ -44,13 +44,33 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="primaryNav" class="primary-nav" aria-label="Hauptnavigation">
+      <div class="drawer-header">
+        <span class="drawer-brand">
+          <img src="IMG_9504.png" alt="" aria-hidden="true" />
+          <span>Dr. Delaram Mostafaei<small>Zahnärztin · Hamburg-Hohenfelde</small></span>
+        </span>
+        <button type="button" class="drawer-close" aria-label="Menü schließen">×</button>
+      </div>
       <ul>
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="praxis.html">Praxis</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a class="btn btn-primary btn-sm" href="termin.html" aria-current="page">Termin</a></li>
+        <li><a href="index.html">Startseite<span class="nav-sub">Übersicht & Schwerpunkte</span></a></li>
+        <li><a href="praxis.html">Praxis<span class="nav-sub">Philosophie & Räume</span></a></li>
+        <li><a href="team.html">Team<span class="nav-sub">Dr. Mostafaei & Praxisteam</span></a></li>
+        <li><a href="leistungen.html">Leistungen<span class="nav-sub">Zahnästhetik, Implantologie, Prophylaxe</span></a></li>
+        <li><a href="kontakt.html">Kontakt<span class="nav-sub">Adresse, Sprechzeiten, Anfahrt</span></a></li>
+      </ul>
+      <ul class="drawer-actions">
+        <li class="drawer-cta">
+          <a class="btn btn-primary btn-arrow" href="termin.html" aria-current="page">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+        </li>
+        <li class="drawer-tel">
+          <a href="tel:+4940221528">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+            Jetzt anrufen: +49 40 221528
+          </a>
+        </li>
+      </ul>
+      <ul class="drawer-legal">
+        <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" data-consent-reopen>Cookies</a> · <a href="intern.html">Intern</a></li>
       </ul>
     </nav>
   </div>
@@ -96,75 +116,134 @@
     </div>
   </section>
 
-  <!-- Formular -->
+  <!-- Stepper-Formular -->
   <section class="section section-alt">
     <div class="container mid">
       <div class="section-head center reveal">
         <p class="section-eyebrow">Anfrage</p>
-        <h2>Termin online anfragen.</h2>
-        <hr class="divider" />
+        <h2>In vier Schritten zum Termin.</h2>
       </div>
 
-      <form class="contact-form reveal" action="mailto:info@dentalharmonie.de" method="post" enctype="text/plain" novalidate aria-describedby="formPrivacy formSecrecy">
-        <p class="form-privacy" id="formPrivacy">
-          <strong>Datenschutz.</strong> Ihre Angaben verarbeiten wir ausschließlich zur Bearbeitung Ihrer Terminanfrage (Art. 6 Abs. 1 lit. b DSGVO). Eine Weitergabe an Dritte erfolgt nicht. Details: <a href="datenschutz.html">Datenschutzhinweise</a>.
-        </p>
-        <p class="form-privacy" id="formSecrecy">
-          <strong>Schweigepflicht.</strong> Bitte beachten Sie: Beim Versand über den eigenen E-Mail-Anbieter (z.&nbsp;B. Gmail, Outlook) werden Ihre Daten unverschlüsselt übertragen. Für sensible medizinische Details rufen Sie uns lieber direkt an: <a href="tel:+4940221528">+49&nbsp;40&nbsp;221528</a>.
-        </p>
+      <form class="contact-form reveal" id="terminForm" action="mailto:info@dentalharmonie.de" method="post" enctype="text/plain" novalidate>
+        <ol class="stepper" id="stepperNav">
+          <li class="stepper-step is-active" data-step="1"><span class="step-num">01</span><span class="step-name">Anliegen</span></li>
+          <li class="stepper-step" data-step="2"><span class="step-num">02</span><span class="step-name">Kontakt</span></li>
+          <li class="stepper-step" data-step="3"><span class="step-num">03</span><span class="step-name">Wunsch</span></li>
+          <li class="stepper-step" data-step="4"><span class="step-num">04</span><span class="step-name">Senden</span></li>
+        </ol>
 
-        <div class="form-row">
-          <label>
-            <span>Vor- und Nachname *</span>
-            <input type="text" name="name" required autocomplete="name" />
+        <p class="step-error" id="stepError" hidden></p>
+
+        <!-- Schritt 1 -->
+        <fieldset class="step-panel is-active" data-step="1">
+          <legend class="visually-hidden">Anliegen</legend>
+          <h2>Worum geht es?</h2>
+          <p class="step-lead">Bitte wählen Sie eine Option. Bei Notfällen außerhalb der Sprechzeiten rufen Sie uns bitte direkt an.</p>
+          <div class="choice-grid" role="radiogroup" aria-label="Anliegen">
+            <label><input type="radio" name="topic" value="Kontrolle / Vorsorge" required /><span>Kontrolle / Vorsorge</span></label>
+            <label><input type="radio" name="topic" value="Professionelle Zahnreinigung" /><span>Professionelle Zahnreinigung</span></label>
+            <label><input type="radio" name="topic" value="Schmerzen / akut" /><span>Schmerzen / akut</span></label>
+            <label><input type="radio" name="topic" value="Implantologie-Beratung" /><span>Implantologie-Beratung</span></label>
+            <label><input type="radio" name="topic" value="Ästhetik · Veneers · Bleaching" /><span>Ästhetik · Veneers · Bleaching</span></label>
+            <label><input type="radio" name="topic" value="Sonstiges" /><span>Sonstiges</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Schritt 2 -->
+        <fieldset class="step-panel" data-step="2">
+          <legend class="visually-hidden">Kontakt</legend>
+          <h2>Wie erreichen wir Sie?</h2>
+          <p class="step-lead">Wir melden uns am gleichen Werktag zurück.</p>
+          <div class="form-row">
+            <label>
+              <span>Vor- und Nachname *</span>
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+          </div>
+          <div class="form-row two">
+            <label>
+              <span>Telefon *</span>
+              <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" />
+            </label>
+            <label>
+              <span>E-Mail (optional)</span>
+              <input type="email" name="email" autocomplete="email" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span>Versicherung</span>
+              <select name="insurance">
+                <option>Gesetzlich</option>
+                <option>Privat</option>
+                <option>Selbstzahler</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Schritt 3 -->
+        <fieldset class="step-panel" data-step="3">
+          <legend class="visually-hidden">Wunschtermin &amp; Nachricht</legend>
+          <h2>Wunschtermin &amp; Nachricht.</h2>
+          <p class="step-lead">Wann passt es Ihnen am besten?</p>
+          <div class="form-row two">
+            <label>
+              <span>Wunschtag (optional)</span>
+              <input type="date" name="preferred_date" />
+            </label>
+            <label>
+              <span>Tageszeit (optional)</span>
+              <select name="preferred_time">
+                <option value="">Keine Präferenz</option>
+                <option>Vormittags</option>
+                <option>Mittags</option>
+                <option>Nachmittags</option>
+                <option>Späte Sprechstunde</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span>Nachricht (optional)</span>
+              <textarea name="message" rows="4" placeholder="z. B. „Lieber persönlicher Anruf am Vormittag.""></textarea>
+            </label>
+          </div>
+          <div class="step-privacy-note">
+            <strong>Hinweis:</strong> Bitte senden Sie über dieses Formular <em>keine</em> sensiblen Befunde, Diagnosen oder Patientendaten. Bei akuten Beschwerden rufen Sie uns bitte direkt an: <a href="tel:+4940221528">+49 40 221528</a>.
+          </div>
+        </fieldset>
+
+        <!-- Schritt 4 -->
+        <fieldset class="step-panel" data-step="4">
+          <legend class="visually-hidden">Datenschutz &amp; Senden</legend>
+          <h2>Bitte bestätigen.</h2>
+          <p class="step-lead">Ihre Angaben verarbeiten wir ausschließlich zur Bearbeitung Ihrer Terminanfrage (Art. 6 Abs. 1 lit. b DSGVO).</p>
+          <label class="check">
+            <input type="checkbox" name="consent" required />
+            <span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung dieser Anfrage einverstanden.</span>
           </label>
+          <div class="step-privacy-note">
+            Beim Absenden wird Ihr E-Mail-Programm geöffnet. Die Anfrage wird unverschlüsselt versendet — bitte keine Befunde oder sensiblen Gesundheitsdaten.
+          </div>
+        </fieldset>
+
+        <div class="step-actions">
+          <button type="button" class="step-back" id="stepBack" hidden>← Zurück</button>
+          <div style="margin-left:auto; display:flex; gap:10px;">
+            <button type="button" class="btn btn-primary btn-arrow step-next" id="stepNext">Weiter <span class="arrow" aria-hidden="true">→</span></button>
+            <button type="submit" class="btn btn-primary step-submit" id="stepSubmit" hidden>E-Mail-Programm öffnen</button>
+          </div>
         </div>
-        <div class="form-row two">
-          <label>
-            <span>Telefon</span>
-            <input type="tel" name="phone" autocomplete="tel" />
-          </label>
-          <label>
-            <span>E-Mail *</span>
-            <input type="email" name="email" required autocomplete="email" />
-          </label>
-        </div>
-        <div class="form-row two">
-          <label>
-            <span>Anliegen</span>
-            <select name="topic">
-              <option>Kontrolltermin / Vorsorge</option>
-              <option>Professionelle Zahnreinigung</option>
-              <option>Schmerzen / akut</option>
-              <option>Implantologie-Beratung</option>
-              <option>Veneers / Ästhetik</option>
-              <option>Bleaching</option>
-              <option>Stressfreie Behandlung</option>
-              <option>Sonstiges</option>
-            </select>
-          </label>
-          <label>
-            <span>Versicherung</span>
-            <select name="insurance">
-              <option>Gesetzlich</option>
-              <option>Privat</option>
-              <option>Selbstzahler</option>
-            </select>
-          </label>
-        </div>
-        <div class="form-row">
-          <label>
-            <span>Wunschtermin / Nachricht</span>
-            <textarea name="message" rows="4" placeholder="z. B. „Vormittags Mo/Di, lieber persönlicher Anruf"></textarea>
-          </label>
-        </div>
-        <label class="check">
-          <input type="checkbox" required />
-          <span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung der Anfrage einverstanden.</span>
-        </label>
-        <button class="btn btn-primary btn-block" type="submit">Anfrage senden</button>
-        <p class="form-foot">Lieber persönlich? <a href="tel:+4940221528">+49 40 221528</a></p>
       </form>
+
+      <!-- Success-Card (versteckt bis Submit) -->
+      <div class="success-card reveal" id="successCard" hidden>
+        <span class="check" aria-hidden="true">✓</span>
+        <h2>Vielen Dank.</h2>
+        <p>Ihr E-Mail-Programm wurde geöffnet und mit Ihrer Anfrage vorbefüllt. Bitte überprüfen Sie den Inhalt und senden die Nachricht ab.</p>
+        <p class="success-meta">Falls das nicht geklappt hat: rufen Sie uns direkt unter <a href="tel:+4940221528"><strong>+49 40 221528</strong></a> an.</p>
+      </div>
     </div>
   </section>
 
@@ -180,22 +259,19 @@
 
 </main>
 
-<section class="member-login-bar" aria-labelledby="memberLoginTitle">
+<section class="footer-cta" aria-label="Termin">
   <div class="container">
-    <form id="memberForm" class="member-form" novalidate>
-      <div class="member-form-info">
-        <p class="section-eyebrow">Mitarbeiter-Bereich</p>
-        <h3 id="memberLoginTitle">Direktzugang für das Praxis-Team</h3>
-        <p>Schichtplan, Notfall-Kontakte, Hygiene-Protokolle, Praxis-News.</p>
-      </div>
-      <div class="member-form-fields">
-        <label class="visually-hidden" for="memberPw">Praxis-Passwort</label>
-        <input type="password" id="memberPw" name="memberPw" placeholder="Praxis-Passwort" autocomplete="current-password" required />
-        <button type="submit" class="btn btn-primary btn-arrow">Anmelden <span class="arrow" aria-hidden="true">→</span></button>
-      </div>
-      <p class="member-error" id="memberError" role="alert" hidden></p>
-      <p class="member-note">Kein Patientenportal. Bei Fragen: <a href="kontakt.html">Praxis kontaktieren</a>.</p>
-    </form>
+    <div class="footer-cta-text">
+      <h2>Sie möchten einen Termin vereinbaren?</h2>
+      <p>Wir melden uns am gleichen Werktag zurück.</p>
+    </div>
+    <div class="footer-cta-actions">
+      <a class="btn btn-primary btn-arrow" href="termin.html">Termin anfragen <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="footer-tel" href="tel:+4940221528">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.3 2.2z"/></svg>
+        +49 40 221528
+      </a>
+    </div>
   </div>
 </section>
 
@@ -209,16 +285,16 @@
           <em>Zahnärztin · Hamburg-Hohenfelde</em>
         </span>
       </a>
-      <p class="muted muted-block">Drei Säulen: Zahnästhetik, Implantologie, Prophylaxe.</p>
+      <p class="muted muted-block">DentalHarmonie · Praxis im Herzen Hamburgs. Drei Schwerpunkte: Zahnästhetik, Implantologie und Prophylaxe.</p>
     </div>
     <div>
-      <h4>Praxis</h4>
+      <h4>Leistungen &amp; Praxis</h4>
       <ul class="ft-list">
         <li><a href="praxis.html">Über die Praxis</a></li>
         <li><a href="team.html">Team</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="leistungen.html">Behandlungsspektrum</a></li>
         <li><a href="termin.html">Termin anfragen</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#faq">Häufige Fragen</a></li>
       </ul>
     </div>
     <div>
@@ -228,21 +304,18 @@
         <li>22087 Hamburg-Hohenfelde</li>
         <li><a href="tel:+4940221528">+49 40 221528</a></li>
         <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Rechtliches</h4>
-      <ul class="ft-list">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
-        <li><a href="intern.html">Mitarbeiter</a></li>
+        <li><a href="kontakt.html">Sprechzeiten &amp; Anfahrt</a></li>
       </ul>
     </div>
   </div>
   <div class="container ft-bottom">
     <small>© 2026 DentalHarmonie · Praxis Dr. Delaram Mostafaei</small>
-    <small>Hamburg-Hohenfelde</small>
+    <ul class="ft-legal" aria-label="Rechtliches">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="#" data-consent-reopen>Cookies</a></li>
+      <li><a class="ft-intern" href="intern.html">Intern</a></li>
+    </ul>
   </div>
 </footer>
 
