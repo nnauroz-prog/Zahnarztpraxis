@@ -19,45 +19,70 @@
   if (toggle && nav) {
     const drawerClose = nav.querySelector('.drawer-close');
     let lastFocused = null;
+    let openedAt = 0;
+    let lastToggleAt = 0;
+    const GUARD_MS = 400; // Schutz gegen Ghost-Klick / überlappende Tap-Region
 
     const openNav = () => {
       lastFocused = document.activeElement;
       nav.classList.add('open');
       toggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('menu-open');
-      // Fokus auf Close-Button setzen
+      openedAt = Date.now();
+      // Fokus auf Close-Button setzen — erst NACH der Slide-in-Animation,
+      // damit kein Phantom-Click vom Burger auf den Close-Button bubbelt
       const target = drawerClose || nav.querySelector('a, button');
-      if (target) setTimeout(() => target.focus(), 50);
+      if (target) setTimeout(() => target.focus(), GUARD_MS);
     };
 
     const closeNav = () => {
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('menu-open');
+      openedAt = 0;
       if (lastFocused && typeof lastFocused.focus === 'function') {
         try { lastFocused.focus(); } catch (e) {}
       }
     };
 
-    // Burger-Klick
+    // Sicheres Schließen — verhindert Ghost-Klicks unmittelbar nach Öffnen
+    const safeClose = () => {
+      if (Date.now() - openedAt < GUARD_MS) return;
+      closeNav();
+    };
+
+    // Burger-Klick — debounced gegen doppelte Tap-Events (iOS Safari)
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
+      const now = Date.now();
+      if (now - lastToggleAt < 250) return; // Doppel-Tap-Schutz
+      lastToggleAt = now;
       if (nav.classList.contains('open')) closeNav();
       else openNav();
     });
 
-    // Close-Button im Drawer
+    // Close-Button im Drawer — geschützt gegen Ghost-Klick
     if (drawerClose) {
       drawerClose.addEventListener('click', (e) => {
         e.preventDefault();
-        closeNav();
+        e.stopPropagation();
+        safeClose();
       });
     }
 
     // Klick auf einen Menü-Link → schließen (Navigation folgt nativ)
+    // Auch hier geschützt: Wenn Menü gerade erst geöffnet wurde, NICHT schließen
     nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => closeNav());
+      a.addEventListener('click', (e) => {
+        if (Date.now() - openedAt < GUARD_MS) {
+          // Phantom-Klick aus dem Burger-Tap — komplett ignorieren
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+        closeNav();
+      });
     });
 
     // ESC schließt
