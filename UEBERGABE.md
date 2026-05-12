@@ -1,13 +1,16 @@
 # Übergabe · DentalHarmonie Relaunch
 
-## Etappe 1 — Grundgerüst (Status: abgeschlossen)
+## Etappe 1 — Grundgerüst (Status: abgeschlossen, v2)
 
 Auf Branch `claude/improve-website-presentation-Yp4UY` liegt jetzt ein
-lauffähiges Grundgerüst mit 12 Seiten, neuem Designsystem, einem
-Supabase-Datenmodul (im Demo-Mode) und sauber getrennten JS-Modulen.
+lauffähiges Grundgerüst mit 12 Seiten, einem auf Premium getrimmten
+Designsystem, einem komplett neu gebauten Navigations-/Menü-System,
+einem Supabase-Datenmodul (im Demo-Mode) und sauber getrennten JS-Modulen.
 
-Es sind **noch keine echten Inhalte** eingepflegt — jede Seite zeigt unterhalb
-des Hero-Bereichs einen Platzhalter „Inhalt folgt in Etappe 2".
+Die **Startseite** ist als Showcase ausgebaut (Hero · drei Säulen · Doctor-
+Strip mit Porträt · Sprechzeiten + Anfahrt · CTA-Band · Wordmark-Footer);
+alle anderen Seiten zeigen Hero + dezenten „Inhalt folgt"-Block, der in
+Etappe 2 durch echte Inhalte ersetzt wird.
 
 ### Was enthalten ist
 
@@ -15,14 +18,24 @@ des Hero-Bereichs einen Platzhalter „Inhalt folgt in Etappe 2".
   `index.html`, `leistungen.html`, `zahnmedizin.html`, `prophylaxe.html`,
   `termin-anfragen.html`, `kontakt.html`, `ueber-uns.html`, `team.html`,
   `impressum.html`, `datenschutz.html`, `admin.html`, `404.html`.
-- Designsystem in `styles.css` (Warm-White / Sage / Gold / Charcoal).
-- `script.js` mit Sticky-Header, Mobile-Drawer (mit Ghost-Click-Schutz),
-  Scroll-Reveal, Cookie-Consent-Banner und Hinweisbanner-Renderer.
-- `db.js` mit der vollständigen API-Oberfläche (`get/set/remove`,
-  `uploadImage`, `subscribe`, `auth.*`, Anfragen-CRUD). Im Demo-Mode
-  liefern Reads Defaults; Writes lehnen mit einer klaren Fehlermeldung ab.
-- `admin.html` mit Login-Card; `admin.js` mit Augen-Toggle und
-  Login-Handler (Auth folgt in Etappe 3).
+- Designsystem in `styles.css`: Fraunces (variable Serif für Headlines)
+  + Inter (Sans für Body), warmes Paper-Weiß, gezielte Sage- und Gold-
+  Akzente, edge-to-edge Header mit Backdrop-Blur on Scroll, großzügige
+  vertikale Rhythmik.
+- Navigations-System komplett neu:
+  - Desktop (≥ 1025 px): Inline-Nav mit feiner Underline-Animation,
+    Telefonnummer + „Termin"-Pille rechts.
+  - Mobile (≤ 1024 px): runder Hamburger-Button öffnet ein Fullscreen-
+    Sheet mit nummerierten Menüpunkten und gestaffelter Einblende-
+    Animation. ESC, Backdrop, Link-Klick und Resize schließen.
+  - Saubere Aria-Semantik (`aria-expanded` am Button, `aria-hidden`
+    am Sheet), Fokus-Rückgabe nach Schließen.
+- `script.js`: Sticky-Header (`is-scrolled`-Klasse), Menu-Handler,
+  Scroll-Reveal mit Stagger-Delays, „Heute"-Markierung für
+  Sprechzeiten-Liste, Cookie-Consent-Banner, Hinweisbanner-Renderer.
+- `db.js` mit vollständiger API-Oberfläche; Demo-Mode aktiv solange
+  `SUPABASE_URL === 'PASTE_HERE'`.
+- `admin.html` mit Login-Card; `admin.js` mit Password-Toggle.
 - `setup.sql` für Supabase (Tabellen, RLS-Policies, Realtime, Bucket).
 - `_headers`, `netlify.toml`, `sitemap.xml`, `robots.txt`.
 

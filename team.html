@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r1';
+  var V = '2026-01-01-r2';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -18,14 +18,14 @@
 })();
 </script>
 <style>
-html,body{background:#FAF8F3;color:#1F2933;font-family:'Inter',system-ui,-apple-system,sans-serif;margin:0;box-sizing:border-box}
+html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-system,sans-serif;margin:0;box-sizing:border-box}
 *,*::before,*::after{box-sizing:inherit}
-.site-header{min-height:72px}
+.header{min-height:68px}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
 <link rel="icon" href="IMG_9504.png">
 <title>Team · DentalHarmonie</title>
 <meta name="description" content="Das Team der Zahnarztpraxis DentalHarmonie Hamburg-Hohenfelde — Dr. Delaram Mostafaei und Mitarbeiterinnen.">
@@ -37,112 +37,127 @@ html,body{background:#FAF8F3;color:#1F2933;font-family:'Inter',system-ui,-apple-
 <meta name="twitter:card" content="summary">
 </head>
 <body>
-<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<a class="skip" href="#main">Zum Inhalt springen</a>
 
-<div class="topbar">
-  <div class="container">
-    <span>Zahnarztpraxis in Hamburg-Hohenfelde · Ifflandstraße 75</span>
-    <span><a href="tel:+494022 1528">+49 40 221528</a></span>
-  </div>
-</div>
-
-<header class="site-header" id="siteHeader">
-  <div class="container">
-    <a class="brand" href="index.html">
-      <img src="IMG_9504.png" alt="" width="38" height="38">
+<header class="header" id="header">
+  <div class="header__row">
+    <a class="header__brand" href="index.html" aria-label="DentalHarmonie · Startseite">
+      <img src="IMG_9504.png" alt="" width="32" height="32">
       <span>DentalHarmonie</span>
     </a>
-    <button class="burger" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Menü öffnen"><span></span></button>
-    <nav class="primary-nav" id="primaryNav" aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="leistungen.html">Leistungen</a></li>
-        <li><a href="zahnmedizin.html">Zahnmedizin</a></li>
-        <li><a href="prophylaxe.html">Prophylaxe</a></li>
-        <li><a href="ueber-uns.html">Über uns</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-      <a class="btn-primary" href="termin-anfragen.html">Termin anfragen</a>
+    <nav class="header__nav" aria-label="Hauptnavigation">
+          <a href="leistungen.html">Leistungen</a>
+          <a href="zahnmedizin.html">Zahnmedizin</a>
+          <a href="prophylaxe.html">Prophylaxe</a>
+          <a href="ueber-uns.html">Praxis</a>
+          <a href="team.html">Team</a>
+          <a href="kontakt.html">Kontakt</a>
     </nav>
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+494022 1528">+49 40 221528</a>
+      <a class="header__cta" href="termin-anfragen.html">Termin
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="header__menu" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<div class="menu" id="menu" aria-hidden="true" aria-label="Mobile Navigation">
+  <div class="menu__inner">
+    <ol class="menu__list">
+        <li><a href="index.html"><span class="menu__num">01</span>Start</a></li>
+        <li><a href="leistungen.html"><span class="menu__num">02</span>Leistungen</a></li>
+        <li><a href="zahnmedizin.html"><span class="menu__num">03</span>Zahnmedizin</a></li>
+        <li><a href="prophylaxe.html"><span class="menu__num">04</span>Prophylaxe</a></li>
+        <li><a href="ueber-uns.html"><span class="menu__num">05</span>Praxis</a></li>
+        <li><a href="team.html"><span class="menu__num">06</span>Team</a></li>
+        <li><a href="kontakt.html"><span class="menu__num">07</span>Kontakt</a></li>
+    </ol>
+    <div class="menu__foot">
+      <a class="menu__cta" href="termin-anfragen.html">Termin anfragen
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="menu__phone" href="tel:+494022 1528">+49 40 221528</a>
+    </div>
+  </div>
+</div>
 
 <main id="main">
   <section class="hero">
     <div class="container">
-      <p class="eyebrow"><span>08</span> Team</p>
-      <h1>Das Team hinter DentalHarmonie.</h1>
-      <p class="lead">Wer Sie in unserer Praxis begleitet — von der Begrüßung am Empfang bis zur Behandlung.</p>
+      <div class="hero__inner">
+        <p class="eyebrow" data-num="08">Team</p>
+        <h1>Das Team hinter DentalHarmonie.</h1>
+        <p class="lead">Wer Sie bei uns begleitet — vom Empfang bis zur Behandlung.</p>
+      </div>
     </div>
   </section>
 
-  <section class="container placeholder">
-    <p class="muted">Inhalt folgt in Etappe 2.</p>
+  <section class="placeholder">
+    <div class="container">
+      <div class="placeholder__inner">
+        <p class="placeholder__note">Inhalt folgt</p>
+        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
+        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="footer">
   <div class="container">
-    <div class="footer-grid">
-      <div>
+    <p class="footer__wordmark">DentalHarmonie</p>
+    <div class="footer__grid">
+      <div class="footer__col">
         <h4>Praxis</h4>
         <ul>
-          <li>DentalHarmonie</li>
           <li>Dr. Delaram Mostafaei</li>
           <li>Ifflandstraße 75</li>
           <li>22087 Hamburg</li>
+          <li><a href="tel:+494022 1528">+49 40 221528</a></li>
+          <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Leistungen</h4>
+      <div class="footer__col">
+        <h4>Behandlung</h4>
         <ul>
-          <li><a href="leistungen.html">Übersicht</a></li>
+          <li><a href="leistungen.html">Leistungsübersicht</a></li>
           <li><a href="zahnmedizin.html">Zahnmedizin</a></li>
           <li><a href="prophylaxe.html">Prophylaxe</a></li>
+          <li><a href="termin-anfragen.html">Termin anfragen</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Team</h4>
+      <div class="footer__col">
+        <h4>Praxis &amp; Team</h4>
         <ul>
           <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="team.html">Das Team</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontakt</h4>
-        <ul>
-          <li><a href="tel:+494022 1528">+49 40 221528</a></li>
-          <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
           <li><a href="kontakt.html">Anfahrt &amp; Karte</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Öffnungszeiten</h4>
-        <ul>
-          <li>Mo, Di, Do · 08–18</li>
-          <li>Mi, Fr · 08–13</li>
-          <li>Sa, So · geschlossen</li>
-        </ul>
-      </div>
-      <div>
+      <div class="footer__col">
         <h4>Rechtliches</h4>
         <ul>
           <li><a href="impressum.html">Impressum</a></li>
           <li><a href="datenschutz.html">Datenschutz</a></li>
-          <li><a href="#" data-consent-reopen>Cookies anpassen</a></li>
+          <li><a href="#" data-consent-reopen>Cookie-Einstellungen</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span id="year">2026</span> DentalHarmonie · Praxis Dr. Delaram Mostafaei</span>
-      <span>Termin anfragen: <a href="termin-anfragen.html">Online</a> oder telefonisch</span>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> DentalHarmonie · Praxis Dr. Delaram Mostafaei</span>
+      <span><a href="termin-anfragen.html">Termin anfragen</a> oder unter <a href="tel:+494022 1528">+49 40 221528</a></span>
     </div>
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r1"></script>
-<script src="db.js?v=2026-01-01-r1"></script>
-<script src="script.js?v=2026-01-01-r1" defer></script>
+<script src="config.js?v=2026-01-01-r2"></script>
+<script src="db.js?v=2026-01-01-r2"></script>
+<script src="script.js?v=2026-01-01-r2" defer></script>
 </body>
 </html>
