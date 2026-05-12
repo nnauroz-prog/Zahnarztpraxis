@@ -27,16 +27,17 @@ html,body{background:#FAF8F3;color:#1F2933;font-family:'Inter',system-ui,-apple-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap">
 <link rel="stylesheet" href="styles.css?v=2026-01-01-r1">
 <link rel="icon" href="IMG_9504.png">
-<title>Leistungen · DentalHarmonie</title>
-<meta name="description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Übersicht über Zahnmedizin, Prophylaxe und ästhetische Leistungen.">
-<link rel="canonical" href="https://www.dentalharmonie.de/leistungen.html">
+<title>Mitgliederbereich · DentalHarmonie</title>
+<meta name="description" content="Interner Mitgliederbereich der Zahnarztpraxis DentalHarmonie.">
+<link rel="canonical" href="https://www.dentalharmonie.de/admin.html">
+<meta name="robots" content="noindex,nofollow">
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Leistungen · DentalHarmonie">
-<meta property="og:description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Übersicht über Zahnmedizin, Prophylaxe und ästhetische Leistungen.">
-<meta property="og:url" content="https://www.dentalharmonie.de/leistungen.html">
+<meta property="og:title" content="Mitgliederbereich · DentalHarmonie">
+<meta property="og:description" content="Interner Mitgliederbereich der Zahnarztpraxis DentalHarmonie.">
+<meta property="og:url" content="https://www.dentalharmonie.de/admin.html">
 <meta name="twitter:card" content="summary">
 </head>
-<body>
+<body class="admin-page">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <div class="topbar">
@@ -69,16 +70,30 @@ html,body{background:#FAF8F3;color:#1F2933;font-family:'Inter',system-ui,-apple-
 </header>
 
 <main id="main">
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow"><span>02</span> Leistungen</p>
-      <h1>Unser Behandlungsspektrum.</h1>
-      <p class="lead">Ein Überblick über alles, was wir in der Praxis anbieten — von Vorsorge über Erhalt bis hin zu ästhetischen Behandlungen.</p>
+  <section class="container">
+    <div class="admin-login">
+      <p class="eyebrow"><span>11</span> Mitgliederbereich</p>
+      <h1>Anmeldung</h1>
+      <p class="muted">Bitte mit Ihrer Praxis-E-Mail anmelden.</p>
+      <form id="adminLoginForm" novalidate>
+        <div class="form-row">
+          <label for="adminEmail">E-Mail</label>
+          <input id="adminEmail" name="email" type="email" autocomplete="username" required>
+        </div>
+        <div class="form-row">
+          <label for="adminPassword">Passwort</label>
+          <div class="pw-wrap">
+            <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+            <button type="button" class="pw-toggle pw-eye-off" aria-label="Passwort anzeigen" aria-pressed="false">anzeigen</button>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Anmelden</button>
+          <a class="btn-link" href="kontakt.html">Passwort vergessen? Bitte Praxis kontaktieren.</a>
+        </div>
+        <p class="status" id="adminStatus" hidden></p>
+      </form>
     </div>
-  </section>
-
-  <section class="container placeholder">
-    <p class="muted">Inhalt folgt in Etappe 2.</p>
   </section>
 </main>
 
@@ -144,5 +159,6 @@ html,body{background:#FAF8F3;color:#1F2933;font-family:'Inter',system-ui,-apple-
 <script src="config.js?v=2026-01-01-r1"></script>
 <script src="db.js?v=2026-01-01-r1"></script>
 <script src="script.js?v=2026-01-01-r1" defer></script>
+<script src="admin.js?v=2026-01-01-r1" defer></script>
 </body>
 </html>
