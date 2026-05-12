@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r2';
+  var V = '2026-01-01-r3';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,14 +25,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
 <link rel="icon" href="IMG_9504.png">
 <title>Zahnmedizin · DentalHarmonie</title>
-<meta name="description" content="Diagnose, Therapie und Schmerzbehandlung in der Zahnarztpraxis DentalHarmonie, Hamburg-Hohenfelde.">
+<meta name="description" content="Diagnose, Therapie und Schmerzbehandlung bei DentalHarmonie in Hamburg-Hohenfelde — vom Füllen bis zur Wurzelkanalbehandlung.">
 <link rel="canonical" href="https://www.dentalharmonie.de/zahnmedizin.html">
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Zahnmedizin · DentalHarmonie">
-<meta property="og:description" content="Diagnose, Therapie und Schmerzbehandlung in der Zahnarztpraxis DentalHarmonie, Hamburg-Hohenfelde.">
+<meta property="og:description" content="Diagnose, Therapie und Schmerzbehandlung bei DentalHarmonie in Hamburg-Hohenfelde — vom Füllen bis zur Wurzelkanalbehandlung.">
 <meta property="og:url" content="https://www.dentalharmonie.de/zahnmedizin.html">
 <meta name="twitter:card" content="summary">
 </head>
@@ -88,22 +88,122 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner reveal">
         <p class="eyebrow" data-num="03">Zahnmedizin</p>
         <h1>Wie wir behandeln.</h1>
-        <p class="lead">Diagnose, Therapie und Erhalt — sorgfältig und ohne Eile. Wir nehmen uns Zeit für eine Behandlung, die zu Ihnen passt.</p>
+        <p class="lead">Sorgfältige Diagnose, transparente Aufklärung und eine Therapie, die zu Ihnen passt. Wir nehmen uns Zeit — auch wenn ein einzelner Termin dadurch länger dauert.</p>
       </div>
     </div>
   </section>
 
-  <section class="placeholder">
+  <section>
     <div class="container">
-      <div class="placeholder__inner">
-        <p class="placeholder__note">Inhalt folgt</p>
-        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
-        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="01">Erstkontakt</p>
+        <h2>Verstehen, bevor wir behandeln.</h2>
+        <p class="lead">Jeder Behandlung geht eine ruhige Bestandsaufnahme voraus. Sie erfahren, was wir sehen, was möglich ist und was warten kann.</p>
+      </div>
+      <div class="feature-grid reveal" data-delay="1">
+        <div class="feature">
+          <span class="feature__num">01</span>
+          <h3>Anamnese &amp; Befund</h3>
+          <p>Gesundheitliche Vorgeschichte, aktuelles Anliegen und vollständiger Befund — verständlich erläutert.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">02</span>
+          <h3>Digitale Diagnostik</h3>
+          <p>Modernes Röntgen mit niedriger Strahlendosis, intraorale Aufnahmen und Modelle für die Planung.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">03</span>
+          <h3>Beratung in Ruhe</h3>
+          <p>Wir erklären Optionen mit Vor- und Nachteilen — und sagen, was wir an Ihrer Stelle tun würden, wenn Sie es wissen möchten.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">04</span>
+          <h3>Heil- &amp; Kostenplan</h3>
+          <p>Vor größeren Maßnahmen erhalten Sie eine schriftliche Übersicht über Behandlung und Honorar nach GOZ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-2">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="02">Therapie</p>
+        <h2>Was wir behandeln.</h2>
+      </div>
+      <ol class="list-rich reveal" data-delay="1">
+        <li>
+          <span class="list-rich__num">01</span>
+          <div>
+            <h3>Karies &amp; Füllungstherapie</h3>
+            <p>Defekte Zahnhartsubstanz wird so substanzschonend wie möglich entfernt und mit zahnfarbenem Composite ersetzt. Bei größeren Defekten besprechen wir Keramik-Inlays.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">02</span>
+          <div>
+            <h3>Wurzelkanalbehandlung</h3>
+            <p>Bei tiefer Karies oder Entzündung des Zahnnervs entfernen wir das entzündete Gewebe maschinell unter Lupensicht und füllen das Wurzelkanalsystem dicht. Ziel ist immer der Erhalt des eigenen Zahns.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">03</span>
+          <div>
+            <h3>Parodontologie</h3>
+            <p>Vom systematischen Reinigen tiefer Zahnfleischtaschen über Lasertherapie bis zur chirurgischen Versorgung — Stufe für Stufe, je nach Befund.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">04</span>
+          <div>
+            <h3>Kronen, Brücken, Zahnersatz</h3>
+            <p>Wenn ein Zahn so weit zerstört ist, dass eine Füllung nicht reicht, versorgen wir mit Vollkeramik oder Metallkeramik. Bei fehlenden Zähnen besprechen wir Brücke vs. Implantat offen.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">05</span>
+          <div>
+            <h3>Kinderzahnheilkunde</h3>
+            <p>Bei Kindern beginnen wir mit „Schau-Terminen", bevor wir behandeln. So gewöhnt sich das Kind in eigenem Tempo an die Praxis und das Team.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">06</span>
+          <div>
+            <h3>Schmerzbehandlung</h3>
+            <p>Akute Beschwerden werden wir, soweit möglich, am selben oder nächsten Werktag einschieben. Bitte rufen Sie uns zu den Sprechzeiten an.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="note note--alert reveal">
+        <span class="note__label">Außerhalb der Sprechzeiten</span>
+        <h4>Zahnärztlicher Notdienst Hamburg</h4>
+        <p>Für akute zahnärztliche Notfälle ist außerhalb unserer Sprechzeiten der zahnärztliche Notdienst der Zahnärztekammer Hamburg zuständig. Bei lebensbedrohlichen Symptomen wählen Sie bitte die 112.</p>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner reveal">
+        <div>
+          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
+          <h2>Einen Termin in Ruhe vereinbaren.</h2>
+          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="tel:+494022 1528">+49 40 221528</a>
+        </div>
       </div>
     </div>
   </section>
@@ -156,8 +256,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r2"></script>
-<script src="db.js?v=2026-01-01-r2"></script>
-<script src="script.js?v=2026-01-01-r2" defer></script>
+<script src="config.js?v=2026-01-01-r3"></script>
+<script src="db.js?v=2026-01-01-r3"></script>
+<script src="script.js?v=2026-01-01-r3" defer></script>
 </body>
 </html>

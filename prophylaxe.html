@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r2';
+  var V = '2026-01-01-r3';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,14 +25,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
 <link rel="icon" href="IMG_9504.png">
 <title>Prophylaxe · DentalHarmonie</title>
-<meta name="description" content="Professionelle Zahnreinigung und Vorsorge bei DentalHarmonie in Hamburg-Hohenfelde.">
+<meta name="description" content="Professionelle Zahnreinigung, Kinder-Prophylaxe, Recall und Bleaching bei DentalHarmonie in Hamburg-Hohenfelde.">
 <link rel="canonical" href="https://www.dentalharmonie.de/prophylaxe.html">
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Prophylaxe · DentalHarmonie">
-<meta property="og:description" content="Professionelle Zahnreinigung und Vorsorge bei DentalHarmonie in Hamburg-Hohenfelde.">
+<meta property="og:description" content="Professionelle Zahnreinigung, Kinder-Prophylaxe, Recall und Bleaching bei DentalHarmonie in Hamburg-Hohenfelde.">
 <meta property="og:url" content="https://www.dentalharmonie.de/prophylaxe.html">
 <meta name="twitter:card" content="summary">
 </head>
@@ -88,7 +88,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner reveal">
         <p class="eyebrow" data-num="04">Prophylaxe</p>
         <h1>Vorsorge, die wirkt.</h1>
         <p class="lead">Regelmäßige Prophylaxe ist die ruhigste Form der Zahnmedizin — weil sie früh ansetzt, bevor Behandlung nötig wird.</p>
@@ -96,14 +96,116 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     </div>
   </section>
 
-  <section class="placeholder">
+  <section>
     <div class="container">
-      <div class="placeholder__inner">
-        <p class="placeholder__note">Inhalt folgt</p>
-        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
-        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="two-col">
+        <aside class="two-col__aside reveal">
+          <p class="eyebrow" data-num="01">Professionelle Zahnreinigung</p>
+          <p>Eine Sitzung dauert in der Regel zwischen 45 und 60 Minuten. Anschließend besprechen wir, welches Recall-Intervall für Sie sinnvoll ist.</p>
+        </aside>
+        <div class="reveal" data-delay="1">
+          <h2>Mehr als nur Politur.</h2>
+          <p class="lead">Die professionelle Zahnreinigung (PZR) ist die Grundlage einer ruhigen, langfristigen Zahnmedizin. Sie hilft, Karies und Parodontitis vorzubeugen — und macht Behandlungen oft überflüssig, die ohne Prophylaxe später nötig wären.</p>
+          <p>Was wir in der PZR machen:</p>
+          <ul style="color: var(--slate); padding-left: 1.2rem;">
+            <li>Vollständige Befunderhebung der Mundhygiene</li>
+            <li>Entfernung harter und weicher Beläge — oberhalb und unterhalb des Zahnfleischrands</li>
+            <li>Politur aller Zahnflächen, auch in den Zwischenräumen</li>
+            <li>Fluoridierung der gereinigten Oberflächen</li>
+            <li>Individuelle Putztechnik-Anleitung, abgestimmt auf Ihre Situation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-2">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="02">Für Kinder &amp; Jugendliche</p>
+        <h2>Spielerisch anfangen.</h2>
+        <p class="lead">Wir machen Kinder mit der Praxis vertraut, bevor wir behandeln — und führen Schritt für Schritt an gute Mundhygiene heran.</p>
+      </div>
+      <div class="feature-grid reveal" data-delay="1">
+        <div class="feature">
+          <span class="feature__num">01</span>
+          <h3>Mundhygiene-Schulung</h3>
+          <p>Kindgerechte Erklärung, wie und warum Zähne geputzt werden — gemeinsam mit den Eltern.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">02</span>
+          <h3>Fissurenversiegelung</h3>
+          <p>Schutz der tiefen Kauflächen-Furchen, bevor Karies dort entstehen kann.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">03</span>
+          <h3>Fluoridierung</h3>
+          <p>Stärkung des Zahnschmelzes, abgestimmt auf das Alter und die individuelle Situation.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">04</span>
+          <h3>Ernährungsberatung</h3>
+          <p>Welche Lebensmittel die Zähne schonen — verständlich, ohne erhobenen Zeigefinger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="two-col">
+        <aside class="two-col__aside reveal">
+          <p class="eyebrow" data-num="03">Recall</p>
+          <p>Das Intervall wird gemeinsam mit Ihnen festgelegt — und kann sich ändern, wenn sich Ihre Situation ändert.</p>
+        </aside>
+        <div class="reveal" data-delay="1">
+          <h2>Erinnerung im richtigen Takt.</h2>
+          <p class="lead">Statt starrer Halbjahres-Termine richten wir die Recall-Frequenz nach Ihrem individuellen Risiko: bei stabilem Befund jährlich, bei höherem Risiko alle drei oder vier Monate.</p>
+          <p>Wir erinnern Sie rechtzeitig per E-Mail oder telefonisch — Sie entscheiden, welcher Weg Ihnen lieber ist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-2">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="04">Ästhetische Aufhellung</p>
+        <h2>Bleaching unter zahnärztlicher Aufsicht.</h2>
+      </div>
+      <div class="feature-grid reveal" data-delay="1">
+        <div class="feature">
+          <span class="feature__num">01</span>
+          <h3>In-Office-Bleaching</h3>
+          <p>Aufhellung in einer einzelnen Sitzung in der Praxis. Vorher prüfen wir Zahnsubstanz und Zahnfleisch.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">02</span>
+          <h3>Home-Bleaching</h3>
+          <p>Individuell angefertigte Aufhellungsschienen für die Anwendung zu Hause, mit Material in zahnärztlicher Qualität.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">03</span>
+          <h3>Vorbereitende PZR</h3>
+          <p>Vor jedem Bleaching wird eine professionelle Zahnreinigung durchgeführt — sonst hellt nur der Belag, nicht der Zahn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner reveal">
+        <div>
+          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
+          <h2>Einen Termin in Ruhe vereinbaren.</h2>
+          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="tel:+494022 1528">+49 40 221528</a>
+        </div>
       </div>
     </div>
   </section>
@@ -156,8 +258,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r2"></script>
-<script src="db.js?v=2026-01-01-r2"></script>
-<script src="script.js?v=2026-01-01-r2" defer></script>
+<script src="config.js?v=2026-01-01-r3"></script>
+<script src="db.js?v=2026-01-01-r3"></script>
+<script src="script.js?v=2026-01-01-r3" defer></script>
 </body>
 </html>

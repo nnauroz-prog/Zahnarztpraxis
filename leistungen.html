@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r2';
+  var V = '2026-01-01-r3';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,14 +25,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
 <link rel="icon" href="IMG_9504.png">
 <title>Leistungen · DentalHarmonie</title>
-<meta name="description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Zahnmedizin, Prophylaxe und ästhetische Versorgung.">
+<meta name="description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Vorsorge, Zahnmedizin, Ästhetik und Zahnersatz.">
 <link rel="canonical" href="https://www.dentalharmonie.de/leistungen.html">
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Leistungen · DentalHarmonie">
-<meta property="og:description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Zahnmedizin, Prophylaxe und ästhetische Versorgung.">
+<meta property="og:description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Vorsorge, Zahnmedizin, Ästhetik und Zahnersatz.">
 <meta property="og:url" content="https://www.dentalharmonie.de/leistungen.html">
 <meta name="twitter:card" content="summary">
 </head>
@@ -88,22 +88,193 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner reveal">
         <p class="eyebrow" data-num="02">Leistungen</p>
         <h1>Unser Behandlungsspektrum.</h1>
-        <p class="lead">Ein Überblick über alles, was wir in der Praxis anbieten — von Vorsorge über Erhalt bis zur ästhetischen Versorgung.</p>
+        <p class="lead">Ein Überblick über alles, was wir in der Praxis anbieten — von Vorsorge über Erhalt bis hin zur ästhetischen Versorgung. Ehrlich erklärt und ohne Verkaufsdruck.</p>
       </div>
     </div>
   </section>
 
-  <section class="placeholder">
+  <section>
     <div class="container">
-      <div class="placeholder__inner">
-        <p class="placeholder__note">Inhalt folgt</p>
-        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
-        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="01">Übersicht</p>
+        <h2>Vier Bereiche, klar getrennt.</h2>
+      </div>
+      <ol class="anchor-list reveal" data-delay="1">
+        <li><a href="#vorsorge"><span class="anchor-list__num">01</span>Vorsorge &amp; Erhalt</a></li>
+        <li><a href="#zahnmedizin"><span class="anchor-list__num">02</span>Zahnmedizin</a></li>
+        <li><a href="#aesthetik"><span class="anchor-list__num">03</span>Ästhetische Versorgung</a></li>
+        <li><a href="#zahnersatz"><span class="anchor-list__num">04</span>Zahnersatz</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="vorsorge" class="surface-2">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="01">Vorsorge &amp; Erhalt</p>
+        <h2>Damit Behandlung gar nicht erst nötig wird.</h2>
+        <p class="lead">Regelmäßige Vorsorge ist die ruhigste Zahnmedizin — wir setzen früh an und besprechen, was wirklich sinnvoll ist.</p>
+      </div>
+      <div class="feature-grid reveal" data-delay="1">
+        <div class="feature">
+          <span class="feature__num">01</span>
+          <h3>Kontrolluntersuchung</h3>
+          <p>Halbjährliche Inspektion mit Befundaufnahme, Erläuterung und ggf. Behandlungsempfehlung.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">02</span>
+          <h3>Professionelle Zahnreinigung</h3>
+          <p>Entfernung von Belägen und Verfärbungen oberhalb und unterhalb des Zahnfleischrands, abschließende Politur und Fluoridierung.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">03</span>
+          <h3>Kinder-Prophylaxe</h3>
+          <p>Spielerische Einführung in die Mundhygiene, Putztechnik-Anleitung und kindgerechte Fluoridierung.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">04</span>
+          <h3>Individueller Recall</h3>
+          <p>Erinnerung an den nächsten Termin in dem Intervall, das zu Ihrem Befund passt — nicht starr alle sechs Monate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zahnmedizin">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="02">Zahnmedizin</p>
+        <h2>Diagnose, Therapie, Erhalt.</h2>
+        <p class="lead">Wir behandeln in ruhigem Tempo, ohne Termin-Stapelung — damit Diagnose, Aufklärung und Therapie zusammenpassen.</p>
+      </div>
+      <ol class="list-rich reveal" data-delay="1">
+        <li>
+          <span class="list-rich__num">01</span>
+          <div>
+            <h3>Karies &amp; Füllungstherapie</h3>
+            <p>Schonende Kariesentfernung und zahnfarbene Composite-Füllungen, abgestimmt auf Funktion und Ästhetik.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">02</span>
+          <div>
+            <h3>Wurzelkanalbehandlung</h3>
+            <p>Endodontische Versorgung mit dem Ziel, den eigenen Zahn so lange wie möglich zu erhalten. Mit Lupenbrille und maschineller Aufbereitung.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">03</span>
+          <div>
+            <h3>Parodontologie</h3>
+            <p>Untersuchung, Diagnostik und Therapie von Zahnfleischerkrankungen — abgestuft, vom systematischen Reinigen bis zur chirurgischen Versorgung.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">04</span>
+          <div>
+            <h3>Schmerz- &amp; Akutbehandlung</h3>
+            <p>Bei akuten Beschwerden versuchen wir, Sie zeitnah einzuschieben. Außerhalb der Sprechzeiten gilt der zahnärztliche Notdienst.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">05</span>
+          <div>
+            <h3>Kinderzahnheilkunde</h3>
+            <p>Behutsame Behandlung in eigenem Tempo. Wir nehmen uns Zeit, das Kind kennenzulernen, bevor wir behandeln.</p>
+          </div>
+        </li>
+      </ol>
+      <a class="btn btn--link" href="zahnmedizin.html" style="margin-top: 2rem;">Mehr zur Zahnmedizin</a>
+    </div>
+  </section>
+
+  <section id="aesthetik" class="surface-2">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="03">Ästhetische Versorgung</p>
+        <h2>Diskret und durchdacht.</h2>
+        <p class="lead">Was die Funktion stützt, darf auch schön sein. Wir besprechen Möglichkeiten in Ruhe, mit ehrlicher Einschätzung.</p>
+      </div>
+      <div class="feature-grid reveal" data-delay="1">
+        <div class="feature">
+          <span class="feature__num">01</span>
+          <h3>Veneers</h3>
+          <p>Dünne Keramikschalen zur Korrektur von Form und Farbe — minimal-invasiv geplant, ehrlich besprochen.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">02</span>
+          <h3>Bleaching</h3>
+          <p>In-Office-Aufhellung unter zahnärztlicher Aufsicht oder als Home-Bleaching mit individuellen Schienen.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">03</span>
+          <h3>Composite-Aufbauten</h3>
+          <p>Reparatur kleiner Defekte und ästhetische Korrekturen mit Komposit-Werkstoffen — substanzschonend.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">04</span>
+          <h3>Vollkeramik-Versorgung</h3>
+          <p>Kronen, Inlays und Onlays aus hochwertiger Keramik — biokompatibel und ästhetisch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zahnersatz">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="04">Zahnersatz</p>
+        <h2>Wenn Zähne ersetzt werden müssen.</h2>
+        <p class="lead">Verlust eines Zahnes lässt sich auf mehreren Wegen kompensieren. Wir erklären die Möglichkeiten, ihre Lebensdauer und ihre Kosten transparent.</p>
+      </div>
+      <ol class="list-rich reveal" data-delay="1">
+        <li>
+          <span class="list-rich__num">01</span>
+          <div>
+            <h3>Kronen &amp; Brücken</h3>
+            <p>Festsitzender Zahnersatz aus Vollkeramik oder Metallkeramik — geeignet, wenn benachbarte Zähne als Anker dienen können.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">02</span>
+          <div>
+            <h3>Implantate</h3>
+            <p>Künstliche Zahnwurzeln aus Titan oder Keramik. Wir prüfen sorgfältig, ob ein Implantat im Einzelfall die richtige Wahl ist.</p>
+          </div>
+        </li>
+        <li>
+          <span class="list-rich__num">03</span>
+          <div>
+            <h3>Teil- und Vollprothesen</h3>
+            <p>Herausnehmbarer Zahnersatz, bei Bedarf kombiniert mit Implantaten zur sicheren Verankerung.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="note reveal" data-delay="2">
+        <span class="note__label">Honorar &amp; Kostenplan</span>
+        <h4>Klarheit vor jeder größeren Behandlung.</h4>
+        <p>Privatleistungen werden nach der Gebührenordnung für Zahnärzte (GOZ) abgerechnet. Vor jeder umfangreicheren Versorgung erhalten Sie einen schriftlichen Heil- und Kostenplan. Bei gesetzlich Versicherten besprechen wir mögliche Zuzahlungen offen, bevor wir mit der Behandlung beginnen.</p>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner reveal">
+        <div>
+          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
+          <h2>Einen Termin in Ruhe vereinbaren.</h2>
+          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="tel:+494022 1528">+49 40 221528</a>
+        </div>
       </div>
     </div>
   </section>
@@ -156,8 +327,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r2"></script>
-<script src="db.js?v=2026-01-01-r2"></script>
-<script src="script.js?v=2026-01-01-r2" defer></script>
+<script src="config.js?v=2026-01-01-r3"></script>
+<script src="db.js?v=2026-01-01-r3"></script>
+<script src="script.js?v=2026-01-01-r3" defer></script>
 </body>
 </html>

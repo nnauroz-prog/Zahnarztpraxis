@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r2';
+  var V = '2026-01-01-r3';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,14 +25,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
 <link rel="icon" href="IMG_9504.png">
 <title>Datenschutz · DentalHarmonie</title>
-<meta name="description" content="Datenschutzhinweise der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde.">
+<meta name="description" content="Datenschutzhinweise der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Verarbeitung Ihrer Daten und Ihre Rechte.">
 <link rel="canonical" href="https://www.dentalharmonie.de/datenschutz.html">
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Datenschutz · DentalHarmonie">
-<meta property="og:description" content="Datenschutzhinweise der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde.">
+<meta property="og:description" content="Datenschutzhinweise der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Verarbeitung Ihrer Daten und Ihre Rechte.">
 <meta property="og:url" content="https://www.dentalharmonie.de/datenschutz.html">
 <meta name="twitter:card" content="summary">
 </head>
@@ -88,7 +88,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner reveal">
         <p class="eyebrow" data-num="10">Rechtliches</p>
         <h1>Datenschutz.</h1>
         <p class="lead">Hinweise zur Verarbeitung personenbezogener Daten in unserer Praxis und auf dieser Website.</p>
@@ -96,17 +96,62 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     </div>
   </section>
 
-  <section class="placeholder">
+  <section>
     <div class="container">
-      <div class="placeholder__inner">
-        <p class="placeholder__note">Inhalt folgt</p>
-        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
-        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="legal reveal">
+
+        <h2>1 · Verantwortlich</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist:</p>
+        <dl>
+          <dt>Dr. Delaram Mostafaei</dt>
+          <dd>Ifflandstraße 75 · 22087 Hamburg-Hohenfelde<br><a href="tel:+494022 1528">+49 40 221528</a> · <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></dd>
+        </dl>
+
+        <h2>2 · Erhebung personenbezogener Daten beim Besuch der Website</h2>
+        <p>Beim rein informatorischen Besuch dieser Website erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt. Diese sind technisch erforderlich, um Ihnen die Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO):</p>
+        <ul>
+          <li>IP-Adresse (gekürzt)</li>
+          <li>Datum und Uhrzeit der Anfrage</li>
+          <li>Aufgerufene Seite und übertragene Datenmenge</li>
+          <li>Browser-Typ, Betriebssystem, Referrer-URL</li>
+        </ul>
+
+        <h2>3 · Cookies und lokale Speicherung</h2>
+        <p>Wir verwenden nur technisch notwendige lokale Speicherung (LocalStorage) — etwa, um Ihre Cookie-Einstellung („Zustimmen" / „Nur notwendige") und einmal weggeklickte Hinweise zu merken. Es werden keine Tracking-Cookies und keine Analyse-Tools eingesetzt.</p>
+
+        <h2>4 · Schriftarten (Google Fonts)</h2>
+        <p>Diese Website lädt die Schriftarten „Inter" und „Fraunces" von Google Fonts (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf der Seite wird Ihre IP-Adresse an Google übertragen. Sie können der Schriftarten-Übertragung über den Cookie-Banner widersprechen — wir verwenden dann ausschließlich System-Schriften (Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO).</p>
+
+        <h2>5 · Terminanfrage und Mitgliederbereich (Supabase)</h2>
+        <p>Wenn Sie unser Anfrageformular nutzen, übermitteln Sie uns Ihre Angaben (Name, Telefon, ggf. E-Mail, Anliegen, Wunschtermin, Nachricht). Diese Daten werden bei unserem Auftragsverarbeiter <strong>Supabase</strong> (Supabase Inc., 970 Toa Payoh North, #07-04, Singapore 318992) in einer Datenbank innerhalb der EU verarbeitet, ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO. Mit Supabase besteht ein Auftragsverarbeitungsvertrag.</p>
+        <p>Der Mitgliederbereich (interner Login für das Praxis-Team) nutzt die Authentifizierung von Supabase. Es werden ausschließlich Beschäftigte der Praxis registriert.</p>
+
+        <h2>6 · Doctolib</h2>
+        <p>Sofern Sie von dieser Website auf Doctolib weiterklicken, gelten ab diesem Zeitpunkt die Datenschutzhinweise von Doctolib (Doctolib GmbH). Wir übermitteln keine Daten an Doctolib, bevor Sie aktiv auf den Link klicken.</p>
+
+        <h2>7 · OpenStreetMap</h2>
+        <p>Auf der Kontaktseite finden Sie eine Karte über OpenStreetMap. Die Karte wird erst geladen, wenn Sie aktiv „Karte laden" anklicken. Dann werden Daten an die OpenStreetMap Foundation übertragen.</p>
+
+        <h2>8 · Behandlung in der Praxis</h2>
+        <p>Behandlungsbezogene personenbezogene Daten (Anamnese, Befunde, Behandlungen) werden ausschließlich in unserer Praxis-EDV verarbeitet, nicht über diese Website. Rechtsgrundlage ist Art. 9 Abs. 2 lit. h DSGVO i.V.m. § 22 BDSG (Verarbeitung im Rahmen der Gesundheitsversorgung).</p>
+
+        <h2>9 · Datensicherheit</h2>
+        <p>Diese Website wird ausschließlich über eine verschlüsselte HTTPS-Verbindung ausgeliefert (TLS).</p>
+
+        <h2>10 · Speicherdauer</h2>
+        <p>Terminanfragen werden für die Dauer der Bearbeitung gespeichert und spätestens drei Monate nach Abschluss gelöscht — sofern Sie nicht Patientin bzw. Patient unserer Praxis sind und die Aufbewahrungsfristen für Patientenakten greifen.</p>
+
+        <h2>11 · Ihre Rechte</h2>
+        <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie ein Widerspruchsrecht (Art. 21). Bitte richten Sie Ihr Anliegen an die oben genannten Kontaktdaten.</p>
+        <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit — <a href="https://datenschutz-hamburg.de" target="_blank" rel="noopener">datenschutz-hamburg.de</a>.</p>
+
+        <h2>12 · Änderung dieser Hinweise</h2>
+        <p>Wir behalten uns vor, diese Datenschutzhinweise anzupassen, sobald sich rechtliche oder technische Rahmenbedingungen ändern. Es gilt jeweils die auf dieser Seite veröffentlichte Fassung.</p>
+
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -156,8 +201,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r2"></script>
-<script src="db.js?v=2026-01-01-r2"></script>
-<script src="script.js?v=2026-01-01-r2" defer></script>
+<script src="config.js?v=2026-01-01-r3"></script>
+<script src="db.js?v=2026-01-01-r3"></script>
+<script src="script.js?v=2026-01-01-r3" defer></script>
 </body>
 </html>

@@ -23,6 +23,8 @@
     safe(initHoursToday);
     safe(initConsent);
     safe(initNoticeBanner);
+    safe(initTerminForm);
+    safe(initMapConsent);
     safe(initYear);
   }
 
@@ -195,6 +197,93 @@
   function initYear() {
     document.querySelectorAll('[data-year]').forEach((el) => {
       el.textContent = String(new Date().getFullYear());
+    });
+  }
+
+  /* ---------- Termin-Formular ---------- */
+  function initTerminForm() {
+    const form = document.getElementById('terminForm');
+    if (!form) return;
+    const successCard = document.getElementById('terminSuccess');
+    const errorEl     = document.getElementById('terminError');
+
+    const setError = (msg) => {
+      if (!errorEl) return;
+      errorEl.textContent = msg || '';
+      errorEl.hidden = !msg;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      setError('');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = {
+        name: form.elements.name.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        email: (form.elements.email.value || '').trim(),
+        request_type: form.elements.request_type.value,
+        preferred_date: form.elements.preferred_date.value || null,
+        preferred_time: form.elements.preferred_time.value || null,
+        message: (form.elements.message.value || '').trim(),
+        privacy_accepted: !!form.elements.privacy.checked
+      };
+
+      const submitBtn = form.querySelector('[type="submit"]');
+      const origLabel = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Wird gesendet&nbsp;…';
+
+      try {
+        if (window.dentalDb && window.dentalDb.isProd) {
+          await window.dentalDb.addAppointmentRequest(data);
+        } else {
+          // Demo-Fallback: mailto öffnen, damit Anfrage trotzdem ankommt
+          await new Promise((r) => setTimeout(r, 500));
+          const subject = encodeURIComponent('Terminanfrage über die Website');
+          const lines = [
+            'Name: ' + data.name,
+            'Telefon: ' + data.phone,
+            data.email ? 'E-Mail: ' + data.email : null,
+            'Anliegen: ' + data.request_type,
+            data.preferred_date ? 'Wunschdatum: ' + data.preferred_date : null,
+            data.preferred_time ? 'Wunschzeit: ' + data.preferred_time : null,
+            data.message ? '\nNachricht:\n' + data.message : null
+          ].filter(Boolean).join('\n');
+          window.location.href = 'mailto:info@dentalharmonie.de?subject=' + subject + '&body=' + encodeURIComponent(lines);
+        }
+
+        form.hidden = true;
+        if (successCard) {
+          successCard.hidden = false;
+          successCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } catch (err) {
+        setError((err && err.message) ? err.message : 'Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origLabel;
+      }
+    });
+  }
+
+  /* ---------- Map-Consent (Click-to-Load OSM) ---------- */
+  function initMapConsent() {
+    document.querySelectorAll('.map').forEach((map) => {
+      const btn = map.querySelector('[data-load-map]');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const iframe = map.querySelector('iframe');
+        const src = map.getAttribute('data-src');
+        if (iframe && src) {
+          iframe.src = src;
+          map.classList.add('is-loaded');
+        }
+      });
     });
   }
 })();

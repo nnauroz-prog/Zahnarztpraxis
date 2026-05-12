@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r2';
+  var V = '2026-01-01-r3';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
 <link rel="icon" href="IMG_9504.png">
 <title>Termin anfragen · DentalHarmonie</title>
 <meta name="description" content="Termin in der Zahnarztpraxis DentalHarmonie Hamburg-Hohenfelde anfragen. Online-Formular oder telefonisch unter +49 40 221528.">
@@ -88,25 +88,113 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner reveal">
         <p class="eyebrow" data-num="05">Termin</p>
         <h1>Termin anfragen.</h1>
-        <p class="lead">Schreiben Sie uns Ihre Wunschzeit, wir bestätigen innerhalb eines Werktages. Telefonisch erreichen Sie uns unter +49 40 221528.</p>
+        <p class="lead">Schreiben Sie uns Ihre Wunschzeit, wir bestätigen werktags innerhalb von 24 Stunden. Bei akuten Beschwerden bitte direkt telefonisch melden.</p>
       </div>
     </div>
   </section>
 
-  <section class="placeholder">
+  <section>
     <div class="container">
-      <div class="placeholder__inner">
-        <p class="placeholder__note">Inhalt folgt</p>
-        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
-        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="form-shell">
+        <div class="reveal">
+          <form id="terminForm" class="form" novalidate>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="terminName">Name *</label>
+                <input id="terminName" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="form__field">
+                <label for="terminPhone">Telefon *</label>
+                <input id="terminPhone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="terminEmail">E-Mail</label>
+              <input id="terminEmail" name="email" type="email" autocomplete="email">
+            </div>
+            <div class="form__field">
+              <label for="terminType">Anliegen *</label>
+              <select id="terminType" name="request_type" required>
+                <option value="">Bitte wählen</option>
+                <option>Erstgespräch / Kennenlernen</option>
+                <option>Kontrolluntersuchung</option>
+                <option>Professionelle Zahnreinigung</option>
+                <option>Akute Beschwerden</option>
+                <option>Beratung Ästhetik / Bleaching</option>
+                <option>Beratung Zahnersatz / Implantat</option>
+                <option>Anderes Anliegen</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="terminDate">Wunschdatum</label>
+                <input id="terminDate" name="preferred_date" type="date">
+              </div>
+              <div class="form__field">
+                <label for="terminTime">Wunschzeit</label>
+                <select id="terminTime" name="preferred_time">
+                  <option value="">Egal</option>
+                  <option>vormittags</option>
+                  <option>mittags</option>
+                  <option>nachmittags</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__field">
+              <label for="terminMsg">Nachricht (optional)</label>
+              <textarea id="terminMsg" name="message" placeholder="Was sollten wir vorab wissen?"></textarea>
+            </div>
+            <label class="form__check">
+              <input type="checkbox" name="privacy" required>
+              <span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen und stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</span>
+            </label>
+            <p class="form__error" id="terminError" hidden></p>
+            <div class="form__actions">
+              <button type="submit" class="btn btn--primary">Anfrage senden
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="form-success" id="terminSuccess" hidden role="status">
+            <span class="form-success__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+            </span>
+            <h3>Danke für Ihre Nachricht.</h3>
+            <p>Wir melden uns werktags innerhalb von 24 Stunden mit einer Bestätigung. Bei dringenden Anliegen erreichen Sie uns telefonisch unter <a href="tel:+494022 1528">+49 40 221528</a>.</p>
+          </div>
+        </div>
+
+        <aside class="form-aside reveal" data-delay="1">
+          <h3>Direkt erreichen</h3>
+          <dl>
+            <dt>Telefon</dt>
+            <dd><a href="tel:+494022 1528">+49 40 221528</a></dd>
+            <dt>E-Mail</dt>
+            <dd><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></dd>
+            <dt>Adresse</dt>
+            <dd>Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</dd>
+            <dt>Sprechzeiten</dt>
+            <dd>Mo, Di, Do · 08–18<br>Mi, Fr · 08–13</dd>
+          </dl>
+          <p class="muted" style="font-size: .88rem; margin: 0;">Sie können auch direkt online über Doctolib buchen.</p>
+          <a class="btn btn--ghost" href="https://www.doctolib.de/zahnmedizin/hamburg/delaram-mostafaei" rel="noopener" target="_blank" style="justify-content: center;">Über Doctolib buchen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </aside>
+      </div>
+
+      <div class="note note--alert reveal" data-delay="2">
+        <span class="note__label">Hinweis</span>
+        <h4>Dieses Formular ist nicht für akute Notfälle.</h4>
+        <p>Bei starken Schmerzen oder akuten Beschwerden rufen Sie uns bitte direkt an. Außerhalb der Sprechzeiten ist der zahnärztliche Notdienst der Zahnärztekammer Hamburg zuständig.</p>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -156,8 +244,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r2"></script>
-<script src="db.js?v=2026-01-01-r2"></script>
-<script src="script.js?v=2026-01-01-r2" defer></script>
+<script src="config.js?v=2026-01-01-r3"></script>
+<script src="db.js?v=2026-01-01-r3"></script>
+<script src="script.js?v=2026-01-01-r3" defer></script>
 </body>
 </html>

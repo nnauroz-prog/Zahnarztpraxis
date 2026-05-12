@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r2';
+  var V = '2026-01-01-r3';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,14 +25,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r2">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
 <link rel="icon" href="IMG_9504.png">
 <title>Über uns · DentalHarmonie</title>
-<meta name="description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Geschichte und Anspruch der Praxis Dr. Delaram Mostafaei.">
+<meta name="description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Philosophie, Werte und berufsrechtliche Angaben zur Praxis Dr. Delaram Mostafaei.">
 <link rel="canonical" href="https://www.dentalharmonie.de/ueber-uns.html">
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Über uns · DentalHarmonie">
-<meta property="og:description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Geschichte und Anspruch der Praxis Dr. Delaram Mostafaei.">
+<meta property="og:description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Philosophie, Werte und berufsrechtliche Angaben zur Praxis Dr. Delaram Mostafaei.">
 <meta property="og:url" content="https://www.dentalharmonie.de/ueber-uns.html">
 <meta name="twitter:card" content="summary">
 </head>
@@ -88,22 +88,104 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero__inner">
+      <div class="hero__inner reveal">
         <p class="eyebrow" data-num="07">Praxis</p>
         <h1>Über DentalHarmonie.</h1>
-        <p class="lead">Eine kleine Praxis im Herzen Hohenfeldes — geführt von Dr. Delaram Mostafaei mit einem Team, das Zeit für Sie hat.</p>
+        <p class="lead">Eine kleine Praxis in Hohenfelde — geführt von Dr. Delaram Mostafaei. Wir behandeln in einem Tempo, das zur Behandlung passt, nicht umgekehrt.</p>
       </div>
     </div>
   </section>
 
-  <section class="placeholder">
+  <section>
     <div class="container">
-      <div class="placeholder__inner">
-        <p class="placeholder__note">Inhalt folgt</p>
-        <p class="lead muted">Diese Seite befindet sich gerade im Aufbau. Den Hauptinhalt füllen wir in der nächsten Etappe ein.</p>
-        <a class="btn btn--ghost" href="kontakt.html">Bei Fragen direkt zur Praxis
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="two-col">
+        <aside class="two-col__aside reveal">
+          <p class="eyebrow" data-num="01">Philosophie</p>
+          <p>Was eine Praxis ausmacht, sind nicht die Geräte. Es sind die Minuten, die man sich für Menschen nimmt.</p>
+        </aside>
+        <div class="reveal" data-delay="1">
+          <h2>Eine Praxis, die zur Ruhe kommt.</h2>
+          <p class="lead">In meiner Praxis arbeite ich mit einem kleinen, erfahrenen Team. Wir behandeln in ruhigem Tempo, ohne Termin-Stapelung — damit Diagnose, Aufklärung und Therapie zusammenpassen.</p>
+          <p>Wir sind bewusst keine Großpraxis. Das heißt: Sie sehen meistens dieselben Gesichter, wir kennen Ihre Vorgeschichte, und wir können uns Zeit nehmen, ohne ständig auf die Uhr zu schauen.</p>
+          <p>Behandelt werden Erwachsene und Kinder, gesetzlich und privat Versicherte. Vor jeder größeren Behandlung erhalten Sie einen schriftlichen Heil- und Kostenplan, damit nichts überrascht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-2">
+    <div class="container">
+      <div class="section-intro reveal">
+        <p class="eyebrow" data-num="02">Werte</p>
+        <h2>Drei Dinge, die uns wichtig sind.</h2>
+      </div>
+      <div class="feature-grid reveal" data-delay="1">
+        <div class="feature">
+          <span class="feature__num">01</span>
+          <h3>Persönlich</h3>
+          <p>Sie werden in der Regel von denselben Personen behandelt. Wir kennen Ihre Vorgeschichte und Ihre Wünsche — das spart Erklärungen.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">02</span>
+          <h3>Transparent</h3>
+          <p>Sie erfahren, was wir sehen, was möglich ist, was kostet, was warten kann. Keine Angebote, die Sie nicht überprüfen können.</p>
+        </div>
+        <div class="feature">
+          <span class="feature__num">03</span>
+          <h3>Ruhig</h3>
+          <p>Wir vermeiden Termin-Stapelung. Lieber ein Termin etwas länger, dafür ohne Eile — und ohne dass Sie warten müssen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="two-col">
+        <aside class="two-col__aside reveal">
+          <p class="eyebrow" data-num="03">Berufsrechtliches</p>
+          <p>Diese Angaben sind Pflicht, schaffen aber auch Klarheit darüber, wer hier behandelt und in welchem Rahmen.</p>
+        </aside>
+        <div class="legal reveal" data-delay="1">
+          <dl>
+            <dt>Berufsbezeichnung</dt>
+            <dd>Zahnärztin (verliehen in der Bundesrepublik Deutschland)</dd>
+
+            <dt>Zuständige Kammer</dt>
+            <dd>Zahnärztekammer Hamburg<br>Möllner Landstraße 31<br>22111 Hamburg<br><a href="https://www.zahnaerzte-hh.de" target="_blank" rel="noopener">zahnaerzte-hh.de</a></dd>
+
+            <dt>KZV</dt>
+            <dd>Kassenzahnärztliche Vereinigung Hamburg<br><a href="https://www.kzv-hamburg.de" target="_blank" rel="noopener">kzv-hamburg.de</a></dd>
+
+            <dt>Aufsichtsbehörde</dt>
+            <dd>Behörde für Wissenschaft, Forschung, Gleichstellung und Bezirke der Freien und Hansestadt Hamburg</dd>
+
+            <dt>Berufsrechtliche Regelungen</dt>
+            <dd>
+              Heilberufekammergesetz Hamburg (HmbKGH)<br>
+              Berufsordnung der Zahnärztekammer Hamburg<br>
+              Zahnheilkundegesetz (ZHG)<br>
+              Gebührenordnung für Zahnärzte (GOZ)
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner reveal">
+        <div>
+          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
+          <h2>Einen Termin in Ruhe vereinbaren.</h2>
+          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="tel:+494022 1528">+49 40 221528</a>
+        </div>
       </div>
     </div>
   </section>
@@ -156,8 +238,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r2"></script>
-<script src="db.js?v=2026-01-01-r2"></script>
-<script src="script.js?v=2026-01-01-r2" defer></script>
+<script src="config.js?v=2026-01-01-r3"></script>
+<script src="db.js?v=2026-01-01-r3"></script>
+<script src="script.js?v=2026-01-01-r3" defer></script>
 </body>
 </html>
