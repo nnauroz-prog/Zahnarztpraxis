@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r3';
+  var V = '2026-01-01-r4';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r3">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r4">
 <link rel="icon" href="IMG_9504.png">
 <title>Zahnmedizin · DentalHarmonie</title>
 <meta name="description" content="Diagnose, Therapie und Schmerzbehandlung bei DentalHarmonie in Hamburg-Hohenfelde — vom Füllen bis zur Wurzelkanalbehandlung.">
@@ -68,20 +68,15 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <div class="menu" id="menu" aria-hidden="true" aria-label="Mobile Navigation">
   <div class="menu__inner">
     <ol class="menu__list">
-        <li><a href="index.html"><span class="menu__num">01</span>Start</a></li>
-        <li><a href="leistungen.html"><span class="menu__num">02</span>Leistungen</a></li>
-        <li><a href="zahnmedizin.html"><span class="menu__num">03</span>Zahnmedizin</a></li>
-        <li><a href="prophylaxe.html"><span class="menu__num">04</span>Prophylaxe</a></li>
-        <li><a href="ueber-uns.html"><span class="menu__num">05</span>Praxis</a></li>
-        <li><a href="team.html"><span class="menu__num">06</span>Team</a></li>
-        <li><a href="kontakt.html"><span class="menu__num">07</span>Kontakt</a></li>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="zahnmedizin.html">Zahnmedizin</a></li>
+        <li><a href="prophylaxe.html">Prophylaxe</a></li>
+        <li><a href="ueber-uns.html">Praxis</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="termin-anfragen.html">Termin anfragen</a></li>
     </ol>
-    <div class="menu__foot">
-      <a class="menu__cta" href="termin-anfragen.html">Termin anfragen
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a class="menu__phone" href="tel:+494022 1528">+49 40 221528</a>
-    </div>
   </div>
 </div>
 
@@ -256,8 +251,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r3"></script>
-<script src="db.js?v=2026-01-01-r3"></script>
-<script src="script.js?v=2026-01-01-r3" defer></script>
+<script src="config.js?v=2026-01-01-r4"></script>
+<script src="db.js?v=2026-01-01-r4"></script>
+<script src="script.js?v=2026-01-01-r4" defer></script>
 </body>
 </html>
