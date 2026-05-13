@@ -311,14 +311,14 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
 }
 
 /* ============================================================
-   MENU · Fullscreen-Sheet (Sage-Background, weiße Versalien)
+   MENU · Fullscreen-Sheet (Paper-Background wie die Seite)
    ============================================================ */
 .menu {
   position: fixed;
   inset: 0;
   z-index: 70;
-  background: var(--sage);
-  color: var(--white);
+  background: var(--paper);
+  color: var(--ink);
   display: flex;
   flex-direction: column;
   pointer-events: none;
@@ -359,15 +359,15 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
   line-height: 1.1;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--ink);
   transition: opacity var(--dur-1) var(--ease);
 }
 .menu__list a:hover,
 .menu__list a:focus-visible {
-  opacity: .7;
-  color: var(--white);
+  opacity: .55;
+  color: var(--ink);
 }
-.menu__list a.is-active { opacity: .6; }
+.menu__list a.is-active { opacity: .5; }
 
 /* Stagger-Animation auf den Einträgen */
 .menu[aria-hidden="false"] .menu__list a {
@@ -386,26 +386,12 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
   to   { opacity: 1; transform: none; }
 }
 
-/* Header über offenem Menü: Brand + Burger weiß umfärben */
+/* Bei offenem Menü: Header transparent, Brand + Burger bleiben in Originalfarbe */
 html.menu-open .header {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border-bottom-color: transparent !important;
-}
-html.menu-open .header__brand {
-  color: var(--white);
-}
-html.menu-open .header__brand img {
-  filter: brightness(0) invert(1);
-  opacity: .95;
-}
-html.menu-open .header__menu {
-  background: transparent;
-  border-color: rgba(255,255,255,.35);
-}
-html.menu-open .header__menu span {
-  background: var(--white);
 }
 
 
