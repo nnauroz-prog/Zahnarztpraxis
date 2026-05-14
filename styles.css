@@ -1335,3 +1335,233 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   font-weight: 500;
   flex-shrink: 0; width: 3em;
 }
+
+/* ============================================================
+   EDITORIAL-KOMPONENTEN (Etappe 3 — gegen Schablonen-Look)
+   ============================================================ */
+
+/* Hero-Variante: Magazin-Stil, ohne Meta-Grid */
+.hero__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.4rem 2rem;
+  margin-top: clamp(28px, 4vw, 44px);
+}
+.hero__phone {
+  font-size: 1rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+}
+.hero__phone:hover { color: var(--sage); border-color: var(--sage); }
+
+.hero__subline {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: clamp(20px, 2.5vw, 28px);
+}
+.hero__subline::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-right: .8em;
+}
+
+/* Erstbesuch — flach, drei Spalten, keine Karten */
+.first-visit {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+}
+.first-visit__heading {
+  position: sticky;
+  top: 96px;
+}
+.first-visit__heading h2 {
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  margin: 0 0 1rem;
+  max-width: 12ch;
+}
+.first-visit__heading p {
+  color: var(--slate);
+  max-width: 36ch;
+  margin: 0;
+}
+.first-visit__steps {
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+}
+.first-visit__step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: clamp(16px, 2vw, 28px);
+  align-items: baseline;
+}
+.first-visit__step .num {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 72;
+  font-size: 1.8rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.first-visit__step h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 .5rem;
+  letter-spacing: -0.005em;
+}
+.first-visit__step p {
+  color: var(--slate);
+  margin: 0;
+  max-width: 50ch;
+}
+@media (max-width: 880px) {
+  .first-visit { grid-template-columns: 1fr; }
+  .first-visit__heading { position: static; }
+}
+
+/* Brief von der Ärztin — typografisch dominiert */
+.letter {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(40px, 5vw, 96px);
+  align-items: start;
+}
+.letter__media {
+  margin: 0;
+  border-radius: var(--r-3);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--bone);
+}
+.letter__media img { width: 100%; height: 100%; object-fit: cover; }
+.letter__body {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36;
+  font-size: clamp(1.1rem, 1.6vw, 1.32rem);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 56ch;
+  letter-spacing: -0.005em;
+}
+.letter__body .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  margin-bottom: 1.4rem;
+}
+.letter__body p { margin: 0 0 1em; }
+.letter__body p:first-of-type::first-letter {
+  font-size: 3.4em;
+  float: left;
+  line-height: .85;
+  margin: .05em .15em 0 -.05em;
+  color: var(--ink);
+  font-weight: 500;
+}
+.letter__signature {
+  font-style: italic;
+  margin-top: 2rem;
+  color: var(--ink);
+}
+.letter__sig-line {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--gold);
+  margin-top: .35rem;
+}
+@media (max-width: 880px) {
+  .letter { grid-template-columns: 1fr; }
+  .letter__media { max-width: 380px; }
+  .letter__body p:first-of-type::first-letter { font-size: 2.6em; }
+}
+
+/* Behandlungs-Liste editorial */
+.treatments {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: clamp(40px, 5vw, 96px);
+  align-items: start;
+}
+.treatments__intro h2 {
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  margin: 0 0 1rem;
+  max-width: 14ch;
+}
+.treatments__intro p {
+  color: var(--slate);
+  max-width: 36ch;
+  margin: 0 0 1.5rem;
+}
+.treatments__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--smoke);
+}
+.treatments__list li { border-bottom: 1px solid var(--smoke); }
+.treatments__list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  padding: clamp(16px, 1.8vw, 22px) 0;
+  color: var(--ink);
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.01em;
+  transition: padding-left var(--dur-2) var(--ease), color var(--dur-1) var(--ease);
+}
+.treatments__list a:hover { padding-left: 8px; color: var(--sage); }
+.treatments__list .cat {
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+@media (max-width: 880px) {
+  .treatments { grid-template-columns: 1fr; }
+}
+
+/* Sprechzeit + Anfahrt (asymmetrisch, ohne Karten) */
+.visit {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 5vw, 96px);
+  align-items: start;
+}
+.visit h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  margin: 0 0 1.2rem;
+  font-variation-settings: "opsz" 36;
+}
+.visit p { color: var(--slate); }
+.visit__contact a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+}
+.visit__contact a:hover { color: var(--sage); border-color: var(--sage); }
+@media (max-width: 760px) {
+  .visit { grid-template-columns: 1fr; }
+}
+
+/* Sectionsabstand-Variante: tighter für editorial pacing */
+section.tight { padding-block: clamp(56px, 7vw, 96px); }
+section.loose { padding-block: clamp(96px, 14vw, 192px); }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r6';
+  var V = '2026-01-01-r7';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,14 +25,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r6">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r7">
 <link rel="icon" href="IMG_9504.png">
 <title>DentalHarmonie · Zahnarztpraxis Dr. Delaram Mostafaei · Hamburg</title>
-<meta name="description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde. Sorgfältige Zahnmedizin, Prophylaxe und ästhetische Versorgung. Termin unter +49 40 221528.">
+<meta name="description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde. Sorgfältige Zahnmedizin, Prophylaxe und ästhetische Versorgung. Termin unter Tel. 040 221 528.">
 <link rel="canonical" href="https://www.dentalharmonie.de/index.html">
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="DentalHarmonie · Zahnarztpraxis Dr. Delaram Mostafaei · Hamburg">
-<meta property="og:description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde. Sorgfältige Zahnmedizin, Prophylaxe und ästhetische Versorgung. Termin unter +49 40 221528.">
+<meta property="og:description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde. Sorgfältige Zahnmedizin, Prophylaxe und ästhetische Versorgung. Termin unter Tel. 040 221 528.">
 <meta property="og:url" content="https://www.dentalharmonie.de/index.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
@@ -42,7 +42,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   "name": "DentalHarmonie",
   "image": "https://www.dentalharmonie.de/IMG_9504.png",
   "url": "https://www.dentalharmonie.de/",
-  "telephone": "+49 40 221528",
+  "telephone": "+49 40 221 528",
   "email": "info@dentalharmonie.de",
   "address": {
     "@type": "PostalAddress",
@@ -78,7 +78,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <a href="kontakt.html">Kontakt</a>
     </nav>
     <div class="header__actions">
-      <a class="header__phone" href="tel:+494022 1528">+49 40 221528</a>
+      <a class="header__phone" href="tel:+4940221528">040 221 528</a>
       <a class="header__cta" href="termin-anfragen.html">Termin
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -108,90 +108,99 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   <section class="hero hero--home">
     <div class="container">
       <div class="hero__inner reveal">
-        <p class="eyebrow" data-num="01">Praxis · Hamburg-Hohenfelde</p>
-        <h1>Zahnmedizin&nbsp;in&nbsp;Ruhe.<br>Klar erklärt.</h1>
-        <p class="lead">Dr. Delaram Mostafaei und ihr Team begleiten Sie sorgfältig — von der Prophylaxe bis zur ästhetischen Versorgung. Eine Praxis, die sich Zeit nimmt.</p>
-        <div class="hero__actions">
+        <h1>Zahnarztpraxis<br>Dr. Delaram Mostafaei.</h1>
+        <p class="lead">Ifflandstraße 75 · Hamburg-Hohenfelde. Eine kleine Praxis für Erwachsene und Kinder — gesetzlich und privat versichert.</p>
+        <div class="hero__row">
           <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost" href="leistungen.html">Leistungen ansehen</a>
+          <a class="hero__phone" href="tel:+4940221528">040&nbsp;221&nbsp;528</a>
         </div>
-        <dl class="hero__meta">
-          <div>
-            <dt>Adresse</dt>
-            <dd>Ifflandstraße 75<br>22087 Hamburg</dd>
-          </div>
-          <div>
-            <dt>Telefon</dt>
-            <dd><a href="tel:+494022 1528">+49 40 221528</a></dd>
-          </div>
-          <div>
-            <dt>Heute</dt>
-            <dd>Mo–Di, Do · 08–18<br>Mi, Fr · 08–13</dd>
-          </div>
-        </dl>
+        <span class="hero__subline">Mo, Di, Do 08–18 · Mi, Fr 08–13</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-2 tight">
+    <div class="container">
+      <div class="first-visit">
+        <div class="first-visit__heading reveal">
+          <h2>Zum ersten Mal hier.</h2>
+          <p>Was Sie wissen sollten, bevor Sie kommen — damit der Termin nicht mit Papierkram beginnt.</p>
+        </div>
+        <ol class="first-visit__steps reveal" data-delay="1">
+          <li class="first-visit__step">
+            <span class="num">1</span>
+            <div>
+              <h3>Was Sie mitbringen</h3>
+              <p>Versicherungskarte, ältere Röntgenbilder wenn vorhanden, eine Liste Ihrer Medikamente. Wenn Sie wegen eines konkreten Anliegens kommen, schreiben Sie es vorab kurz auf — das spart Zeit am Stuhl.</p>
+            </div>
+          </li>
+          <li class="first-visit__step">
+            <span class="num">2</span>
+            <div>
+              <h3>Was passiert</h3>
+              <p>Anamnese, vollständige Untersuchung und Befundbesprechung am Monitor. Wir behandeln beim Erstgespräch in der Regel noch nicht — außer Sie haben akute Schmerzen. Planen Sie 30 bis 45 Minuten ein.</p>
+            </div>
+          </li>
+          <li class="first-visit__step">
+            <span class="num">3</span>
+            <div>
+              <h3>Was es kostet</h3>
+              <p>Gesetzlich Versicherte: Untersuchung läuft über die Karte. Privat: Abrechnung nach GOZ. Bei größeren Behandlungen erhalten Sie vorher einen schriftlichen Heil- und Kostenplan. Die PZR ist meist Privatleistung — viele Krankenkassen erstatten anteilig.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="reveal">
-        <p class="eyebrow" data-num="02">Schwerpunkte</p>
-        <h2>Drei Bereiche, ein Anspruch.</h2>
-        <p class="lead">Wir behandeln in ruhigem Tempo, ohne Termin-Stapelung — damit Diagnose, Aufklärung und Therapie zusammenpassen.</p>
-      </div>
-      <div class="pillars">
-        <article class="pillar reveal" data-delay="1">
-          <span class="pillar__num">03 · Zahnmedizin</span>
-          <h3>Diagnose &amp; Therapie</h3>
-          <p>Sorgfältige Untersuchung, Füllungstherapie, Wurzelbehandlung und Zahnersatz — auf einem Stand der Technik, der zur Behandlung passt, nicht umgekehrt.</p>
-          <a href="zahnmedizin.html">Mehr zur Zahnmedizin →</a>
-        </article>
-        <article class="pillar reveal" data-delay="2">
-          <span class="pillar__num">04 · Prophylaxe</span>
-          <h3>Vorsorge &amp; Erhalt</h3>
-          <p>Professionelle Zahnreinigung, Prophylaxe für Erwachsene und Kinder, individuelle Recall-Termine — die ruhigste Form der Zahnmedizin.</p>
-          <a href="prophylaxe.html">Mehr zur Prophylaxe →</a>
-        </article>
-        <article class="pillar reveal" data-delay="3">
-          <span class="pillar__num">05 · Ästhetik</span>
-          <h3>Ästhetische Versorgung</h3>
-          <p>Bleaching, Veneers, hochwertige Keramik — durchdacht ausgewählt, ehrlich besprochen und immer mit einem schriftlichen Heil- und Kostenplan.</p>
-          <a href="leistungen.html">Leistungsspektrum →</a>
-        </article>
+      <div class="letter">
+        <figure class="letter__media reveal">
+          <img src="IMG_9505.jpeg" alt="Porträt Dr. Delaram Mostafaei" loading="lazy">
+        </figure>
+        <div class="letter__body reveal" data-delay="1">
+          <p class="eyebrow">Ein Wort vorab</p>
+          <p>Gute Zahnmedizin beginnt aus meiner Sicht in den Minuten, bevor das erste Instrument zum Einsatz kommt. Was tut weh? Wie lange schon? Wovor haben Sie Angst? Diese Fragen kosten Zeit — und ersparen oft sehr viel mehr Zeit auf dem Behandlungsstuhl.</p>
+          <p>Deshalb arbeite ich mit kleinen Terminblöcken und einem festen Team. Manche Behandlungen sind in zehn Minuten erledigt, andere brauchen einen ganzen Vormittag. Beide sollen ihren Raum bekommen.</p>
+          <p>Wenn Sie noch nie bei uns waren, kommen Sie gern für ein Erstgespräch — Sie verlieren nichts außer der Zeit.</p>
+          <p class="letter__signature">Dr. Delaram Mostafaei<span class="letter__sig-line"></span></p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="surface-2">
     <div class="container">
-      <div class="doctor">
-        <figure class="doctor__media reveal">
-          <img src="IMG_9505.jpeg" alt="Porträt Dr. Delaram Mostafaei" loading="lazy">
-        </figure>
-        <div class="doctor__body reveal" data-delay="1">
-          <p class="eyebrow" data-num="06">Praxis</p>
-          <h2>Behandlung, die zur Ruhe kommt.</h2>
-          <p>In meiner Praxis arbeite ich gemeinsam mit einem erfahrenen Team. Wir nehmen uns Zeit, um zuzuhören, gründlich zu untersuchen und Behandlungswege so ruhig wie möglich zu gestalten. Sie verlassen die Praxis mit einem klaren Bild davon, was als Nächstes wichtig ist — und was warten kann.</p>
-          <p>Wir behandeln Erwachsene und Kinder, gesetzlich und privat Versicherte. Privatleistungen werden nach GOZ abgerechnet; vor jeder größeren Maßnahme erhalten Sie einen schriftlichen Heil- und Kostenplan.</p>
-          <a class="btn btn--link" href="ueber-uns.html">Mehr über die Praxis</a>
-          <p class="doctor__signature">— Dr. Delaram Mostafaei<span class="doctor__sig-line"></span></p>
+      <div class="treatments">
+        <div class="treatments__intro reveal">
+          <h2>Was wir machen.</h2>
+          <p>Eine Auswahl der Versorgung in unserer Praxis. Bei Fragen, was zu Ihnen passt, rufen Sie uns einfach an.</p>
+          <a class="btn btn--link" href="leistungen.html">Vollständiges Leistungsverzeichnis</a>
         </div>
+        <ul class="treatments__list reveal" data-delay="1">
+          <li><a href="prophylaxe.html"><span>Professionelle Zahnreinigung</span><span class="cat">Prophylaxe</span></a></li>
+          <li><a href="zahnmedizin.html"><span>Füllungstherapie &amp; Karies</span><span class="cat">Zahnmedizin</span></a></li>
+          <li><a href="zahnmedizin.html"><span>Wurzelkanalbehandlung</span><span class="cat">Zahnmedizin</span></a></li>
+          <li><a href="zahnmedizin.html"><span>Parodontologie</span><span class="cat">Zahnmedizin</span></a></li>
+          <li><a href="leistungen.html#aesthetik"><span>Veneers</span><span class="cat">Ästhetik</span></a></li>
+          <li><a href="prophylaxe.html"><span>Bleaching</span><span class="cat">Ästhetik</span></a></li>
+          <li><a href="leistungen.html#zahnersatz"><span>Kronen, Brücken, Vollkeramik</span><span class="cat">Zahnersatz</span></a></li>
+          <li><a href="leistungen.html#zahnersatz"><span>Implantatversorgung</span><span class="cat">Zahnersatz</span></a></li>
+          <li><a href="prophylaxe.html"><span>Kinderzahnheilkunde</span><span class="cat">Kinder</span></a></li>
+          <li><a href="zahnmedizin.html"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">Akut</span></a></li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="reveal">
-        <p class="eyebrow" data-num="07">Besuch</p>
-        <h2>So finden Sie zu uns.</h2>
-      </div>
-      <div class="split">
-        <div class="card reveal" data-delay="1">
-          <h3>Sprechzeiten</h3>
+      <div class="visit">
+        <div class="visit__hours reveal">
+          <h2>Sprechzeiten</h2>
           <ul class="hours-list">
             <li data-day="1"><span class="day">Montag</span>     <span class="time">08:00 – 18:00</span></li>
             <li data-day="2"><span class="day">Dienstag</span>   <span class="time">08:00 – 18:00</span></li>
@@ -201,26 +210,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
             <li data-day="6,0"><span class="day">Wochenende</span> <span class="time">geschlossen</span></li>
           </ul>
         </div>
-        <div class="card reveal" data-delay="2">
-          <h3>Kontakt &amp; Anfahrt</h3>
-          <dl class="visit-list">
-            <div>
-              <dt>Adresse</dt>
-              <dd>Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</dd>
-            </div>
-            <div>
-              <dt>Telefon</dt>
-              <dd><a href="tel:+494022 1528">+49 40 221528</a></dd>
-            </div>
-            <div>
-              <dt>E-Mail</dt>
-              <dd><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></dd>
-            </div>
-            <div>
-              <dt>Anfahrt</dt>
-              <dd>U-Bahn Lübecker Straße (U1, U3) · Bus 25, 37 · Parkplätze in den umliegenden Straßen</dd>
-            </div>
-          </dl>
+        <div class="visit__contact reveal" data-delay="1">
+          <h2>Hierher kommen</h2>
+          <p>Ifflandstraße 75, 22087 Hamburg-Hohenfelde. U-Bahn Lübecker Straße (U1, U3), wenige Minuten Fußweg. Die Buslinien 25 und 37 halten vor der Tür.</p>
+          <p>Telefon <a href="tel:+4940221528">040 221 528</a><br>E-Mail <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></p>
+          <a class="btn btn--ghost" href="kontakt.html">Karte &amp; Anfahrt
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -230,15 +226,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="cta-band__inner reveal">
         <div>
-          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
-          <h2>Einen Termin in Ruhe vereinbaren.</h2>
-          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+          <h2>Termin?</h2>
+          <p class="lead">Schreiben Sie uns Wunschzeit und Anliegen — wir antworten werktags innerhalb von 24 Stunden. Telefonisch sind wir morgens am besten erreichbar.</p>
         </div>
         <div class="cta-band__actions">
-          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+          <a class="btn btn--primary" href="termin-anfragen.html">Anfrage senden
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost" href="tel:+494022 1528">+49 40 221528</a>
+          <a class="btn btn--ghost" href="tel:+4940221528">040 221 528</a>
         </div>
       </div>
     </div>
@@ -255,7 +250,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <li>Dr. Delaram Mostafaei</li>
           <li>Ifflandstraße 75</li>
           <li>22087 Hamburg</li>
-          <li><a href="tel:+494022 1528">+49 40 221528</a></li>
+          <li><a href="tel:+4940221528">040 221 528</a></li>
           <li><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></li>
         </ul>
       </div>
@@ -287,14 +282,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     </div>
     <div class="footer__bottom">
       <span>© <span data-year>2026</span> DentalHarmonie · Praxis Dr. Delaram Mostafaei</span>
-      <span><a href="termin-anfragen.html">Termin anfragen</a> oder unter <a href="tel:+494022 1528">+49 40 221528</a></span>
+      <span><a href="termin-anfragen.html">Termin anfragen</a> oder unter <a href="tel:+4940221528">040 221 528</a></span>
     </div>
     <p class="footer__credit">Erstellt durch <a href="https://sitalo.de" target="_blank" rel="noopener">Sitalo.de</a></p>
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r6"></script>
-<script src="db.js?v=2026-01-01-r6"></script>
-<script src="script.js?v=2026-01-01-r6" defer></script>
+<script src="config.js?v=2026-01-01-r7"></script>
+<script src="db.js?v=2026-01-01-r7"></script>
+<script src="script.js?v=2026-01-01-r7" defer></script>
 </body>
 </html>
