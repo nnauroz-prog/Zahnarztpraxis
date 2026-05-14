@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r8';
+  var V = '2026-01-01-r9';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r8">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r9">
 <link rel="icon" href="IMG_9504.png">
 <title>Leistungen · DentalHarmonie</title>
 <meta name="description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Vorsorge, Zahnmedizin, Ästhetik und Zahnersatz.">
@@ -37,6 +37,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta name="twitter:card" content="summary">
 </head>
 <body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
 <header class="header" id="header">
@@ -193,6 +195,97 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
       </div>
     </div>
   </section>
+
+  <section class="surface-2">
+    <div class="container">
+      <div class="two-col">
+        <aside class="two-col__aside reveal reveal--left">
+          <p class="eyebrow">Fragen &amp; Antworten</p>
+          <p>Die häufigsten Fragen unserer Patientinnen und Patienten. Falls Ihre Frage nicht dabei ist, rufen Sie uns gerne an.</p>
+        </aside>
+        <div class="reveal" data-delay="1">
+          <h2>Häufige Fragen.</h2>
+          <div class="faq" style="margin-top: 1.5rem;">
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Wie lange dauert ein Erstgespräch?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Planen Sie <strong>30 bis 45 Minuten</strong> ein. Wir machen Anamnese, vollständige Untersuchung und besprechen den Befund gemeinsam am Monitor. Bei dieser Sitzung behandeln wir in der Regel noch nicht — außer Sie haben akute Schmerzen.</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Was kostet eine professionelle Zahnreinigung (PZR)?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Die PZR ist überwiegend eine Privatleistung. Die Kosten richten sich nach Aufwand und Befund — wir nennen Ihnen vor der Sitzung einen verbindlichen Preisrahmen.</p>
+                <p>Viele gesetzliche Krankenkassen erstatten <strong>anteilig</strong>. Es lohnt sich, vorab bei Ihrer Kasse nachzufragen.</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Ich habe Zahnarzt-Angst. Wie gehen Sie damit um?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Sagen Sie es uns am Telefon oder beim Erstgespräch — wir nehmen das ernst. Bei Bedarf legen wir <strong>längere Termine</strong>, machen <strong>Pausen</strong>, oder bauen die Behandlung in mehreren kleinen Schritten auf.</p>
+                <p>Bei Kindern beginnen wir oft mit einem reinen Schau-Termin, ohne dass behandelt wird. So lernt das Kind die Praxis in seinem eigenen Tempo kennen.</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Bekomme ich vor einer Behandlung eine Kostenschätzung?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Ja — bei jeder größeren Versorgung erhalten Sie einen <strong>schriftlichen Heil- und Kostenplan</strong>, mit dem Sie auch bei Ihrer Krankenkasse die Zuschüsse abklären können. Privatleistungen rechnen wir nach GOZ ab.</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Behandeln Sie auch Kinder?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Ja, vom ersten Milchzahn an. Bei kleinen Kindern arbeiten wir mit einem kindgerechten Aufbau — Kennenlernen, „Zähnezählen", erst dann Behandlung. Eltern dürfen mit ins Behandlungszimmer.</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Was tun bei akuten Zahnschmerzen außerhalb der Sprechzeiten?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Innerhalb der Sprechzeiten rufen Sie uns bitte direkt an — wir versuchen, Sie am gleichen oder nächsten Werktag einzuschieben.</p>
+                <p>Außerhalb der Sprechzeiten ist der <strong>zahnärztliche Notdienst der Zahnärztekammer Hamburg</strong> zuständig. Bei lebensbedrohlichen Symptomen wählen Sie 112.</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__summary">
+                Welche Zahlungsweisen akzeptieren Sie?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </summary>
+              <div class="faq__body">
+                <p>Gesetzliche Leistungen werden direkt über die Versichertenkarte abgerechnet. Privatleistungen erhalten Sie als Rechnung — zahlbar per Überweisung. Bei größeren Behandlungen können Ratenzahlungen über externe Abrechnungsstellen vereinbart werden; wir besprechen das vorab.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="container">
       <div class="cta-band__inner reveal">
@@ -259,8 +352,16 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r8"></script>
-<script src="db.js?v=2026-01-01-r8"></script>
-<script src="script.js?v=2026-01-01-r8" defer></script>
+<script src="config.js?v=2026-01-01-r9"></script>
+<script src="db.js?v=2026-01-01-r9"></script>
+<script src="script.js?v=2026-01-01-r9" defer></script>
+<aside class="sticky-cta" aria-label="Schnell-Kontakt">
+  <a href="termin-anfragen.html">Termin anfragen
+    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+  <a class="sticky-cta__phone" href="tel:+4940221528" aria-label="Praxis anrufen">
+    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.8" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</aside>
 </body>
 </html>

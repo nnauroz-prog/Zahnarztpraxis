@@ -21,11 +21,14 @@
     safe(initActiveNav);
     safe(initReveal);
     safe(initHeroParallax);
+    safe(initScrollProgress);
+    safe(initStickyCta);
     safe(initHoursToday);
     safe(initConsent);
     safe(initNoticeBanner);
     safe(initTerminForm);
     safe(initMapConsent);
+    safe(initFaqExclusive);
     safe(initYear);
   }
 
@@ -289,6 +292,52 @@
         submitBtn.disabled = false;
         submitBtn.innerHTML = origLabel;
       }
+    });
+  }
+
+  /* ---------- Scroll-Progress (oben, fein) ---------- */
+  function initScrollProgress() {
+    const bar = document.querySelector('.scroll-progress');
+    if (!bar) return;
+    let ticking = false;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      bar.style.transform = 'scaleX(' + pct + ')';
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }, { passive: true });
+    update();
+  }
+
+  /* ---------- Sticky Mobile-CTA ---------- */
+  function initStickyCta() {
+    const cta = document.querySelector('.sticky-cta');
+    if (!cta) return;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      const show = scrolled > 480 && scrolled < max - 240;
+      cta.classList.toggle('is-visible', show);
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  /* ---------- FAQ: nur ein <details> gleichzeitig offen ---------- */
+  function initFaqExclusive() {
+    const items = document.querySelectorAll('.faq .faq__item');
+    if (!items.length) return;
+    items.forEach((d) => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          items.forEach((o) => { if (o !== d) o.open = false; });
+        }
+      });
     });
   }
 

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r8';
+  var V = '2026-01-01-r9';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r8">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r9">
 <link rel="icon" href="IMG_9504.png">
 <title>Termin anfragen · DentalHarmonie</title>
 <meta name="description" content="Termin in der Zahnarztpraxis DentalHarmonie Hamburg-Hohenfelde anfragen. Online-Formular oder telefonisch unter 040 221 528.">
@@ -37,6 +37,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta name="twitter:card" content="summary">
 </head>
 <body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
 <header class="header" id="header">
@@ -163,15 +165,20 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           </div>
         </div>
 
-        <aside class="form-aside reveal" data-delay="1">
-          <h3>Direkt erreichen</h3>
+        <aside class="form-aside reveal reveal--right" data-delay="1">
+          <h3>Was danach passiert</h3>
+          <ol class="steps-mini">
+            <li data-step="1"><span><strong>Innerhalb 24h werktags</strong> melden wir uns per Telefon oder E-Mail mit einem Termin­vorschlag.</span></li>
+            <li data-step="2"><span>Sie bestätigen — und erhalten ggf. <strong>Anfahrt-Hinweise</strong> oder einen Hinweis, was mitzubringen ist.</span></li>
+            <li data-step="3"><span>Beim Termin <strong>30–45 Minuten</strong> einplanen, gesetzlich Versicherte bitte die Versichertenkarte mitbringen.</span></li>
+          </ol>
+          <hr style="border:0; border-top: 1px solid var(--smoke); margin: 1.5rem 0 0;">
+          <h3 style="margin-top: 1.2rem;">Direkt erreichen</h3>
           <dl>
             <dt>Telefon</dt>
             <dd><a href="tel:+4940221528">040 221 528</a></dd>
             <dt>E-Mail</dt>
             <dd><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></dd>
-            <dt>Adresse</dt>
-            <dd>Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</dd>
             <dt>Sprechzeiten</dt>
             <dd>Mo, Di, Do · 08–18<br>Mi, Fr · 08–13</dd>
           </dl>
@@ -240,8 +247,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r8"></script>
-<script src="db.js?v=2026-01-01-r8"></script>
-<script src="script.js?v=2026-01-01-r8" defer></script>
+<script src="config.js?v=2026-01-01-r9"></script>
+<script src="db.js?v=2026-01-01-r9"></script>
+<script src="script.js?v=2026-01-01-r9" defer></script>
 </body>
 </html>
