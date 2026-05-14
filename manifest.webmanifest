@@ -1,0 +1,16 @@
+{
+  "name": "DentalHarmonie · Zahnarztpraxis Dr. Delaram Mostafaei",
+  "short_name": "DentalHarmonie",
+  "description": "Zahnarztpraxis Dr. Delaram Mostafaei in Hamburg-Hohenfelde. Sorgfältige Zahnmedizin, Prophylaxe und ästhetische Versorgung.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#FBFAF6",
+  "theme_color": "#0E0F12",
+  "lang": "de-DE",
+  "categories": ["health", "medical"],
+  "icons": [
+    { "src": "IMG_9504.png", "sizes": "any", "type": "image/png", "purpose": "any" },
+    { "src": "IMG_9504.png", "sizes": "any", "type": "image/png", "purpose": "maskable" }
+  ]
+}

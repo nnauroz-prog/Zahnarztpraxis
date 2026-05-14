@@ -180,6 +180,19 @@ section + section {
   border-radius: 2px;
 }
 
+/* Akzentvarianten: Buttons + dunkler Footer brauchen Gold-Ring, Ink wäre unsichtbar */
+.btn:focus-visible,
+.cta-band a:focus-visible,
+.footer a:focus-visible,
+.menu__list a:focus-visible {
+  outline-color: var(--gold);
+  outline-offset: 4px;
+}
+.sticky-cta a:focus-visible {
+  outline-color: var(--gold);
+  outline-offset: 3px;
+}
+
 /* ============================================================
    HEADER · Sticky, edge-to-edge, mit Backdrop-Blur on Scroll
    ============================================================ */
@@ -1919,3 +1932,76 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
   font-weight: 500;
 }
 .steps-mini strong { color: var(--ink); font-weight: 500; }
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  /* Hide UI chrome */
+  .header,
+  .menu,
+  .scroll-progress,
+  .sticky-cta,
+  .consent,
+  .cta-band,
+  .map,
+  .map__consent,
+  iframe,
+  .footer__wordmark,
+  .footer__credit,
+  .reveal--left,
+  .reveal--right,
+  .reveal--scale,
+  [data-consent-reopen],
+  button.btn,
+  .btn--gold,
+  .form,
+  .form-aside,
+  .form-shell {
+    display: none !important;
+  }
+  /* Reset background and animations */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    animation: none !important;
+  }
+  body { font-size: 11pt; line-height: 1.45; }
+  main { display: block; }
+  section {
+    padding-block: .6rem !important;
+    page-break-inside: avoid;
+    border: 0 !important;
+  }
+  .container { padding-inline: 0 !important; max-width: 100% !important; }
+  .hero { padding-top: 0 !important; padding-bottom: .8rem !important; }
+  .hero h1 { font-size: 22pt; }
+  h2 { font-size: 16pt; margin-top: .8em; }
+  h3 { font-size: 13pt; }
+  p, li, dd, dt { color: #000 !important; }
+  a { color: #000 !important; text-decoration: none; }
+  a[href^="tel:"]::after,
+  a[href^="mailto:"]::after,
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
+  a[href^="#"]::after { content: ""; }
+  /* Reveal-Elemente immer sichtbar im Druck */
+  .reveal { opacity: 1 !important; transform: none !important; }
+  /* Footer kompakt */
+  .footer {
+    background: #ffffff !important;
+    color: #000 !important;
+    padding: .8rem 0 !important;
+    border-top: 1px solid #999;
+    margin-top: 1rem !important;
+  }
+  .footer__grid { grid-template-columns: repeat(3, 1fr) !important; gap: .8rem !important; padding-bottom: .4rem !important; border-bottom: 0 !important; }
+  .footer__col h4 { color: #555 !important; font-size: 8pt; }
+  .footer__bottom { color: #444 !important; }
+  /* Anfahrt-Karten als blocks, nicht als Grid */
+  .routes { display: block !important; }
+  .route { border: 1px solid #ddd !important; padding: .8rem !important; margin-bottom: .6rem !important; background: #fff !important; page-break-inside: avoid; }
+  /* Bilder klein */
+  img { max-width: 240px; }
+  /* Listen-Trennlinien dezent */
+  .hours-list li, .treatments__list li, .anchor-list a, .faq__item, .first-visit__steps li { border-color: #ddd !important; }
+}
