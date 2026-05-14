@@ -20,6 +20,7 @@
     safe(initMenu);
     safe(initActiveNav);
     safe(initReveal);
+    safe(initHeroParallax);
     safe(initHoursToday);
     safe(initConsent);
     safe(initNoticeBanner);
@@ -90,10 +91,10 @@
     });
   }
 
-  /* ---------- Scroll Reveal ---------- */
+  /* ---------- Scroll Reveal (mit Varianten: default, --left, --right, --scale) ---------- */
   function initReveal() {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const targets = document.querySelectorAll('.reveal');
+    const targets = document.querySelectorAll('.reveal, .reveal--left, .reveal--right, .reveal--scale');
     if (reduce || !targets.length || !('IntersectionObserver' in window)) return;
 
     document.body.classList.add('js-ready');
@@ -115,6 +116,26 @@
 
     targets.forEach((el) => { if (!el.classList.contains('in')) io.observe(el); });
     setTimeout(() => targets.forEach((el) => el.classList.add('in')), 2500);
+  }
+
+  /* ---------- Hero Parallax (sehr subtil) ---------- */
+  function initHeroParallax() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const hero = document.querySelector('.hero__inner');
+    if (!hero) return;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY * 0.18, 60);
+        hero.style.transform = 'translateY(' + y + 'px)';
+        hero.style.opacity = String(Math.max(1 - window.scrollY / 600, 0.4));
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   /* ---------- "Heute"-Markierung in Sprechzeiten-Liste ---------- */

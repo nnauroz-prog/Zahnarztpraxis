@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r7';
+  var V = '2026-01-01-r8';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r7">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r8">
 <link rel="icon" href="IMG_9504.png">
 <title>Kontakt · DentalHarmonie</title>
 <meta name="description" content="Adresse, Telefon, Öffnungszeiten und Anfahrt zur Zahnarztpraxis DentalHarmonie in der Ifflandstraße 75, Hamburg-Hohenfelde.">
@@ -84,43 +84,18 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   <section class="hero">
     <div class="container">
       <div class="hero__inner reveal">
-        <p class="eyebrow" data-num="06">Kontakt</p>
-        <h1>So erreichen Sie uns.</h1>
+        <p class="eyebrow">Kontakt</p>
+        <h1>So erreichen<br>Sie uns.</h1>
         <p class="lead">Ifflandstraße 75, 22087 Hamburg-Hohenfelde. Drei Gehminuten von der U-Bahn-Haltestelle Lübecker Straße.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="tight">
     <div class="container">
-      <div class="split">
-        <div class="card reveal">
-          <h3>Adresse &amp; Kontakt</h3>
-          <dl class="visit-list">
-            <div>
-              <dt>Anschrift</dt>
-              <dd>DentalHarmonie<br>Dr. Delaram Mostafaei<br>Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</dd>
-            </div>
-            <div>
-              <dt>Telefon</dt>
-              <dd><a href="tel:+4940221528">040 221 528</a></dd>
-            </div>
-            <div>
-              <dt>Fax</dt>
-              <dd>+49 40 22698898</dd>
-            </div>
-            <div>
-              <dt>E-Mail</dt>
-              <dd><a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></dd>
-            </div>
-            <div>
-              <dt>Anfahrt</dt>
-              <dd>U-Bahn Lübecker Straße (U1, U3) · Bus 25, 37 · Parkplätze in den umliegenden Straßen</dd>
-            </div>
-          </dl>
-        </div>
-        <div class="card reveal" data-delay="1">
-          <h3>Sprechzeiten</h3>
+      <div class="visit">
+        <div class="visit__hours reveal reveal--left">
+          <h2>Sprechzeiten</h2>
           <ul class="hours-list">
             <li data-day="1"><span class="day">Montag</span>     <span class="time">08:00 – 18:00</span></li>
             <li data-day="2"><span class="day">Dienstag</span>   <span class="time">08:00 – 18:00</span></li>
@@ -129,11 +104,63 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
             <li data-day="5"><span class="day">Freitag</span>    <span class="time">08:00 – 13:00</span></li>
             <li data-day="6,0"><span class="day">Wochenende</span> <span class="time">geschlossen</span></li>
           </ul>
-          <p class="muted" style="font-size: .88rem; margin-top: 1.2rem;">Termine bitte vorab telefonisch oder über das <a href="termin-anfragen.html" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;">Anfrageformular</a> vereinbaren.</p>
+          <p class="muted" style="font-size: .88rem; margin-top: 1.2rem;">Termine bitte vorab telefonisch oder über das <a href="termin-anfragen.html" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;">Anfrageformular</a>.</p>
+        </div>
+        <div class="visit__contact reveal reveal--right" data-delay="1">
+          <h2>Adresse &amp; direkt</h2>
+          <p>DentalHarmonie<br>Dr. Delaram Mostafaei<br>Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</p>
+          <p>Telefon <a href="tel:+4940221528">040 221 528</a><br>Fax 040 22698898<br>E-Mail <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="map reveal" data-delay="2" data-src="https://www.openstreetmap.org/export/embed.html?bbox=10.0287%2C53.5587%2C10.0387%2C53.5637&amp;layer=mapnik&amp;marker=53.5612%2C10.0337">
+  <section class="surface-2">
+    <div class="container">
+      <div class="reveal" style="max-width: 720px;">
+        <p class="eyebrow">Anfahrt</p>
+        <h2>Drei Wege zu uns.</h2>
+        <p class="lead">U-Bahn, Bus oder Auto — die Praxis ist gut erreichbar. Hier die wichtigsten Schritte.</p>
+      </div>
+
+      <div class="routes">
+        <article class="route reveal reveal--scale" data-delay="1">
+          <span class="route__icon">U</span>
+          <h3>Mit der U-Bahn</h3>
+          <p class="route__line">U1 · U3</p>
+          <ol class="route__steps">
+            <li>Aussteigen an <strong>Lübecker Straße</strong></li>
+            <li>Ausgang Richtung Hohenfelde / Hammer Steindamm</li>
+            <li>In die <strong>Ifflandstraße</strong> einbiegen — die Praxis liegt auf der rechten Seite, Nr.&nbsp;75</li>
+          </ol>
+          <p class="route__time">≈ 3 Minuten zu Fuß</p>
+        </article>
+
+        <article class="route reveal reveal--scale" data-delay="2">
+          <span class="route__icon">B</span>
+          <h3>Mit dem Bus</h3>
+          <p class="route__line">25 · 37</p>
+          <ol class="route__steps">
+            <li>Haltestelle <strong>Ifflandstraße</strong> direkt vor der Praxis</li>
+            <li>Alternativ Lübecker Straße (Anschluss zur U-Bahn)</li>
+          </ol>
+          <p class="route__time">Direktanfahrt</p>
+        </article>
+
+        <article class="route reveal reveal--scale" data-delay="3">
+          <span class="route__icon">P</span>
+          <h3>Mit dem Auto</h3>
+          <p class="route__line">Parken</p>
+          <ol class="route__steps">
+            <li>Parkplätze in der <strong>Ifflandstraße</strong> und den umliegenden Seitenstraßen</li>
+            <li>Es gilt Parkraumbewirtschaftung — bitte Parkscheinautomaten beachten</li>
+            <li>Tipp: morgens sind die Plätze in Richtung Mundsburger Damm meist freier</li>
+          </ol>
+          <p class="route__time">Bewohnerparken Mo–Fr</p>
+        </article>
+      </div>
+
+      <div class="map reveal" data-src="https://www.openstreetmap.org/export/embed.html?bbox=10.0287%2C53.5587%2C10.0387%2C53.5637&amp;layer=mapnik&amp;marker=53.5612%2C10.0337">
         <iframe title="Karte zur Praxis DentalHarmonie" loading="lazy"></iframe>
         <div class="map__consent">
           <p>Wenn Sie die Karte laden, werden Daten an OpenStreetMap übertragen.</p>
@@ -141,8 +168,12 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <p class="muted" style="font-size: .82rem;"><a href="https://www.openstreetmap.org/?mlat=53.5612&amp;mlon=10.0337#map=18/53.5612/10.0337" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold);">Direkt bei OpenStreetMap öffnen</a></p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="note note--alert reveal" data-delay="3">
+  <section class="tight">
+    <div class="container">
+      <div class="note note--alert reveal">
         <span class="note__label">Außerhalb der Sprechzeiten</span>
         <h4>Notfälle</h4>
         <p>Bei zahnärztlichen Notfällen außerhalb unserer Sprechzeiten wenden Sie sich bitte an den zahnärztlichen Notdienst der Zahnärztekammer Hamburg. In medizinischen Notfällen rufen Sie 112.</p>
@@ -153,12 +184,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="cta-band__inner reveal">
         <div>
-          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
           <h2>Termin?</h2>
-          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+          <p class="lead">Schreiben Sie uns Wunschzeit und Anliegen — wir antworten werktags innerhalb von 24 Stunden. Telefonisch sind wir morgens am besten erreichbar.</p>
         </div>
         <div class="cta-band__actions">
-          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+          <a class="btn btn--primary" href="termin-anfragen.html">Anfrage senden
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="btn btn--ghost" href="tel:+4940221528">040 221 528</a>
@@ -216,8 +246,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r7"></script>
-<script src="db.js?v=2026-01-01-r7"></script>
-<script src="script.js?v=2026-01-01-r7" defer></script>
+<script src="config.js?v=2026-01-01-r8"></script>
+<script src="db.js?v=2026-01-01-r8"></script>
+<script src="script.js?v=2026-01-01-r8" defer></script>
 </body>
 </html>

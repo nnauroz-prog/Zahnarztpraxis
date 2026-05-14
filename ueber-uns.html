@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r7';
+  var V = '2026-01-01-r8';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r7">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r8">
 <link rel="icon" href="IMG_9504.png">
 <title>Über uns · DentalHarmonie</title>
 <meta name="description" content="Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Philosophie, Werte und berufsrechtliche Angaben zur Praxis Dr. Delaram Mostafaei.">
@@ -84,8 +84,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   <section class="hero">
     <div class="container">
       <div class="hero__inner reveal">
-        <p class="eyebrow" data-num="07">Praxis</p>
-        <h1>Über DentalHarmonie.</h1>
+        <p class="eyebrow">Praxis</p>
+        <h1>Über uns.</h1>
         <p class="lead">Eine kleine Praxis in Hohenfelde, geführt von Dr. Delaram Mostafaei. Behandlung für Erwachsene und Kinder, gesetzlich und privat versichert.</p>
       </div>
     </div>
@@ -93,43 +93,44 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 
   <section>
     <div class="container">
-      <div class="two-col">
-        <aside class="two-col__aside reveal">
-          <p class="eyebrow" data-num="01">Philosophie</p>
-          <p>Was eine Praxis ausmacht, sind nicht ihre Geräte — sondern die Minuten, die im Gespräch entstehen.</p>
-        </aside>
-        <div class="reveal" data-delay="1">
-          <h2>Wie wir arbeiten.</h2>
-          <p class="lead">In meiner Praxis arbeite ich mit einem kleinen, erfahrenen Team. Wir behandeln mit ausreichend langen Terminblöcken — damit Diagnose, Aufklärung und Therapie zusammenpassen.</p>
-          <p>Wir sind bewusst keine Großpraxis. Das bedeutet: Sie sehen meistens dieselben Gesichter. Wir kennen Ihre Vorgeschichte, ohne sie jedes Mal neu erfragen zu müssen.</p>
-          <p>Behandelt werden Erwachsene und Kinder, gesetzlich und privat Versicherte. Vor jeder größeren Behandlung erhalten Sie einen schriftlichen Heil- und Kostenplan, damit nichts überrascht.</p>
-        </div>
+      <div class="prose-intro reveal">
+        <p>Was eine Praxis ausmacht, sind nicht ihre Geräte — es sind die Minuten, die im Gespräch entstehen. Diese Überzeugung prägt, wie wir hier arbeiten.</p>
+        <p>Wir sind bewusst keine Großpraxis. Sie sehen meistens dieselben Gesichter: am Empfang, in der Prophylaxe, bei der Behandlung. Wir kennen Ihre Vorgeschichte, ohne sie jedes Mal neu erfragen zu müssen.</p>
+        <p>Unsere Termine sind länger geplant als üblich. Lieber zehn Minuten zu viel als zu wenig — so bleibt Spielraum, wenn etwas auffällt, und Sie müssen seltener wiederkommen.</p>
       </div>
     </div>
   </section>
 
-  <section class="surface-2">
+  <section class="surface-2 tight">
     <div class="container">
-      <div class="section-intro reveal">
-        <p class="eyebrow" data-num="02">Werte</p>
-        <h2>Was uns wichtig ist.</h2>
-      </div>
-      <div class="feature-grid reveal" data-delay="1">
-        <div class="feature">
-          <span class="feature__num">01</span>
-          <h3>Klein gehalten</h3>
-          <p>Vier Behandlungszimmer, ein festes Team. Sie werden in der Regel von denselben Personen behandelt — das spart Erklärungen.</p>
+      <div class="first-visit">
+        <div class="first-visit__heading reveal reveal--left">
+          <h2>Wie wir arbeiten.</h2>
+          <p>Drei Dinge, an denen Sie merken, dass Sie hier sind und nicht woanders.</p>
         </div>
-        <div class="feature">
-          <span class="feature__num">02</span>
-          <h3>Vor der Behandlung besprochen</h3>
-          <p>Sie erfahren vor jedem größeren Eingriff schriftlich, was er kostet und welche Alternativen es gibt. Keine Behandlung, die wir Ihnen nicht erklärt haben.</p>
-        </div>
-        <div class="feature">
-          <span class="feature__num">03</span>
-          <h3>Genügend Zeit</h3>
-          <p>Wir kalkulieren je Termin lieber zehn Minuten zu viel als zu wenig. So bleibt Spielraum, wenn etwas auffällt — und Sie müssen seltener wiederkommen.</p>
-        </div>
+        <ol class="first-visit__steps reveal reveal--right" data-delay="1">
+          <li class="first-visit__step">
+            <span class="num">1</span>
+            <div>
+              <h3>Klein gehalten</h3>
+              <p>Vier Behandlungszimmer, ein festes Team. Sie werden in der Regel von denselben Personen behandelt, die Sie schon kennen — das spart Erklärungen und schafft Vertrauen.</p>
+            </div>
+          </li>
+          <li class="first-visit__step">
+            <span class="num">2</span>
+            <div>
+              <h3>Vor der Behandlung besprochen</h3>
+              <p>Sie erfahren vor jedem größeren Eingriff schriftlich, was er kostet und welche Alternativen es gibt. Keine Behandlung, die wir Ihnen nicht verständlich erklärt haben.</p>
+            </div>
+          </li>
+          <li class="first-visit__step">
+            <span class="num">3</span>
+            <div>
+              <h3>Genügend Zeit</h3>
+              <p>Wir kalkulieren je Termin lieber zehn Minuten zu viel ein. So bleibt Spielraum für Fragen, für eine genauere Diagnose oder eine Behandlung, die etwas länger braucht.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -137,9 +138,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   <section>
     <div class="container">
       <div class="two-col">
-        <aside class="two-col__aside reveal">
-          <p class="eyebrow" data-num="03">Berufsrechtliches</p>
-          <p>Diese Angaben sind Pflicht, schaffen aber auch Klarheit darüber, wer hier behandelt und in welchem Rahmen.</p>
+        <aside class="two-col__aside reveal reveal--left">
+          <p class="eyebrow">Berufsrechtliches</p>
+          <p>Pflichtangaben — und gleichzeitig Klarheit darüber, in welchem Rahmen wir hier arbeiten.</p>
         </aside>
         <div class="legal reveal" data-delay="1">
           <dl>
@@ -152,16 +153,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
             <dt>KZV</dt>
             <dd>Kassenzahnärztliche Vereinigung Hamburg<br><a href="https://www.kzv-hamburg.de" target="_blank" rel="noopener">kzv-hamburg.de</a></dd>
 
-            <dt>Aufsichtsbehörde</dt>
-            <dd>Behörde für Wissenschaft, Forschung, Gleichstellung und Bezirke der Freien und Hansestadt Hamburg</dd>
-
             <dt>Berufsrechtliche Regelungen</dt>
-            <dd>
-              Heilberufekammergesetz Hamburg (HmbKGH)<br>
-              Berufsordnung der Zahnärztekammer Hamburg<br>
-              Zahnheilkundegesetz (ZHG)<br>
-              Gebührenordnung für Zahnärzte (GOZ)
-            </dd>
+            <dd>Heilberufekammergesetz Hamburg (HmbKGH) · Berufsordnung der Zahnärztekammer Hamburg · Zahnheilkundegesetz (ZHG) · Gebührenordnung für Zahnärzte (GOZ)</dd>
           </dl>
         </div>
       </div>
@@ -171,12 +164,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="cta-band__inner reveal">
         <div>
-          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
           <h2>Termin?</h2>
-          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+          <p class="lead">Schreiben Sie uns Wunschzeit und Anliegen — wir antworten werktags innerhalb von 24 Stunden. Telefonisch sind wir morgens am besten erreichbar.</p>
         </div>
         <div class="cta-band__actions">
-          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+          <a class="btn btn--primary" href="termin-anfragen.html">Anfrage senden
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="btn btn--ghost" href="tel:+4940221528">040 221 528</a>
@@ -234,8 +226,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r7"></script>
-<script src="db.js?v=2026-01-01-r7"></script>
-<script src="script.js?v=2026-01-01-r7" defer></script>
+<script src="config.js?v=2026-01-01-r8"></script>
+<script src="db.js?v=2026-01-01-r8"></script>
+<script src="script.js?v=2026-01-01-r8" defer></script>
 </body>
 </html>

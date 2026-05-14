@@ -1565,3 +1565,218 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 /* Sectionsabstand-Variante: tighter für editorial pacing */
 section.tight { padding-block: clamp(56px, 7vw, 96px); }
 section.loose { padding-block: clamp(96px, 14vw, 192px); }
+
+/* Long-form Essay-Intro mit Drop-Cap */
+.prose-intro {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.prose-intro p {
+  font-family: 'Fraunces', "Iowan Old Style", Georgia, serif;
+  font-variation-settings: "opsz" 24;
+  font-size: clamp(1.18rem, 1.7vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 1.2em;
+  letter-spacing: -0.005em;
+}
+.prose-intro p:first-child::first-letter {
+  font-size: 3em;
+  float: left;
+  line-height: .82;
+  margin: .05em .12em 0 -.04em;
+  color: var(--ink);
+  font-weight: 500;
+}
+.prose-intro p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Anfahrt — drei Routen-Karten */
+.routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(20px, 2.6vw, 32px);
+  margin-top: clamp(36px, 5vw, 56px);
+}
+.route {
+  background: var(--white);
+  border: 1px solid var(--smoke);
+  border-radius: var(--r-3);
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  transition: transform var(--dur-2) var(--ease),
+              box-shadow var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease);
+}
+.route:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--line);
+}
+.route__icon {
+  width: 44px; height: 44px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  border-radius: var(--r-pill);
+  background: var(--paper-2);
+  color: var(--ink);
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36;
+  font-size: 1.2rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: background var(--dur-2) var(--ease);
+}
+.route:hover .route__icon { background: var(--gold-soft); }
+.route h3 {
+  font-size: 1.15rem;
+  margin: 0;
+  font-variation-settings: "opsz" 36;
+}
+.route__line {
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin: 0;
+  font-weight: 500;
+}
+.route__steps {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid; gap: .6rem;
+  counter-reset: step;
+  flex: 1;
+}
+.route__steps li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: .6rem;
+  font-size: .94rem;
+  color: var(--slate);
+  line-height: 1.5;
+  counter-increment: step;
+}
+.route__steps li::before {
+  content: counter(step);
+  font-family: 'Inter', sans-serif;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: .2em;
+}
+.route__steps strong { color: var(--ink); font-weight: 500; }
+.route__time {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--mute);
+  letter-spacing: .02em;
+  padding-top: .8rem;
+  border-top: 1px solid var(--smoke);
+}
+
+/* Reveal-Varianten — abwechslungsreichere Einblendungen */
+body.js-ready .reveal--left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+body.js-ready .reveal--right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+body.js-ready .reveal--scale {
+  opacity: 0;
+  transform: scale(.96);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+}
+body.js-ready .reveal--left.in,
+body.js-ready .reveal--right.in,
+body.js-ready .reveal--scale.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Bilder: subtiler Hover-Zoom */
+.letter__media,
+.team-lead__media,
+.doctor__media {
+  overflow: hidden;
+}
+.letter__media img,
+.team-lead__media img,
+.doctor__media img {
+  transition: transform 1.4s cubic-bezier(.16,.84,.32,1);
+  will-change: transform;
+}
+.letter__media:hover img,
+.team-lead__media:hover img,
+.doctor__media:hover img {
+  transform: scale(1.04);
+}
+
+/* Hero: Gradient-Blob mit langsamer Atembewegung */
+@keyframes heroBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: .9; }
+  50%      { transform: translate(28px, 36px) scale(1.06); opacity: 1; }
+}
+.hero--home::before {
+  animation: heroBlob 16s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero--home::before { animation: none; }
+}
+
+/* Headlines: Gradient-Akzent in der ersten Zeile beim Hover (Hero only) */
+.hero h1 {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--ink-2) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+/* Buttons: feinere Hover-Bewegung */
+.btn { transition: background .25s var(--ease), color .2s var(--ease),
+                   border-color .2s var(--ease), transform .2s var(--ease),
+                   box-shadow .25s var(--ease); }
+.btn--primary:hover { box-shadow: 0 8px 18px rgba(14,15,18,.18); }
+.btn--gold:hover    { box-shadow: 0 8px 18px rgba(168,131,71,.32); }
+
+/* Section dividers: feiner pulsierender Akzent-Punkt nach Headlines */
+.section-mark {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-left: .35em;
+  animation: pulseDot 3.6s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50%      { opacity: 1;  transform: scale(1.25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-mark { animation: none; }
+}
+
+/* Smooth scroll on internal anchors */
+@supports (scroll-behavior: smooth) {
+  html:not(.menu-open) { scroll-behavior: smooth; }
+}
+
+/* First-paint fade — verhindert Layout-Sprung beim ersten Reveal */
+body { animation: pageEnter .6s var(--ease) both; }
+@keyframes pageEnter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}

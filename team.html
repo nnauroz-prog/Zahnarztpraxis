@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r7';
+  var V = '2026-01-01-r8';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r7">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r8">
 <link rel="icon" href="IMG_9504.png">
 <title>Team · DentalHarmonie</title>
 <meta name="description" content="Das Team der Zahnarztpraxis DentalHarmonie Hamburg-Hohenfelde — Dr. Delaram Mostafaei und ihr Praxisteam.">
@@ -84,25 +84,25 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   <section class="hero">
     <div class="container">
       <div class="hero__inner reveal">
-        <p class="eyebrow" data-num="08">Team</p>
-        <h1>Das Team hinter DentalHarmonie.</h1>
-        <p class="lead">Wer Sie bei uns begleitet — die Personen hinter den Türen.</p>
+        <p class="eyebrow">Team</p>
+        <h1>Die Personen<br>hinter den Türen.</h1>
+        <p class="lead">Wer Sie hier am Empfang trifft, in der Prophylaxe behandelt und bei der Behandlung assistiert.</p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="team-lead reveal">
-        <figure class="team-lead__media">
+      <div class="letter">
+        <figure class="letter__media reveal reveal--scale">
           <img src="IMG_9505.jpeg" alt="Porträt Dr. Delaram Mostafaei" loading="lazy">
         </figure>
-        <div class="team-lead__body">
-          <p class="team-lead__role">Inhaberin · Zahnärztin</p>
-          <h2>Dr. Delaram Mostafaei</h2>
-          <p class="lead">Ich führe diese Praxis, weil ich glaube, dass Zahnmedizin in unserem eigenen Tempo besser ist — für Patientinnen und Patienten genauso wie für das Team.</p>
-          <p>Mein Schwerpunkt liegt in der allgemeinen Zahnheilkunde mit besonderem Augenmerk auf substanzschonende Versorgung und Prophylaxe. Ich bilde mich regelmäßig fort, um meinen Patientinnen und Patienten eine Behandlung auf aktuellem fachlichem Stand anbieten zu können.</p>
-          <p>Behandelt werden Erwachsene und Kinder, gesetzlich und privat Versicherte. Privatleistungen rechnen wir nach GOZ ab, bei größeren Maßnahmen mit schriftlichem Heil- und Kostenplan.</p>
+        <div class="letter__body reveal" data-delay="1">
+          <p class="eyebrow">Inhaberin · Zahnärztin</p>
+          <p>Ich habe diese Praxis übernommen, weil ich überzeugt bin: Mit ausreichend Zeit pro Termin sind Behandlungen am Ende besser — für Patientinnen und Patienten genauso wie für das Team.</p>
+          <p>Mein fachlicher Schwerpunkt liegt in der allgemeinen Zahnheilkunde, mit besonderem Augenmerk auf substanzschonende Versorgung und Prophylaxe. Wenn etwas außerhalb unseres Schwerpunkts besser bei spezialisierten Kolleginnen oder Kollegen aufgehoben ist, sage ich Ihnen das offen — und vermittle weiter.</p>
+          <p>Behandelt werden Erwachsene und Kinder, gesetzlich und privat Versicherte. Bei größeren Maßnahmen erhalten Sie vorab einen schriftlichen Heil- und Kostenplan.</p>
+          <p class="letter__signature">Dr. Delaram Mostafaei<span class="letter__sig-line"></span></p>
         </div>
       </div>
     </div>
@@ -110,41 +110,24 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 
   <section class="surface-2">
     <div class="container">
-      <div class="section-intro reveal">
-        <p class="eyebrow" data-num="02">Praxis-Team</p>
-        <h2>Empfang, Prophylaxe, Assistenz.</h2>
-        <p class="lead">Unser Team begleitet Sie durch den gesamten Praxisbesuch — vom Empfang über die Prophylaxe bis zur zahnmedizinischen Assistenz.</p>
+      <div class="prose-intro reveal">
+        <p>Das übrige Praxis-Team begleitet Sie durch den gesamten Termin — von der ersten Begrüßung am Telefon bis zur Verabschiedung an der Tür.</p>
+        <p><strong>Am Empfang</strong> arbeiten unsere Praxis-Managerinnen. Sie koordinieren Termine, prüfen die Versicherungsformalitäten und sind erste Ansprechpartnerinnen, wenn Sie ein Anliegen vorab klären möchten.</p>
+        <p><strong>In der Prophylaxe</strong> sind speziell ausgebildete Dentalhygienikerinnen für Sie zuständig. Sie führen die professionelle Zahnreinigung in eigenen Behandlungsräumen durch — im eigenen Tempo, mit eigenem Recall-Konzept.</p>
+        <p><strong>An der Behandlungseinheit</strong> assistieren erfahrene Zahnmedizinische Fachangestellte. Sie bereiten den Arbeitsplatz vor, übernehmen Hygiene und Material und sind während der Behandlung die zweite ruhige Stimme im Raum.</p>
       </div>
-      <div class="team-grid reveal" data-delay="1">
-        <div class="team-card">
-          <span class="team-card__role">Empfang &amp; Terminkoordination</span>
-          <h3>Praxis-Empfang</h3>
-          <p>Erste Ansprechpartnerinnen am Telefon und vor Ort. Sie koordinieren Termine, prüfen Versicherungsformalitäten und sorgen für einen ruhigen Praxisablauf.</p>
-        </div>
-        <div class="team-card">
-          <span class="team-card__role">Prophylaxe</span>
-          <h3>Dental­hygienik­erinnen</h3>
-          <p>Speziell ausgebildete Fachkräfte, die professionelle Zahnreinigung, Parodontaltherapie und Recall durchführen — mit eigenen Behandlungszimmern und in eigenem Tempo.</p>
-        </div>
-        <div class="team-card">
-          <span class="team-card__role">Behandlungsassistenz</span>
-          <h3>ZFA-Team</h3>
-          <p>Zahnmedizinische Fachangestellte mit langjähriger Praxiserfahrung. Sie assistieren bei der Behandlung, bereiten Arbeitsplätze vor und kümmern sich um Hygiene und Material.</p>
-        </div>
-      </div>
-      <p class="muted reveal" data-delay="2" style="font-size: .9rem; margin-top: 2rem; max-width: 56ch;">Namen und persönliche Profile unserer Mitarbeiterinnen ergänzen wir auf deren Wunsch und mit ihrer Einwilligung. Lernen Sie das Team gerne bei einem Erstgespräch persönlich kennen.</p>
+      <p class="muted reveal" data-delay="1" style="font-size: .9rem; margin: 2.5rem auto 0; max-width: 720px; text-align: center;">Persönliche Profile unserer Mitarbeiterinnen ergänzen wir auf deren Wunsch und mit ihrer Einwilligung. Sie lernen das Team gerne bei einem Erstgespräch persönlich kennen.</p>
     </div>
   </section>
   <section class="cta-band">
     <div class="container">
       <div class="cta-band__inner reveal">
         <div>
-          <p class="eyebrow no-num" style="color: rgba(251,250,246,.6);">Termin</p>
           <h2>Termin?</h2>
-          <p class="lead">Schreiben Sie uns Ihre Wunschzeit — wir bestätigen werktags innerhalb von 24 Stunden. Telefonisch erreichen Sie uns zu den Sprechzeiten.</p>
+          <p class="lead">Schreiben Sie uns Wunschzeit und Anliegen — wir antworten werktags innerhalb von 24 Stunden. Telefonisch sind wir morgens am besten erreichbar.</p>
         </div>
         <div class="cta-band__actions">
-          <a class="btn btn--primary" href="termin-anfragen.html">Termin anfragen
+          <a class="btn btn--primary" href="termin-anfragen.html">Anfrage senden
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="btn btn--ghost" href="tel:+4940221528">040 221 528</a>
@@ -202,8 +185,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r7"></script>
-<script src="db.js?v=2026-01-01-r7"></script>
-<script src="script.js?v=2026-01-01-r7" defer></script>
+<script src="config.js?v=2026-01-01-r8"></script>
+<script src="db.js?v=2026-01-01-r8"></script>
+<script src="script.js?v=2026-01-01-r8" defer></script>
 </body>
 </html>
