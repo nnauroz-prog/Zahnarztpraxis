@@ -24,6 +24,7 @@
     safe(initScrollProgress);
     safe(initStickyCta);
     safe(initHoursToday);
+    safe(initLiveStatus);
     safe(initConsent);
     safe(initNoticeBanner);
     safe(initTerminForm);
@@ -339,6 +340,57 @@
         }
       });
     });
+  }
+
+  /* ---------- Live-Praxis-Status ("Jetzt geöffnet bis HH:MM") ---------- */
+  function initLiveStatus() {
+    const targets = document.querySelectorAll('[data-status]');
+    if (!targets.length) return;
+    const DAYS = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    const cfgHours = (window.dentalConfig && window.dentalConfig.PRACTICE && window.dentalConfig.PRACTICE.hours) || [];
+    const dbReady = window.dentalDb && window.dentalDb.get ? window.dentalDb.get('opening-hours') : Promise.resolve(null);
+    Promise.resolve(dbReady).then((live) => {
+      let hours = Array.isArray(live) && live.length ? live : cfgHours;
+      if (!Array.isArray(hours) || !hours.length) return;
+      render(hours);
+    }).catch(() => render(cfgHours));
+
+    function render(hours) {
+      const now = new Date();
+      const today = hours.find((h) => h && h.day === DAYS[now.getDay()]);
+      const nowMin = now.getHours() * 60 + now.getMinutes();
+      let label = '';
+      let mode  = 'closed';
+      if (today && today.open && today.close) {
+        const [oh, om] = today.open.split(':').map(Number);
+        const [ch, cm] = today.close.split(':').map(Number);
+        const openMin  = oh * 60 + om;
+        const closeMin = ch * 60 + cm;
+        if (nowMin >= openMin && nowMin < closeMin) {
+          mode = 'open';
+          label = 'Jetzt geöffnet bis ' + today.close;
+        } else if (nowMin < openMin) {
+          mode = 'soon';
+          label = 'Heute ab ' + today.open + ' geöffnet';
+        }
+      }
+      if (!label) {
+        // Nächsten Öffnungstag finden
+        for (let i = 1; i <= 7; i++) {
+          const d = (now.getDay() + i) % 7;
+          const candidate = hours.find((h) => h && h.day === DAYS[d]);
+          if (candidate && candidate.open && candidate.close) {
+            label = 'Aktuell geschlossen · ' + DAYS[d] + ' ab ' + candidate.open;
+            break;
+          }
+        }
+        if (!label) label = 'Aktuell geschlossen';
+      }
+      targets.forEach((el) => {
+        el.textContent = label;
+        el.setAttribute('data-status', mode);
+      });
+    }
   }
 
   /* ---------- Map-Consent (Click-to-Load OSM) ---------- */
