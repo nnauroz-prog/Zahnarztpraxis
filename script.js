@@ -30,6 +30,7 @@
     safe(initTerminForm);
     safe(initMapConsent);
     safe(initFaqExclusive);
+    safe(initShare);
     safe(initYear);
   }
 
@@ -42,12 +43,46 @@
     onScroll();
   }
 
-  /* ---------- Active Nav ---------- */
+  /* ---------- Active Nav (+ aria-current) ---------- */
   function initActiveNav() {
     const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     document.querySelectorAll('.header__nav a[href], .menu__list a[href]').forEach((a) => {
       const target = (a.getAttribute('href') || '').toLowerCase();
-      if (target === here) a.classList.add('is-active');
+      if (target === here) {
+        a.classList.add('is-active');
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  /* ---------- Web Share API (Teilen-Button) ---------- */
+  function initShare() {
+    const btn = document.querySelector('[data-share]');
+    if (!btn) return;
+    if (!navigator.share) {
+      // Fallback: zur Kopie der URL
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(location.href);
+          const orig = btn.textContent;
+          btn.textContent = 'Link kopiert ✓';
+          setTimeout(() => { btn.textContent = orig; }, 1800);
+        } catch (e) {
+          alert('Link konnte nicht kopiert werden.');
+        }
+      });
+      return;
+    }
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.share({
+          title: document.title,
+          text: 'Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde',
+          url: location.href
+        });
+      } catch (e) {
+        if (e.name !== 'AbortError') console.error(e);
+      }
     });
   }
 

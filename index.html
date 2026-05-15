@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r16';
+  var V = '2026-01-01-r17';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r16">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r17">
 <link rel="icon" href="IMG_9504.png">
 <link rel="preload" as="image" href="IMG_9505.jpeg" fetchpriority="low">
 <link rel="apple-touch-icon" href="IMG_9504.png">
@@ -65,6 +65,18 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday"], "opens": "08:00", "closes": "18:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "13:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "13:00" }
+  ],
+  "areaServed": { "@type": "City", "name": "Hamburg" },
+  "priceRange": "$$",
+  "availableService": [
+    { "@type": "MedicalProcedure", "name": "Professionelle Zahnreinigung (PZR)", "procedureType": "https://schema.org/PreventiveProcedure" },
+    { "@type": "MedicalProcedure", "name": "Karies & Füllungstherapie", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Wurzelkanalbehandlung", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Parodontologie", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Kronen, Brücken und Vollkeramik", "procedureType": "https://schema.org/SurgicalProcedure" },
+    { "@type": "MedicalProcedure", "name": "Implantatversorgung", "procedureType": "https://schema.org/SurgicalProcedure" },
+    { "@type": "MedicalProcedure", "name": "Bleaching", "procedureType": "https://schema.org/TherapeuticProcedure" },
+    { "@type": "MedicalProcedure", "name": "Kinderzahnheilkunde", "procedureType": "https://schema.org/TherapeuticProcedure" }
   ]
 }
 </script>
@@ -73,6 +85,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 
 <div class="scroll-progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Zum Inhalt springen</a>
+<noscript>
+  <div class="noscript">
+    <strong>Diese Website nutzt JavaScript</strong> für das Mobile-Menü, Karten-Consent und das Terminformular. Wesentliche Praxis-Informationen finden Sie auch ohne JavaScript: <a href="tel:+4940221528">040 221 528</a> · Ifflandstraße 75, 22087 Hamburg-Hohenfelde · Mo, Di, Do 08–18 · Mi, Fr 08–13.
+  </div>
+</noscript>
 
 <header class="header" id="header">
   <div class="header__row">
@@ -300,9 +317,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r16"></script>
-<script src="db.js?v=2026-01-01-r16"></script>
-<script src="script.js?v=2026-01-01-r16" defer></script>
+<script src="config.js?v=2026-01-01-r17"></script>
+<script src="db.js?v=2026-01-01-r17"></script>
+<script src="script.js?v=2026-01-01-r17" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
