@@ -1,0 +1,6 @@
+# Security-Kontakt für die DentalHarmonie-Website
+# Wenn Sie eine Sicherheitslücke finden, schreiben Sie uns bitte.
+
+Contact: mailto:info@dentalharmonie.de
+Preferred-Languages: de, en
+Canonical: https://www.dentalharmonie.de/.well-known/security.txt

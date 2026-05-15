@@ -1,0 +1,13 @@
+/* Team */
+Praxis:       DentalHarmonie · Dr. Delaram Mostafaei
+Ort:          Hamburg-Hohenfelde, Deutschland
+Kontakt:      info@dentalharmonie.de
+
+/* Site */
+Konzept &
+Umsetzung:    Sitalo.de — https://sitalo.de
+Technik:      Vanilla HTML/CSS/JavaScript, keine Frameworks.
+              Daten via Supabase (Auth, Postgres, Storage, Realtime).
+              Gehostet auf Netlify.
+Typografie:   Fraunces (variable Serif), Inter (Sans) — Google Fonts.
+Farben:       Paper #FBFAF6 · Ink #0E0F12 · Sage #6E8975 · Gold #A88347
