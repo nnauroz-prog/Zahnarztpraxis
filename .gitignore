@@ -1,0 +1,27 @@
+# OS-Cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+
+# Logs
+*.log
+
+# Dependency-Verzeichnisse (zur Sicherheit, obwohl keine genutzt werden)
+node_modules/
+
+# Build-Artefakte
+dist/
+build/
+
+# Lokale Konfigurations-Overrides
+config.local.js
+.env*
+!.env.example

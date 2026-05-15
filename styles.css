@@ -2376,3 +2376,24 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
   border-bottom: 1px solid var(--gold);
 }
 .noscript a { color: var(--ink); text-decoration: underline; }
+
+/* ============================================================
+   Form-Validation-Feedback (browser-native :user-invalid)
+   ============================================================ */
+.form__field input:user-invalid:not(:placeholder-shown),
+.form__field select:user-invalid,
+.form__field textarea:user-invalid {
+  border-color: var(--danger);
+}
+.form__field input:user-invalid:not(:placeholder-shown):focus,
+.form__field select:user-invalid:focus,
+.form__field textarea:user-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(178,59,59,.12);
+}
+.form__check input:user-invalid + span {
+  color: var(--danger);
+}
+
+/* Aria-live Region für Form-Status (Screen-Reader bekommen Updates mit) */
+.form__error[role="alert"],
+.dash__status[aria-live] { /* Defaults reichen */ }
