@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r13';
+  var V = '2026-01-01-r14';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r13">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r14">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -43,6 +43,28 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="DentalHarmonie">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Wie lange dauert ein Erstgespräch?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Planen Sie 30 bis 45 Minuten ein. Wir machen Anamnese, vollständige Untersuchung und besprechen den Befund gemeinsam am Monitor. Bei dieser Sitzung behandeln wir in der Regel noch nicht — außer Sie haben akute Schmerzen." } },
+    { "@type": "Question", "name": "Was kostet eine professionelle Zahnreinigung (PZR)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Die PZR ist überwiegend eine Privatleistung. Die Kosten richten sich nach Aufwand und Befund — wir nennen Ihnen vor der Sitzung einen verbindlichen Preisrahmen. Viele gesetzliche Krankenkassen erstatten anteilig." } },
+    { "@type": "Question", "name": "Ich habe Zahnarzt-Angst. Wie gehen Sie damit um?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sagen Sie es uns am Telefon oder beim Erstgespräch — wir nehmen das ernst. Bei Bedarf legen wir längere Termine, machen Pausen, oder bauen die Behandlung in mehreren kleinen Schritten auf. Bei Kindern beginnen wir oft mit einem reinen Schau-Termin, ohne dass behandelt wird." } },
+    { "@type": "Question", "name": "Bekomme ich vor einer Behandlung eine Kostenschätzung?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja — bei jeder größeren Versorgung erhalten Sie einen schriftlichen Heil- und Kostenplan, mit dem Sie auch bei Ihrer Krankenkasse die Zuschüsse abklären können. Privatleistungen rechnen wir nach GOZ ab." } },
+    { "@type": "Question", "name": "Behandeln Sie auch Kinder?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja, vom ersten Milchzahn an. Bei kleinen Kindern arbeiten wir mit einem kindgerechten Aufbau — Kennenlernen, „Zähnezählen\", erst dann Behandlung. Eltern dürfen mit ins Behandlungszimmer." } },
+    { "@type": "Question", "name": "Was tun bei akuten Zahnschmerzen außerhalb der Sprechzeiten?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Innerhalb der Sprechzeiten rufen Sie uns bitte direkt an — wir versuchen, Sie am gleichen oder nächsten Werktag einzuschieben. Außerhalb der Sprechzeiten ist der zahnärztliche Notdienst der Zahnärztekammer Hamburg zuständig. Bei lebensbedrohlichen Symptomen wählen Sie 112." } },
+    { "@type": "Question", "name": "Welche Zahlungsweisen akzeptieren Sie?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Gesetzliche Leistungen werden direkt über die Versichertenkarte abgerechnet. Privatleistungen erhalten Sie als Rechnung — zahlbar per Überweisung. Bei größeren Behandlungen können Ratenzahlungen über externe Abrechnungsstellen vereinbart werden; wir besprechen das vorab." } }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -360,9 +382,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r13"></script>
-<script src="db.js?v=2026-01-01-r13"></script>
-<script src="script.js?v=2026-01-01-r13" defer></script>
+<script src="config.js?v=2026-01-01-r14"></script>
+<script src="db.js?v=2026-01-01-r14"></script>
+<script src="script.js?v=2026-01-01-r14" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
