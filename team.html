@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r19';
+  var V = '2026-01-01-r20';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -24,8 +24,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r19">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r20">
 <link rel="icon" href="IMG_9504.png">
 <link rel="preload" as="image" href="IMG_9505.jpeg" fetchpriority="low">
 <link rel="apple-touch-icon" href="IMG_9504.png">
@@ -160,11 +160,45 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="prose-intro reveal">
         <p>Das übrige Praxis-Team begleitet Sie durch den gesamten Termin — von der ersten Begrüßung am Telefon bis zur Verabschiedung an der Tür.</p>
-        <p><strong>Am Empfang</strong> arbeiten unsere Praxis-Managerinnen. Sie koordinieren Termine, prüfen die Versicherungsformalitäten und sind erste Ansprechpartnerinnen, wenn Sie ein Anliegen vorab klären möchten.</p>
-        <p><strong>In der Prophylaxe</strong> sind speziell ausgebildete Dentalhygienikerinnen für Sie zuständig. Sie führen die professionelle Zahnreinigung in eigenen Behandlungsräumen durch — im eigenen Tempo, mit eigenem Recall-Konzept.</p>
-        <p><strong>An der Behandlungseinheit</strong> assistieren erfahrene Zahnmedizinische Fachangestellte. Sie bereiten den Arbeitsplatz vor, übernehmen Hygiene und Material und sind während der Behandlung die zweite ruhige Stimme im Raum.</p>
+        <p><strong>Am Empfang</strong> arbeiten unsere Praxis-Managerinnen. Sie koordinieren Termine, prüfen die Versicherungsformalitäten und sind erste Ansprechpartnerinnen, wenn Sie ein Anliegen vorab klären möchten. Wenn Sie nervös sind oder etwas zu erklären haben, das nicht in einen Standard-Anruf passt: Sagen Sie es am Telefon. Wir nehmen uns die Zeit dafür.</p>
+        <p><strong>In der Prophylaxe</strong> sind speziell ausgebildete Dentalhygienikerinnen für Sie zuständig. Sie führen die professionelle Zahnreinigung in eigenen Behandlungsräumen durch — im eigenen Tempo, mit eigenem Recall-Konzept. Bei Folgeterminen treffen Sie in der Regel dieselbe Person wieder, sodass Sie nicht jedes Mal neu erklären müssen, wo es empfindlich ist.</p>
+        <p><strong>An der Behandlungseinheit</strong> assistieren erfahrene Zahnmedizinische Fachangestellte. Sie bereiten den Arbeitsplatz vor, übernehmen Hygiene und Material und sind während der Behandlung die zweite ruhige Stimme im Raum. Sie behalten den Überblick, wenn die Behandlerin auf einen Zahn konzentriert ist — und merken zuerst, wenn etwas unbequem wird.</p>
       </div>
-      <p class="muted reveal" data-delay="1" style="font-size: .9rem; margin: 2.5rem auto 0; max-width: 720px; text-align: center;">Persönliche Profile unserer Mitarbeiterinnen ergänzen wir auf deren Wunsch und mit ihrer Einwilligung. Sie lernen das Team gerne bei einem Erstgespräch persönlich kennen.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="two-col">
+        <aside class="two-col__aside reveal reveal--left">
+          <p class="eyebrow">Praktisch</p>
+          <p>Wie der Praxisbesuch in der Regel abläuft, von der Tür bis zur Verabschiedung.</p>
+        </aside>
+        <ol class="first-visit__steps reveal reveal--right" data-delay="1">
+          <li class="first-visit__step">
+            <span class="num">1</span>
+            <div>
+              <h3>Begrüßung am Empfang</h3>
+              <p>Versichertenkarte einlesen, kurzer Gesundheits-Check (Anamnese), eventuelle Wartezeit max. 5–10 Min — wir kalkulieren keine Doppel-Termine.</p>
+            </div>
+          </li>
+          <li class="first-visit__step">
+            <span class="num">2</span>
+            <div>
+              <h3>Behandlungszimmer</h3>
+              <p>Ihre Behandlerin holt Sie persönlich ab. Vor der Behandlung wird besprochen, was geplant ist und ob sich seit dem letzten Termin etwas geändert hat — bevor das erste Instrument angefasst wird.</p>
+            </div>
+          </li>
+          <li class="first-visit__step">
+            <span class="num">3</span>
+            <div>
+              <h3>Nach der Behandlung</h3>
+              <p>Kurze Nachbesprechung mit den nächsten Schritten und (falls nötig) Verhaltens­hinweisen für die nächsten Stunden. Sie verlassen die Praxis mit klaren Anweisungen, nicht mit offenen Fragen.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <p class="muted reveal" data-delay="2" style="font-size: .9rem; margin: 3rem auto 0; max-width: 720px; text-align: center;">Persönliche Profile unserer Mitarbeiterinnen ergänzen wir auf deren Wunsch und mit ihrer Einwilligung. Sie lernen das Team gerne bei einem Erstgespräch persönlich kennen.</p>
     </div>
   </section>
   <section class="cta-band">
@@ -233,9 +267,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r19"></script>
-<script src="db.js?v=2026-01-01-r19"></script>
-<script src="script.js?v=2026-01-01-r19" defer></script>
+<script src="config.js?v=2026-01-01-r20"></script>
+<script src="db.js?v=2026-01-01-r20"></script>
+<script src="script.js?v=2026-01-01-r20" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

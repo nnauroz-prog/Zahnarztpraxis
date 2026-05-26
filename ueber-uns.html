@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r19';
+  var V = '2026-01-01-r20';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -24,8 +24,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r19">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r20">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -163,6 +163,29 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="two-col">
         <aside class="two-col__aside reveal reveal--left">
+          <p class="eyebrow">Standard im Behandlungsalltag</p>
+          <p>Was technisch und methodisch zu jeder Behandlung gehört — unabhängig davon, ob es um eine Füllung oder eine umfangreiche Sanierung geht.</p>
+        </aside>
+        <div class="reveal" data-delay="1">
+          <h2>Womit wir arbeiten.</h2>
+          <p class="lead">Wir verzichten bewusst auf Marketing-Buzzwords zu Geräten. Sie sollen sich darauf verlassen können, dass folgende Punkte selbstverständlich sind:</p>
+          <ul style="color: var(--slate); padding-left: 1.2rem; margin: 1rem 0;">
+            <li><strong>Lupensicht</strong> für präzises Arbeiten an feinen Strukturen — Standard bei Füllungs- und Wurzelbehandlung.</li>
+            <li><strong>Digitales Röntgen</strong> mit deutlich reduzierter Strahlendosis gegenüber analogem Röntgen, mit Sofort-Befund am Monitor.</li>
+            <li><strong>Zahnfarbene Composite-Werkstoffe</strong> klinisch dokumentierter Hersteller; Amalgam setzen wir nicht ein.</li>
+            <li><strong>Hygiene nach RKI-Empfehlung</strong> — Instrumente werden in einem zertifizierten Aufbereitungs-Kreislauf gereinigt, desinfiziert und sterilisiert.</li>
+            <li><strong>Schriftliche Kostenpläne</strong> vor jeder größeren Maßnahme — nach GOZ, mit ausgewiesenen Alternativen.</li>
+          </ul>
+          <p style="color: var(--slate);">Was außerhalb unseres Schwerpunkts liegt — etwa komplexe <strong>Kieferorthopädie</strong> oder umfangreiche <strong>Kieferchirurgie</strong> — vermitteln wir an spezialisierte Kolleginnen und Kollegen. Wir sagen offen, wenn etwas bei jemand anderem besser aufgehoben ist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surface-2">
+    <div class="container">
+      <div class="two-col">
+        <aside class="two-col__aside reveal reveal--left">
           <p class="eyebrow">Berufsrechtliches</p>
           <p>Pflichtangaben — und gleichzeitig Klarheit darüber, in welchem Rahmen wir hier arbeiten.</p>
         </aside>
@@ -250,9 +273,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r19"></script>
-<script src="db.js?v=2026-01-01-r19"></script>
-<script src="script.js?v=2026-01-01-r19" defer></script>
+<script src="config.js?v=2026-01-01-r20"></script>
+<script src="db.js?v=2026-01-01-r20"></script>
+<script src="script.js?v=2026-01-01-r20" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
