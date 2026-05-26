@@ -53,7 +53,7 @@
   --t-eyebrow: .72rem;
   --t-body:    1.0625rem; /* 17px */
   --t-lead:    1.25rem;
-  --t-h1:      clamp(2.6rem, 7vw, 5.2rem);
+  --t-h1:      clamp(2.8rem, 9vw, 6.4rem);
   --t-h2:      clamp(2rem, 4vw, 3.2rem);
   --t-h3:      clamp(1.25rem, 1.7vw, 1.55rem);
 }
@@ -292,12 +292,12 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
   padding: .55rem 1.05rem;
   font-size: .9rem;
   font-weight: 500;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--paper);
   border-radius: var(--r-pill);
   transition: background var(--dur-1) var(--ease), transform var(--dur-1) var(--ease);
 }
-.header__cta:hover { background: var(--coal-2); transform: translateY(-1px); }
+.header__cta:hover { background: var(--accent-2); transform: translateY(-1px); }
 
 .header__menu {
   display: none;
@@ -435,10 +435,10 @@ html.menu-open .header {
   text-decoration: none;
 }
 .btn--primary {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--paper);
 }
-.btn--primary:hover { background: var(--coal-2); transform: translateY(-1px); }
+.btn--primary:hover { background: var(--accent-2); transform: translateY(-1px); }
 .btn--ghost {
   background: transparent;
   color: var(--ink);
@@ -2417,4 +2417,26 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
   letter-spacing: 0;
   line-height: 1.5;
   max-width: 56ch;
+}
+
+/* ============================================================
+   Instrument-Serif-Adjustments
+   ============================================================ */
+/* Headlines: italic-em-Akzent in der gleichen Schrift, mit subtileren Terminals */
+h1 em, h2 em, .hero h1 em {
+  font-style: italic;
+  font-family: 'Instrument Serif', Georgia, serif;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+/* Drop-Cap auf Letter wird mit Instrument Serif deutlich dünner — etwas Gewicht zugeben */
+.letter__body p:first-of-type::first-letter,
+.prose-intro p:first-child::first-letter {
+  font-weight: 400;
+  margin-right: .12em;
+}
+/* Footer-Wordmark: Instrument-Serif braucht etwas mehr Spacing */
+.footer__wordmark {
+  letter-spacing: -0.04em;
+  font-family: 'Instrument Serif', Georgia, serif;
 }
