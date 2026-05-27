@@ -2474,3 +2474,86 @@ h1 em, h2 em, .hero h1 em {
     transition: none;
   }
 }
+
+/* ============================================================
+   Coal-Surface — kontrastreiches Dunkel-Intermezzo
+   ============================================================ */
+.surface-coal {
+  background: var(--coal);
+  color: rgba(251,250,246,.86);
+}
+.surface-coal h2,
+.surface-coal h3,
+.surface-coal strong { color: var(--paper); }
+.surface-coal .eyebrow {
+  color: var(--accent-soft);
+}
+.surface-coal .eyebrow::before {
+  background: rgba(232,215,213,.6);
+}
+.surface-coal .letter__body {
+  color: rgba(251,250,246,.82);
+}
+.surface-coal .letter__body p:first-of-type::first-letter {
+  color: var(--paper);
+}
+.surface-coal .letter__signature {
+  color: var(--accent-soft);
+}
+.surface-coal .letter__sig-line {
+  background: var(--accent-soft);
+}
+.surface-coal .letter__media {
+  background: rgba(255,255,255,.06);
+}
+.surface-coal .btn--link {
+  color: var(--paper);
+  border-bottom-color: var(--accent-soft);
+}
+.surface-coal .btn--link:hover { color: var(--accent-soft); border-bottom-color: var(--paper); }
+.surface-coal a:not(.btn) { color: var(--accent-soft); }
+
+/* ============================================================
+   Eyebrow-Magazin-Variante: mit horizontaler Linie davor
+   ============================================================ */
+.eyebrow {
+  /* Tausche das ::before-Number-Element gegen einen feinen Strich */
+}
+.eyebrow:not([data-num])::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+  margin-right: .75em;
+  vertical-align: 3px;
+}
+/* Wenn data-num existiert, bleibt das ::before die Zahl */
+
+/* ============================================================
+   Margin-Numerals: Sektions-Nummern als italische Roman-Marker
+   ============================================================ */
+.section-numeral {
+  position: absolute;
+  left: clamp(20px, 4vw, 56px);
+  top: clamp(60px, 8vw, 110px);
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  color: var(--accent);
+  opacity: .85;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  z-index: 1;
+}
+.section-numeral::before { content: ''; display: none; }
+section { position: relative; }
+@media (max-width: 880px) {
+  .section-numeral {
+    position: static;
+    display: block;
+    font-size: 2rem;
+    margin: 0 0 .8rem;
+  }
+}
