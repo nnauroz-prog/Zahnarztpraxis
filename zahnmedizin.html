@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r22';
+  var V = '2026-01-01-r23';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r22">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r23">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -157,13 +157,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <p>Eine Auswahl der zahnmedizinischen Versorgung in unserer Praxis. Was Sie brauchen, klären wir im Erstgespräch.</p>
         </div>
         <ul class="treatments__list reveal" data-delay="1">
-          <li><a href="#"><span>Karies &amp; Füllungstherapie</span><span class="cat">Composite</span></a></li>
-          <li><a href="#"><span>Wurzelkanalbehandlung</span><span class="cat">maschinell · Lupe</span></a></li>
-          <li><a href="#"><span>Parodontologie</span><span class="cat">stufenweise</span></a></li>
-          <li><a href="#"><span>Kronen, Brücken, Vollkeramik</span><span class="cat">Zahnersatz</span></a></li>
-          <li><a href="prophylaxe.html"><span>Professionelle Zahnreinigung</span><span class="cat">Prophylaxe</span></a></li>
-          <li><a href="#"><span>Kinderzahnheilkunde</span><span class="cat">behutsam</span></a></li>
-          <li><a href="#"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">auf Anruf</span></a></li>
+          <li><a href="#"><span><span class="t-title">Karies &amp; Füllungstherapie</span><span class="t-desc">Schonende Kariesentfernung mit zahnfarbenen Composite-Füllungen; bei größeren Defekten Keramik-Inlays als Alternative.</span></span><span class="cat">Composite</span></a></li>
+          <li><a href="#"><span><span class="t-title">Wurzelkanalbehandlung</span><span class="t-desc">Maschinelle Aufbereitung des Wurzelkanals unter Lupensicht — das Ziel ist immer der Erhalt des eigenen Zahns.</span></span><span class="cat">maschinell · Lupe</span></a></li>
+          <li><a href="#"><span><span class="t-title">Parodontologie</span><span class="t-desc">Vom systematischen Reinigen tiefer Zahnfleischtaschen bis zur chirurgischen Versorgung — Stufe für Stufe je nach Befund.</span></span><span class="cat">stufenweise</span></a></li>
+          <li><a href="#"><span><span class="t-title">Kronen, Brücken, Vollkeramik</span><span class="t-desc">Wenn eine Füllung nicht mehr reicht: Vollkeramik oder Metallkeramik, mit ehrlicher Beratung zur Lebensdauer.</span></span><span class="cat">Zahnersatz</span></a></li>
+          <li><a href="prophylaxe.html"><span><span class="t-title">Professionelle Zahnreinigung</span><span class="t-desc">Grundlage langfristiger Zahngesundheit. Eine Sitzung dauert 45 bis 60 Minuten.</span></span><span class="cat">Prophylaxe</span></a></li>
+          <li><a href="#"><span><span class="t-title">Kinderzahnheilkunde</span><span class="t-desc">Behutsame Behandlung in eigenem Tempo, oft mit reinem Schau-Termin als Auftakt.</span></span><span class="cat">behutsam</span></a></li>
+          <li><a href="#"><span><span class="t-title">Schmerz- &amp; Akutbehandlung</span><span class="t-desc">Bei akuten Beschwerden versuchen wir, einen Platz am gleichen oder nächsten Werktag einzuschieben.</span></span><span class="cat">auf Anruf</span></a></li>
         </ul>
       </div>
     </div>
@@ -244,9 +244,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r22"></script>
-<script src="db.js?v=2026-01-01-r22"></script>
-<script src="script.js?v=2026-01-01-r22" defer></script>
+<script src="config.js?v=2026-01-01-r23"></script>
+<script src="db.js?v=2026-01-01-r23"></script>
+<script src="script.js?v=2026-01-01-r23" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

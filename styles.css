@@ -2452,3 +2452,25 @@ h1 em, h2 em, .hero h1 em {
   letter-spacing: -0.04em;
   font-family: 'Instrument Serif', Georgia, serif;
 }
+
+/* ============================================================
+   Editoriale Porträt-Behandlung — subtile warme Sepia
+   ============================================================ */
+.letter__media img,
+.team-lead__media img,
+.doctor__media img {
+  filter: sepia(0.18) saturate(0.92) contrast(1.02);
+  transition: filter 1.2s var(--ease), transform 1.4s cubic-bezier(.16,.84,.32,1);
+}
+.letter__media:hover img,
+.team-lead__media:hover img,
+.doctor__media:hover img {
+  filter: sepia(0.06) saturate(1) contrast(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .letter__media img,
+  .team-lead__media img,
+  .doctor__media img {
+    transition: none;
+  }
+}
