@@ -2793,7 +2793,7 @@ h1 em, h2 em, .hero h1 em {
   position: relative;
   z-index: 1;
 }
-.manifesto p:first-of-type::first-letter {
+.manifesto p:nth-of-type(2)::first-letter {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: 3.4em;
   float: left;
@@ -2822,7 +2822,7 @@ h1 em, h2 em, .hero h1 em {
     font-size: clamp(5rem, 18vw, 8rem);
     top: -20px;
   }
-  .manifesto p:first-of-type::first-letter { font-size: 2.8em; }
+  .manifesto p:nth-of-type(2)::first-letter { font-size: 2.8em; }
 }
 
 /* ============================================================

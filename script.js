@@ -161,7 +161,7 @@
   function initHeroParallax() {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce) return;
-    const hero = document.querySelector('.hero__inner');
+    const hero = document.querySelector('.hero__inner, .hero__cover-text');
     if (!hero) return;
     let ticking = false;
     const onScroll = () => {
