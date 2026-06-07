@@ -1890,9 +1890,9 @@ body { animation: pageEnter .6s var(--ease) both; }
   align-items: center;
   gap: .4rem;
   padding: .4rem;
-  background: var(--ink);
+  background: var(--accent);
   border-radius: var(--r-pill);
-  box-shadow: 0 12px 40px rgba(14,15,18,.32), 0 4px 12px rgba(14,15,18,.18);
+  box-shadow: 0 12px 40px rgba(63,42,74,.32), 0 4px 12px rgba(63,42,74,.18);
   transition: transform .4s var(--ease), opacity .25s var(--ease);
   opacity: 0;
 }
@@ -2903,4 +2903,30 @@ section { position: relative; }
   color: rgba(251,250,246,.55);
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   letter-spacing: .01em;
+}
+
+/* ============================================================
+   Hero italic-tag — kleine vertraulich anmutende Sub-Zeile
+   ============================================================ */
+.hero__tag {
+  margin: clamp(20px, 2.5vw, 32px) 0 0;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.4vw, 1.32rem);
+  color: var(--accent-2);
+  letter-spacing: -0.005em;
+  max-width: 42ch;
+  line-height: 1.4;
+}
+
+/* Gallery-Slots: feinere Caption ohne backdrop-blur (war zu modern)
+   sondern dezent direkt auf dem Gradient */
+.gallery__slot figcaption {
+  background: var(--paper);
+  color: var(--ink-2);
+  font-weight: 600;
+  padding: .4em .8em;
+  border-radius: var(--r-1);
+  border: 1px solid var(--smoke);
+  backdrop-filter: none;
 }
