@@ -1496,7 +1496,7 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 .first-visit__step .num {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: 1.8rem;
-  color: var(--gold);
+  color: var(--accent);
   line-height: 1;
 }
 .first-visit__step h3 {
