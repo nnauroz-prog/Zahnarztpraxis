@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r45';
+  var V = '2026-01-01-r46';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r45">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r46">
 <link rel="icon" href="IMG_9504.png">
 <link rel="preload" as="image" href="IMG_9505.jpeg" fetchpriority="high">
 <link rel="apple-touch-icon" href="IMG_9504.png">
@@ -197,18 +197,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 
   <section class="surface-coal">
     <div class="container">
-      <div class="letter">
-        <figure class="letter__media reveal">
-          <img src="IMG_9505.jpeg" width="1024" height="1280" alt="Porträt Dr. Delaram Mostafaei" loading="lazy">
-        </figure>
-        <div class="letter__body reveal" data-delay="1">
-          <p class="eyebrow">Ein Wort vorab</p>
-          <p>Gute Zahnmedizin beginnt für mich nicht am Bohrer, sondern im Gespräch. Was tut weh? Wie lange schon? Wovor haben Sie Angst? Diese Minuten klingen nach Luxus — und sparen am Ende oft Stunden auf dem Stuhl.</p>
-          <p>Darum arbeite ich mit längeren Terminen und einem kleinen, festen Team. Sie sehen nicht jedes Mal neue Gesichter. Das macht vieles ruhiger — für Sie und für mich.</p>
-          <p>Wenn Sie noch nie hier waren: Kommen Sie gern für ein Erstgespräch. Sie verlieren nichts außer der Zeit.</p>
-          <p class="letter__signature">Dr. Delaram Mostafaei<span class="letter__sig-line"></span></p>
-        </div>
-      </div>
+      <article class="manifesto reveal">
+        <p class="eyebrow">Ein Wort vorab</p>
+        <p>Gute Zahnmedizin beginnt für mich nicht am Bohrer, sondern im Gespräch. Was tut weh? Wie lange schon? Wovor haben Sie Angst? Diese Minuten klingen nach Luxus — und sparen am Ende oft Stunden auf dem Stuhl.</p>
+        <p>Darum arbeite ich mit längeren Terminen und einem kleinen, festen Team. Sie sehen nicht jedes Mal neue Gesichter. Das macht vieles ruhiger — für Sie und für mich.</p>
+        <p>Wenn Sie noch nie hier waren: Kommen Sie gern für ein Erstgespräch. Sie verlieren nichts außer der Zeit.</p>
+        <p class="manifesto__sign">Dr. Delaram Mostafaei<span class="manifesto__sign-line"></span></p>
+      </article>
     </div>
   </section>
 
@@ -327,9 +322,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r45"></script>
-<script src="db.js?v=2026-01-01-r45"></script>
-<script src="script.js?v=2026-01-01-r45" defer></script>
+<script src="config.js?v=2026-01-01-r46"></script>
+<script src="db.js?v=2026-01-01-r46"></script>
+<script src="script.js?v=2026-01-01-r46" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

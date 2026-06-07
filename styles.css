@@ -891,12 +891,13 @@ html.menu-open .header {
 .cta-band h2 {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
   color: var(--ink);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin: 0 0 .8rem;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin: 0 0 1rem;
   max-width: 14ch;
+  text-wrap: balance;
 }
 .cta-band .lead {
   color: var(--slate);
@@ -2709,6 +2710,77 @@ h1 em, h2 em, .hero h1 em {
   .doctor__media img {
     transition: none;
   }
+}
+
+/* ============================================================
+   Manifesto — typografisches Editorial-Statement statt Brief
+   ============================================================ */
+.manifesto {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: clamp(20px, 3vw, 36px);
+}
+.manifesto::before {
+  content: '\201E';
+  position: absolute;
+  top: clamp(-40px, -3vw, -16px);
+  left: clamp(-10px, -1vw, -4px);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(7rem, 14vw, 12rem);
+  color: var(--accent);
+  opacity: .14;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.manifesto > .eyebrow {
+  position: relative;
+  z-index: 1;
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+.manifesto p {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  line-height: 1.45;
+  color: var(--ink-2);
+  letter-spacing: -0.005em;
+  margin: 0 0 1em;
+  max-width: 56ch;
+  position: relative;
+  z-index: 1;
+}
+.manifesto p:first-of-type::first-letter {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 3.4em;
+  float: left;
+  line-height: .82;
+  margin: .04em .14em 0 -.05em;
+  color: var(--accent);
+  font-weight: 400;
+}
+.manifesto__sign {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  color: var(--accent-2);
+  margin-top: 2.4rem !important;
+  letter-spacing: 0;
+}
+.manifesto__sign-line {
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: .5rem;
+}
+@media (max-width: 540px) {
+  .manifesto::before {
+    font-size: clamp(5rem, 18vw, 8rem);
+    top: -20px;
+  }
+  .manifesto p:first-of-type::first-letter { font-size: 2.8em; }
 }
 
 /* ============================================================
