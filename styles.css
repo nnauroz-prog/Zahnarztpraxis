@@ -737,14 +737,14 @@ html.menu-open .header {
    CTA Band
    ============================================================ */
 .cta-band {
-  background: var(--coal);
+  background: var(--accent);
   color: var(--paper);
-  padding: clamp(72px, 11vw, 144px) 0;
+  padding: clamp(64px, 9vw, 112px) 0;
   overflow: hidden;
   position: relative;
 }
 .cta-band h2 { color: var(--paper); }
-.cta-band .lead { color: rgba(251,250,246,.7); margin-top: 1.2rem; }
+.cta-band .lead { color: rgba(239,232,244,.85); margin-top: 1.2rem; }
 .cta-band__inner {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1118,8 +1118,13 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   color: var(--ink-2);
 }
 .note p { color: var(--slate); margin: 0; max-width: 64ch; }
-.note--alert { border-left-color: var(--danger); }
+.note--alert {
+  background: rgba(178,59,59,.05);
+  border-color: rgba(178,59,59,.18);
+  border-left: 3px solid var(--danger);
+}
 .note--alert .note__label { color: var(--danger); }
+.note--alert h4 { color: var(--danger); }
 
 /* Termin-Form */
 .form-shell {
