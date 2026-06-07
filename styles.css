@@ -536,21 +536,27 @@ html.menu-open .header {
   .hero__meta { grid-template-columns: 1fr; gap: 1rem; }
 }
 
-/* Schmuck-Element rechts oben (nur Hero auf index) */
+/* Schmuck-Element rechts oben (nur Hero auf index) — Aubergine-Lavendel-Wolke */
 .hero--home::before {
   content: '';
   position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle at 30% 30%, rgba(110,137,117,.18), rgba(168,131,71,.06) 40%, transparent 70%);
+  top: -160px;
+  right: -160px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle at 30% 30%, rgba(63,42,74,.18), rgba(63,42,74,.06) 38%, transparent 72%);
   border-radius: 50%;
-  filter: blur(20px);
+  filter: blur(30px);
   pointer-events: none;
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 1; }
+@media (max-width: 640px) {
+  .hero--home::before {
+    width: 360px; height: 360px;
+    top: -80px; right: -120px;
+  }
+}
 
 /* ============================================================
    Pillars (Drei Schwerpunkte auf der Startseite)
@@ -1478,23 +1484,25 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 .hero__phone:hover { color: var(--sage); border-color: var(--sage); }
 
 .hero__subline {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: .9em;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  font-size: clamp(.78rem, .9vw, .85rem);
   font-weight: 500;
-  letter-spacing: .04em;
+  letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--mute);
   margin-top: clamp(20px, 2.5vw, 28px);
+  font-variant-numeric: tabular-nums;
 }
 .hero__subline::before {
   content: '';
   display: inline-block;
-  width: 28px;
+  width: 32px;
   height: 1px;
-  background: var(--gold);
-  vertical-align: middle;
-  margin-right: .8em;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 /* Erstbesuch — flach, drei Spalten, keine Karten */
