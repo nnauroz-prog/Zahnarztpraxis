@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r40';
+  var V = '2026-01-01-r41';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r40">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r41">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -109,8 +109,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="hero__inner reveal">
         <p class="eyebrow">Kontakt</p>
-        <h1>So erreichen<br>Sie uns.</h1>
-        <p class="lead">Ifflandstraße 75, 22087 Hamburg-Hohenfelde. Anbindung über U1, U3 und HVV-Busse — Wegbeschreibung weiter unten.</p>
+        <h1>So finden Sie<br>zu mir.</h1>
+        <p class="lead">Ifflandstraße 75 in Hohenfelde. U-Bahn und HVV-Busse halten in der Umgebung — Details unten.</p>
         <p style="margin-top: 1rem;"><span class="status-badge" data-status="closed">Status wird geladen …</span></p>
       </div>
     </div>
@@ -121,6 +121,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
       <div class="visit">
         <div class="visit__hours reveal reveal--left">
           <h2>Sprechzeiten</h2>
+
           <ul class="hours-list">
             <li data-day="1"><span class="day">Montag</span>     <span class="time">08:00 – 18:00</span></li>
             <li data-day="2"><span class="day">Dienstag</span>   <span class="time">08:00 – 18:00</span></li>
@@ -132,7 +133,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <p class="muted" style="font-size: .88rem; margin-top: 1.2rem;">Termine bitte vorab telefonisch oder über das <a href="termin-anfragen.html" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;">Anfrageformular</a>.</p>
         </div>
         <div class="visit__contact reveal reveal--right" data-delay="1">
-          <h2>Adresse &amp; direkt</h2>
+          <h2>Adresse</h2>
           <p>DentalHarmonie<br>Dr. Delaram Mostafaei<br>Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</p>
           <p>Telefon <a href="tel:+4940221528">040 221 528</a><br>Fax 040 22698898<br>E-Mail <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></p>
           <div style="display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .8rem;">
@@ -152,8 +153,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="reveal" style="max-width: 720px;">
         <p class="eyebrow">Anfahrt</p>
-        <h2>Drei Wege zu uns.</h2>
-        <p class="lead">U-Bahn, Bus oder Auto — die Praxis ist gut erreichbar. Hier die wichtigsten Schritte.</p>
+        <h2>Drei Wege her.</h2>
+        <p class="lead">U-Bahn, Bus oder Auto. Die Praxis ist gut erreichbar.</p>
       </div>
 
       <div class="routes">
@@ -219,7 +220,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
       <div class="note note--alert reveal">
         <span class="note__label">Außerhalb der Sprechzeiten</span>
         <h4>Notfälle</h4>
-        <p>Bei zahnärztlichen Notfällen außerhalb unserer Sprechzeiten wenden Sie sich bitte an den zahnärztlichen Notdienst der Zahnärztekammer Hamburg. In medizinischen Notfällen rufen Sie 112.</p>
+        <p>Bei zahnärztlichen Notfällen außerhalb meiner Sprechzeiten: zahnärztlicher Notdienst der Zahnärztekammer Hamburg. In medizinischen Notfällen: 112.</p>
       </div>
     </div>
   </section>
@@ -227,8 +228,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="cta-band__inner reveal">
         <div>
-          <h2>Vereinbaren wir<br>einen Termin.</h2>
-          <p class="lead">Schreiben Sie uns Ihre Wunschzeit. Werktags antworten wir innerhalb von 24 Stunden.</p>
+          <h2>Sprechen<br>wir.</h2>
+          <p class="lead">Schreiben Sie mir Ihre Wunschzeit. Ich melde mich werktags innerhalb von 24 Stunden.</p>
         </div>
         <div class="cta-band__actions">
           <a class="btn btn--primary" href="termin-anfragen.html">Anfrage senden
@@ -289,9 +290,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r40"></script>
-<script src="db.js?v=2026-01-01-r40"></script>
-<script src="script.js?v=2026-01-01-r40" defer></script>
+<script src="config.js?v=2026-01-01-r41"></script>
+<script src="db.js?v=2026-01-01-r41"></script>
+<script src="script.js?v=2026-01-01-r41" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
