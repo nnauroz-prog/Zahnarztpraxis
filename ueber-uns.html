@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r47';
+  var V = '2026-01-01-r48';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r47">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r48">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -109,7 +109,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="hero__inner reveal">
         <p class="eyebrow">Praxis</p>
-        <h1>Über mich.</h1>
+        <h1>Über<br><em>mich.</em></h1>
         <p class="lead">Ich bin Dr. Delaram Mostafaei. Diese Praxis führe ich seit Jahren — für Erwachsene und Kinder.</p>
       </div>
     </div>
@@ -133,7 +133,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="first-visit">
         <div class="first-visit__heading reveal reveal--left">
-          <h2>Wie ich arbeite.</h2>
+          <p class="chapter-mark">Kapitel 01</p>
+          <h2>Wie ich<br><em>arbeite.</em></h2>
           <p>Drei Dinge, die für mich nicht verhandelbar sind.</p>
         </div>
         <ol class="first-visit__steps reveal reveal--right" data-delay="1">
@@ -167,11 +168,12 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="two-col">
         <aside class="two-col__aside reveal reveal--left">
+          <p class="chapter-mark">Kapitel 02</p>
           <p class="eyebrow">Standard</p>
           <p>Was zu jeder Behandlung gehört — ob Füllung oder Sanierung.</p>
         </aside>
         <div class="reveal" data-delay="1">
-          <h2>Womit ich arbeite.</h2>
+          <h2>Womit ich<br><em>arbeite.</em></h2>
           <p class="lead">Keine Werbe-Begriffe für Geräte. Stattdessen das, worauf Sie sich verlassen können:</p>
           <ul style="color: var(--slate); padding-left: 1.2rem; margin: 1rem 0;">
             <li><strong>Lupensicht</strong> für präzises Arbeiten an feinen Strukturen — Standard bei Füllung und Wurzelbehandlung.</li>
@@ -190,6 +192,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="two-col">
         <aside class="two-col__aside reveal reveal--left">
+          <p class="chapter-mark">Kapitel 03</p>
           <p class="eyebrow">Berufsrechtliches</p>
           <p>Pflichtangaben — und gleichzeitig Klarheit über den Rahmen, in dem ich arbeite.</p>
         </aside>
@@ -277,9 +280,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r47"></script>
-<script src="db.js?v=2026-01-01-r47"></script>
-<script src="script.js?v=2026-01-01-r47" defer></script>
+<script src="config.js?v=2026-01-01-r48"></script>
+<script src="db.js?v=2026-01-01-r48"></script>
+<script src="script.js?v=2026-01-01-r48" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
