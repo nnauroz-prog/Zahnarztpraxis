@@ -2557,3 +2557,52 @@ section { position: relative; }
     margin: 0 0 .8rem;
   }
 }
+
+/* ============================================================
+   Hero-Siegel: rotierendes „№75"-Logo wie ein Praxis-Wachssiegel
+   ============================================================ */
+.hero__badge {
+  position: absolute;
+  top: clamp(80px, 11vh, 130px);
+  right: clamp(20px, 4vw, 64px);
+  width: clamp(120px, 14vw, 180px);
+  height: clamp(120px, 14vw, 180px);
+  color: var(--accent);
+  pointer-events: none;
+  z-index: 2;
+}
+.hero__badge svg { width: 100%; height: 100%; display: block; }
+.hero__badge .badge-ring {
+  transform-origin: 100px 100px;
+  animation: badgeSpin 38s linear infinite;
+}
+.hero__badge .badge-num {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 46px;
+  letter-spacing: -0.02em;
+}
+.hero__badge .badge-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: .32em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@keyframes badgeSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge .badge-ring { animation: none; }
+}
+@media (max-width: 760px) {
+  .hero__badge {
+    top: auto;
+    right: clamp(16px, 5vw, 28px);
+    bottom: -54px;
+    width: 108px;
+    height: 108px;
+  }
+}
+.hero { position: relative; overflow: visible; }
