@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r32';
+  var V = '2026-01-01-r33';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r32">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r33">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -192,12 +192,20 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         </article>
       </div>
 
-      <div class="map reveal" data-src="https://www.openstreetmap.org/export/embed.html?bbox=10.0287%2C53.5587%2C10.0387%2C53.5637&amp;layer=mapnik&amp;marker=53.5612%2C10.0337">
-        <iframe title="Karte zur Praxis DentalHarmonie" loading="lazy"></iframe>
-        <div class="map__consent">
-          <p>Wenn Sie die Karte laden, werden Daten an OpenStreetMap übertragen.</p>
-          <button type="button" class="btn btn--primary" data-load-map>Karte laden</button>
-          <p class="muted" style="font-size: .82rem;"><a href="https://www.openstreetmap.org/?mlat=53.5612&amp;mlon=10.0337#map=18/53.5612/10.0337" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold);">Direkt bei OpenStreetMap öffnen</a></p>
+      <div class="map-cta reveal" data-delay="2">
+        <div class="map-cta__inner">
+          <div>
+            <p class="eyebrow">Karte</p>
+            <p class="map-cta__address">Ifflandstraße 75<br>22087 Hamburg-Hohenfelde</p>
+          </div>
+          <div class="map-cta__actions">
+            <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener">In Google Maps öffnen
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="https://www.openstreetmap.org/search?query=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener">In OpenStreetMap öffnen
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -216,7 +224,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     <div class="container">
       <div class="cta-band__inner reveal">
         <div>
-          <h2>Termin?</h2>
+          <h2>Vereinbaren wir<br>einen Termin.</h2>
           <p class="lead">Schreiben Sie uns Ihre Wunschzeit. Werktags antworten wir innerhalb von 24 Stunden.</p>
         </div>
         <div class="cta-band__actions">
@@ -233,6 +241,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <footer class="footer">
   <div class="container">
     <p class="footer__wordmark">Dental<em>Harmonie</em></p>
+    <p class="footer__tagline">Zahnärztliche Praxis · Hamburg-Hohenfelde · Seit Jahren in der Ifflandstraße.</p>
     <div class="footer__grid">
       <div class="footer__col">
         <h4>Praxis</h4>
@@ -278,9 +287,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r32"></script>
-<script src="db.js?v=2026-01-01-r32"></script>
-<script src="script.js?v=2026-01-01-r32" defer></script>
+<script src="config.js?v=2026-01-01-r33"></script>
+<script src="db.js?v=2026-01-01-r33"></script>
+<script src="script.js?v=2026-01-01-r33" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

@@ -747,22 +747,38 @@ html.menu-open .header {
 }
 
 /* ============================================================
-   CTA Band
+   CTA Band — restrained, paper background, magazine-style
    ============================================================ */
 .cta-band {
-  background: var(--accent);
-  color: var(--paper);
-  padding: clamp(64px, 9vw, 112px) 0;
-  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(96px, 13vw, 160px) 0;
   position: relative;
+  border-top: 1px solid var(--smoke);
+  border-bottom: 1px solid var(--smoke);
 }
-.cta-band h2 { color: var(--paper); }
-.cta-band .lead { color: rgba(239,232,244,.85); margin-top: 1.2rem; }
 .cta-band__inner {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 4vw, 64px);
   align-items: end;
+  max-width: 1080px;
+}
+.cta-band h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 .8rem;
+  max-width: 14ch;
+}
+.cta-band .lead {
+  color: var(--slate);
+  margin-top: 1rem;
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
 }
 .cta-band__actions {
   display: flex;
@@ -771,15 +787,15 @@ html.menu-open .header {
   text-align: right;
 }
 .cta-band__actions .btn--primary {
-  background: var(--paper);
-  color: var(--ink);
-}
-.cta-band__actions .btn--primary:hover { background: var(--white); }
-.cta-band__actions .btn--ghost {
+  background: var(--accent);
   color: var(--paper);
-  border-color: rgba(251,250,246,.3);
 }
-.cta-band__actions .btn--ghost:hover { background: rgba(251,250,246,.08); border-color: var(--paper); }
+.cta-band__actions .btn--primary:hover { background: var(--accent-2); }
+.cta-band__actions .btn--ghost {
+  color: var(--ink);
+  border-color: var(--line);
+}
+.cta-band__actions .btn--ghost:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-2); }
 @media (max-width: 760px) {
   .cta-band__inner { grid-template-columns: 1fr; }
   .cta-band__actions { text-align: left; }
@@ -2843,3 +2859,48 @@ section { position: relative; }
 }
 .treatments__list li:hover::before { transform: translateY(-50%) scaleY(1); }
 .treatments__list a:hover { padding-left: 12px; }
+
+/* ============================================================
+   Map-CTA — sicherer Adress-Block statt fehleranfälligem Iframe
+   ============================================================ */
+.map-cta {
+  margin-top: clamp(36px, 5vw, 56px);
+  padding: clamp(28px, 4vw, 48px);
+  background: linear-gradient(160deg, var(--accent-soft) 0%, var(--paper-2) 100%);
+  border: 1px solid var(--smoke);
+  border-radius: var(--r-3);
+}
+.map-cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: end;
+}
+.map-cta__address {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.map-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  align-items: stretch;
+}
+.map-cta__actions .btn { justify-content: space-between; }
+@media (max-width: 640px) {
+  .map-cta__inner { grid-template-columns: 1fr; }
+}
+
+/* Footer-Tagline */
+.footer__tagline {
+  margin: -1.4rem 0 clamp(40px, 5vw, 64px);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  color: rgba(251,250,246,.55);
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  letter-spacing: .01em;
+}
