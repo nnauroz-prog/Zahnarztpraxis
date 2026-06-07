@@ -2705,3 +2705,42 @@ section { position: relative; }
     height: 88px;
   }
 }
+
+/* ============================================================
+   Subtle Brand-Hairline über Hero-H1 auf Themen-Seiten
+   ============================================================ */
+.hero:not(.hero--home) .hero__inner .eyebrow + h1::before,
+.hero:not(.hero--home) .hero__inner h1:first-child::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1.5px;
+  background: var(--accent);
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+
+/* ============================================================
+   Termin-Form-Polish: Card-Container statt nackt
+   ============================================================ */
+.form-shell > .reveal:first-child {
+  position: relative;
+}
+.form-shell #terminForm {
+  background: var(--white);
+  border: 1px solid var(--smoke);
+  border-radius: var(--r-3);
+  padding: clamp(28px, 3.4vw, 48px);
+  box-shadow: var(--shadow-1);
+}
+.form-shell #terminForm::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 64px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: var(--r-pill);
+}
+.form-shell #terminSuccess {
+  border: 1px solid var(--smoke);
+}
