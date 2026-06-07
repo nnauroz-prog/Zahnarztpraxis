@@ -540,21 +540,137 @@ html.menu-open .header {
 .hero--home::before {
   content: '';
   position: absolute;
-  top: -160px;
-  right: -160px;
-  width: 560px;
-  height: 560px;
-  background: radial-gradient(circle at 30% 30%, rgba(63,42,74,.18), rgba(63,42,74,.06) 38%, transparent 72%);
+  top: -200px;
+  left: 40%;
+  width: 720px;
+  height: 720px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(63,42,74,.16), rgba(63,42,74,.04) 40%, transparent 72%);
   border-radius: 50%;
-  filter: blur(30px);
+  filter: blur(40px);
   pointer-events: none;
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 1; }
-@media (max-width: 640px) {
+@media (max-width: 880px) {
   .hero--home::before {
-    width: 360px; height: 360px;
-    top: -80px; right: -120px;
+    width: 480px; height: 480px;
+    top: -120px; left: 20%;
+  }
+}
+
+/* Magazin-Cover-Hero — Statement-Text links, Porträt rechts */
+.hero--cover {
+  padding-top: clamp(64px, 10vw, 140px);
+  padding-bottom: clamp(72px, 11vw, 144px);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+}
+.hero__cover {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 88px);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero__cover-text { max-width: 720px; }
+.hero--cover .eyebrow {
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+.hero--cover h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3.2rem, 9.5vw, 7.4rem);
+  line-height: .94;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0 0 clamp(22px, 2.6vw, 36px);
+  text-wrap: balance;
+}
+.hero--cover h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+.hero--cover .lead {
+  max-width: 44ch;
+  color: var(--slate);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+}
+
+.hero__cover-media {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--bone);
+  box-shadow:
+    0 24px 48px rgba(14,15,18,.16),
+    0 2px 8px rgba(14,15,18,.08);
+  transform: translateY(0);
+}
+.hero__cover-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(14,15,18,.18) 100%);
+  pointer-events: none;
+}
+.hero__cover-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+  filter: sepia(.16) saturate(.92) contrast(1.03);
+  transition: transform 1.4s cubic-bezier(.16,.84,.32,1), filter 1.2s var(--ease);
+}
+.hero__cover-media:hover img {
+  transform: scale(1.03);
+  filter: sepia(.1) saturate(.98) contrast(1.04);
+}
+.hero__cover-media figcaption {
+  position: absolute;
+  bottom: clamp(14px, 1.8vw, 22px);
+  left: clamp(14px, 1.8vw, 22px);
+  padding: .5em .85em .55em;
+  background: var(--paper);
+  border-radius: var(--r-1);
+  display: grid;
+  gap: .15rem;
+  z-index: 1;
+}
+.hero__cover-media figcaption em {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.hero__cover-media figcaption span {
+  font-family: 'Inter', sans-serif;
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  font-weight: 500;
+}
+
+@media (max-width: 880px) {
+  .hero__cover {
+    grid-template-columns: 1fr;
+    gap: clamp(36px, 6vw, 56px);
+  }
+  .hero__cover-media {
+    max-width: 360px;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+  }
+}
+@media (max-width: 540px) {
+  .hero--cover h1 {
+    font-size: clamp(2.6rem, 12vw, 4.2rem);
   }
 }
 
