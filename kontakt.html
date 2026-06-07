@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r25';
+  var V = '2026-01-01-r26';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r25">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r26">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -110,7 +110,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
       <div class="hero__inner reveal">
         <p class="eyebrow">Kontakt</p>
         <h1>So erreichen<br>Sie uns.</h1>
-        <p class="lead">Ifflandstraße 75, 22087 Hamburg-Hohenfelde. Wenige Schritte von der U-Bahn-Haltestelle Uhlandstraße (U3).</p>
+        <p class="lead">Ifflandstraße 75, 22087 Hamburg-Hohenfelde. Anbindung über U1, U3 und HVV-Busse — Wegbeschreibung weiter unten.</p>
         <p style="margin-top: 1rem;"><span class="status-badge" data-status="closed">Status wird geladen …</span></p>
       </div>
     </div>
@@ -160,13 +160,12 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <article class="route reveal reveal--scale" data-delay="1">
           <span class="route__icon">U</span>
           <h3>Mit der U-Bahn</h3>
-          <p class="route__line">U3</p>
+          <p class="route__line">U1 · U3</p>
           <ol class="route__steps">
-            <li>Aussteigen an <strong>Uhlandstraße</strong> (U3)</li>
-            <li>Wenige Schritte in die <strong>Ifflandstraße</strong></li>
-            <li>Die Praxis liegt unter Nr.&nbsp;75</li>
+            <li>Über die <strong>Linien U1 und U3</strong> erreichen Sie die Praxis bequem mit kurzem Fußweg.</li>
+            <li>Verbindung und nächste Haltestelle prüfen Sie aktuell im <a href="https://www.hvv.de/de/fahrplanauskunft?ziel=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;"><strong>HVV-Routenplaner</strong></a> — der zeigt Ihnen die schnellste Verbindung von Ihrem Startpunkt.</li>
           </ol>
-          <p class="route__time">Nächstgelegene Station · Lübecker Straße (U1 · U3) als Alternative</p>
+          <p class="route__time">Anschluss aus ganz Hamburg über HVV</p>
         </article>
 
         <article class="route reveal reveal--scale" data-delay="2">
@@ -174,8 +173,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <h3>Mit dem Bus</h3>
           <p class="route__line">HVV-Stadtbus</p>
           <ol class="route__steps">
-            <li>Mehrere Linien halten in der Umgebung</li>
-            <li>Aktuelle Linien und Haltestellen im <a href="https://www.hvv.de" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;">HVV-Routenplaner</a></li>
+            <li>Mehrere Buslinien halten in der Umgebung der Praxis.</li>
+            <li>Aktuelle Verbindung &amp; Haltestelle im <a href="https://www.hvv.de/de/fahrplanauskunft?ziel=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;"><strong>HVV-Routenplaner</strong></a> ansehen.</li>
           </ol>
           <p class="route__time">Tagsüber dichte Taktung</p>
         </article>
@@ -183,12 +182,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <article class="route reveal reveal--scale" data-delay="3">
           <span class="route__icon">P</span>
           <h3>Mit dem Auto</h3>
-          <p class="route__line">Parken &amp; Navi</p>
+          <p class="route__line">Navigation &amp; Parken</p>
           <ol class="route__steps">
-            <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;"><strong>Wegbeschreibung in Google Maps öffnen</strong></a></li>
-            <li>Parkplätze in der <strong>Ifflandstraße</strong> und den umliegenden Seitenstraßen</li>
-            <li>Es gilt Parkraumbewirtschaftung — bitte Parkscheinautomaten beachten</li>
-            <li>Tipp: morgens sind die Plätze in Richtung Mundsburger Damm meist freier</li>
+            <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;"><strong>Wegbeschreibung in Google Maps öffnen</strong></a> — startet die Navigation direkt zur Praxis.</li>
+            <li>Parkplätze in der <strong>Ifflandstraße</strong> und den umliegenden Seitenstraßen.</li>
+            <li>In Hohenfelde gilt überwiegend <strong>Parkraumbewirtschaftung</strong> — bitte Parkscheinautomaten beachten.</li>
           </ol>
           <p class="route__time">Bewohnerparken Mo–Fr</p>
         </article>
@@ -280,9 +278,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r25"></script>
-<script src="db.js?v=2026-01-01-r25"></script>
-<script src="script.js?v=2026-01-01-r25" defer></script>
+<script src="config.js?v=2026-01-01-r26"></script>
+<script src="db.js?v=2026-01-01-r26"></script>
+<script src="script.js?v=2026-01-01-r26" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

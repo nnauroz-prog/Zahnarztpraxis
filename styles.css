@@ -6,9 +6,9 @@
 /* ---------- Tokens ---------- */
 :root {
   /* Farben — warm, neutral, mit gezielten Akzenten */
-  --paper:    #FBFAF6;
-  --paper-2:  #F4EFE5;
-  --bone:     #ECE5D6;
+  --paper:    #FAF8F5;
+  --paper-2:  #F2EDE7;
+  --bone:     #E7E1D5;
   --smoke:    #E1DBCC;
   --line:     #D8D2C3;
   --ink:      #0E0F12;
@@ -17,12 +17,12 @@
   --mute:     #7E8089;
   --sage:     #6E8975;
   --sage-2:   #4F6A57;
-  --gold:        #6B2C2A;
-  --gold-2:      #4F1F1E;
-  --gold-soft:   #E8D7D5;
-  --accent:      #6B2C2A;
-  --accent-2:    #4F1F1E;
-  --accent-soft: #E8D7D5;
+  --gold:        #3F2A4A;
+  --gold-2:      #2B1E33;
+  --gold-soft:   #EFE8F4;
+  --accent:      #3F2A4A;
+  --accent-2:    #2B1E33;
+  --accent-soft: #EFE8F4;
   --coal:     #111114;
   --coal-2:   #1A1A1F;
   --white:    #FFFFFF;
@@ -2479,39 +2479,35 @@ h1 em, h2 em, .hero h1 em {
    Coal-Surface — kontrastreiches Dunkel-Intermezzo
    ============================================================ */
 .surface-coal {
-  background: var(--coal);
-  color: rgba(251,250,246,.86);
+  background: var(--accent-soft);
+  color: var(--ink-2);
 }
 .surface-coal h2,
 .surface-coal h3,
-.surface-coal strong { color: var(--paper); }
-.surface-coal .eyebrow {
-  color: var(--accent-soft);
-}
-.surface-coal .eyebrow::before {
-  background: rgba(232,215,213,.6);
-}
+.surface-coal strong { color: var(--accent-2); }
+.surface-coal .eyebrow { color: var(--accent); }
+.surface-coal .eyebrow::before { background: var(--accent); }
 .surface-coal .letter__body {
-  color: rgba(251,250,246,.82);
+  color: var(--ink-2);
 }
 .surface-coal .letter__body p:first-of-type::first-letter {
-  color: var(--paper);
+  color: var(--accent);
 }
 .surface-coal .letter__signature {
-  color: var(--accent-soft);
+  color: var(--accent-2);
 }
 .surface-coal .letter__sig-line {
-  background: var(--accent-soft);
+  background: var(--accent);
 }
 .surface-coal .letter__media {
-  background: rgba(255,255,255,.06);
+  background: rgba(63,42,74,.06);
 }
 .surface-coal .btn--link {
-  color: var(--paper);
-  border-bottom-color: var(--accent-soft);
+  color: var(--ink);
+  border-bottom-color: var(--accent);
 }
-.surface-coal .btn--link:hover { color: var(--accent-soft); border-bottom-color: var(--paper); }
-.surface-coal a:not(.btn) { color: var(--accent-soft); }
+.surface-coal .btn--link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.surface-coal a:not(.btn) { color: var(--accent-2); }
 
 /* ============================================================
    Eyebrow-Magazin-Variante: mit horizontaler Linie davor
