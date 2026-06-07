@@ -1634,9 +1634,18 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   top: 96px;
 }
 .first-visit__heading h2 {
-  font-size: clamp(2rem, 3.6vw, 2.8rem);
-  margin: 0 0 1rem;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  line-height: .98;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.2rem;
   max-width: 12ch;
+  text-wrap: balance;
+}
+.first-visit__heading h2 em {
+  font-style: italic;
+  color: var(--accent);
 }
 .first-visit__heading p {
   color: var(--slate);
@@ -1739,9 +1748,18 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   align-items: start;
 }
 .treatments__intro h2 {
-  font-size: clamp(2rem, 3.6vw, 2.8rem);
-  margin: 0 0 1rem;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  line-height: .98;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.2rem;
   max-width: 14ch;
+  text-wrap: balance;
+}
+.treatments__intro h2 em {
+  font-style: italic;
+  color: var(--accent);
 }
 .treatments__intro p {
   color: var(--slate);
@@ -2710,6 +2728,30 @@ h1 em, h2 em, .hero h1 em {
   .doctor__media img {
     transition: none;
   }
+}
+
+/* ============================================================
+   Chapter-Mark — kleines Editorial-Label ueber Section-H2
+   ============================================================ */
+.chapter-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: .8em;
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 clamp(14px, 1.6vw, 22px);
+}
+.chapter-mark::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
 }
 
 /* ============================================================
