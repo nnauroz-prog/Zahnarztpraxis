@@ -66,7 +66,9 @@
 
 /* ---------- Reset & Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; overflow-x: clip; }
+html { width: 100%; }
+body { width: 100%; min-height: 100vh; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; color-scheme: light; }
 html.menu-open { overflow: hidden; }
 
@@ -814,11 +816,14 @@ html.menu-open .header {
 .footer a:hover { color: var(--white); }
 .footer__wordmark {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(3rem, 12vw, 9rem);
-  line-height: .9;
+  font-size: clamp(2rem, 11vw, 8.4rem);
+  line-height: .95;
   color: var(--paper);
   letter-spacing: -0.03em;
   margin: 0 0 clamp(48px, 7vw, 88px);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 .footer__grid {
   display: grid;
@@ -2010,16 +2015,15 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
   .map__consent,
   iframe,
   .footer__wordmark,
+  .footer__tagline,
   .footer__credit,
-  .reveal--left,
-  .reveal--right,
-  .reveal--scale,
   [data-consent-reopen],
   button.btn,
   .btn--gold,
   .form,
   .form-aside,
-  .form-shell {
+  .form-shell,
+  .map-cta__actions {
     display: none !important;
   }
   /* Reset background and animations */
@@ -2042,12 +2046,29 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
   h3 { font-size: 13pt; }
   p, li, dd, dt { color: #000 !important; }
   a { color: #000 !important; text-decoration: none; }
-  a[href^="tel:"]::after,
-  a[href^="mailto:"]::after,
-  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
+  /* URL nur einblenden, wenn Link-Text != href */
+  a[href^="tel:"]::after { content: ""; }
+  a[href^="mailto:"]::after { content: ""; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; word-break: break-all; }
   a[href^="#"]::after { content: ""; }
-  /* Reveal-Elemente immer sichtbar im Druck */
-  .reveal { opacity: 1 !important; transform: none !important; }
+  /* Map-CTA-Karten: nur Adresse drucken, keine Maps-Links */
+  .map-cta {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    padding: .6rem !important;
+    margin: .4rem 0 !important;
+  }
+  .map-cta a::after { content: ""; }
+  /* Reveal-Elemente IMMER sichtbar im Druck — auch die Varianten */
+  .reveal,
+  .reveal--left,
+  .reveal--right,
+  .reveal--scale,
+  .reveal--up {
+    opacity: 1 !important;
+    transform: none !important;
+    display: revert !important;
+  }
   /* Footer kompakt */
   .footer {
     background: #ffffff !important;
