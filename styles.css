@@ -2670,16 +2670,17 @@ section { position: relative; }
 .gallery__slot figcaption {
   position: relative;
   z-index: 1;
-  font-family: 'Inter', sans-serif;
-  font-size: .82rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent-2);
-  font-weight: 600;
-  background: rgba(250,248,245,.84);
-  padding: .4em .7em;
-  border-radius: var(--r-pill);
-  backdrop-filter: blur(6px);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  font-weight: 400;
+  background: var(--paper);
+  padding: .35em .75em;
+  border-radius: var(--r-1);
+  border: 1px solid var(--smoke);
 }
 .gallery__slot--empty::before {
   content: '';
@@ -2923,10 +2924,18 @@ section { position: relative; }
    sondern dezent direkt auf dem Gradient */
 .gallery__slot figcaption {
   background: var(--paper);
-  color: var(--ink-2);
-  font-weight: 600;
-  padding: .4em .8em;
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 400;
+  padding: .35em .75em;
   border-radius: var(--r-1);
   border: 1px solid var(--smoke);
   backdrop-filter: none;
+}
+
+/* Auf sehr schmalen Smartphones: eine Spalte für mehr Atem */
+@media (max-width: 520px) {
+  .gallery { grid-template-columns: 1fr !important; }
+  .gallery__slot { aspect-ratio: 5/3; }
+  .gallery__slot:nth-child(3) { aspect-ratio: 5/3; }
 }
