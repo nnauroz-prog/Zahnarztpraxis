@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r26';
+  var V = '2026-01-01-r27';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r26">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r27">
 <link rel="icon" href="IMG_9504.png">
 <link rel="preload" as="image" href="IMG_9505.jpeg" fetchpriority="low">
 <link rel="apple-touch-icon" href="IMG_9504.png">
@@ -139,6 +139,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <main id="main">
   <section class="hero hero--home">
     <div class="container">
+      <div class="hero__brand-mark" aria-hidden="true">
+        <img src="IMG_9504.png" alt="" width="160" height="160">
+      </div>
       <div class="hero__inner reveal">
         <h1>Zahnarztpraxis<br>Dr. Delaram Mostafaei.</h1>
         <p class="lead">Ifflandstraße 75 · Hamburg-Hohenfelde. Eine kleine Praxis für Erwachsene und Kinder — gesetzlich und privat versichert.</p>
@@ -225,6 +228,27 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <li><a href="prophylaxe.html"><span>Kinderzahnheilkunde</span><span class="cat">Kinder</span></a></li>
           <li><a href="zahnmedizin.html"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">Akut</span></a></li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="gallery-intro reveal">
+        <p class="eyebrow">Praxis-Eindrücke</p>
+        <h2>Vor dem ersten Termin sehen, wo Sie ankommen.</h2>
+        <p class="lead">Empfang, Behandlungszimmer, Wartebereich — wie es bei uns aussieht.</p>
+      </div>
+      <div class="gallery reveal" data-delay="1">
+        <figure class="gallery__slot gallery__slot--empty">
+          <figcaption>Empfang</figcaption>
+        </figure>
+        <figure class="gallery__slot gallery__slot--empty">
+          <figcaption>Behandlungszimmer</figcaption>
+        </figure>
+        <figure class="gallery__slot gallery__slot--empty">
+          <figcaption>Wartebereich</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -321,9 +345,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r26"></script>
-<script src="db.js?v=2026-01-01-r26"></script>
-<script src="script.js?v=2026-01-01-r26" defer></script>
+<script src="config.js?v=2026-01-01-r27"></script>
+<script src="db.js?v=2026-01-01-r27"></script>
+<script src="script.js?v=2026-01-01-r27" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
