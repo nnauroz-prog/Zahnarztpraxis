@@ -1133,25 +1133,33 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 
 /* Note / Info-Callout */
 .note {
+  position: relative;
   border: 1px solid var(--smoke);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--accent);
   background: var(--paper-2);
-  padding: clamp(22px, 2.8vw, 32px);
+  padding: clamp(28px, 3.4vw, 44px) clamp(24px, 3vw, 40px);
   border-radius: var(--r-2);
-  display: grid; gap: .4rem;
+  display: grid; gap: .65rem;
   margin-top: clamp(40px, 5vw, 64px);
+  max-width: 920px;
 }
 .note__label {
-  font-size: .72rem; letter-spacing: .18em;
-  color: var(--gold-2);
-  text-transform: uppercase; font-weight: 500;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  letter-spacing: 0;
+  color: var(--accent);
+  text-transform: none; font-weight: 400;
 }
 .note h4 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.02rem; font-weight: 600; margin: 0;
-  color: var(--ink-2);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 400; margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  max-width: 24ch;
 }
-.note p { color: var(--slate); margin: 0; max-width: 64ch; }
+.note p { color: var(--slate); margin: 0; max-width: 62ch; line-height: 1.6; }
 .note--alert {
   background: rgba(178,59,59,.05);
   border-color: rgba(178,59,59,.18);
@@ -1405,20 +1413,47 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   display: grid;
 }
 .anchor-list a {
-  display: flex; align-items: baseline; gap: 1rem;
-  padding: 1rem 0; font-size: 1.05rem;
+  position: relative;
+  display: flex; align-items: baseline; gap: 1.4rem;
+  padding: clamp(18px, 2vw, 24px) 2.6rem clamp(18px, 2vw, 24px) 0;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+  letter-spacing: -0.005em;
   color: var(--ink);
   border-bottom: 1px solid var(--smoke);
   transition: color var(--dur-1) var(--ease), padding-left var(--dur-2) var(--ease);
 }
 .anchor-list a:first-child { border-top: 1px solid var(--smoke); }
-.anchor-list a:hover { color: var(--sage); padding-left: 6px; }
-.anchor-list__num {
-  color: var(--gold-2); font-size: .72rem;
-  letter-spacing: .18em;
+.anchor-list a:hover { color: var(--accent); padding-left: 6px; }
+.anchor-list a::after {
+  content: '→';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translate(-10px, -50%);
+  opacity: 0;
+  color: var(--accent);
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  flex-shrink: 0; width: 3em;
+  font-size: 1rem;
+  transition: transform var(--dur-2) var(--ease), opacity var(--dur-2) var(--ease);
+}
+.anchor-list a:hover::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.anchor-list__num {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: var(--accent);
+  font-feature-settings: 'lnum';
+  font-weight: 400;
+  flex-shrink: 0; width: 2.4em;
+  letter-spacing: 0;
+}
+@media (max-width: 540px) {
+  .anchor-list a { padding-right: 2.2rem; gap: 1rem; }
+  .anchor-list__num { width: 2em; }
 }
 
 /* ============================================================
@@ -1619,6 +1654,18 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 }
 @media (max-width: 880px) {
   .treatments { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .treatments__list a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;
+    padding: 14px 0 16px;
+  }
+  .treatments__list .cat {
+    font-size: .68rem;
+    letter-spacing: .14em;
+  }
 }
 
 /* Sprechzeit + Anfahrt (asymmetrisch, ohne Karten) */
@@ -1940,13 +1987,17 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
 }
 .faq__item {
   border-bottom: 1px solid var(--smoke);
+  transition: background var(--dur-1) var(--ease);
+}
+.faq__item:hover {
+  background: linear-gradient(180deg, transparent 0%, var(--paper-2) 100%);
 }
 .faq__summary {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: clamp(20px, 2.4vw, 28px) 0;
+  padding: clamp(20px, 2.4vw, 28px) clamp(0px, 1vw, 16px);
   cursor: pointer;
   list-style: none;
   font-family: 'Instrument Serif', Georgia, serif;
@@ -1955,7 +2006,8 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
   letter-spacing: -0.005em;
   transition: color var(--dur-1) var(--ease);
 }
-.faq__summary:hover { color: var(--sage); }
+.faq__summary:hover { color: var(--accent); }
+.faq__body { padding-inline: clamp(0px, 1vw, 16px); }
 .faq__summary::-webkit-details-marker { display: none; }
 .faq__summary::marker { display: none; }
 .faq__summary svg {
