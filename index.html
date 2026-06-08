@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r50';
+  var V = '2026-01-01-r51';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r50">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r51">
 <link rel="icon" href="IMG_9504.png">
 <link rel="preload" as="image" href="IMG_9505.jpeg" fetchpriority="high">
 <link rel="apple-touch-icon" href="IMG_9504.png">
@@ -234,9 +234,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </section>
   <section>
     <div class="container">
+      <div class="visit__header reveal">
+        <p class="chapter-mark">Kapitel 03</p>
+        <h2>Hierher <em>kommen.</em></h2>
+      </div>
       <div class="visit">
         <div class="visit__hours reveal">
-          <h2>Sprechzeiten</h2>
+          <h3>Sprechzeiten</h3>
           <ul class="hours-list">
             <li data-day="1"><span class="day">Montag</span>     <span class="time">08:00 – 18:00</span></li>
             <li data-day="2"><span class="day">Dienstag</span>   <span class="time">08:00 – 18:00</span></li>
@@ -247,7 +251,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           </ul>
         </div>
         <div class="visit__contact reveal" data-delay="1">
-          <h2>Anfahrt</h2>
+          <h3>Anfahrt</h3>
           <p>Über U-Bahn und HVV-Busse erreichbar. Verbindung im <a href="https://www.hvv.de/de/fahrplanauskunft?ziel=Ifflandstra%C3%9Fe+75%2C+22087+Hamburg" target="_blank" rel="noopener">HVV-Routenplaner</a>.</p>
           <p>Telefon <a href="tel:+4940221528">040 221 528</a><br>E-Mail <a href="mailto:info@dentalharmonie.de">info@dentalharmonie.de</a></p>
           <a class="btn btn--ghost" href="kontakt.html">Karte &amp; Anfahrt
@@ -324,9 +328,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r50"></script>
-<script src="db.js?v=2026-01-01-r50"></script>
-<script src="script.js?v=2026-01-01-r50" defer></script>
+<script src="config.js?v=2026-01-01-r51"></script>
+<script src="db.js?v=2026-01-01-r51"></script>
+<script src="script.js?v=2026-01-01-r51" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
