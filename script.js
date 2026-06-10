@@ -35,6 +35,9 @@
     safe(initMagneticButtons);
     safe(initPortraitParallax);
     safe(initStaggerLists);
+    safe(initHeadlineWordReveal);
+    safe(initPortraitTilt);
+    safe(initChapterMarkDraw);
   }
 
   /* ---------- Sticky Header ---------- */
@@ -494,6 +497,105 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  }
+
+  /* ---------- Hero-Headline Word-by-Word Reveal ---------- */
+  function initHeadlineWordReveal() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const h1 = document.querySelector('.hero--cover h1, .hero__inner h1');
+    if (!h1) return;
+    if (h1.dataset.split === '1') return;
+    h1.dataset.split = '1';
+
+    // Erkenne <br> als Zeilen-Trenner, em als Akzent-Wrapper
+    const nodes = Array.from(h1.childNodes);
+    let wordIndex = 0;
+    const out = document.createDocumentFragment();
+    nodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const words = node.textContent.split(/(\s+)/);
+        words.forEach((w) => {
+          if (/^\s+$/.test(w) || w === '') {
+            out.appendChild(document.createTextNode(w));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'hwr';
+            span.textContent = w;
+            span.style.setProperty('--i', wordIndex++);
+            out.appendChild(span);
+          }
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
+        out.appendChild(node.cloneNode());
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'EM') {
+        const words = (node.textContent || '').split(/(\s+)/);
+        const wrap = document.createElement('em');
+        words.forEach((w) => {
+          if (/^\s+$/.test(w) || w === '') {
+            wrap.appendChild(document.createTextNode(w));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'hwr';
+            span.textContent = w;
+            span.style.setProperty('--i', wordIndex++);
+            wrap.appendChild(span);
+          }
+        });
+        out.appendChild(wrap);
+      } else {
+        out.appendChild(node.cloneNode(true));
+      }
+    });
+    h1.innerHTML = '';
+    h1.appendChild(out);
+
+    requestAnimationFrame(() => h1.classList.add('hwr-in'));
+  }
+
+  /* ---------- 3D-Tilt fuer Hero-Portrait (sehr subtil, max 4 Grad) ---------- */
+  function initPortraitTilt() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine   = window.matchMedia('(pointer: fine)').matches;
+    if (reduce || !fine) return;
+    const fig = document.querySelector('.hero__cover-media');
+    if (!fig) return;
+
+    const MAX_DEG = 4;
+    let raf = null;
+    fig.style.willChange = 'transform';
+    fig.style.transformStyle = 'preserve-3d';
+    fig.style.transition = 'transform .35s cubic-bezier(.2,.7,.2,1)';
+
+    fig.addEventListener('pointermove', (e) => {
+      const r = fig.getBoundingClientRect();
+      const dx = ((e.clientX - r.left) / r.width  - 0.5) * 2;  // -1..1
+      const dy = ((e.clientY - r.top)  / r.height - 0.5) * 2;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        fig.style.transform = 'perspective(900px) rotateY(' + (dx * MAX_DEG).toFixed(2) + 'deg) rotateX(' + (-dy * MAX_DEG).toFixed(2) + 'deg)';
+      });
+    });
+    fig.addEventListener('pointerleave', () => {
+      if (raf) cancelAnimationFrame(raf);
+      fig.style.transform = '';
+    });
+  }
+
+  /* ---------- Chapter-Mark Hairline draws in on enter ---------- */
+  function initChapterMarkDraw() {
+    if (!('IntersectionObserver' in window)) return;
+    const marks = document.querySelectorAll('.chapter-mark');
+    if (!marks.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-drawn');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 });
+    marks.forEach((m) => io.observe(m));
   }
 
   /* ---------- Staggered Reveal fuer Listen-Items (Treatments + Hours + Anchor) ---------- */

@@ -2775,9 +2775,33 @@ h1 em, h2 em, .hero h1 em {
 .chapter-mark::before {
   content: '';
   display: inline-block;
-  width: 28px;
+  width: 0;
   height: 1px;
   background: var(--accent);
+  transition: width .9s cubic-bezier(.2,.7,.2,1);
+}
+.chapter-mark.is-drawn::before { width: 28px; }
+@media (prefers-reduced-motion: reduce) {
+  .chapter-mark::before { width: 28px !important; transition: none; }
+}
+
+/* ============================================================
+   Hero-Headline Word-by-Word Reveal
+   ============================================================ */
+.hwr {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(.6em);
+  transition: opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1);
+  transition-delay: calc(var(--i, 0) * 70ms + 60ms);
+  will-change: opacity, transform;
+}
+.hwr-in .hwr {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hwr { opacity: 1 !important; transform: none !important; transition: none; }
 }
 
 /* ============================================================
