@@ -2825,6 +2825,53 @@ h1 em, h2 em, .hero h1 em {
 }
 
 /* ============================================================
+   Premium-Touch 1: Custom Text Selection (Aubergine)
+   ============================================================ */
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: var(--accent);
+  color: var(--paper);
+  text-shadow: none;
+}
+
+/* ============================================================
+   Premium-Touch 2: Paper-Grain-Textur (sehr subtile Patina)
+   ============================================================ */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: .035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.06  0 0 0 0 0.06  0 0 0 0 0.08  0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+@media (prefers-reduced-motion: reduce) {
+  body::after { display: none; }
+}
+
+/* ============================================================
+   Premium-Touch 3: Hero-Portrait Clip-Path-Reveal beim Load
+   ============================================================ */
+.hero__cover-media {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.4s cubic-bezier(.7,0,.15,1);
+  will-change: clip-path;
+}
+.hero__cover-media.is-revealed {
+  clip-path: inset(0 0 0 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__cover-media { clip-path: none !important; transition: none; }
+}
+
+/* ============================================================
    Page-Transition Fade (Out beim Navigieren, kein In-Risk)
    ============================================================ */
 body.pt-leaving {

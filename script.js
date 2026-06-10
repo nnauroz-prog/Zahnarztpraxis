@@ -42,6 +42,7 @@
     safe(initHeaderAutoHide);
     safe(initButtonRipple);
     safe(initAnchorSmoothScroll);
+    safe(initPortraitReveal);
   }
 
   /* ---------- Sticky Header ---------- */
@@ -584,6 +585,23 @@
       if (raf) cancelAnimationFrame(raf);
       fig.style.transform = '';
     });
+  }
+
+  /* ---------- Portrait Clip-Path Reveal beim Load ---------- */
+  function initPortraitReveal() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const fig = document.querySelector('.hero__cover-media');
+    if (!fig) return;
+    const img = fig.querySelector('img');
+    const reveal = () => requestAnimationFrame(() => fig.classList.add('is-revealed'));
+    if (img && !img.complete) {
+      img.addEventListener('load', () => setTimeout(reveal, 80), { once: true });
+      img.addEventListener('error', reveal, { once: true });
+      setTimeout(reveal, 1200); // Fallback falls Load-Event nie kommt
+    } else {
+      setTimeout(reveal, 120);
+    }
   }
 
   /* ---------- Header Auto-Hide on Scroll Down, Show on Scroll Up ---------- */
