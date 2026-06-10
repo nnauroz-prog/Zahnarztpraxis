@@ -38,6 +38,7 @@
     safe(initHeadlineWordReveal);
     safe(initPortraitTilt);
     safe(initChapterMarkDraw);
+    safe(initPageTransition);
   }
 
   /* ---------- Sticky Header ---------- */
@@ -580,6 +581,33 @@
       if (raf) cancelAnimationFrame(raf);
       fig.style.transform = '';
     });
+  }
+
+  /* ---------- Page-Transition Fade (vor interner Navigation) ---------- */
+  function initPageTransition() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+
+    // Interne Links: vor Navigation kurz ausfaden
+    document.querySelectorAll('a[href]').forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      const target = a.getAttribute('target') || '';
+      const isHash = href.startsWith('#');
+      const isMail = href.startsWith('mailto:');
+      const isTel  = href.startsWith('tel:');
+      const isJs   = href.startsWith('javascript:');
+      const isAbs  = /^(https?:)?\/\//i.test(href);
+      if (isHash || isMail || isTel || isJs || isAbs || target === '_blank' || a.hasAttribute('download')) return;
+      a.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        document.body.classList.add('pt-leaving');
+        setTimeout(() => { window.location.href = a.href; }, 220);
+      });
+    });
+
+    // Falls die Seite ueber Back-Button restauriert wird, Klasse entfernen
+    window.addEventListener('pageshow', () => document.body.classList.remove('pt-leaving'));
   }
 
   /* ---------- Chapter-Mark Hairline draws in on enter ---------- */

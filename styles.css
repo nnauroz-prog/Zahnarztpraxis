@@ -2786,6 +2786,75 @@ h1 em, h2 em, .hero h1 em {
 }
 
 /* ============================================================
+   Page-Transition Fade (Out beim Navigieren, kein In-Risk)
+   ============================================================ */
+body.pt-leaving {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity .25s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-reduced-motion: reduce) {
+  body.pt-leaving { transition: none; opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   Animierter Link-Underline (Prose-Links)
+   ============================================================ */
+.prose-intro a:not(.btn),
+.manifesto a:not(.btn),
+.faq__body a:not(.btn),
+.visit__contact a:not(.btn),
+.legal a:not(.btn) {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  padding-bottom: 1px;
+  transition: background-size .45s cubic-bezier(.2,.7,.2,1), color var(--dur-1) var(--ease);
+}
+.prose-intro a:not(.btn):hover,
+.manifesto a:not(.btn):hover,
+.faq__body a:not(.btn):hover,
+.visit__contact a:not(.btn):hover,
+.legal a:not(.btn):hover {
+  color: var(--accent);
+  background-size: 100% 2px;
+}
+
+/* ============================================================
+   Treatments-List Hover-Pfeil (subtil rechts ausfahrend)
+   ============================================================ */
+.treatments__list a {
+  position: relative;
+  padding-right: 1.6em;
+}
+.treatments__list a::after {
+  content: '→';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translate(-8px, -50%);
+  opacity: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: .95rem;
+  color: var(--accent);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .35s cubic-bezier(.2,.7,.2,1);
+  pointer-events: none;
+}
+.treatments__list a:hover::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+@media (max-width: 540px) {
+  .treatments__list a { padding-right: 0; }
+  .treatments__list a::after { display: none; }
+}
+
+/* ============================================================
    Hero-Headline Word-by-Word Reveal
    ============================================================ */
 .hwr {
