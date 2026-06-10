@@ -225,7 +225,9 @@ section + section {
   border-bottom: 1px solid transparent;
   transition: background var(--dur-2) var(--ease),
               backdrop-filter var(--dur-2) var(--ease),
-              border-color var(--dur-2) var(--ease);
+              border-color var(--dur-2) var(--ease),
+              transform .35s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
 }
 .header.is-scrolled {
   background: rgba(251, 250, 246, .82);
@@ -233,7 +235,13 @@ section + section {
           backdrop-filter: saturate(180%) blur(18px);
   border-bottom-color: var(--smoke);
 }
-html.menu-open .header { background: transparent; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.header.is-hidden {
+  transform: translateY(-110%);
+}
+html.menu-open .header { background: transparent; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .header { transition: background var(--dur-2) var(--ease); transform: none !important; }
+}
 
 .header__row {
   display: flex;
@@ -2783,6 +2791,37 @@ h1 em, h2 em, .hero h1 em {
 .chapter-mark.is-drawn::before { width: 28px; }
 @media (prefers-reduced-motion: reduce) {
   .chapter-mark::before { width: 28px !important; transition: none; }
+}
+
+/* ============================================================
+   Button-Ripple (subtile Klick-Welle auf Primary-Buttons)
+   ============================================================ */
+.btn--primary,
+.header__cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(251, 250, 246, .35);
+  pointer-events: none;
+  transform: scale(0);
+  opacity: 1;
+  animation: rippleAnim .6s cubic-bezier(.2,.7,.2,1) forwards;
+  z-index: 0;
+}
+.btn--primary > *:not(.ripple),
+.header__cta > *:not(.ripple) {
+  position: relative;
+  z-index: 1;
+}
+@keyframes rippleAnim {
+  to { transform: scale(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ripple { display: none; }
 }
 
 /* ============================================================

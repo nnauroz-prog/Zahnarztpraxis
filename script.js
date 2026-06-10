@@ -39,6 +39,9 @@
     safe(initPortraitTilt);
     safe(initChapterMarkDraw);
     safe(initPageTransition);
+    safe(initHeaderAutoHide);
+    safe(initButtonRipple);
+    safe(initAnchorSmoothScroll);
   }
 
   /* ---------- Sticky Header ---------- */
@@ -580,6 +583,71 @@
     fig.addEventListener('pointerleave', () => {
       if (raf) cancelAnimationFrame(raf);
       fig.style.transform = '';
+    });
+  }
+
+  /* ---------- Header Auto-Hide on Scroll Down, Show on Scroll Up ---------- */
+  function initHeaderAutoHide() {
+    const header = document.getElementById('header');
+    if (!header) return;
+    let lastY = window.scrollY;
+    let ticking = false;
+    const THRESH = 8;
+    const TOP_LIMIT = 80;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const delta = y - lastY;
+        if (y < TOP_LIMIT) {
+          header.classList.remove('is-hidden');
+        } else if (Math.abs(delta) > THRESH) {
+          if (delta > 0) header.classList.add('is-hidden');
+          else header.classList.remove('is-hidden');
+        }
+        lastY = y;
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ---------- Button Klick-Welle (subtile Aubergine-Ripple auf Primary) ---------- */
+  function initButtonRipple() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    document.querySelectorAll('.btn--primary, .header__cta').forEach((btn) => {
+      btn.addEventListener('pointerdown', (e) => {
+        const r = btn.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        const size = Math.max(r.width, r.height) * 1.8;
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - r.left - size / 2) + 'px';
+        ripple.style.top  = (e.clientY - r.top  - size / 2) + 'px';
+        btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 650);
+      });
+    });
+  }
+
+  /* ---------- Smooth Anchor Scroll mit Header-Offset ---------- */
+  function initAnchorSmoothScroll() {
+    const header = document.getElementById('header');
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      if (href === '#' || href.length < 2) return;
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const headerH = header ? header.getBoundingClientRect().height : 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+        if (history.pushState) history.pushState(null, '', href);
+      });
     });
   }
 
