@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r65';
+  var V = '2026-01-01-r66';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r65">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r66">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -148,14 +148,14 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <p>Vom ersten Putz-Termin im Kindergartenalter bis zum jährlichen Recall.</p>
         </div>
         <ul class="treatments__list reveal" data-delay="1">
-          <li><a href="#"><span><span class="t-title">Kinder-Prophylaxe</span><span class="t-desc">Mundhygiene mit spielerischem Aufbau, je nach Alter und Befund.</span></span><span class="cat">spielerisch</span></a></li>
-          <li><a href="#"><span><span class="t-title">Mundhygiene-Schulung</span><span class="t-desc">Putztechnik, abgestimmt auf Zahnstellung, Implantate oder Brücken.</span></span><span class="cat">individuell</span></a></li>
-          <li><a href="#"><span><span class="t-title">Fissurenversiegelung</span><span class="t-desc">Schutz tiefer Kauflächen-Furchen vor Karies — direkt nach Durchbruch der bleibenden Backenzähne.</span></span><span class="cat">Karies-Schutz</span></a></li>
-          <li><a href="#"><span><span class="t-title">Fluoridierung</span><span class="t-desc">Stärkung des Zahnschmelzes. Dosis und Frequenz nach Alter und Risiko.</span></span><span class="cat">je nach Alter</span></a></li>
-          <li><a href="#"><span><span class="t-title">Individueller Recall</span><span class="t-desc">Intervall nach Ihrem Befund-Profil — alle drei Monate bei höherem Risiko, jährlich bei stabilem Befund.</span></span><span class="cat">3 – 12 Monate</span></a></li>
-          <li><a href="#"><span><span class="t-title">Bleaching In-Office</span><span class="t-desc">Aufhellung in einer Sitzung. Mit Zahn- und Zahnfleisch-Prüfung vorab.</span></span><span class="cat">eine Sitzung</span></a></li>
-          <li><a href="#"><span><span class="t-title">Bleaching Home</span><span class="t-desc">Individuell angefertigte Aufhellungsschienen für 1 bis 2 Wochen zu Hause.</span></span><span class="cat">mit Schienen</span></a></li>
-          <li><a href="#"><span><span class="t-title">Ernährungsberatung</span><span class="t-desc">Welche Lebensmittel die Zähne schonen — ohne erhobenen Zeigefinger.</span></span><span class="cat">auf Wunsch</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Kinder-Prophylaxe"><span><span class="t-title">Kinder-Prophylaxe</span><span class="t-desc">Mundhygiene mit spielerischem Aufbau, je nach Alter und Befund.</span></span><span class="cat">spielerisch</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Mundhygiene-Schulung"><span><span class="t-title">Mundhygiene-Schulung</span><span class="t-desc">Putztechnik, abgestimmt auf Zahnstellung, Implantate oder Brücken.</span></span><span class="cat">individuell</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Fissurenversiegelung"><span><span class="t-title">Fissurenversiegelung</span><span class="t-desc">Schutz tiefer Kauflächen-Furchen vor Karies — direkt nach Durchbruch der bleibenden Backenzähne.</span></span><span class="cat">Karies-Schutz</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Fluoridierung"><span><span class="t-title">Fluoridierung</span><span class="t-desc">Stärkung des Zahnschmelzes. Dosis und Frequenz nach Alter und Risiko.</span></span><span class="cat">je nach Alter</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Kontrolluntersuchung"><span><span class="t-title">Individueller Recall</span><span class="t-desc">Intervall nach Ihrem Befund-Profil — alle drei Monate bei höherem Risiko, jährlich bei stabilem Befund.</span></span><span class="cat">3 – 12 Monate</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Bleaching%20In-Office"><span><span class="t-title">Bleaching In-Office</span><span class="t-desc">Aufhellung in einer Sitzung. Mit Zahn- und Zahnfleisch-Prüfung vorab.</span></span><span class="cat">eine Sitzung</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Bleaching%20Home"><span><span class="t-title">Bleaching Home</span><span class="t-desc">Individuell angefertigte Aufhellungsschienen für 1 bis 2 Wochen zu Hause.</span></span><span class="cat">mit Schienen</span></a></li>
+          <li><a href="termin-anfragen.html?anliegen=Ern%C3%A4hrungsberatung"><span><span class="t-title">Ernährungsberatung</span><span class="t-desc">Welche Lebensmittel die Zähne schonen — ohne erhobenen Zeigefinger.</span></span><span class="cat">auf Wunsch</span></a></li>
         </ul>
       </div>
     </div>
@@ -226,9 +226,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r65"></script>
-<script src="db.js?v=2026-01-01-r65"></script>
-<script src="script.js?v=2026-01-01-r65" defer></script>
+<script src="config.js?v=2026-01-01-r66"></script>
+<script src="db.js?v=2026-01-01-r66"></script>
+<script src="script.js?v=2026-01-01-r66" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

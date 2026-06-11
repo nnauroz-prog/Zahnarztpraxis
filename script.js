@@ -44,6 +44,7 @@
     safe(initAnchorSmoothScroll);
     safe(initPortraitReveal);
     safe(initAnchorScrollSpy);
+    safe(initTerminPrefill);
   }
 
   /* ---------- Sticky Header ---------- */
@@ -586,6 +587,55 @@
       if (raf) cancelAnimationFrame(raf);
       fig.style.transform = '';
     });
+  }
+
+  /* ---------- Termin-Form Prefill aus ?anliegen=...-URL-Param ---------- */
+  function initTerminPrefill() {
+    const form = document.getElementById('terminForm');
+    if (!form) return;
+    const params = new URLSearchParams(window.location.search);
+    const anliegen = params.get('anliegen');
+    if (!anliegen) return;
+
+    const select = document.getElementById('terminType');
+    const msg    = document.getElementById('terminMsg');
+
+    // Versuche, im Dropdown einen Treffer zu finden (case-insensitive)
+    if (select) {
+      const wanted = anliegen.toLowerCase();
+      let matched = false;
+      Array.from(select.options).forEach((opt) => {
+        if (opt.value && opt.value.toLowerCase().includes(wanted) ||
+            opt.textContent.toLowerCase().includes(wanted)) {
+          select.value = opt.value || opt.textContent;
+          matched = true;
+        }
+      });
+      // Kein Treffer → 'Anderes Anliegen' auswaehlen (falls vorhanden)
+      if (!matched) {
+        Array.from(select.options).forEach((opt) => {
+          if (opt.textContent.toLowerCase().includes('anderes')) {
+            select.value = opt.value || opt.textContent;
+          }
+        });
+      }
+    }
+
+    // Nachrichten-Feld vorbefuellen
+    if (msg && !msg.value) {
+      msg.value = 'Mein Anliegen: ' + anliegen;
+    }
+
+    // Kleine Hervorhebung am Anliegen-Select fuer 2 Sekunden
+    if (select) {
+      select.style.transition = 'box-shadow .4s ease, border-color .4s ease';
+      select.style.boxShadow = '0 0 0 4px rgba(63, 42, 74, .18)';
+      select.style.borderColor = 'var(--accent)';
+      setTimeout(() => {
+        select.style.boxShadow = '';
+        select.style.borderColor = '';
+      }, 2200);
+    }
   }
 
   /* ---------- Anchor Scroll-Spy (markiert aktive Sektion in der Anchor-List) ---------- */
