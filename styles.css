@@ -1734,6 +1734,16 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   font-size: 1.8rem;
   color: var(--accent);
   line-height: 1;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(.4em) scale(.85);
+  transition: opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.34,1.4,.5,1);
+}
+.first-visit__steps.in .first-visit__step:nth-child(1) .num { transition-delay: 120ms; opacity: 1; transform: none; }
+.first-visit__steps.in .first-visit__step:nth-child(2) .num { transition-delay: 260ms; opacity: 1; transform: none; }
+.first-visit__steps.in .first-visit__step:nth-child(3) .num { transition-delay: 400ms; opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .first-visit__step .num { opacity: 1; transform: none; transition: none; }
 }
 .first-visit__step h3 {
   font-family: 'Inter', sans-serif;
