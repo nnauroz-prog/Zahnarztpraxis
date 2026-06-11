@@ -599,13 +599,14 @@
 
     const select = document.getElementById('terminType');
     const msg    = document.getElementById('terminMsg');
+    const nameInput = document.getElementById('terminName');
 
     // Versuche, im Dropdown einen Treffer zu finden (case-insensitive)
     if (select) {
       const wanted = anliegen.toLowerCase();
       let matched = false;
       Array.from(select.options).forEach((opt) => {
-        if (opt.value && opt.value.toLowerCase().includes(wanted) ||
+        if ((opt.value && opt.value.toLowerCase().includes(wanted)) ||
             opt.textContent.toLowerCase().includes(wanted)) {
           select.value = opt.value || opt.textContent;
           matched = true;
@@ -626,7 +627,31 @@
       msg.value = 'Mein Anliegen: ' + anliegen;
     }
 
-    // Kleine Hervorhebung am Anliegen-Select fuer 2 Sekunden
+    // Visuelle Bestaetigung oberhalb des Formulars
+    const prefillNote = document.createElement('div');
+    prefillNote.className = 'prefill-note';
+    prefillNote.innerHTML =
+      '<span class="prefill-note__icon" aria-hidden="true">✓</span>' +
+      '<span><strong>Anliegen vorausgewählt:</strong> ' + escapeHtml(anliegen) + '</span>' +
+      '<button type="button" class="prefill-note__close" aria-label="Hinweis schliessen">×</button>';
+    form.parentNode.insertBefore(prefillNote, form);
+    prefillNote.querySelector('.prefill-note__close').addEventListener('click', () => {
+      prefillNote.style.opacity = '0';
+      setTimeout(() => prefillNote.remove(), 300);
+    });
+
+    // Sanft zum Formular scrollen (mit Header-Offset)
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(() => {
+      const header = document.getElementById('header');
+      const headerH = header ? header.getBoundingClientRect().height : 68;
+      const target = prefillNote.getBoundingClientRect().top + window.scrollY - headerH - 24;
+      window.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' });
+      // Name-Feld fokussieren — Patient kann direkt tippen
+      if (nameInput) setTimeout(() => nameInput.focus({ preventScroll: true }), reduce ? 0 : 700);
+    }, 250);
+
+    // Kleine Hervorhebung am Anliegen-Select fuer 2.2s
     if (select) {
       select.style.transition = 'box-shadow .4s ease, border-color .4s ease';
       select.style.boxShadow = '0 0 0 4px rgba(63, 42, 74, .18)';
@@ -636,6 +661,18 @@
         select.style.borderColor = '';
       }, 2200);
     }
+
+    // URL aufraeumen: '?anliegen=...' raus, damit ein Refresh nicht erneut prefiled
+    if (history.replaceState) {
+      const cleanUrl = window.location.pathname;
+      history.replaceState(null, '', cleanUrl);
+    }
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
   }
 
   /* ---------- Anchor Scroll-Spy (markiert aktive Sektion in der Anchor-List) ---------- */
