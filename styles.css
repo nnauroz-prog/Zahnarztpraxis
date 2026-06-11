@@ -2368,6 +2368,36 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
     transform: none !important;
     display: revert !important;
   }
+  /* Neue Animations-Komponenten: Anfangszustaende zuruecksetzen */
+  .first-visit__step .num,
+  .hwr,
+  .hero__cover-media,
+  .chapter-mark::before {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    width: 28px !important;
+  }
+  .chapter-mark::before {
+    width: 28px !important;
+  }
+  /* Hero-Portrait verkleinern fuers Print */
+  .hero__cover-media {
+    max-width: 200px !important;
+    box-shadow: none !important;
+    aspect-ratio: 4/5;
+  }
+  .hero__cover-media img { filter: none !important; }
+  .hero__cover-media::after { display: none; }
+  .hero__cover {
+    grid-template-columns: 1fr 220px !important;
+    gap: 1.2rem !important;
+    align-items: start !important;
+  }
+  /* Body-Grain-Overlay weg im Print */
+  body::after { display: none !important; }
+  /* Page-Transition-Fade darf nicht beim Drucken aktiv sein */
+  body.pt-leaving { opacity: 1 !important; transform: none !important; }
   /* Footer kompakt */
   .footer {
     background: #ffffff !important;
