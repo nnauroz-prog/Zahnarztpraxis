@@ -43,6 +43,7 @@
     safe(initButtonRipple);
     safe(initAnchorSmoothScroll);
     safe(initPortraitReveal);
+    safe(initAnchorScrollSpy);
   }
 
   /* ---------- Sticky Header ---------- */
@@ -585,6 +586,33 @@
       if (raf) cancelAnimationFrame(raf);
       fig.style.transform = '';
     });
+  }
+
+  /* ---------- Anchor Scroll-Spy (markiert aktive Sektion in der Anchor-List) ---------- */
+  function initAnchorScrollSpy() {
+    const list = document.querySelector('.anchor-list');
+    if (!list || !('IntersectionObserver' in window)) return;
+    const links = Array.from(list.querySelectorAll('a[href^="#"]'));
+    const sections = links
+      .map((a) => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+    if (!sections.length) return;
+
+    const setActive = (id) => {
+      links.forEach((a) => {
+        a.classList.toggle('is-current', a.getAttribute('href') === '#' + id);
+      });
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      // Sortiere nach Position, nimm das oberste sichtbare Element
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length) setActive(visible[0].target.id);
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach((s) => io.observe(s));
   }
 
   /* ---------- Portrait Clip-Path Reveal beim Load ---------- */

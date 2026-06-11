@@ -196,21 +196,23 @@ section + section {
 .skip:focus { left: 0; }
 
 :focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
+  transition: outline-offset .15s var(--ease);
 }
 
-/* Akzentvarianten: Buttons + dunkler Footer brauchen Gold-Ring, Ink wäre unsichtbar */
+/* Akzentvarianten: Footer mit Paper-Ring auf Coal-Hintergrund */
+.footer a:focus-visible {
+  outline-color: var(--paper);
+  outline-offset: 4px;
+}
 .btn:focus-visible,
 .cta-band a:focus-visible,
-.footer a:focus-visible,
 .menu__list a:focus-visible {
-  outline-color: var(--gold);
   outline-offset: 4px;
 }
 .sticky-cta a:focus-visible {
-  outline-color: var(--gold);
   outline-offset: 3px;
 }
 
@@ -1339,9 +1341,17 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 .form__field input:focus,
 .form__field select:focus,
 .form__field textarea:focus {
-  outline: none; border-color: var(--ink);
-  box-shadow: 0 0 0 3px rgba(14,15,18,.08);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(63, 42, 74, .12);
+  background: var(--paper);
 }
+.form__field input:hover,
+.form__field select:hover,
+.form__field textarea:hover {
+  border-color: var(--ink-2);
+}
+.form__check input { accent-color: var(--accent); }
 .form__check {
   display: flex; gap: .8rem;
   align-items: flex-start;
@@ -1556,6 +1566,29 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 }
 .anchor-list a:first-child { border-top: 1px solid var(--smoke); }
 .anchor-list a:hover { color: var(--accent); padding-left: 6px; }
+.anchor-list a.is-current {
+  color: var(--accent);
+  padding-left: 6px;
+}
+.anchor-list a.is-current .anchor-list__num {
+  color: var(--accent);
+}
+.anchor-list a.is-current::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-50%);
+  animation: anchorDot .6s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes anchorDot {
+  from { transform: translateY(-50%) scale(0); opacity: 0; }
+  to   { transform: translateY(-50%) scale(1); opacity: 1; }
+}
 .anchor-list a::after {
   content: '→';
   position: absolute;
