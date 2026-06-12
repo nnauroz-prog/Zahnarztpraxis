@@ -1005,13 +1005,14 @@ html.menu-open .header {
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .footer__col h4 {
-  font-family: 'Inter', sans-serif;
-  font-size: .72rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(251,250,246,.55);
-  margin: 0 0 1.2rem;
-  font-weight: 500;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(251,250,246,.78);
+  margin: 0 0 1.3rem;
+  font-weight: 400;
 }
 .footer__col ul {
   list-style: none;
@@ -1440,24 +1441,58 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 }
 .form__check input { accent-color: var(--accent); }
 .form__check {
-  display: flex; gap: .8rem;
+  display: flex; gap: .9rem;
   align-items: flex-start;
-  font-size: .9rem;
+  font-size: .92rem;
   color: var(--slate);
   cursor: pointer;
-  line-height: 1.5;
+  line-height: 1.55;
+  padding: .8rem 1rem;
+  border-radius: var(--r-2);
+  background: rgba(255, 255, 255, .55);
+  border: 1px solid rgba(220, 214, 199, .45);
+  transition: background var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease);
 }
-.form__check input { margin-top: .25rem; flex-shrink: 0; accent-color: var(--ink); }
+.form__check:hover {
+  background: rgba(255, 255, 255, .8);
+  border-color: rgba(74, 47, 88, .25);
+}
+.form__check input {
+  margin-top: .2rem;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
 .form__check a {
-  color: var(--ink); border-bottom: 1px solid var(--gold);
-  padding-bottom: 1px;
+  color: var(--ink);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  padding-bottom: 2px;
+  transition: background-size .35s cubic-bezier(.2,.7,.2,1);
+  text-decoration: none;
 }
+.form__check a:hover { background-size: 100% 2px; }
 .form__error {
   background: rgba(178,59,59,.08);
   color: var(--danger);
-  padding: .8rem 1rem;
+  padding: 1rem 1.2rem;
   border-radius: var(--r-2);
-  font-size: .9rem;
+  font-size: .92rem;
+  line-height: 1.5;
+  border: 1px solid rgba(178,59,59,.18);
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+}
+.form__error::before {
+  content: '⚠';
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 .form__actions {
   margin-top: .4rem;
