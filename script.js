@@ -224,12 +224,12 @@
       el.setAttribute('aria-labelledby', 'consentTitle');
       el.innerHTML =
         '<div>' +
-          '<h3 id="consentTitle">Hinweis zu Cookies</h3>' +
-          '<p>Wir nutzen technisch notwendige Speicherung. Schriftarten werden von Google Fonts geladen — dabei wird Ihre IP an Google übertragen. Details in den <a href="datenschutz.html">Datenschutzhinweisen</a>.</p>' +
+          '<h3 id="consentTitle">Kurz zu Daten</h3>' +
+          '<p>Diese Seite nutzt nur technisch nötige Speicherung. Wenn Sie zustimmen, werden zusätzlich Schriftarten von Google Fonts geladen — dabei sieht Google Ihre IP. Mehr in den <a href="datenschutz.html">Datenschutzhinweisen</a>.</p>' +
         '</div>' +
         '<div class="consent__actions">' +
           '<button type="button" class="btn btn--primary" data-consent="all">Zustimmen</button>' +
-          '<button type="button" class="btn btn--ghost" data-consent="necessary">Nur notwendige</button>' +
+          '<button type="button" class="btn btn--ghost" data-consent="necessary">Nur das Nötigste</button>' +
         '</div>';
       document.body.appendChild(el);
       requestAnimationFrame(() => el.classList.add('is-visible'));

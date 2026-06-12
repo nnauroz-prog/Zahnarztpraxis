@@ -313,17 +313,19 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
 .header__nav a {
   font-size: .94rem;
   color: var(--ink-2);
-  padding: .3rem 0;
+  padding: .35rem 0;
   position: relative;
   transition: color var(--dur-1) var(--ease);
+  text-decoration: none;
 }
+.header__nav a:hover { color: var(--accent); }
 .header__nav a::after {
   content: '';
   position: absolute;
   left: 50%; right: 50%;
   bottom: -2px;
   height: 1px;
-  background: var(--ink);
+  background: var(--accent);
   transition: left var(--dur-2) var(--ease), right var(--dur-2) var(--ease);
 }
 .header__nav a:hover::after,
@@ -2080,6 +2082,10 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   letter-spacing: -0.025em;
   margin: 0;
   text-wrap: balance;
+}
+@media (max-width: 540px) {
+  .visit__header h2 { line-height: 1; }
+  .visit { gap: 32px; }
 }
 .visit__header h2 em {
   font-style: italic;
