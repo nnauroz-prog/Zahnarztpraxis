@@ -1,96 +1,154 @@
-# Übergabe · DentalHarmonie Relaunch
+# Übergabe · DentalHarmonie
 
-## Status: Etappe 3 abgeschlossen — Site funktionsfähig + live-CMS
+## Status: Sales-ready (Cache r91)
 
-Auf Branch `claude/improve-website-presentation-Yp4UY` liegt ein
-vollständiges, premiumiges Praxis-Portal mit:
+Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
+1 Stylesheet (~3.900 Zeilen), 1 Script (~700 Zeilen), 1 Konfiguration,
+1 SQL-Setup. Plus 6 Verkaufsdokumente im Repo-Root.
 
-- 12 Seiten mit echten Inhalten und editorialer Struktur
-- Vollbild-Menü (Paper-Farbe, weiße Versalien Editorial-Look)
-- Termin-Formular mit Supabase-Anbindung (Fallback auf mailto im Demo)
-- Anfahrt-Plan auf Kontakt (U-Bahn Uhlandstraße als nächste, Bus, Auto)
-- Click-to-Load OpenStreetMap-Karte
-- FAQ-Sektion auf Leistungen
-- Scroll-Progress, Sticky-Mobile-CTA, Reveal-Animationen
-- Manifest + Theme-Color + OG-Image für Social-Share + Print-CSS
-- **Admin-Dashboard** mit echtem Supabase-Backend
+---
 
-### Manuelle Schritte zur Inbetriebnahme
+## Was steht
+
+### Seiten (13)
+
+| Seite | Zweck |
+| --- | --- |
+| `index.html` | Magazin-Cover-Hero mit Portrait, drei Kapitel, Manifesto auf Lavendel, CTA-Band |
+| `leistungen.html` | Anchor-Inhaltsverzeichnis + 4 Kapitel (Vorsorge, Zahnmedizin, Ästhetik, Zahnersatz), Honorar-Note, FAQ |
+| `zahnmedizin.html` | „Bestandsaufnahme zuerst" 3-Schritt-Block + Treatments-Liste mit Anchor-IDs für tief verlinkte Items |
+| `prophylaxe.html` | PZR-Detail-Block + Treatments-Liste mit Anchor-IDs |
+| `ueber-uns.html` | Hero, Prose-Intro mit Pull-Quote, 4-Schritt „Wie ich arbeite", Standards-Liste, Berufsrechtliches |
+| `team.html` | Hero, Letter mit Portrait, Prose-Intro Team-Stationen, 3-Schritt „Wie ein Termin abläuft" |
+| `kontakt.html` | Hero, Sprechzeiten + Adresse, drei Routen-Karten, Map-CTA, Notfall-Note |
+| `termin-anfragen.html` | Form mit Prefill-Logik (`?anliegen=...`), Side-Aside mit Doctolib-Link |
+| `impressum.html` | Pflichtangaben nach DDG |
+| `datenschutz.html` | DSGVO-konform |
+| `sitemap.html` | Vier Bereiche der Site auf einer Seite |
+| `404.html` | Mit Sitemap-Übersicht |
+| `admin.html` | Supabase-basiertes Dashboard für Termine, Inhalte, Sprechzeiten |
+
+### Design-System
+
+- **Farben:** Aubergine `#4A2F58` als Hauptakzent, Paper `#FBF9F6` als Background, dezenter Sage als Sekundär
+- **Typografie:** Instrument Serif (Display/Italic) + Inter (Body) + JetBrains Mono (Code)
+- **Komponenten:** Hero-Cover, Chapter-Marks, Manifesto, Pull-Quote, Notes, Treatments-Liste, Hours-Liste, Anchor-Liste, FAQ, Form, Letter, Visit, CTA-Band, Footer
+- **Effekte:** 24 sorgfältig dosierte Mikro-Animationen — Magnet-Buttons, Counter-Parallax, Word-Stagger, 3D-Tilt, Chapter-Hairline, Page-Transition-Fade, Anchor-Scroll-Spy, Prefill-Bestätigung, Status-Badge-Pulse, „Heute"-Pulse u.v.m.
+- **Tokens:** Generöse Border-Radii (8/16/26 px), diffuse Mehrlagen-Schatten, Aubergine-Glow für Hover-States
+
+### Funktionen
+
+- Termin-Anfrage-Formular mit URL-Param-Prefill (`?anliegen=Wurzelkanalbehandlung` → Dropdown vorausgewählt, Nachrichtenfeld vorbefüllt, Aubergine-Glow auf Dropdown, Auto-Scroll zum Form, Focus auf Name-Feld)
+- Automatische Sprechzeiten-Logik (`Jetzt geöffnet bis 18:00` / `Heute ab 08:00` / `Aktuell geschlossen · Donnerstag ab 08:00`)
+- „Heute"-Markierung in der Sprechzeiten-Liste mit Pulse
+- Klick-zu-Laden-Karte für DSGVO-konformen OpenStreetMap-Einsatz
+- Cookie-Consent mit drei Stufen
+- Header-Auto-Hide auf Scroll-Down
+- Smooth-Anchor-Scroll mit Header-Offset
+- Page-Transition-Fade beim Navigieren zwischen Seiten
+- Anchor-Scroll-Spy auf Leistungen-Anchor-Liste
+
+### Technik & Standards
+
+- Schema.org strukturierte Daten: `Dentist`, `Person`, `FAQPage`, `BreadcrumbList`, `MedicalProcedure`
+- Open-Graph-Tags für Social-Vorschau (WhatsApp, Facebook, LinkedIn)
+- Web-App-Manifest (Mobile-App-Add-to-Home)
+- Druck-Stylesheet (`@media print`) für saubere Patient-PDFs
+- Cache-Busting via `?v=2026-01-01-r91`
+- Service-Worker-Unregister im Head (verhindert Old-Cache-Stalking)
+- WCAG-2.1-konforme Focus-Rings in Aubergine
+
+---
+
+## Manuelle Schritte zur Inbetriebnahme
 
 1. **Supabase-Projekt** erstellen unter https://supabase.com
 2. URL und Anon-Key aus `Settings → API` kopieren
-3. In **`config.js`** beide Werte eintragen (Platzhalter `PASTE_HERE` ersetzen)
-4. **`setup.sql`** im SQL-Editor des Projekts ausführen — legt an:
+3. In `config.js` beide Werte eintragen (Platzhalter `PASTE_HERE` ersetzen)
+4. `setup.sql` im SQL-Editor des Projekts ausführen — legt an:
    - Tabelle `content` (öffentlich lesbar, Auth-Schreibzugriff)
    - Tabelle `appointment_requests` (Anon-Insert mit Privacy-Checkbox, Auth-CRUD)
    - Storage-Bucket `images`
    - Realtime-Publication auf beiden Tabellen
    - Alle Row-Level-Security-Policies
 5. Ersten Admin-Nutzer in Supabase **Authentication → Users → „Add user"** anlegen
-6. Auf `https://www.dentalharmonie.de/admin.html` mit dieser E-Mail/Passwort
-   anmelden
-7. Im Dashboard:
-   - **Banner**: bei Bedarf aktivieren (Praxis-Schließung etc.)
-   - **Sprechzeiten**: aktuelle Zeiten eintragen oder bestätigen
-   - **Kontakt**: Praxis-Stammdaten prüfen
-   - **Bilder**: erste Praxis-Bilder (Empfang, Behandlungszimmer) hochladen
-8. **Rechtstexte** (`impressum.html`, `datenschutz.html`) durch eine
-   Anwältin oder einen Anwalt prüfen lassen
+6. Auf `https://www.dentalharmonie.de/admin.html` mit dieser E-Mail/Passwort anmelden
+7. Inhalte einpflegen, Sprechzeiten überprüfen, ggf. Bild hochladen
 
-### Admin-Dashboard — was es kann
+Detaillierte Schritt-für-Schritt-Anleitung steht in `GO-LIVE-CHECKLISTE.md`.
 
-Nach dem Login (über `admin.html`) öffnet sich ein Dashboard mit
-seitlicher Navigation und folgenden Bereichen:
+---
 
-- **Übersicht**: Zahl der neuen Anfragen, Banner-Status, Öffnungszeit-
-  Einträge auf einen Blick. Click-Through in die jeweiligen Panels.
-- **Terminanfragen**: alle eingegangenen Anfragen, neueste zuerst,
-  mit Status-Update (Neu / In Bearbeitung / Erledigt / Archiviert),
-  Lösch-Aktion und automatischer Live-Aktualisierung über Supabase
-  Realtime. Filter nach Status.
-- **Hinweisbanner**: Ein-/Aus-Schalter und Text-Eingabe. Wenn aktiv,
-  erscheint der Text ganz oben auf allen öffentlichen Seiten.
-- **Sprechzeiten**: Wochenpläne mit Time-Inputs. Leerlassen heißt
-  geschlossen.
-- **Kontakt**: Praxisname, Inhaberin, Adresse, Telefon, E-Mail —
-  wird in der gesamten Site verwendet (Read über `dentalDb.get`).
-- **Bilder**: Datei-Upload in den `images`-Bucket mit optionalem
-  Slot/Kategorie-Prefix. Liefert direkt eine öffentliche URL zurück.
-
-Realtime: das Dashboard abonniert beide Tabellen — wenn eine neue
-Anfrage eingeht, taucht sie ohne Reload auf.
-
-Abmelden: oben links per „Abmelden"-Button (löst Auth-Signout und Reload aus).
-
-### Demo-Mode (vor Supabase-Konfiguration)
-
-- Solange `SUPABASE_URL === 'PASTE_HERE'` in `config.js` steht,
-  läuft alles im **Demo-Mode**:
-- Lesezugriffe (`get(key)`) liefern sinnvolle Defaults
-- Schreibzugriffe lehnen sauber mit Hinweis ab
-- Das Termin-Formular fällt auf `mailto:info@dentalharmonie.de`
-  zurück und öffnet das Mail-Programm vorausgefüllt
-- Der Admin-Login zeigt eine klare Fehlermeldung
-
-### Datei-Karte
+## Verkaufsdokumente
 
 | Datei | Zweck |
-|---|---|
-| `config.js` | Praxis-Stammdaten, Supabase-Schlüssel, Cache-Version |
-| `db.js` | Vollständiger Supabase-Wrapper (Auth, Content, Storage, Realtime) — Demo-Fallback bei fehlender Konfiguration |
-| `script.js` | Header, Menü, Reveal, Consent, Termin-Form, Map, Scroll-Progress, Sticky-CTA, FAQ |
-| `admin.js` | Admin-Dashboard (Login, Panels, Realtime-Updates, CRUD für alle Inhalte) |
-| `styles.css` | Designsystem + Layout + Inhalts-Komponenten + Editorial-Komponenten + Print + Admin |
-| `setup.sql` | Supabase-Schema (Tabellen, RLS, Storage, Realtime) |
-| `_headers` | HSTS, CSP, Cache-Header, Robots-Tag |
-| `netlify.toml` | Netlify-Build und 404-Fallback |
-| `manifest.webmanifest` | Web-App-Manifest |
-| `sitemap.xml`, `robots.txt` | SEO |
+| --- | --- |
+| `PITCH.md` | Gesprächsleitfaden für den Termin mit Dr. Mostafaei (30 Min, Tour-Reihenfolge, Hooks, Einwand-Antworten) |
+| `EINBLICK.md` | One-Pager für die Inhaberin (kann sie ihrem Steuerberater zeigen) |
+| `ANGEBOT.md` | Formelles Angebot zum Ausdrucken und Unterschreiben |
+| `ANSCHREIBEN.md` | Drei E-Mail-Bausteine (Vorab, Follow-up, SMS-Kurzform) |
+| `GO-LIVE-CHECKLISTE.md` | Was vor dem Start passiert (Domain, DNS, Supabase, Tests) |
+| `LAUNCH-KOMMUNIKATION.md` | Acht ready-to-use Bausteine für Launch-Tag (Instagram, Facebook, LinkedIn, MyBusiness, Patientenkarte mit QR, Wartezimmer-Aushang) |
+| `TEXT-AUDIT-VERGLEICH.md` | Vergleich der Texte mit 8 realen Hamburger Konkurrenz-Praxen |
 
-### Was offen bleibt (auf Wunsch der Praxis)
+---
 
-- Echte Praxis-Fotos (Behandlungszimmer, Empfang) — über das Admin-
-  Bilder-Panel hochladbar, dann von Hand auf den jeweiligen Seiten
-  einsetzen oder als „hero-home"-Inhalt referenzieren
-- Anwaltliche Prüfung von Impressum + Datenschutz
-- Eventuell Doctolib-Integration über deren Embed-Widget
+## Erkenntnisse aus dem Konkurrenz-Audit (Hamburg)
+
+Untersuchte Praxis-Sites: Förster & Wollenberger (Uhlenhorst), Karlstraße, Dr. Janina Magdanz (Immenhof), Zahnarztpraxis Uhlenhorst (Diestel & Frank), Dr. Maryam Taleh (Gänsemarkt), Praxis Dr. Humsi, Lieblings-Zahnarzt (Stephansplatz), Zahnarztpraxis Ottensen.
+
+**Was alle anderen tun:**
+- „Vertrauen" als zentrales Wort
+- „Wir nehmen uns Zeit" als pauschales Versprechen
+- Wir-Pluralis selbst bei Ein-Behandler-Praxen
+- Keine Honorartransparenz auf der Startseite
+- Marketing-Floskeln statt eigener Aussagen
+
+**Was DentalHarmonie macht (Differenzierung):**
+- Ich-Stimme statt Wir-Pluralis (im Markt selten)
+- Konkrete Zahlen („zehn Minuten zu viel pro Termin", „30–45 Min Erstgespräch")
+- Ehrliche Grenzen („Was außerhalb meines Bereichs liegt, schicke ich offen weiter")
+- Statement-Headline „Erst zuhören. *Dann behandeln.*" statt Schlagworte
+- Honorar-Note prominent auf Leistungen-Seite
+- Pull-Quote als Manifest („Eine kleine Praxis ist kein Mangel an Größe. Es ist eine Entscheidung.")
+- Magazin-Cover-Hero mit Portrait — im Hamburger Zahnarzt-Markt nirgendwo zu finden
+
+---
+
+## Was Sie pflegen können
+
+Über das Admin-Dashboard ohne Code-Kenntnisse:
+
+- Texte aller Sektionen
+- Sprechzeiten und Sonderzeiten
+- Praxis-Status (Geöffnet, Urlaub, Sonderöffnung)
+- Termin-Anfragen einsehen und exportieren
+- Fotos austauschen (Storage-Bucket)
+
+Was Code-Eingriff bräuchte:
+
+- Brand-Farbe (in `styles.css` Tokens-Block)
+- Neue Seiten (HTML kopieren als Vorlage)
+- Schema.org-Strukturdaten ändern
+- E-Mail-Adressen umstellen
+
+---
+
+## Test-Checklist für die Präsentation
+
+1. Live-Site mit Hard-Reload öffnen (vermeidet Cache-Lag-Probleme bei Demos)
+2. Hero-Portrait einmal scrollen (Magazin-Cover + Counter-Parallax + Word-Stagger sollten greifen)
+3. „Wurzelkanalbehandlung" auf der Startseite anklicken → springt zu `zahnmedizin.html#wurzelkanal` und pulst dort
+4. Auf Termin-anfragen.html ein Behandlungs-Item aus prophylaxe.html anklicken → Formular bekommt Prefill-Note + Aubergine-Glow am Dropdown
+5. Mobile-Hochformat testen — alles stapelt sauber, Hero-Portrait passt unter den Text
+6. Cookie-Consent erscheint nach 700 ms; nach Klick verschwindet er
+7. „Heute" pulst in der Sprechzeiten-Liste am korrekten Wochentag
+8. Sticky-CTA-Pill erscheint nach Scroll auf Mobile
+
+---
+
+## Bekannte Einschränkungen
+
+- Map ist Click-to-Load — beim ersten Klick lädt die OSM-Karte tatsächlich Inhalte, dabei wird IP an OSM-Server übertragen
+- Doctolib-Link nur Vorhanden falls Frau Mostafaei Doctolib-Profil hat (aktuell verlinkt: `delaram-mostafaei`)
+- Schriftarten von Google Fonts CDN — bei Datenschutz-Strenge auf selbst-hostbar umstellen (Inter + Instrument Serif gibt's als Webfonts zum Selbst-Hosten)
