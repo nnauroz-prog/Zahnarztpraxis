@@ -112,10 +112,11 @@ h3 { font-size: var(--t-h3); }
 p { margin: 0 0 1em; }
 .lead {
   font-size: var(--t-lead);
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--slate);
   max-width: 56ch;
   text-wrap: pretty;
+  letter-spacing: -0.003em;
 }
 
 .eyebrow {
@@ -184,7 +185,11 @@ section + section::before {
   opacity: .55;
 }
 
-.surface-2 { background: var(--paper-2); }
+.surface-2 {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(74,47,88,.03) 0%, transparent 50%),
+    var(--paper-2);
+}
 .surface-bone { background: var(--bone); }
 
 /* ---------- Accessibility ---------- */
@@ -245,10 +250,11 @@ section + section::before {
   will-change: transform;
 }
 .header.is-scrolled {
-  background: rgba(251, 250, 246, .82);
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
-          backdrop-filter: saturate(180%) blur(18px);
-  border-bottom-color: var(--smoke);
+  background: rgba(251, 249, 246, .80);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
+          backdrop-filter: saturate(180%) blur(22px);
+  border-bottom-color: rgba(220, 214, 199, .35);
+  box-shadow: 0 1px 4px rgba(20,21,26,.03);
 }
 .header.is-hidden {
   transform: translateY(-110%);
@@ -596,7 +602,10 @@ html.menu-open .header {
 .hero--cover {
   padding-top: clamp(64px, 10vw, 140px);
   padding-bottom: clamp(72px, 11vw, 144px);
-  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  background:
+    radial-gradient(ellipse at 70% 0%, rgba(74,47,88,.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(110,137,117,.04) 0%, transparent 45%),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
 }
 .hero__cover {
   display: grid;
@@ -1659,15 +1668,17 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 }
 .first-visit__step h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin: 0 0 .5rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin: 0 0 .6rem;
   letter-spacing: -0.005em;
+  color: var(--ink);
 }
 .first-visit__step p {
   color: var(--slate);
   margin: 0;
   max-width: 50ch;
+  line-height: 1.6;
 }
 @media (max-width: 880px) {
   .first-visit { grid-template-columns: 1fr; }
@@ -1687,6 +1698,10 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: var(--bone);
+  box-shadow:
+    0 2px 6px rgba(20, 21, 26, .04),
+    0 14px 32px rgba(20, 21, 26, .10),
+    0 50px 90px rgba(74, 47, 88, .07);
 }
 .letter__media img { width: 100%; height: 100%; object-fit: cover; }
 .letter__body {
@@ -3137,11 +3152,22 @@ body.pt-leaving {
 }
 
 /* ============================================================
-   Coal-Surface — kontrastreiches Dunkel-Intermezzo
+   Coal-Surface — Lavender-Intermezzo mit Tiefe
    ============================================================ */
 .surface-coal {
-  background: var(--accent-soft);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(74,47,88,.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(74,47,88,.05) 0%, transparent 45%),
+    linear-gradient(135deg, var(--accent-soft) 0%, rgba(241,234,246,.6) 100%);
   color: var(--ink-2);
+  position: relative;
+}
+.surface-coal::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(74,47,88,.18), transparent);
 }
 .surface-coal h2,
 .surface-coal h3,
