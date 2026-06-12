@@ -763,6 +763,22 @@ html.menu-open .header {
 @media (max-width: 540px) {
   .hero--cover h1 {
     font-size: clamp(2.6rem, 12vw, 4.2rem);
+    line-height: .96;
+  }
+  .hero--cover .lead {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .hero__cover {
+    gap: 32px;
+  }
+}
+@media (max-width: 540px) {
+  .hero h1 {
+    line-height: .98;
+  }
+  .hero .lead {
+    font-size: 1.05rem;
   }
 }
 
