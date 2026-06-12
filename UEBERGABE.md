@@ -1,6 +1,6 @@
 # Übergabe · DentalHarmonie
 
-## Status: Sales-ready (Cache r91)
+## Status: Sales-ready (Cache r92)
 
 Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 1 Stylesheet (~3.900 Zeilen), 1 Script (~700 Zeilen), 1 Konfiguration,
@@ -31,7 +31,7 @@ Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 ### Design-System
 
 - **Farben:** Aubergine `#4A2F58` als Hauptakzent, Paper `#FBF9F6` als Background, dezenter Sage als Sekundär
-- **Typografie:** Instrument Serif (Display/Italic) + Inter (Body) + JetBrains Mono (Code)
+- **Typografie:** Instrument Serif (Display/Italic) + Inter (Body) — beide selbst gehostet in `fonts/`
 - **Komponenten:** Hero-Cover, Chapter-Marks, Manifesto, Pull-Quote, Notes, Treatments-Liste, Hours-Liste, Anchor-Liste, FAQ, Form, Letter, Visit, CTA-Band, Footer
 - **Effekte:** 24 sorgfältig dosierte Mikro-Animationen — Magnet-Buttons, Counter-Parallax, Word-Stagger, 3D-Tilt, Chapter-Hairline, Page-Transition-Fade, Anchor-Scroll-Spy, Prefill-Bestätigung, Status-Badge-Pulse, „Heute"-Pulse u.v.m.
 - **Tokens:** Generöse Border-Radii (8/16/26 px), diffuse Mehrlagen-Schatten, Aubergine-Glow für Hover-States
@@ -41,8 +41,8 @@ Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 - Termin-Anfrage-Formular mit URL-Param-Prefill (`?anliegen=Wurzelkanalbehandlung` → Dropdown vorausgewählt, Nachrichtenfeld vorbefüllt, Aubergine-Glow auf Dropdown, Auto-Scroll zum Form, Focus auf Name-Feld)
 - Automatische Sprechzeiten-Logik (`Jetzt geöffnet bis 18:00` / `Heute ab 08:00` / `Aktuell geschlossen · Donnerstag ab 08:00`)
 - „Heute"-Markierung in der Sprechzeiten-Liste mit Pulse
-- Klick-zu-Laden-Karte für DSGVO-konformen OpenStreetMap-Einsatz
-- Cookie-Consent mit drei Stufen
+- Karten- und Routen-Links (Google Maps, Apple Maps, OpenStreetMap, HVV) öffnen externe Dienste erst auf Klick — DSGVO-sauber ohne eingebettete Karte
+- Daten-Hinweis-Banner (ehrlich: kein Tracking, Schriften lokal, ein Bestätigen-Button)
 - Header-Auto-Hide auf Scroll-Down
 - Smooth-Anchor-Scroll mit Header-Offset
 - Page-Transition-Fade beim Navigieren zwischen Seiten
@@ -54,7 +54,8 @@ Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 - Open-Graph-Tags für Social-Vorschau (WhatsApp, Facebook, LinkedIn)
 - Web-App-Manifest (Mobile-App-Add-to-Home)
 - Druck-Stylesheet (`@media print`) für saubere Patient-PDFs
-- Cache-Busting via `?v=2026-01-01-r91`
+- Schriften selbst gehostet (`fonts/` · woff2, Subsets latin + latin-ext) — kein Google-CDN, keine IP-Übertragung an Dritte beim Seitenaufruf
+- Cache-Busting via `?v=2026-01-01-r92`
 - Service-Worker-Unregister im Head (verhindert Old-Cache-Stalking)
 - WCAG-2.1-konforme Focus-Rings in Aubergine
 
@@ -149,6 +150,8 @@ Was Code-Eingriff bräuchte:
 
 ## Bekannte Einschränkungen
 
-- Map ist Click-to-Load — beim ersten Klick lädt die OSM-Karte tatsächlich Inhalte, dabei wird IP an OSM-Server übertragen
-- Doctolib-Link nur Vorhanden falls Frau Mostafaei Doctolib-Profil hat (aktuell verlinkt: `delaram-mostafaei`)
-- Schriftarten von Google Fonts CDN — bei Datenschutz-Strenge auf selbst-hostbar umstellen (Inter + Instrument Serif gibt's als Webfonts zum Selbst-Hosten)
+- Keine eingebettete Karte auf der Kontaktseite — bewusste Entscheidung: nur externe Karten-Links (öffnen auf Klick), dadurch keine Drittanbieter-Anfragen beim Seitenaufruf
+- Doctolib-Link nur sinnvoll, falls Frau Mostafaei ein Doctolib-Profil hat (aktuell verlinkt: `delaram-mostafaei`) — vor Go-Live verifizieren
+- Porträtfoto liegt nur in 353 × 530 px vor — für gestochen scharfe Darstellung auf großen Screens wäre eine höher aufgelöste Aufnahme gut (auch fürs Social-Vorschaubild)
+- Telefonnummer, Faxnummer und E-Mail-Adresse vor Go-Live mit der Praxis abgleichen
+- Aussagen im Text, die die Inhaberin bestätigen sollte: „Wartezeit höchstens 5–10 Minuten", Team-Beschreibung (Praxis-Managerinnen, Dentalhygienikerinnen, eigene Prophylaxe-Räume), Ratenzahlung über externe Abrechnungsstellen

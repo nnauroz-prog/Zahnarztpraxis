@@ -6,6 +6,37 @@ beim Refresh die alte Version.
 
 ---
 
+## r92 · Fremdblick-QA: DSGVO-Lücke geschlossen
+
+Kritischer Review-Durchgang mit frischen Augen vor der Präsentation:
+
+**Schriften selbst gehostet (wichtigster Fix)**
+- Google Fonts wurde bedingungslos im `<head>` geladen, obwohl Banner
+  und Datenschutzerklärung behaupteten, Fonts kämen erst nach
+  Zustimmung — reale Abmahn-Angriffsfläche (LG-München-Rechtsprechung)
+- Jetzt: woff2-Dateien lokal in `fonts/` (Inter als Variable Font,
+  Instrument Serif, JetBrains Mono · Subsets latin + latin-ext)
+- Kein Preconnect/Request mehr an Google beim Seitenaufruf
+
+**Texte an Realität angeglichen**
+- Datenschutz §4 nannte „Fraunces" — eine Schrift, die die Site gar
+  nicht nutzt. Jetzt korrekt: lokale Schriften, keine Übertragung
+- Datenschutz §7 beschrieb eine Click-to-Load-OSM-Karte, die es nicht
+  gibt. Jetzt korrekt: externe Karten-Links öffnen erst auf Klick
+- Datenschutz §5 ergänzt: auch Inhalte (Status, Hinweise) laden über
+  Supabase
+- Consent-Banner ehrlich umformuliert: kein Tracking, ein Button
+  („Alles klar") statt Schein-Wahl ohne Wirkung
+
+**Kleinere Korrekturen**
+- `team.html`: Porträt-Maße 1024×1280 → echte 353×530 (Layout-Shift)
+- `leistungen.html`: Kinderzahnheilkunde-Label „Erwachsene + Kinder"
+  → „ab Milchzahn"
+- `index.html`: Canonical/og:url auf Domain-Root statt `/index.html`
+- Datenschutz-Stand auf Juni 2026
+
+---
+
 ## r91 · Stunden-Polish-Pass · Sales-ready
 
 24 Iterations-Runden über zwei Stunden:

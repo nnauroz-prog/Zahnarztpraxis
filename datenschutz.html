@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r91';
+  var V = '2026-01-01-r92';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -22,10 +22,10 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 *,*::before,*::after{box-sizing:inherit}
 .header{min-height:68px}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r91">
+<link rel="preload" as="font" type="font/woff2" href="fonts/instrumentserif-400-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r92">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r92">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -120,7 +120,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
       <div class="legal reveal">
 
         
-        <p class="muted" style="font-size: .82rem; margin: 0 0 2rem;">Stand: Januar 2026</p>
+        <p class="muted" style="font-size: .82rem; margin: 0 0 2rem;">Stand: Juni 2026</p>
         <h2>1 · Verantwortlich</h2>
         <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist:</p>
         <dl>
@@ -138,20 +138,21 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         </ul>
 
         <h2>3 · Cookies und lokale Speicherung</h2>
-        <p>Wir verwenden nur technisch notwendige lokale Speicherung (LocalStorage) — etwa, um Ihre Cookie-Einstellung („Zustimmen" / „Nur notwendige") und einmal weggeklickte Hinweise zu merken. Es werden keine Tracking-Cookies und keine Analyse-Tools eingesetzt.</p>
+        <p>Wir verwenden nur technisch notwendige lokale Speicherung (LocalStorage) — etwa, um zu merken, dass Sie den Daten-Hinweis bereits gesehen oder einen Hinweis weggeklickt haben. Es werden keine Tracking-Cookies und keine Analyse-Tools eingesetzt.</p>
 
-        <h2>4 · Schriftarten (Google Fonts)</h2>
-        <p>Diese Website lädt die Schriftarten „Inter" und „Fraunces" von Google Fonts (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf der Seite wird Ihre IP-Adresse an Google übertragen. Sie können der Schriftarten-Übertragung über den Cookie-Banner widersprechen — wir verwenden dann ausschließlich System-Schriften (Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO).</p>
+        <h2>4 · Schriftarten</h2>
+        <p>Die auf dieser Website verwendeten Schriftarten („Inter", „Instrument Serif") liegen lokal auf unserem Server und werden von dort geladen. Es findet dabei keine Verbindung zu Google Fonts oder anderen Schriften-Diensten statt; Ihre IP-Adresse wird hierfür an keinen Dritten übertragen.</p>
 
         <h2>5 · Terminanfrage und Mitgliederbereich (Supabase)</h2>
         <p>Wenn Sie unser Anfrageformular nutzen, übermitteln Sie uns Ihre Angaben (Name, Telefon, ggf. E-Mail, Anliegen, Wunschtermin, Nachricht). Diese Daten werden bei unserem Auftragsverarbeiter <strong>Supabase</strong> (Supabase Inc., 970 Toa Payoh North, #07-04, Singapore 318992) in einer Datenbank innerhalb der EU verarbeitet, ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und f DSGVO. Mit Supabase besteht ein Auftragsverarbeitungsvertrag.</p>
+        <p>Auch einzelne Inhalte der Website (etwa der Praxis-Status oder aktuelle Hinweise) werden über Supabase geladen. Dabei wird Ihre IP-Adresse technisch bedingt an Supabase übertragen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO — Bereitstellung aktueller Praxis-Informationen).</p>
         <p>Der Mitgliederbereich (interner Login für das Praxis-Team) nutzt die Authentifizierung von Supabase. Es werden ausschließlich Beschäftigte der Praxis registriert.</p>
 
         <h2>6 · Doctolib</h2>
         <p>Sofern Sie von dieser Website auf Doctolib weiterklicken, gelten ab diesem Zeitpunkt die Datenschutzhinweise von Doctolib (Doctolib GmbH). Wir übermitteln keine Daten an Doctolib, bevor Sie aktiv auf den Link klicken.</p>
 
-        <h2>7 · OpenStreetMap</h2>
-        <p>Auf der Kontaktseite finden Sie eine Karte über OpenStreetMap. Die Karte wird erst geladen, wenn Sie aktiv „Karte laden" anklicken. Dann werden Daten an die OpenStreetMap Foundation übertragen.</p>
+        <h2>7 · Karten- und Routen-Links</h2>
+        <p>Auf der Kontaktseite finden Sie Links zu externen Karten- und Routendiensten (Google Maps, Apple Maps, OpenStreetMap, HVV-Fahrplanauskunft). Diese Dienste öffnen sich erst, wenn Sie aktiv auf den jeweiligen Link klicken — ab diesem Zeitpunkt gelten die Datenschutzhinweise des jeweiligen Anbieters. Beim bloßen Aufruf unserer Website werden keine Daten an diese Dienste übertragen.</p>
 
         <h2>8 · Behandlung in der Praxis</h2>
         <p>Behandlungsbezogene personenbezogene Daten (Anamnese, Befunde, Behandlungen) werden ausschließlich in unserer Praxis-EDV verarbeitet, nicht über diese Website. Rechtsgrundlage ist Art. 9 Abs. 2 lit. h DSGVO i.V.m. § 22 BDSG (Verarbeitung im Rahmen der Gesundheitsversorgung).</p>
@@ -223,9 +224,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r91"></script>
-<script src="db.js?v=2026-01-01-r91"></script>
-<script src="script.js?v=2026-01-01-r91" defer></script>
+<script src="config.js?v=2026-01-01-r92"></script>
+<script src="db.js?v=2026-01-01-r92"></script>
+<script src="script.js?v=2026-01-01-r92" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

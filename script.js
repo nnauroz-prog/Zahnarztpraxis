@@ -225,11 +225,10 @@
       el.innerHTML =
         '<div>' +
           '<h3 id="consentTitle">Kurz zu Daten</h3>' +
-          '<p>Diese Seite nutzt nur technisch nötige Speicherung. Wenn Sie zustimmen, werden zusätzlich Schriftarten von Google Fonts geladen — dabei sieht Google Ihre IP. Mehr in den <a href="datenschutz.html">Datenschutzhinweisen</a>.</p>' +
+          '<p>Diese Seite kommt ohne Tracking und ohne Werbe-Cookies aus. Schriften liegen lokal, gespeichert wird nur Technisch-Nötiges — zum Beispiel, dass Sie diesen Hinweis gesehen haben. Details in den <a href="datenschutz.html">Datenschutzhinweisen</a>.</p>' +
         '</div>' +
         '<div class="consent__actions">' +
-          '<button type="button" class="btn btn--primary" data-consent="all">Zustimmen</button>' +
-          '<button type="button" class="btn btn--ghost" data-consent="necessary">Nur das Nötigste</button>' +
+          '<button type="button" class="btn btn--primary" data-consent="necessary">Alles klar</button>' +
         '</div>';
       document.body.appendChild(el);
       requestAnimationFrame(() => el.classList.add('is-visible'));
