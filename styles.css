@@ -1408,7 +1408,23 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
               box-shadow var(--dur-2) var(--ease),
               background var(--dur-1) var(--ease);
 }
-.form__field textarea { min-height: 120px; resize: vertical; }
+.form__field textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
+.form__field input[type="date"],
+.form__field input[type="time"] {
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.form__field input[type="date"]::-webkit-calendar-picker-indicator,
+.form__field input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity var(--dur-1) var(--ease);
+}
+.form__field input[type="date"]:hover::-webkit-calendar-picker-indicator,
+.form__field input[type="time"]:hover::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
 .form__field input:focus,
 .form__field select:focus,
 .form__field textarea:focus {
@@ -1554,10 +1570,12 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  padding: 2rem; text-align: center; gap: .9rem;
-  background: linear-gradient(135deg, var(--paper-2) 0%, var(--bone) 100%);
+  padding: 2rem; text-align: center; gap: 1.1rem;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(74,47,88,.06) 0%, transparent 60%),
+    linear-gradient(135deg, var(--paper-2) 0%, var(--accent-soft) 100%);
 }
-.map__consent p { max-width: 42ch; color: var(--slate); margin: 0; }
+.map__consent p { max-width: 42ch; color: var(--slate); margin: 0; line-height: 1.6; }
 .map.is-loaded .map__consent { display: none; }
 
 /* Legal (Impressum / Datenschutz) */
