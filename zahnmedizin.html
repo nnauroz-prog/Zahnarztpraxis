@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r67';
+  var V = '2026-01-01-r68';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r67">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r68">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -159,13 +159,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <p>Auswahl der zahnmedizinischen Versorgung. Was für Sie zutrifft, klären wir im Erstgespräch.</p>
         </div>
         <ul class="treatments__list reveal" data-delay="1">
-          <li><a href="termin-anfragen.html?anliegen=Karies%20%26%20F%C3%BCllungstherapie"><span><span class="t-title">Karies &amp; Füllungstherapie</span><span class="t-desc">Schonende Kariesentfernung mit zahnfarbenem Composite. Bei größeren Defekten Keramik-Inlays.</span></span><span class="cat">Composite</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span><span class="t-title">Wurzelkanalbehandlung</span><span class="t-desc">Maschinelle Aufbereitung unter Lupensicht — Ziel ist der Erhalt des eigenen Zahns.</span></span><span class="cat">maschinell · Lupe</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Parodontologie"><span><span class="t-title">Parodontologie</span><span class="t-desc">Vom systematischen Reinigen tiefer Zahnfleischtaschen bis zur chirurgischen Versorgung. Stufe für Stufe je nach Befund.</span></span><span class="cat">stufenweise</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Kronen%2C%20Br%C3%BCcken%2C%20Vollkeramik"><span><span class="t-title">Kronen, Brücken, Vollkeramik</span><span class="t-desc">Wenn eine Füllung nicht mehr reicht. Vollkeramik oder Metallkeramik — mit ehrlicher Einschätzung zur Lebensdauer.</span></span><span class="cat">Zahnersatz</span></a></li>
-          <li><a href="prophylaxe.html"><span><span class="t-title">Professionelle Zahnreinigung</span><span class="t-desc">Grundlage langfristiger Zahngesundheit. Eine Sitzung dauert 45 bis 60 Minuten.</span></span><span class="cat">Prophylaxe</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span><span class="t-title">Kinderzahnheilkunde</span><span class="t-desc">Behutsame Behandlung im Tempo des Kindes, oft mit Schau-Termin als Auftakt.</span></span><span class="cat">behutsam</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span><span class="t-title">Schmerz- &amp; Akutbehandlung</span><span class="t-desc">Bei akuten Beschwerden versuche ich, Sie am gleichen oder nächsten Werktag einzuschieben.</span></span><span class="cat">auf Anruf</span></a></li>
+          <li id="karies"><a href="termin-anfragen.html?anliegen=Karies%20%26%20F%C3%BCllungstherapie"><span><span class="t-title">Karies &amp; Füllungstherapie</span><span class="t-desc">Schonende Kariesentfernung mit zahnfarbenem Composite. Bei größeren Defekten Keramik-Inlays.</span></span><span class="cat">Composite</span></a></li>
+          <li id="wurzelkanal"><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span><span class="t-title">Wurzelkanalbehandlung</span><span class="t-desc">Maschinelle Aufbereitung unter Lupensicht — Ziel ist der Erhalt des eigenen Zahns.</span></span><span class="cat">maschinell · Lupe</span></a></li>
+          <li id="parodontologie"><a href="termin-anfragen.html?anliegen=Parodontologie"><span><span class="t-title">Parodontologie</span><span class="t-desc">Vom systematischen Reinigen tiefer Zahnfleischtaschen bis zur chirurgischen Versorgung. Stufe für Stufe je nach Befund.</span></span><span class="cat">stufenweise</span></a></li>
+          <li id="kronen-bruecken"><a href="termin-anfragen.html?anliegen=Kronen%2C%20Br%C3%BCcken%2C%20Vollkeramik"><span><span class="t-title">Kronen, Brücken, Vollkeramik</span><span class="t-desc">Wenn eine Füllung nicht mehr reicht. Vollkeramik oder Metallkeramik — mit ehrlicher Einschätzung zur Lebensdauer.</span></span><span class="cat">Zahnersatz</span></a></li>
+          <li id="pzr"><a href="prophylaxe.html"><span><span class="t-title">Professionelle Zahnreinigung</span><span class="t-desc">Grundlage langfristiger Zahngesundheit. Eine Sitzung dauert 45 bis 60 Minuten.</span></span><span class="cat">Prophylaxe</span></a></li>
+          <li id="kinderzahn"><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span><span class="t-title">Kinderzahnheilkunde</span><span class="t-desc">Behutsame Behandlung im Tempo des Kindes, oft mit Schau-Termin als Auftakt.</span></span><span class="cat">behutsam</span></a></li>
+          <li id="schmerz-akut"><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span><span class="t-title">Schmerz- &amp; Akutbehandlung</span><span class="t-desc">Bei akuten Beschwerden versuche ich, Sie am gleichen oder nächsten Werktag einzuschieben.</span></span><span class="cat">auf Anruf</span></a></li>
         </ul>
       </div>
     </div>
@@ -246,9 +246,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r67"></script>
-<script src="db.js?v=2026-01-01-r67"></script>
-<script src="script.js?v=2026-01-01-r67" defer></script>
+<script src="config.js?v=2026-01-01-r68"></script>
+<script src="db.js?v=2026-01-01-r68"></script>
+<script src="script.js?v=2026-01-01-r68" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

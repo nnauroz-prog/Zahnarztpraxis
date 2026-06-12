@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r67';
+  var V = '2026-01-01-r68';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r67">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r68">
 <link rel="icon" href="IMG_9504.png">
 <link rel="preload" as="image" href="IMG_9505.jpeg" fetchpriority="high">
 <link rel="apple-touch-icon" href="IMG_9504.png">
@@ -218,16 +218,16 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
           <a class="btn btn--link" href="leistungen.html">Vollständiges Leistungsverzeichnis</a>
         </div>
         <ul class="treatments__list reveal" data-delay="1">
-          <li><a href="termin-anfragen.html?anliegen=Professionelle%20Zahnreinigung"><span>Professionelle Zahnreinigung</span><span class="cat">Prophylaxe</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=F%C3%BCllungstherapie%20%26%20Karies"><span>Füllungstherapie &amp; Karies</span><span class="cat">Zahnmedizin</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span>Wurzelkanalbehandlung</span><span class="cat">Zahnmedizin</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Parodontologie"><span>Parodontologie</span><span class="cat">Zahnmedizin</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Veneers"><span>Veneers</span><span class="cat">Ästhetik</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Bleaching"><span>Bleaching</span><span class="cat">Ästhetik</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Kronen%2C%20Br%C3%BCcken%2C%20Vollkeramik"><span>Kronen, Brücken, Vollkeramik</span><span class="cat">Zahnersatz</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Implantatversorgung"><span>Implantatversorgung</span><span class="cat">Zahnersatz</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span>Kinderzahnheilkunde</span><span class="cat">Kinder</span></a></li>
-          <li><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">Akut</span></a></li>
+          <li><a href="prophylaxe.html"><span>Professionelle Zahnreinigung</span><span class="cat">Prophylaxe</span></a></li>
+          <li><a href="zahnmedizin.html#karies"><span>Füllungstherapie &amp; Karies</span><span class="cat">Zahnmedizin</span></a></li>
+          <li><a href="zahnmedizin.html#wurzelkanal"><span>Wurzelkanalbehandlung</span><span class="cat">Zahnmedizin</span></a></li>
+          <li><a href="zahnmedizin.html#parodontologie"><span>Parodontologie</span><span class="cat">Zahnmedizin</span></a></li>
+          <li><a href="leistungen.html#aesthetik"><span>Veneers</span><span class="cat">Ästhetik</span></a></li>
+          <li><a href="prophylaxe.html#bleaching-office"><span>Bleaching</span><span class="cat">Ästhetik</span></a></li>
+          <li><a href="leistungen.html#zahnersatz"><span>Kronen, Brücken, Vollkeramik</span><span class="cat">Zahnersatz</span></a></li>
+          <li><a href="leistungen.html#zahnersatz"><span>Implantatversorgung</span><span class="cat">Zahnersatz</span></a></li>
+          <li><a href="prophylaxe.html#kinder-prophylaxe"><span>Kinderzahnheilkunde</span><span class="cat">Kinder</span></a></li>
+          <li><a href="zahnmedizin.html#schmerz-akut"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">Akut</span></a></li>
         </ul>
       </div>
     </div>
@@ -328,9 +328,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r67"></script>
-<script src="db.js?v=2026-01-01-r67"></script>
-<script src="script.js?v=2026-01-01-r67" defer></script>
+<script src="config.js?v=2026-01-01-r68"></script>
+<script src="db.js?v=2026-01-01-r68"></script>
+<script src="script.js?v=2026-01-01-r68" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

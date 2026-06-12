@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r67';
+  var V = '2026-01-01-r68';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r67">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r68">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -159,11 +159,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Damit es gar nicht erst <em>dazu kommt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="termin-anfragen.html?anliegen=Kontrolluntersuchung"><span>Kontrolluntersuchung</span><span class="cat">halbjährlich</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Professionelle%20Zahnreinigung"><span>Professionelle Zahnreinigung</span><span class="cat">PZR · 45–60 Min</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Kinder-Prophylaxe"><span>Kinder-Prophylaxe</span><span class="cat">kindgerecht</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Individueller%20Recall"><span>Individueller Recall</span><span class="cat">auf Befund abgestimmt</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Fluoridierung"><span>Fluoridierung</span><span class="cat">ab Befund</span></a></li>
+              <li><a href="prophylaxe.html"><span>Kontrolluntersuchung</span><span class="cat">halbjährlich</span></a></li>
+              <li><a href="prophylaxe.html"><span>Professionelle Zahnreinigung</span><span class="cat">PZR · 45–60 Min</span></a></li>
+              <li><a href="prophylaxe.html#kinder-prophylaxe"><span>Kinder-Prophylaxe</span><span class="cat">kindgerecht</span></a></li>
+              <li><a href="prophylaxe.html#recall"><span>Individueller Recall</span><span class="cat">auf Befund abgestimmt</span></a></li>
+              <li><a href="prophylaxe.html#fluoridierung"><span>Fluoridierung</span><span class="cat">ab Befund</span></a></li>
           </ul>
         </div>
       </div>
@@ -181,11 +181,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Diagnose, Therapie, <em>Erhalt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="termin-anfragen.html?anliegen=Karies%20%26%20F%C3%BCllungstherapie"><span>Karies &amp; Füllungstherapie</span><span class="cat">Composite</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span>Wurzelkanalbehandlung</span><span class="cat">maschinell · Lupe</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Parodontologie"><span>Parodontologie</span><span class="cat">systematisch</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span>Kinderzahnheilkunde</span><span class="cat">Erwachsene + Kinder</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">auf Anruf</span></a></li>
+              <li><a href="zahnmedizin.html#karies"><span>Karies &amp; Füllungstherapie</span><span class="cat">Composite</span></a></li>
+              <li><a href="zahnmedizin.html#wurzelkanal"><span>Wurzelkanalbehandlung</span><span class="cat">maschinell · Lupe</span></a></li>
+              <li><a href="zahnmedizin.html#parodontologie"><span>Parodontologie</span><span class="cat">systematisch</span></a></li>
+              <li><a href="zahnmedizin.html#kinderzahn"><span>Kinderzahnheilkunde</span><span class="cat">Erwachsene + Kinder</span></a></li>
+              <li><a href="zahnmedizin.html#schmerz-akut"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">auf Anruf</span></a></li>
           </ul>
         </div>
       </div>
@@ -401,9 +401,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r67"></script>
-<script src="db.js?v=2026-01-01-r67"></script>
-<script src="script.js?v=2026-01-01-r67" defer></script>
+<script src="config.js?v=2026-01-01-r68"></script>
+<script src="db.js?v=2026-01-01-r68"></script>
+<script src="script.js?v=2026-01-01-r68" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

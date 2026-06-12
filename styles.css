@@ -1725,7 +1725,21 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   padding: 0;
   border-top: 1px solid var(--smoke);
 }
-.treatments__list li { border-bottom: 1px solid var(--smoke); }
+.treatments__list li {
+  border-bottom: 1px solid var(--smoke);
+  scroll-margin-top: 96px;
+}
+.treatments__list li:target {
+  background: linear-gradient(90deg, var(--accent-soft) 0%, transparent 60%);
+  animation: targetPulse 1.6s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes targetPulse {
+  0%   { background-color: rgba(63, 42, 74, .18); }
+  100% { background-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .treatments__list li:target { animation: none; background: var(--accent-soft); }
+}
 .treatments__list a {
   display: flex;
   justify-content: space-between;
