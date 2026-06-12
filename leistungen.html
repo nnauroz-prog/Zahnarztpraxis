@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r88';
+  var V = '2026-01-01-r89';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -25,7 +25,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r88">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r89">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -53,19 +53,19 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Wie lange dauert ein Erstgespräch?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Planen Sie 30 bis 45 Minuten ein. Anamnese, vollständige Untersuchung, Befund am Monitor. Behandelt wird beim ersten Termin in der Regel nicht — außer Sie haben Schmerzen." } },
-    { "@type": "Question", "name": "Was kostet eine professionelle Zahnreinigung (PZR)?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Die PZR ist überwiegend Privatleistung. Die Kosten richten sich nach Aufwand und Befund — Sie bekommen vor der Sitzung einen verbindlichen Preisrahmen. Viele gesetzliche Kassen erstatten anteilig." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Bitte rechnen Sie mit 30 bis 45 Minuten. Wir reden über Ihre Vorgeschichte, ich mache eine vollständige Untersuchung und zeige Ihnen den Befund gemeinsam am Monitor. Behandelt wird beim Erstgespräch in der Regel noch nicht — außer Sie haben Schmerzen." } },
+    { "@type": "Question", "name": "Was kostet eine professionelle Zahnreinigung?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Die PZR ist überwiegend Privatleistung. Je nach Aufwand und Befund unterschiedlich — Sie bekommen vor der Sitzung einen verbindlichen Preisrahmen, keine Überraschungen. Viele gesetzliche Kassen erstatten anteilig." } },
     { "@type": "Question", "name": "Ich habe Zahnarzt-Angst. Wie gehen Sie damit um?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sagen Sie es am Telefon oder beim Erstgespräch — ich nehme das ernst. Wenn nötig: längere Termine, Pausen oder Behandlung in kleinen Schritten. Bei Kindern starte ich oft mit einem reinen Schau-Termin." } },
-    { "@type": "Question", "name": "Bekomme ich vor einer Behandlung eine Kostenschätzung?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Bei jeder größeren Versorgung bekommen Sie einen schriftlichen Heil- und Kostenplan, mit dem Sie auch die Zuschüsse Ihrer Kasse klären können. Privatleistungen rechne ich nach GOZ ab." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Sagen Sie es uns am Telefon oder gleich am Anfang. Ich nehme das ernst — niemand wird hier zu etwas überredet. Wenn es hilft: längere Termine, Pausen jederzeit, oder Behandlung in kleinen Schritten. Bei Kindern starte ich gern mit einem reinen Schau-Termin." } },
+    { "@type": "Question", "name": "Bekomme ich vorher eine Kostenschätzung?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja, immer. Bei jeder größeren Versorgung bekommen Sie einen schriftlichen Heil- und Kostenplan — den können Sie auch direkt bei Ihrer Kasse einreichen. Privatleistungen rechne ich nach GOZ ab." } },
     { "@type": "Question", "name": "Behandeln Sie auch Kinder?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ja, vom ersten Milchzahn an. Bei kleinen Kindern: Kennenlernen, „Zähnezählen\", erst dann Behandlung. Eltern dürfen mit ins Behandlungszimmer." } },
-    { "@type": "Question", "name": "Was tun bei akuten Zahnschmerzen außerhalb der Sprechzeiten?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Innerhalb der Sprechzeiten: anrufen. Ich versuche, Sie am gleichen oder nächsten Werktag einzuschieben. Außerhalb der Sprechzeiten: Zahnärztlicher Notdienst der Zahnärztekammer Hamburg. Bei lebensbedrohlichen Symptomen: 112." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja, ab dem ersten Milchzahn. Bei kleinen Kindern: erstmal Kennenlernen, „Zähnezählen\", Vertrauen aufbauen — behandelt wird erst, wenn das Kind das mitmacht. Eltern dürfen selbstverständlich mit ins Behandlungszimmer." } },
+    { "@type": "Question", "name": "Was tun bei akuten Schmerzen außerhalb der Sprechzeiten?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Während der Sprechzeiten: bitte einfach anrufen. Ich versuche, Sie am gleichen oder spätestens nächsten Werktag einzuschieben. Außerhalb der Sprechzeiten übernimmt der zahnärztliche Notdienst der Zahnärztekammer Hamburg. Wenn es lebensbedrohlich ist: 112." } },
     { "@type": "Question", "name": "Welche Zahlungsweisen akzeptieren Sie?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Gesetzliche Leistungen: direkt über die Versichertenkarte. Privatleistungen: Rechnung, zahlbar per Überweisung. Bei größeren Behandlungen sind Ratenzahlungen über externe Abrechnungsstellen möglich." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Gesetzliche Leistungen laufen direkt über die Versichertenkarte. Privatleistungen bekommen Sie als Rechnung, zahlbar per Überweisung. Bei größeren Behandlungen sind Ratenzahlungen über externe Abrechnungsstellen möglich." } }
   ]
 }
 </script>
@@ -262,18 +262,18 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Planen Sie <strong>30 bis 45 Minuten</strong> ein. Anamnese, vollständige Untersuchung, Befund am Monitor. Behandelt wird beim ersten Termin in der Regel nicht — außer Sie haben Schmerzen.</p>
+                <p>Bitte rechnen Sie mit <strong>30 bis 45 Minuten</strong>. Wir reden über Ihre Vorgeschichte, ich mache eine vollständige Untersuchung und zeige Ihnen den Befund gemeinsam am Monitor. Behandelt wird beim Erstgespräch in der Regel noch nicht — außer Sie haben Schmerzen.</p>
               </div>
             </details>
 
             <details class="faq__item">
               <summary class="faq__summary">
-                Was kostet eine professionelle Zahnreinigung (PZR)?
+                Was kostet eine professionelle Zahnreinigung?
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Die PZR ist überwiegend Privatleistung. Die Kosten richten sich nach Aufwand und Befund — Sie bekommen vor der Sitzung einen verbindlichen Preisrahmen.</p>
-                <p>Viele gesetzliche Kassen erstatten <strong>anteilig</strong>. Es lohnt sich, vorab bei Ihrer Kasse nachzufragen.</p>
+                <p>Die PZR ist überwiegend Privatleistung. Je nach Aufwand und Befund unterschiedlich — Sie bekommen vor der Sitzung einen <strong>verbindlichen Preisrahmen</strong>, keine Überraschungen.</p>
+                <p>Viele gesetzliche Kassen erstatten anteilig. Es lohnt sich, vorab kurz bei Ihrer Kasse nachzufragen — wir helfen gern beim Formulieren.</p>
               </div>
             </details>
 
@@ -283,18 +283,18 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Sagen Sie es am Telefon oder beim Erstgespräch — ich nehme das ernst. Wenn nötig: <strong>längere Termine</strong>, <strong>Pausen</strong> oder Behandlung in kleinen Schritten.</p>
-                <p>Bei Kindern starte ich oft mit einem reinen Schau-Termin, ohne Behandlung. Das Kind lernt die Praxis in seinem Tempo kennen.</p>
+                <p>Sagen Sie es uns am Telefon oder gleich am Anfang. Ich nehme das ernst — niemand wird hier zu etwas überredet. Wenn es hilft: <strong>längere Termine</strong>, <strong>Pausen jederzeit</strong>, oder Behandlung in kleinen Schritten über mehrere Sitzungen.</p>
+                <p>Bei Kindern starte ich gern mit einem reinen Schau-Termin — ohne Bohrer, ohne Druck. Das Kind lernt die Praxis erstmal im eigenen Tempo kennen.</p>
               </div>
             </details>
 
             <details class="faq__item">
               <summary class="faq__summary">
-                Bekomme ich vor einer Behandlung eine Kostenschätzung?
+                Bekomme ich vorher eine Kostenschätzung?
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Ja. Bei jeder größeren Versorgung bekommen Sie einen <strong>schriftlichen Heil- und Kostenplan</strong>, mit dem Sie auch die Zuschüsse Ihrer Kasse klären können. Privatleistungen rechne ich nach GOZ ab.</p>
+                <p>Ja, immer. Bei jeder größeren Versorgung bekommen Sie einen <strong>schriftlichen Heil- und Kostenplan</strong> — den können Sie auch direkt bei Ihrer Kasse einreichen, um die Zuschüsse zu klären. Privatleistungen rechne ich nach GOZ ab.</p>
               </div>
             </details>
 
@@ -304,18 +304,18 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Ja, vom ersten Milchzahn an. Bei kleinen Kindern: Kennenlernen, „Zähnezählen", erst dann Behandlung. Eltern dürfen mit ins Behandlungszimmer.</p>
+                <p>Ja, ab dem ersten Milchzahn. Bei kleinen Kindern: erstmal Kennenlernen, „Zähnezählen", Vertrauen aufbauen — behandelt wird erst, wenn das Kind das mitmacht. Eltern dürfen selbstverständlich mit ins Behandlungszimmer.</p>
               </div>
             </details>
 
             <details class="faq__item">
               <summary class="faq__summary">
-                Was tun bei akuten Zahnschmerzen außerhalb der Sprechzeiten?
+                Was tun bei akuten Schmerzen außerhalb der Sprechzeiten?
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Innerhalb der Sprechzeiten: anrufen. Ich versuche, Sie am gleichen oder nächsten Werktag einzuschieben.</p>
-                <p>Außerhalb der Sprechzeiten: <strong>Zahnärztlicher Notdienst der Zahnärztekammer Hamburg</strong>. Bei lebensbedrohlichen Symptomen: 112.</p>
+                <p>Während der Sprechzeiten: bitte einfach anrufen. Ich versuche, Sie am gleichen oder spätestens nächsten Werktag einzuschieben.</p>
+                <p>Außerhalb der Sprechzeiten übernimmt der <strong>zahnärztliche Notdienst der Zahnärztekammer Hamburg</strong>. Wenn es lebensbedrohlich ist, wählen Sie bitte die 112.</p>
               </div>
             </details>
 
@@ -325,7 +325,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
               </summary>
               <div class="faq__body">
-                <p>Gesetzliche Leistungen: direkt über die Versichertenkarte. Privatleistungen: Rechnung, zahlbar per Überweisung. Bei größeren Behandlungen sind Ratenzahlungen über externe Abrechnungsstellen möglich — sagen Sie vorher Bescheid.</p>
+                <p>Gesetzliche Leistungen laufen direkt über die Versichertenkarte. Privatleistungen bekommen Sie als Rechnung, zahlbar per Überweisung. Bei größeren Behandlungen sind Ratenzahlungen über externe Abrechnungsstellen möglich — sagen Sie einfach Bescheid, wenn das für Sie wichtig wäre.</p>
               </div>
             </details>
 
@@ -401,9 +401,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r88"></script>
-<script src="db.js?v=2026-01-01-r88"></script>
-<script src="script.js?v=2026-01-01-r88" defer></script>
+<script src="config.js?v=2026-01-01-r89"></script>
+<script src="db.js?v=2026-01-01-r89"></script>
+<script src="script.js?v=2026-01-01-r89" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
