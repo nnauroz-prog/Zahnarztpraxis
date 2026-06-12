@@ -134,13 +134,14 @@ p { margin: 0 0 1em; }
 }
 .eyebrow::before {
   content: attr(data-num);
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-variant-numeric: tabular-nums;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-variant-numeric: lining-nums tabular-nums;
   color: var(--mute);
-  letter-spacing: .08em;
-  font-size: .68rem;
-  font-weight: 600;
+  letter-spacing: 0;
+  font-size: .85em;
+  font-weight: 400;
+  opacity: .7;
 }
 .eyebrow.no-num::before,
 .eyebrow:not([data-num])::before {
@@ -335,25 +336,31 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
   flex-shrink: 0;
 }
 .header__phone {
-  font-size: .9rem;
+  font-size: .92rem;
   color: var(--slate);
-  letter-spacing: .01em;
+  letter-spacing: .005em;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-1) var(--ease);
 }
-.header__phone:hover { color: var(--ink); }
+.header__phone:hover { color: var(--accent); }
 .header__cta {
   display: inline-flex;
   align-items: center;
   gap: .4rem;
-  padding: .55rem 1.05rem;
+  padding: .6rem 1.15rem;
   font-size: .9rem;
   font-weight: 500;
-  background: var(--accent);
+  background: linear-gradient(180deg, #5C3B6E 0%, var(--accent) 60%, var(--accent-2) 100%);
   color: var(--paper);
   border-radius: var(--r-pill);
-  transition: background var(--dur-1) var(--ease), transform var(--dur-1) var(--ease);
+  box-shadow: 0 1px 3px rgba(74,47,88,.18), 0 6px 16px rgba(74,47,88,.10);
+  transition: transform var(--dur-1) var(--ease), box-shadow var(--dur-2) var(--ease);
 }
-.header__cta:hover { background: var(--accent-2); transform: translateY(-1px); }
+.header__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74,47,88,.26), 0 0 0 6px rgba(74,47,88,.08);
+}
 
 .header__menu {
   display: none;
@@ -430,21 +437,24 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
 
 .menu__list a {
   display: block;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 400;
-  font-size: clamp(1.5rem, 5.6vw, 2.15rem);
-  line-height: 1.1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-transform: none;
   color: var(--ink);
-  transition: opacity var(--dur-1) var(--ease);
+  transition: color var(--dur-1) var(--ease), transform var(--dur-2) var(--ease);
 }
 .menu__list a:hover,
 .menu__list a:focus-visible {
-  opacity: .55;
-  color: var(--ink);
+  color: var(--accent);
+  transform: translateX(6px);
 }
-.menu__list a.is-active { opacity: .5; }
+.menu__list a.is-active {
+  color: var(--accent);
+  font-style: italic;
+}
 
 /* Stagger-Animation auf den Einträgen */
 .menu[aria-hidden="false"] .menu__list a {
