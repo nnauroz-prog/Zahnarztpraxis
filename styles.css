@@ -2950,13 +2950,13 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
 .treatments__list .t-desc {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: .92rem;
+  font-size: .94rem;
   font-weight: 400;
   font-variation-settings: normal;
   color: var(--slate);
-  margin-top: .4rem;
+  margin-top: .5rem;
   letter-spacing: 0;
-  line-height: 1.5;
+  line-height: 1.6;
   max-width: 56ch;
 }
 
