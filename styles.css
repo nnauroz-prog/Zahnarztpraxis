@@ -1091,15 +1091,16 @@ html.menu-open .header {
    Notice banner (above header, from db.js)
    ============================================================ */
 .notice {
-  background: var(--ink);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
   color: var(--paper);
-  font-size: .88rem;
+  font-size: .92rem;
+  letter-spacing: .005em;
 }
 .notice .container {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-block: .55rem;
+  padding-block: .65rem;
 }
 .notice__text { flex: 1; }
 .notice__close {
