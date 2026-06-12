@@ -1978,9 +1978,9 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   margin-top: .35rem;
 }
 @media (max-width: 880px) {
-  .letter { grid-template-columns: 1fr; }
-  .letter__media { max-width: 380px; }
-  .letter__body p:first-of-type::first-letter { font-size: 2.6em; }
+  .letter { grid-template-columns: 1fr; gap: 36px; }
+  .letter__media { max-width: 380px; aspect-ratio: 4 / 4.5; }
+  .letter__body p:first-of-type::first-letter { font-size: 2.8em; }
 }
 
 /* Behandlungs-Liste editorial */
@@ -3003,14 +3003,23 @@ html.menu-open .sticky-cta { opacity: 0; pointer-events: none; }
    <noscript> fallback
    ============================================================ */
 .noscript {
-  background: var(--gold-soft);
-  color: var(--ink);
-  padding: .8rem 1rem;
+  background: linear-gradient(180deg, var(--accent-soft) 0%, rgba(241,234,246,.6) 100%);
+  color: var(--ink-2);
+  padding: 1rem 1.2rem;
   text-align: center;
-  font-size: .9rem;
-  border-bottom: 1px solid var(--gold);
+  font-size: .92rem;
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(74,47,88,.18);
 }
-.noscript a { color: var(--ink); text-decoration: underline; }
+.noscript a {
+  color: var(--ink);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  padding-bottom: 2px;
+  text-decoration: none;
+}
 
 /* ============================================================
    Form-Validation-Feedback (browser-native :user-invalid)
@@ -3427,9 +3436,9 @@ body.pt-leaving {
 }
 .manifesto__sign-line {
   display: block;
-  width: 64px;
+  width: 72px;
   height: 1px;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
   margin-top: .5rem;
 }
 @media (max-width: 540px) {
