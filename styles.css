@@ -388,7 +388,10 @@ html.menu-open .header { background: transparent; border-bottom-color: transpare
   position: fixed;
   inset: 0;
   z-index: 70;
-  background: var(--paper);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(74,47,88,.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(110,137,117,.05) 0%, transparent 50%),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
   color: var(--ink);
   display: flex;
   flex-direction: column;
@@ -499,21 +502,37 @@ html.menu-open .header {
   box-shadow: 0 8px 22px rgba(74,47,88,.30), 0 0 0 8px rgba(74,47,88,.10);
 }
 .btn--ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, .35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: var(--ink);
-  border-color: var(--line);
+  border-color: rgba(220, 214, 199, .8);
+  box-shadow: 0 1px 2px rgba(20,21,26,.03);
 }
-.btn--ghost:hover { background: var(--paper-2); border-color: var(--ink); }
+.btn--ghost:hover {
+  background: rgba(241, 234, 246, .6);
+  border-color: rgba(74,47,88,.4);
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(74,47,88,.10);
+}
 .btn--link {
   padding: 0;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--ink);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
   border-radius: 0;
   color: var(--ink);
   font-weight: 500;
+  padding-bottom: 2px;
+  transition: background-size .45s cubic-bezier(.2,.7,.2,1), color var(--dur-1) var(--ease);
 }
-.btn--link:hover { color: var(--sage); border-bottom-color: var(--sage); }
+.btn--link:hover {
+  color: var(--accent);
+  background-size: 100% 2px;
+}
 
 .btn .arrow {
   width: 14px; height: 14px;
@@ -1356,16 +1375,19 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 /* Termin-Erreichbarkeit (rechts neben Formular) */
 .form-aside {
   display: grid; gap: 1.4rem;
-  padding: clamp(28px, 3.4vw, 40px);
-  background: var(--paper-2);
-  border: 1px solid var(--smoke);
+  padding: clamp(32px, 3.8vw, 48px);
+  background:
+    linear-gradient(135deg, rgba(244,239,233,.9) 0%, rgba(241,234,246,.55) 100%);
+  border: 1px solid rgba(220, 214, 199, .55);
   border-radius: var(--r-3);
+  box-shadow: 0 1px 2px rgba(20,21,26,.03), 0 12px 36px rgba(74,47,88,.06);
 }
 .form-aside h3 {
   font-size: 1.1rem;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0;
+  color: var(--ink);
   color: var(--ink);
 }
 .form-aside dt {
@@ -1929,21 +1951,23 @@ section.loose { padding-block: clamp(112px, 16vw, 224px); }
   margin-top: clamp(36px, 5vw, 56px);
 }
 .route {
-  background: var(--white);
-  border: 1px solid var(--smoke);
+  background:
+    linear-gradient(170deg, rgba(255,255,255,.95) 0%, rgba(251,249,246,.85) 100%);
+  border: 1px solid rgba(220, 214, 199, .55);
   border-radius: var(--r-3);
-  padding: clamp(24px, 3vw, 36px);
+  padding: clamp(28px, 3.4vw, 40px);
   display: flex;
   flex-direction: column;
-  gap: .8rem;
+  gap: .9rem;
   transition: transform var(--dur-2) var(--ease),
               box-shadow var(--dur-2) var(--ease),
               border-color var(--dur-2) var(--ease);
+  box-shadow: 0 1px 3px rgba(20,21,26,.03), 0 8px 22px rgba(20,21,26,.04);
 }
 .route:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-2);
-  border-color: var(--line);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(20,21,26,.06), 0 22px 50px rgba(74,47,88,.10);
+  border-color: rgba(74,47,88,.25);
 }
 .route__icon {
   width: 44px; height: 44px;
@@ -3564,10 +3588,13 @@ section { position: relative; }
    ============================================================ */
 .map-cta {
   margin-top: clamp(36px, 5vw, 56px);
-  padding: clamp(28px, 4vw, 48px);
-  background: linear-gradient(160deg, var(--accent-soft) 0%, var(--paper-2) 100%);
-  border: 1px solid var(--smoke);
+  padding: clamp(32px, 4.4vw, 56px);
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(74,47,88,.10) 0%, transparent 60%),
+    linear-gradient(160deg, var(--accent-soft) 0%, var(--paper-2) 100%);
+  border: 1px solid rgba(220, 214, 199, .5);
   border-radius: var(--r-3);
+  box-shadow: 0 1px 2px rgba(20,21,26,.03), 0 14px 38px rgba(74,47,88,.07);
 }
 .map-cta__inner {
   display: grid;
