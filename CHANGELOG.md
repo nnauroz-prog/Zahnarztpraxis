@@ -6,6 +6,21 @@ beim Refresh die alte Version.
 
 ---
 
+## r93 · Social-Card eingebunden
+
+Eigens komponiertes Open-Graph-Bild `og-card.png` (1200 × 630, PNG)
+mit Paper-Background, Aubergine-Wordmark (Dental + Italic *Harmonie*),
+Headline „Erst zuhören. *Dann behandeln.*", Porträt rechts gerundet
+mit Aubergine-Glow-Shadow, Telefonnummer + Domain in der Fußzeile.
+
+Alle 13 Seiten verlinken `og-card.png` als `og:image` (mit
+`width/height/type`), `twitter:card` von `summary` auf
+`summary_large_image` umgestellt. WhatsApp, Facebook und LinkedIn
+zeigen die Vorschau jetzt im richtigen Querformat statt das Hochformat
+zu beschneiden.
+
+---
+
 ## r92 · Fremdblick-QA: DSGVO-Lücke geschlossen
 
 Kritischer Review-Durchgang mit frischen Augen vor der Präsentation:

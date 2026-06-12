@@ -1,6 +1,6 @@
 # Übergabe · DentalHarmonie
 
-## Status: Sales-ready (Cache r92)
+## Status: Sales-ready (Cache r93)
 
 Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 1 Stylesheet (~3.900 Zeilen), 1 Script (~700 Zeilen), 1 Konfiguration,
@@ -51,11 +51,11 @@ Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 ### Technik & Standards
 
 - Schema.org strukturierte Daten: `Dentist`, `Person`, `FAQPage`, `BreadcrumbList`, `MedicalProcedure`
-- Open-Graph-Tags für Social-Vorschau (WhatsApp, Facebook, LinkedIn)
+- Open-Graph-Tags für Social-Vorschau (WhatsApp, Facebook, LinkedIn) mit eigens komponierter Social-Card 1200×630 (`og-card.png`)
 - Web-App-Manifest (Mobile-App-Add-to-Home)
 - Druck-Stylesheet (`@media print`) für saubere Patient-PDFs
 - Schriften selbst gehostet (`fonts/` · woff2, Subsets latin + latin-ext) — kein Google-CDN, keine IP-Übertragung an Dritte beim Seitenaufruf
-- Cache-Busting via `?v=2026-01-01-r92`
+- Cache-Busting via `?v=2026-01-01-r93`
 - Service-Worker-Unregister im Head (verhindert Old-Cache-Stalking)
 - WCAG-2.1-konforme Focus-Rings in Aubergine
 
@@ -152,6 +152,6 @@ Was Code-Eingriff bräuchte:
 
 - Keine eingebettete Karte auf der Kontaktseite — bewusste Entscheidung: nur externe Karten-Links (öffnen auf Klick), dadurch keine Drittanbieter-Anfragen beim Seitenaufruf
 - Doctolib-Link nur sinnvoll, falls Frau Mostafaei ein Doctolib-Profil hat (aktuell verlinkt: `delaram-mostafaei`) — vor Go-Live verifizieren
-- Porträtfoto liegt nur in 353 × 530 px vor — für gestochen scharfe Darstellung auf großen Screens wäre eine höher aufgelöste Aufnahme gut (auch fürs Social-Vorschaubild)
+- Porträtfoto liegt nur in 353 × 530 px vor — für gestochen scharfe Darstellung auf großen Screens wäre eine höher aufgelöste Aufnahme gut (die Social-Card nutzt das vorhandene Foto, kommt damit aber an die Auflösungs-Grenze des Originals)
 - Telefonnummer, Faxnummer und E-Mail-Adresse vor Go-Live mit der Praxis abgleichen
 - Aussagen im Text, die die Inhaberin bestätigen sollte: „Wartezeit höchstens 5–10 Minuten", Team-Beschreibung (Praxis-Managerinnen, Dentalhygienikerinnen, eigene Prophylaxe-Räume), Ratenzahlung über externe Abrechnungsstellen
