@@ -801,12 +801,17 @@ html.menu-open .header {
   gap: .7rem;
   flex-wrap: wrap;
   min-width: 0;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
 }
 .hours-list .time {
   color: var(--slate);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   text-align: right;
+  font-size: .98rem;
+  letter-spacing: .01em;
 }
 .hours-list li.is-today .day,
 .hours-list li.is-today .time {
@@ -1437,14 +1442,26 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   color: var(--ink);
 }
 .form-aside dt {
-  font-size: .72rem; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--mute);
-  margin-bottom: .25rem;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: .95rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent);
+  margin-bottom: .3rem;
 }
-.form-aside dd { margin: 0 0 1rem; font-size: .95rem; color: var(--ink-2); }
+.form-aside dd { margin: 0 0 1.1rem; font-size: 1rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .form-aside dd a {
-  color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 1px;
+  color: var(--ink);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  padding-bottom: 2px;
+  transition: background-size .45s cubic-bezier(.2,.7,.2,1), color var(--dur-1) var(--ease);
+  text-decoration: none;
 }
+.form-aside dd a:hover { color: var(--accent); background-size: 100% 2px; }
 
 /* Form Success */
 .form-success {
@@ -1919,12 +1936,13 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 }
 .treatments__list a:hover { padding-left: 10px; color: var(--accent); }
 .treatments__list .cat {
-  font-family: 'Inter', sans-serif;
-  font-size: .72rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: .92rem;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--mute);
-  font-weight: 500;
+  font-weight: 400;
   flex-shrink: 0;
 }
 @media (max-width: 880px) {
