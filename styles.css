@@ -839,10 +839,24 @@ html.menu-open .header {
   font-size: .98rem;
   letter-spacing: .01em;
 }
+.hours-list li.is-today {
+  position: relative;
+}
+.hours-list li.is-today::before {
+  content: '';
+  position: absolute;
+  left: -16px; right: -16px;
+  top: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(74,47,88,.05) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: var(--r-1);
+}
 .hours-list li.is-today .day,
 .hours-list li.is-today .time {
   color: var(--ink);
   font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 .hours-list li.is-today .day::after {
   content: 'Heute geöffnet';
@@ -2120,10 +2134,10 @@ section.loose { padding-block: clamp(112px, 16vw, 224px); }
 }
 .prose-intro p {
   font-family: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.18rem, 1.7vw, 1.4rem);
-  line-height: 1.55;
+  font-size: clamp(1.22rem, 1.75vw, 1.45rem);
+  line-height: 1.6;
   color: var(--ink-2);
-  margin: 0 0 1.2em;
+  margin: 0 0 1.25em;
   letter-spacing: -0.005em;
 }
 .prose-intro p:first-child::first-letter {
