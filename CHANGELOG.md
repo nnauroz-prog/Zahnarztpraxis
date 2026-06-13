@@ -6,6 +6,27 @@ beim Refresh die alte Version.
 
 ---
 
+## r96 · Behandlungslisten lesbarer + Klick-Affordanz
+
+**Kategorie-Labels (`.cat`) bekamen mehr Stimme.** Vorher in `--mute`
+(#888B96 — fast unsichtbar), jetzt in `--slate` (#56596A). Die kleinen
+Annotations rechts neben jeder Behandlung („halbjährlich",
+„PZR · 45–60 Min", „kindgerecht", „auf Befund abgestimmt") sind jetzt
+lesbar statt nur dekorativ.
+
+**Hover-Chevron als Klickhinweis.** Behandlungs-Listen-Eintraege
+fadeten beim Hover bisher nur dezent Farbe und Padding — kein
+klassisches Pfeil-Signal. Jetzt schiebt sich beim Hover ein dezenter
+`›`-Chevron in Aubergine am rechten Rand rein.
+
+**Mobile: Kategorie-Labels als Uppercase-Caps.** Auf schmalen Screens
+schon vorher untenstehend, aber im italic-Serif kaum von der
+Beschreibung zu unterscheiden — jetzt klare Uppercase-Caps in
+`--mute`-Grau (`PROPHYLAXE`, `ZAHNMEDIZIN`, `ÄSTHETIK`). Mehr Rhythmus
+in der gestapelten Liste, ohne den Eintrag selbst zu ueberblenden.
+
+---
+
 ## r95 · Bug-Hunt: drei echte Fehler gefixt
 
 **Teilen-Button verliert SVG-Icon nach Kopier-Fallback.** Auf Browsern

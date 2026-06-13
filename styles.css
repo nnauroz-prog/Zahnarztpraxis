@@ -2044,16 +2044,32 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   letter-spacing: -0.01em;
+  position: relative;
   transition: padding-left var(--dur-2) var(--ease), color var(--dur-1) var(--ease);
 }
+.treatments__list a::after {
+  content: '›';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.5em;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0;
+  transform: translate(-6px, -50%);
+  transition: opacity var(--dur-1) var(--ease), transform var(--dur-2) var(--ease);
+  pointer-events: none;
+}
 .treatments__list a:hover { padding-left: 10px; color: var(--accent); }
+.treatments__list a:hover::after { opacity: .8; transform: translate(0, -50%); }
 .treatments__list .cat {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
   font-size: .92rem;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--mute);
+  color: var(--slate);
   font-weight: 400;
   flex-shrink: 0;
 }
@@ -2070,7 +2086,13 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
   .treatments__list .cat {
     font-size: .68rem;
     letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mute);
   }
+}
+/* Touch-Geraete: Chevron immer leicht sichtbar — kein Hover als Hinweis */
+@media (hover: none) {
+  .treatments__list a::after { opacity: .35; transform: translate(0, -50%); }
 }
 
 /* Sprechzeit + Anfahrt (asymmetrisch, ohne Karten) */
