@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r97';
+  var V = '2026-01-01-r98';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -24,8 +24,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 </style>
 <link rel="preload" as="font" type="font/woff2" href="fonts/instrumentserif-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r97">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r97">
+<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r98">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r98">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -42,7 +42,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta property="og:title" content="Leistungen · DentalHarmonie">
 <meta property="og:description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Vorsorge, Zahnmedizin, Ästhetik und Zahnersatz.">
 <meta property="og:url" content="https://www.dentalharmonie.de/leistungen.html">
-<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r97">
+<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r98">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -208,7 +208,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Schön ist, was <em>gesund bleibt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="termin-anfragen.html?anliegen=Veneers"><span>Veneers</span><span class="cat">Vollkeramik</span></a></li>
+              <li id="veneers"><a href="termin-anfragen.html?anliegen=Veneers"><span>Veneers</span><span class="cat">Vollkeramik</span></a></li>
               <li><a href="termin-anfragen.html?anliegen=Bleaching%20In-Office"><span>Bleaching In-Office</span><span class="cat">eine Sitzung</span></a></li>
               <li><a href="termin-anfragen.html?anliegen=Bleaching%20Home"><span>Bleaching Home</span><span class="cat">mit Schienen</span></a></li>
               <li><a href="termin-anfragen.html?anliegen=Composite-Aufbauten"><span>Composite-Aufbauten</span><span class="cat">minimal-invasiv</span></a></li>
@@ -230,9 +230,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Wenn Zähne <em>fehlen.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="termin-anfragen.html?anliegen=Kronen%20%26%20Br%C3%BCcken"><span>Kronen &amp; Brücken</span><span class="cat">Vollkeramik</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Implantatversorgung"><span>Implantatversorgung</span><span class="cat">Titan / Keramik</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Teil-%20%26%20Vollprothesen"><span>Teil- &amp; Vollprothesen</span><span class="cat">klassisch + kombiniert</span></a></li>
+              <li id="kronen"><a href="termin-anfragen.html?anliegen=Kronen%20%26%20Br%C3%BCcken"><span>Kronen &amp; Brücken</span><span class="cat">Vollkeramik</span></a></li>
+              <li id="implantat"><a href="termin-anfragen.html?anliegen=Implantatversorgung"><span>Implantatversorgung</span><span class="cat">Titan / Keramik</span></a></li>
+              <li id="prothesen"><a href="termin-anfragen.html?anliegen=Teil-%20%26%20Vollprothesen"><span>Teil- &amp; Vollprothesen</span><span class="cat">klassisch + kombiniert</span></a></li>
           </ul>
         </div>
       </div>
@@ -406,9 +406,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r97"></script>
-<script src="db.js?v=2026-01-01-r97"></script>
-<script src="script.js?v=2026-01-01-r97" defer></script>
+<script src="config.js?v=2026-01-01-r98"></script>
+<script src="db.js?v=2026-01-01-r98"></script>
+<script src="script.js?v=2026-01-01-r98" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

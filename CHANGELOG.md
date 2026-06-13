@@ -6,6 +6,31 @@ beim Refresh die alte Version.
 
 ---
 
+## r98 · IA-Nachzug: Doppel-Ziele und Naming-Kollision aufgeloest
+
+Drei Folgefehler aus dem r97-Audit gefixt:
+
+**Doppel-Ziele auf Home.** „Kronen, Brücken, Vollkeramik" und
+„Implantatversorgung" zeigten beide auf `leistungen.html#zahnersatz`
+(gleiches Anker, zwei Eintraege). Veneers landete auf der breiten
+Ästhetik-Section, nicht auf Veneers selbst. Jetzt haben die Eintraege
+in leistungen.html eigene IDs (`#veneers`, `#kronen`, `#implantat`,
+`#prothesen`) und der Klick aus Home landet auf der spezifischen Zeile —
+mit dem r97-Hier-sind-Sie-Marker.
+
+**Naming-Kollision aufgeloest.** zahnmedizin.html Kapitel 02 hiess
+„Was ich behandle." — identisch zur Home-Section. Verwirrend.
+Umbenannt zu „Diagnose, Therapie, Erhalt." (passt zur leistungen.html
+Zahnmedizin-Sektion). Dazu eine direkte Handlungs-Anweisung im Intro:
+„Klicken Sie eine Leistung an — das Termin-Formular ist mit Ihrem
+Anliegen vorbefuellt."
+
+**Gleiche Klarstellung auf prophylaxe.html Kapitel 02.** Intro ergaenzt
+um „Klicken Sie eine Leistung an — das Termin-Formular ist vorbefuellt."
+— damit niemand denkt, hier sei noch ein weiteres Auswahl-Menue.
+
+---
+
 ## r97 · IA-Fix: „Was ich behandle" fuehrt jetzt zur Antwort, nicht zu noch einem Menue
 
 **Das Problem (Nutzer-Feedback):** Klick auf Kapitel 02 / „Was ich behandle"
