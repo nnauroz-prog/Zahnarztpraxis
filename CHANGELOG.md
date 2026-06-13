@@ -6,6 +6,45 @@ beim Refresh die alte Version.
 
 ---
 
+## r97 · IA-Fix: „Was ich behandle" fuehrt jetzt zur Antwort, nicht zu noch einem Menue
+
+**Das Problem (Nutzer-Feedback):** Klick auf Kapitel 02 / „Was ich behandle"
+landete auf einer Unterseite, die ein **weiteres Menue** zeigte — Besucher
+mussten nochmal waehlen, bevor sie endlich die Leistung erklaert bekamen.
+Verbindungen funktionierten nicht intuitiv.
+
+**Drei strukturelle Aenderungen:**
+
+**1. Home-Link „Professionelle Zahnreinigung" geht jetzt direkt zur
+PZR-Erklaerung** statt zur Prophylaxe-Hero. Konkret:
+- `prophylaxe.html` Kapitel-01-Section bekam `id="pzr"`
+- Eyebrow umbenannt von „PZR · 45 – 60 Minuten" zu „Professionelle
+  Zahnreinigung · 45 – 60 Minuten" — sofort klar, was hier erklaert wird
+- Termin-CTA „Termin fuer PZR anfragen" am Ende des Abschnitts
+- Home-Link `prophylaxe.html` → `prophylaxe.html#pzr`
+
+**2. Leistungen-Seite vereinheitlicht.** Vorher waren die ersten zwei
+Kapitel (Vorsorge, Zahnmedizin) Cross-Links zu den Unterseiten, die
+letzten zwei (Aesthetik, Zahnersatz) direkt zur Termin-Anfrage —
+inkonsistent. Jetzt: **alle 18 Eintraege fuehren direkt zur Termin-Anfrage**
+mit passendem Anliegen-Prefill. Wer trotzdem mehr lesen will, findet
+unter jeder Kategorie einen kleinen Link „Mehr zur Vorsorge / Zahnmedizin
+lesen →".
+
+**3. Ziel-Highlight verstaerkt.** Wer ueber einen Anker auf einer
+Unterseite landet (z.B. `zahnmedizin.html#karies`), sieht den Eintrag
+jetzt klar markiert: Aubergine-Linke-Kante, helle Aubergine-Schattierung,
+Hinweis „✓ Hier sind Sie · zur Anfrage klicken" in italic Serif und
+Chevron rechts. Die umliegenden Eintraege sehen normal aus — das macht
+sichtbar, dass der gelandete Eintrag die Antwort ist und nicht Teil
+eines Auswahl-Menues.
+
+Klick-Pfad jetzt: Home → ein einziger Klick → Erklaerung der gewuenschten
+Leistung, klar markiert, mit direktem Booking-Button. Verifiziert in
+QtWebEngine.
+
+---
+
 ## r96 · Behandlungslisten lesbarer + Klick-Affordanz
 
 **Kategorie-Labels (`.cat`) bekamen mehr Stimme.** Vorher in `--mute`

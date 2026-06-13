@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r96';
+  var V = '2026-01-01-r97';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -24,8 +24,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 </style>
 <link rel="preload" as="font" type="font/woff2" href="fonts/instrumentserif-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r96">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r96">
+<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r97">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r97">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -42,7 +42,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta property="og:title" content="Leistungen · DentalHarmonie">
 <meta property="og:description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Vorsorge, Zahnmedizin, Ästhetik und Zahnersatz.">
 <meta property="og:url" content="https://www.dentalharmonie.de/leistungen.html">
-<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r96">
+<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r97">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -162,12 +162,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Damit es gar nicht erst <em>dazu kommt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="prophylaxe.html"><span>Kontrolluntersuchung</span><span class="cat">halbjährlich</span></a></li>
-              <li><a href="prophylaxe.html"><span>Professionelle Zahnreinigung</span><span class="cat">PZR · 45–60 Min</span></a></li>
-              <li><a href="prophylaxe.html#kinder-prophylaxe"><span>Kinder-Prophylaxe</span><span class="cat">kindgerecht</span></a></li>
-              <li><a href="prophylaxe.html#recall"><span>Individueller Recall</span><span class="cat">auf Befund abgestimmt</span></a></li>
-              <li><a href="prophylaxe.html#fluoridierung"><span>Fluoridierung</span><span class="cat">ab Befund</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Kontrolluntersuchung"><span>Kontrolluntersuchung</span><span class="cat">halbjährlich</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Professionelle%20Zahnreinigung"><span>Professionelle Zahnreinigung</span><span class="cat">PZR · 45–60 Min</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Kinder-Prophylaxe"><span>Kinder-Prophylaxe</span><span class="cat">kindgerecht</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Individueller%20Recall"><span>Individueller Recall</span><span class="cat">auf Befund abgestimmt</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Fluoridierung"><span>Fluoridierung</span><span class="cat">ab Befund</span></a></li>
           </ul>
+          <p style="margin-top: 1.2rem; font-size: .92rem;"><a class="btn btn--link" href="prophylaxe.html">Mehr zur Vorsorge lesen →</a></p>
         </div>
       </div>
     </div>
@@ -184,12 +185,13 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Diagnose, Therapie, <em>Erhalt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="zahnmedizin.html#karies"><span>Karies &amp; Füllungstherapie</span><span class="cat">Composite</span></a></li>
-              <li><a href="zahnmedizin.html#wurzelkanal"><span>Wurzelkanalbehandlung</span><span class="cat">maschinell · Lupe</span></a></li>
-              <li><a href="zahnmedizin.html#parodontologie"><span>Parodontologie</span><span class="cat">systematisch</span></a></li>
-              <li><a href="zahnmedizin.html#kinderzahn"><span>Kinderzahnheilkunde</span><span class="cat">ab Milchzahn</span></a></li>
-              <li><a href="zahnmedizin.html#schmerz-akut"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">auf Anruf</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Karies%20%26%20F%C3%BCllungstherapie"><span>Karies &amp; Füllungstherapie</span><span class="cat">Composite</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span>Wurzelkanalbehandlung</span><span class="cat">maschinell · Lupe</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Parodontologie"><span>Parodontologie</span><span class="cat">systematisch</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span>Kinderzahnheilkunde</span><span class="cat">ab Milchzahn</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">auf Anruf</span></a></li>
           </ul>
+          <p style="margin-top: 1.2rem; font-size: .92rem;"><a class="btn btn--link" href="zahnmedizin.html">Mehr zur Zahnmedizin lesen →</a></p>
         </div>
       </div>
     </div>
@@ -404,9 +406,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r96"></script>
-<script src="db.js?v=2026-01-01-r96"></script>
-<script src="script.js?v=2026-01-01-r96" defer></script>
+<script src="config.js?v=2026-01-01-r97"></script>
+<script src="db.js?v=2026-01-01-r97"></script>
+<script src="script.js?v=2026-01-01-r97" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r96';
+  var V = '2026-01-01-r97';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -24,8 +24,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 </style>
 <link rel="preload" as="font" type="font/woff2" href="fonts/instrumentserif-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r96">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r96">
+<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r97">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r97">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -42,7 +42,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta property="og:title" content="Prophylaxe · DentalHarmonie">
 <meta property="og:description" content="Professionelle Zahnreinigung, Kinder-Prophylaxe, Recall und Bleaching bei DentalHarmonie in Hamburg-Hohenfelde.">
 <meta property="og:url" content="https://www.dentalharmonie.de/prophylaxe.html">
-<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r96">
+<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r97">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -118,12 +118,12 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
     </div>
   </section>
 
-  <section>
+  <section id="pzr">
     <div class="container">
       <div class="two-col">
         <aside class="two-col__aside reveal reveal--left">
           <p class="chapter-mark">Kapitel 01</p>
-          <p class="eyebrow">PZR · 45 – 60 Minuten</p>
+          <p class="eyebrow">Professionelle Zahnreinigung · 45 – 60 Minuten</p>
           <p>Eine Sitzung dauert 45 bis 60 Minuten. Im Anschluss klären wir, welches Recall-Intervall zu Ihrem Befund passt.</p>
         </aside>
         <div class="reveal" data-delay="1">
@@ -137,6 +137,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
             <li>Fluoridierung der gereinigten Oberflächen</li>
             <li>Individuelle Putztechnik-Anleitung, abgestimmt auf Ihre Situation</li>
           </ul>
+          <p style="margin-top: 1.6rem;">
+            <a class="btn btn--primary" href="termin-anfragen.html?anliegen=Professionelle%20Zahnreinigung">Termin für PZR anfragen
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </p>
         </div>
       </div>
     </div>
@@ -229,9 +234,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r96"></script>
-<script src="db.js?v=2026-01-01-r96"></script>
-<script src="script.js?v=2026-01-01-r96" defer></script>
+<script src="config.js?v=2026-01-01-r97"></script>
+<script src="db.js?v=2026-01-01-r97"></script>
+<script src="script.js?v=2026-01-01-r97" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

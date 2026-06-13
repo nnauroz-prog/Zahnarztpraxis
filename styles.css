@@ -2022,18 +2022,47 @@ body.js-ready .reveal[data-delay="4"] { transition-delay: 320ms; }
 .treatments__list li {
   border-bottom: 1px solid rgba(220, 214, 199, .6);
   scroll-margin-top: 96px;
+  position: relative;
 }
+/* :target = der Besucher ist genau hier gelandet. Persistente Auszeichnung,
+   damit klar wird: "Das ist die Antwort, kein weiteres Menue." */
 .treatments__list li:target {
-  background: linear-gradient(90deg, var(--accent-soft) 0%, transparent 60%);
-  animation: targetPulse 1.6s cubic-bezier(.2,.7,.2,1);
+  background: linear-gradient(90deg, rgba(74,47,88,.18) 0%, rgba(74,47,88,.04) 90%);
+  padding: 0 18px;
+  margin: 0 -18px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--r-2) var(--r-2) 0;
 }
-@keyframes targetPulse {
-  0%   { background-color: rgba(63, 42, 74, .18); }
-  100% { background-color: transparent; }
+.treatments__list li:target::before {
+  /* ueberschreibt den ::before-Hover-Strich, der sonst die Höhe kollabiert */
+  content: '✓ Hier sind Sie · zur Anfrage klicken';
+  position: static;
+  display: block;
+  width: auto;
+  height: auto;
+  background: transparent;
+  transform: none;
+  padding: 14px 0 0;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: .82rem;
+  color: var(--accent);
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.treatments__list li:target a {
+  padding-top: 8px;
+}
+.treatments__list li:target a::after {
+  opacity: .9 !important;
+  transform: translate(0, -50%) !important;
+  color: var(--accent);
 }
 @media (prefers-reduced-motion: reduce) {
-  .treatments__list li:target { animation: none; background: var(--accent-soft); }
+  .treatments__list li:target { animation: none; }
 }
+/* Auch fuer Section-Anker (z.B. prophylaxe.html#pzr) — Sticky-Header-Offset */
+section[id] { scroll-margin-top: 88px; }
 .treatments__list a {
   display: flex;
   justify-content: space-between;
