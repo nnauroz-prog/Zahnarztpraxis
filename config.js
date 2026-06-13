@@ -9,9 +9,8 @@
       owner: 'Dr. Delaram Mostafaei',
       street: 'Ifflandstraße 75',
       city: '22087 Hamburg-Hohenfelde',
-      phone: '+49 40 221528',
-      phoneHref: 'tel:+494022 1528',
-      fax: '+49 40 22698898',
+      phone: '040 221 528',
+      fax: '040 22698898',
       email: 'info@dentalharmonie.de',
       doctolib: 'https://www.doctolib.de/zahnmedizin/hamburg/delaram-mostafaei',
       hours: [

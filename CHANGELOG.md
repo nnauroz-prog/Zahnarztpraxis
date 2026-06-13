@@ -6,6 +6,50 @@ beim Refresh die alte Version.
 
 ---
 
+## r95 · Bug-Hunt: drei echte Fehler gefixt
+
+**Teilen-Button verliert SVG-Icon nach Kopier-Fallback.** Auf Browsern
+ohne Web-Share-API (Desktop) wurde nach dem Klick auf „Teilen" das
+Pfeil-Symbol fuer immer zerstoert: `btn.textContent = '...'`
+ueberschrieb alle Kindknoten inkl. `<svg>`. Fix: innerHTML statt
+textContent zum Wiederherstellen — Icon bleibt erhalten.
+
+**Demo-Mode-Erfolgskarte log uebers Termin-Formular.** Solange Supabase
+nicht konfiguriert ist, oeffnet der Submit-Button das E-Mail-Programm
+(mailto-Fallback). Die Erfolgskarte zeigte trotzdem „Danke fuer Ihre
+Nachricht. Ich melde mich werktags innerhalb von 24 Stunden mit einer
+Bestaetigung." — obwohl der Versand am Mail-Client des Besuchers haengt.
+Fix: im Demo-Mode wird die Karte zu „Fast geschafft." mit ehrlichem Text:
+„Ihr E-Mail-Programm sollte sich gerade geoeffnet haben — bitte tippen
+Sie dort auf ‚Senden'…" plus Telefon-Link als Fallback.
+
+**Stagger-Listen flackerten beim Page-Load.** Treatments-, Hours- und
+Anchor-Listen bekamen alle Items per JS auf `opacity:0`, auch die schon
+im sichtbaren Viewport. Auf langsamen Geraeten kurzer
+Sichtbar-Unsichtbar-Sichtbar-Sprung. Fix: getBoundingClientRect() vor
+dem Verstecken — Items im initialen Viewport bleiben durchgehend zu
+sehen, nur unterhalb wird animiert eingeblendet.
+
+**Nebenbei:** `phoneHref: 'tel:+494022 1528'` in config.js (Tippfehler
+mit Leerzeichen in der Nummer) wurde nirgends gelesen — komplett raus,
+zusammen mit der inkonsistenten internationalen Telefonnummern-Form.
+
+Alle drei Fixes in QtWebEngine (Chromium-Engine) am realen DOM
+verifiziert.
+
+---
+
+## r94 · [hidden]-Schutzregel
+
+Komponentenregeln mit `display: flex/grid` (`.form__error`,
+`.form-success`) ueberschrieben das `hidden`-Attribut aus dem
+UA-Stylesheet. Auf der Termin-Seite waren dadurch leere Fehlerbox UND
+Danke-Karte dauerhaft sichtbar (vor jedem Absenden). Globale Reset-Regel:
+`[hidden] { display: none !important; }` — schliesst auch die analogen
+Stellen im Admin-Dashboard.
+
+---
+
 ## r93 · Social-Card eingebunden
 
 Eigens komponiertes Open-Graph-Bild `og-card.png` (1200 × 630, PNG)

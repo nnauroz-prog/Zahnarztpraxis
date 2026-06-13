@@ -77,9 +77,10 @@
       btn.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(location.href);
-          const orig = btn.textContent;
+          // innerHTML statt textContent, damit das SVG-Icon nicht verloren geht
+          const origHTML = btn.innerHTML;
           btn.textContent = 'Link kopiert ✓';
-          setTimeout(() => { btn.textContent = orig; }, 1800);
+          setTimeout(() => { btn.innerHTML = origHTML; }, 1800);
         } catch (e) {
           alert('Link konnte nicht kopiert werden.');
         }
@@ -310,8 +311,10 @@
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Wird gesendet&nbsp;…';
 
+      const isDemo = !(window.dentalDb && window.dentalDb.isProd);
+
       try {
-        if (window.dentalDb && window.dentalDb.isProd) {
+        if (!isDemo) {
           await window.dentalDb.addAppointmentRequest(data);
         } else {
           // Demo-Fallback: mailto öffnen, damit Anfrage trotzdem ankommt
@@ -329,6 +332,15 @@
           window.location.href = 'mailto:info@dentalharmonie.de?subject=' + subject + '&body=' + encodeURIComponent(lines);
         }
 
+        // Im Demo-Mode ehrlich bleiben: wir haben kein Backend, der Versand
+        // haengt am E-Mail-Programm des Besuchers — sonst suggeriert die
+        // Erfolgskarte eine Bestaetigung, die es nicht gibt.
+        if (isDemo && successCard) {
+          const p = successCard.querySelector('p');
+          if (p) p.innerHTML = 'Ihr E-Mail-Programm sollte sich gerade geöffnet haben — bitte tippen Sie dort auf „Senden", damit die Anfrage in der Praxis ankommt. Falls nichts passiert ist, rufen Sie uns gerne unter <a href="tel:+4940221528">040 221 528</a> an.';
+          const h = successCard.querySelector('h3');
+          if (h) h.textContent = 'Fast geschafft.';
+        }
         form.hidden = true;
         if (successCard) {
           successCard.hidden = false;
@@ -834,9 +846,14 @@
     const groups = document.querySelectorAll('.treatments__list, .hours-list, .anchor-list');
     if (!groups.length) return;
 
+    // Items, die beim Page-Load schon im Viewport stehen, NICHT verstecken —
+    // sonst kurzes Aufblitzen-und-wieder-Verschwinden, bevor der Observer feuert.
+    const vh = window.innerHeight;
     groups.forEach((group) => {
       const items = group.querySelectorAll('li');
       items.forEach((li, i) => {
+        const r = li.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0) return;
         li.style.opacity = '0';
         li.style.transform = 'translateY(8px)';
         li.style.transition = 'opacity .55s cubic-bezier(.2,.7,.2,1) ' + (i * 50) + 'ms, transform .55s cubic-bezier(.2,.7,.2,1) ' + (i * 50) + 'ms';
