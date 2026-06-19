@@ -1,6 +1,6 @@
 # Übergabe · DentalHarmonie
 
-## Status: Sales-ready (Cache r98)
+## Status: Sales-ready (Cache r99)
 
 Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 1 Stylesheet (~3.900 Zeilen), 1 Script (~700 Zeilen), 1 Konfiguration,
@@ -55,7 +55,7 @@ Auf Branch `claude/improve-website-presentation-Yp4UY`. 13 HTML-Seiten,
 - Web-App-Manifest (Mobile-App-Add-to-Home)
 - Druck-Stylesheet (`@media print`) für saubere Patient-PDFs
 - Schriften selbst gehostet (`fonts/` · woff2, Subsets latin + latin-ext) — kein Google-CDN, keine IP-Übertragung an Dritte beim Seitenaufruf
-- Cache-Busting via `?v=2026-01-01-r98`
+- Cache-Busting via `?v=2026-01-01-r99`
 - Service-Worker-Unregister im Head (verhindert Old-Cache-Stalking)
 - WCAG-2.1-konforme Focus-Rings in Aubergine
 

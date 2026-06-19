@@ -6,6 +6,49 @@ beim Refresh die alte Version.
 
 ---
 
+## r99 · Senior-Audit-Pass: Trust-Anker, weniger Reibung, vollstaendige Leistungs-Texte
+
+**Vier Eingriffe an den groessten Conversion-Bremsen.**
+
+**1. Trust-Zeile im Hero — drei Anker auf die haeufigsten Patientensorgen.**
+Direkt unter den CTAs jetzt eine Reihe mit drei sage-gruenen Check-Chips:
+
+- ✓ Gesetzlich & privat (beantwortet: „nimmt die meine Kasse?")
+- ✓ Schriftlicher Kostenplan (beantwortet: „weiss ich vorher was es kostet?")
+- ✓ Zahnärztekammer Hamburg (beantwortet: „ist das eine offizielle Praxis?")
+
+Alle drei Aussagen sind aus den vorhandenen Praxis-Daten in ueber-uns.html
+abgeleitet — nichts erfunden. Auf Mobile wrappt die Reihe automatisch in
+zwei Zeilen.
+
+**2. Mikro-Reassurance unter den Hero-CTAs.** „Erstgespräch unverbindlich ·
+30–45 Minuten" — eine Zeile in italic Serif Slate. Senkt die Hemmschwelle
+„was kostet mich der Klick?" und entkoppelt das Erstgespraech von der
+Vorstellung eines teuren Erstbesuchs.
+
+**3. Cookie-Banner deutlich schlanker.** War vorher fast vollbreit am
+unteren Rand, ueberdeckte auf Mobile die Hero-CTAs beim First-Visit.
+Jetzt: 380px max-Width, rechte untere Ecke, kleinerer Padding/Schrift —
+sichtbar, aber nicht blockierend. Auf Mobile wieder vollbreit aber mit
+deutlich kleinerer Hoehe.
+
+**4. Leistungs-Seite mit vollstaendigen Beschreibungen.** Die 18 Eintraege
+auf leistungen.html hatten nur Titel + Kategorie-Label. Jetzt jeder mit
+einer faktischen 1-Satz-Beschreibung was die Leistung ist — z.B.
+
+> Veneers · Vollkeramik
+> Hauchdünne Keramikschalen für Frontzähne — bei Verfärbungen, kleinen
+> Lücken oder Form-Korrektur.
+
+Schliesst die r98-Luecke: Wer aus Home auf #veneers landet, sieht jetzt
+nicht nur den Namen mit „Hier sind Sie"-Marker, sondern auch was Veneers
+ueberhaupt sind. Der Anker-Landing-Pfad transportiert jetzt echte
+Information.
+
+Verifiziert in QtWebEngine an Mobile (420px) und Desktop (1280px).
+
+---
+
 ## r98 · IA-Nachzug: Doppel-Ziele und Naming-Kollision aufgeloest
 
 Drei Folgefehler aus dem r97-Audit gefixt:

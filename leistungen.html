@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 (function () {
-  var V = '2026-01-01-r98';
+  var V = '2026-01-01-r99';
   try {
     if (localStorage.getItem('app-content-version') !== V) {
       Object.keys(localStorage).forEach(function (k) { if (k.indexOf('app-content') === 0) localStorage.removeItem(k); });
@@ -24,8 +24,8 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 </style>
 <link rel="preload" as="font" type="font/woff2" href="fonts/instrumentserif-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
-<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r98">
-<link rel="stylesheet" href="styles.css?v=2026-01-01-r98">
+<link rel="stylesheet" href="fonts/fonts.css?v=2026-01-01-r99">
+<link rel="stylesheet" href="styles.css?v=2026-01-01-r99">
 <link rel="icon" href="IMG_9504.png">
 <link rel="apple-touch-icon" href="IMG_9504.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -42,7 +42,7 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
 <meta property="og:title" content="Leistungen · DentalHarmonie">
 <meta property="og:description" content="Behandlungsspektrum der Zahnarztpraxis DentalHarmonie in Hamburg-Hohenfelde — Vorsorge, Zahnmedizin, Ästhetik und Zahnersatz.">
 <meta property="og:url" content="https://www.dentalharmonie.de/leistungen.html">
-<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r98">
+<meta property="og:image" content="https://www.dentalharmonie.de/og-card.png?v=2026-01-01-r99">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -162,11 +162,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Damit es gar nicht erst <em>dazu kommt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="termin-anfragen.html?anliegen=Kontrolluntersuchung"><span>Kontrolluntersuchung</span><span class="cat">halbjährlich</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Professionelle%20Zahnreinigung"><span>Professionelle Zahnreinigung</span><span class="cat">PZR · 45–60 Min</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Kinder-Prophylaxe"><span>Kinder-Prophylaxe</span><span class="cat">kindgerecht</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Individueller%20Recall"><span>Individueller Recall</span><span class="cat">auf Befund abgestimmt</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Fluoridierung"><span>Fluoridierung</span><span class="cat">ab Befund</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Kontrolluntersuchung"><span><span class="t-title">Kontrolluntersuchung</span><span class="t-desc">Routinetermin mit vollständigem Befund — empfohlen alle sechs Monate, gesetzliche Kassenleistung.</span></span><span class="cat">halbjährlich</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Professionelle%20Zahnreinigung"><span><span class="t-title">Professionelle Zahnreinigung</span><span class="t-desc">Gründliche Entfernung von Belägen über und unter dem Zahnfleischrand, mit Politur und Fluoridierung.</span></span><span class="cat">PZR · 45–60 Min</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Kinder-Prophylaxe"><span><span class="t-title">Kinder-Prophylaxe</span><span class="t-desc">Spielerische Mundhygiene-Einführung, behutsam abgestimmt auf Alter und Befund.</span></span><span class="cat">kindgerecht</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Individueller%20Recall"><span><span class="t-title">Individueller Recall</span><span class="t-desc">Recall-Intervall nach Ihrem Befund-Profil — alle drei Monate bei höherem Risiko, jährlich bei stabilem Befund.</span></span><span class="cat">auf Befund abgestimmt</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Fluoridierung"><span><span class="t-title">Fluoridierung</span><span class="t-desc">Stärkung des Zahnschmelzes — Dosis und Frequenz nach Alter und individuellem Karies-Risiko.</span></span><span class="cat">ab Befund</span></a></li>
           </ul>
           <p style="margin-top: 1.2rem; font-size: .92rem;"><a class="btn btn--link" href="prophylaxe.html">Mehr zur Vorsorge lesen →</a></p>
         </div>
@@ -185,11 +185,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Diagnose, Therapie, <em>Erhalt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li><a href="termin-anfragen.html?anliegen=Karies%20%26%20F%C3%BCllungstherapie"><span>Karies &amp; Füllungstherapie</span><span class="cat">Composite</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span>Wurzelkanalbehandlung</span><span class="cat">maschinell · Lupe</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Parodontologie"><span>Parodontologie</span><span class="cat">systematisch</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span>Kinderzahnheilkunde</span><span class="cat">ab Milchzahn</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span>Schmerz- &amp; Akutbehandlung</span><span class="cat">auf Anruf</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Karies%20%26%20F%C3%BCllungstherapie"><span><span class="t-title">Karies &amp; Füllungstherapie</span><span class="t-desc">Schonende Kariesentfernung mit zahnfarbenem Composite — bei größeren Defekten Keramik-Inlays.</span></span><span class="cat">Composite</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Wurzelkanalbehandlung"><span><span class="t-title">Wurzelkanalbehandlung</span><span class="t-desc">Maschinelle Aufbereitung unter Lupensicht — Ziel ist der Erhalt des eigenen Zahns.</span></span><span class="cat">maschinell · Lupe</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Parodontologie"><span><span class="t-title">Parodontologie</span><span class="t-desc">Systematische Reinigung tiefer Zahnfleischtaschen, Stufe für Stufe nach Befund.</span></span><span class="cat">systematisch</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Kinderzahnheilkunde"><span><span class="t-title">Kinderzahnheilkunde</span><span class="t-desc">Behutsame Behandlung im Tempo des Kindes, oft mit einem reinen Schau-Termin als Auftakt.</span></span><span class="cat">ab Milchzahn</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Akute%20Beschwerden"><span><span class="t-title">Schmerz- &amp; Akutbehandlung</span><span class="t-desc">Bei akuten Beschwerden versuche ich, Sie am gleichen oder nächsten Werktag einzuschieben.</span></span><span class="cat">auf Anruf</span></a></li>
           </ul>
           <p style="margin-top: 1.2rem; font-size: .92rem;"><a class="btn btn--link" href="zahnmedizin.html">Mehr zur Zahnmedizin lesen →</a></p>
         </div>
@@ -208,11 +208,11 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Schön ist, was <em>gesund bleibt.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li id="veneers"><a href="termin-anfragen.html?anliegen=Veneers"><span>Veneers</span><span class="cat">Vollkeramik</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Bleaching%20In-Office"><span>Bleaching In-Office</span><span class="cat">eine Sitzung</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Bleaching%20Home"><span>Bleaching Home</span><span class="cat">mit Schienen</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Composite-Aufbauten"><span>Composite-Aufbauten</span><span class="cat">minimal-invasiv</span></a></li>
-              <li><a href="termin-anfragen.html?anliegen=Vollkeramik-Inlays"><span>Vollkeramik-Inlays</span><span class="cat">Keramik</span></a></li>
+              <li id="veneers"><a href="termin-anfragen.html?anliegen=Veneers"><span><span class="t-title">Veneers</span><span class="t-desc">Hauchdünne Keramikschalen für Frontzähne — bei Verfärbungen, kleinen Lücken oder Form-Korrektur.</span></span><span class="cat">Vollkeramik</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Bleaching%20In-Office"><span><span class="t-title">Bleaching In-Office</span><span class="t-desc">Aufhellung in einer Sitzung in der Praxis. Mit Zahn- und Zahnfleischprüfung vorab.</span></span><span class="cat">eine Sitzung</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Bleaching%20Home"><span><span class="t-title">Bleaching Home</span><span class="t-desc">Individuell angefertigte Aufhellungsschienen, die Sie 1 bis 2 Wochen abends zu Hause tragen.</span></span><span class="cat">mit Schienen</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Composite-Aufbauten"><span><span class="t-title">Composite-Aufbauten</span><span class="t-desc">Zahnfarbene Kunststoff-Aufbauten für Ecken, Kanten oder kleine Form-Korrekturen — substanzschonend.</span></span><span class="cat">minimal-invasiv</span></a></li>
+              <li><a href="termin-anfragen.html?anliegen=Vollkeramik-Inlays"><span><span class="t-title">Vollkeramik-Inlays</span><span class="t-desc">Im Labor gefertigte Keramik-Einlagefüllung — bei größeren Defekten, langlebiger als Composite.</span></span><span class="cat">Keramik</span></a></li>
           </ul>
         </div>
       </div>
@@ -230,9 +230,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
         <div class="reveal" data-delay="1">
           <h2>Wenn Zähne <em>fehlen.</em></h2>
           <ul class="treatments__list" style="margin-top: 1.5rem;">
-              <li id="kronen"><a href="termin-anfragen.html?anliegen=Kronen%20%26%20Br%C3%BCcken"><span>Kronen &amp; Brücken</span><span class="cat">Vollkeramik</span></a></li>
-              <li id="implantat"><a href="termin-anfragen.html?anliegen=Implantatversorgung"><span>Implantatversorgung</span><span class="cat">Titan / Keramik</span></a></li>
-              <li id="prothesen"><a href="termin-anfragen.html?anliegen=Teil-%20%26%20Vollprothesen"><span>Teil- &amp; Vollprothesen</span><span class="cat">klassisch + kombiniert</span></a></li>
+              <li id="kronen"><a href="termin-anfragen.html?anliegen=Kronen%20%26%20Br%C3%BCcken"><span><span class="t-title">Kronen &amp; Brücken</span><span class="t-desc">Wenn eine Füllung nicht mehr reicht — Vollkeramik oder Metallkeramik, mit ehrlicher Einschätzung zur Lebensdauer.</span></span><span class="cat">Vollkeramik</span></a></li>
+              <li id="implantat"><a href="termin-anfragen.html?anliegen=Implantatversorgung"><span><span class="t-title">Implantatversorgung</span><span class="t-desc">Künstliche Zahnwurzel im Kiefer mit aufgesetzter Krone — Einzelzahn bis hin zu Brücken-Konstruktionen.</span></span><span class="cat">Titan / Keramik</span></a></li>
+              <li id="prothesen"><a href="termin-anfragen.html?anliegen=Teil-%20%26%20Vollprothesen"><span><span class="t-title">Teil- &amp; Vollprothesen</span><span class="t-desc">Herausnehmbarer Zahnersatz für teilweise oder vollständig zahnlose Kiefer — auch in Kombination mit Implantaten.</span></span><span class="cat">klassisch + kombiniert</span></a></li>
           </ul>
         </div>
       </div>
@@ -406,9 +406,9 @@ html,body{background:#FBFAF6;color:#0E0F12;font-family:'Inter',system-ui,-apple-
   </div>
 </footer>
 
-<script src="config.js?v=2026-01-01-r98"></script>
-<script src="db.js?v=2026-01-01-r98"></script>
-<script src="script.js?v=2026-01-01-r98" defer></script>
+<script src="config.js?v=2026-01-01-r99"></script>
+<script src="db.js?v=2026-01-01-r99"></script>
+<script src="script.js?v=2026-01-01-r99" defer></script>
 <aside class="sticky-cta" aria-label="Schnell-Kontakt">
   <a href="termin-anfragen.html">Termin anfragen
     <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
